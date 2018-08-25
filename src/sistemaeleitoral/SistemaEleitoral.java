@@ -5,6 +5,9 @@
  */
 package sistemaeleitoral;
 
+import javax.swing.JFrame;
+import sistemagrafico.LayoutMaster;
+
 /**
  *
  * @author Anderson
@@ -18,7 +21,8 @@ public class SistemaEleitoral
     public static void main(String[] args) 
     {
         // TODO code application logic here
-        
+        LayoutMaster lm = new LayoutMaster();
+        lm.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     }
     
 }

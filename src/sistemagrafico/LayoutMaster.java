@@ -1,7 +1,5 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * AQUI CONTÉM JOPTIONPANE
  */
 package sistemagrafico;
 
@@ -12,19 +10,23 @@ import java.awt.Container;
 import java.awt.Dimension;
 import java.awt.FlowLayout;
 import java.awt.Font;
-import java.awt.GridLayout;
 import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
+import java.util.ArrayList;
 import java.util.Calendar;
+import javax.swing.Action;
 import javax.swing.BorderFactory;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JPasswordField;
-import javax.swing.JScrollPane;
 import javax.swing.JTextField;
 
 /**
@@ -41,6 +43,7 @@ public class LayoutMaster extends JFrame
     private JPanel panelInferior;
     private JPanel panelContainerTelaVez;                                            
     private JPanel panelLogin;
+    private JPanel panelMesario;
     
     private JLabel labelInferior;
     
@@ -50,36 +53,53 @@ public class LayoutMaster extends JFrame
         tamanhoTela = Toolkit.getDefaultToolkit().getScreenSize();
         
         panelPrincipal = new JPanel(new BorderLayout());
-       
+        panelLogin = new JPanel(new BorderLayout());
+        panelMesario = new JPanel();
+        
+        panelLogin.setName("panelLogin");
+        panelMesario.setName("panelMesario");
+        
+        
         cardManager = new CardLayout();                                         
-        panelContainerTelaVez = new JPanel(cardManager);                                 //panelPrincipal.setLayout(cardManager); 
+        panelContainerTelaVez = new JPanel(cardManager);                        
+        panelContainerTelaVez.add(panelLogin, panelLogin.getName());
+        panelContainerTelaVez.add(panelMesario, panelMesario.getName());
         
-        
+        //#########################CONFIGURAR PAINEIS###########################
         configurarPanelInferior();
-        configurarTelaLogin(); 
+        configurarTelaLogin();
+        configurarTelaMesario();
+        //#########################CONFIGURAR PAINEIS###########################
+
         
-        
-        panelContainerTelaVez.add(panelLogin);
         panelPrincipal.add(panelContainerTelaVez, BorderLayout.CENTER);
-        
-        JScrollPane scroll = new JScrollPane();
-        scroll.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
-        scroll.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED);
-        container.add(scroll);
         
         container.add(panelInferior, BorderLayout.SOUTH);
         container.add(panelPrincipal, BorderLayout.CENTER);
         this.setExtendedState(JFrame.MAXIMIZED_BOTH);
         this.setVisible( true );
         this.setMinimumSize(new Dimension(tamanhoTela.width/2, tamanhoTela.height/2));
+        this.setIconImage(Toolkit.getDefaultToolkit().getImage("C:/Users/Anderson/Documents/NetBeansProjects/SistemaEleitoral/assets/eleicaoLogo.png"));
     }
     
     
     
     
+    
+    //#####################MÉTODOS DE CONFIGURAÇÃO##############################
+    private void configurarPanelInferior()
+    {
+        panelInferior = new JPanel();
+        panelInferior.setBorder(BorderFactory.createLineBorder(Color.BLACK));
+        labelInferior = new JLabel("SISTEMA ELEITORAL");
+        labelInferior.setFont(new Font(Font.SERIF, Font.PLAIN, 16));
+        panelInferior.add(labelInferior);
+    }
+    
     private void configurarTelaLogin()
     {
-        JLabel labelEleicoes = new JLabel("ELEIÇÕES "+Calendar.getInstance().get(Calendar.YEAR));;
+        panelLogin = new PanelLogin(panelLogin, container, cardManager, panelContainerTelaVez);
+        /*JLabel labelEleicoes = new JLabel("ELEIÇÕES "+Calendar.getInstance().get(Calendar.YEAR));
         JLabel labelLogin = new JLabel("Login");
         JLabel labelSenha = new JLabel("Senha");
         JLabel labelNomeTela = new JLabel("MESÁRIO - LOGIN");
@@ -92,36 +112,51 @@ public class LayoutMaster extends JFrame
         Font fontLabelsInputs = new Font(Font.SERIF, Font.PLAIN, 20);
         JPanel panelLayoutLogin = new JPanel(new FlowLayout(FlowLayout.CENTER, 10, 10));
         
-        panelLogin = new JPanel(new BorderLayout());
-        
         labelEleicoes.setFont(new Font(Font.SERIF, Font.BOLD, 50));
         labelEleicoes.setHorizontalAlignment(JLabel.CENTER);
         labelNomeTela.setFont(new Font(Font.SERIF, Font.BOLD, 25));
-        
-        
         labelLogin.setFont(fontLabelsInputs);
         labelSenha.setFont(fontLabelsInputs);
         textFieldlogin.setFont(fontLabelsInputs);
         passwordFieldSenha.setFont(fontLabelsInputs);
         textFieldlogin.setColumns(15);
         passwordFieldSenha.setColumns(15);
-        buttonLogin.addActionListener(new ActionListener() 
-        {
-            @Override
-            public void actionPerformed(ActionEvent e) 
-            {
-                //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        textFieldlogin.addKeyListener(new KeyAdapter() {
+            public void keyPressed(KeyEvent evt) {
+               if (evt.getKeyCode() == KeyEvent.VK_ENTER)
+               {
                 String login = (String) textFieldlogin.getText();
                 String senha = new String(passwordFieldSenha.getPassword());
-                
-                
-                //#############################################
-                //ENVIAR LOGIN E SENHA E RECEBER TRUE OU FALSE
-                /**********************************************
-                *   if(logado == true)                        *
-                *       trocar painel                         *
-                **********************************************/
-                //#############################################
+                if(logar(login, senha))
+                    cardManager.show(panelContainerTelaVez, "panelMesario");
+                else                                                            //Aqui contém o JOPTIONPANE
+                    JOptionPane.showMessageDialog(container, "Usuário inválido, tente novamente!", "Erro ao fazer login", JOptionPane.ERROR_MESSAGE, null);
+               }
+            }
+        });
+        passwordFieldSenha.addKeyListener(new KeyAdapter() {
+            public void keyPressed(KeyEvent evt)
+            {
+               if (evt.getKeyCode() == KeyEvent.VK_ENTER)
+               {
+                String login = (String) textFieldlogin.getText();
+                String senha = new String(passwordFieldSenha.getPassword());
+                if(logar(login, senha))
+                    cardManager.show(panelContainerTelaVez, "panelMesario");
+                else                                                            //Aqui contém o JOPTIONPANE
+                    JOptionPane.showMessageDialog(container, "Usuário inválido, tente novamente!", "Erro ao fazer login", JOptionPane.ERROR_MESSAGE, null);
+               } 
+            }
+        });
+        buttonLogin.addActionListener(new ActionListener(){
+            @Override
+            public void actionPerformed(ActionEvent e){
+                String login = (String) textFieldlogin.getText();
+                String senha = new String(passwordFieldSenha.getPassword());
+                if(logar(login, senha))
+                    cardManager.show(panelContainerTelaVez, "panelMesario");
+                else                                                            //Aqui contém o JOPTIONPANE
+                    JOptionPane.showMessageDialog(container, "Usuário inválido, tente novamente!", "Erro ao fazer login", JOptionPane.ERROR_MESSAGE, null);
             }
         });
         
@@ -142,15 +177,23 @@ public class LayoutMaster extends JFrame
         
         panelLogin.add(labelEleicoes, BorderLayout.NORTH);
         panelLogin.add(panelLayoutLogin, BorderLayout.CENTER);
-        
+        */
     }
     
-    private void configurarPanelInferior()
+    private void configurarTelaMesario()
     {
-        panelInferior = new JPanel();
-        panelInferior.setBorder(BorderFactory.createLineBorder(Color.BLACK));
-        labelInferior = new JLabel("SISTEMA ELEITORAL");
-        labelInferior.setFont(new Font(Font.SERIF, Font.PLAIN, 16));
-        panelInferior.add(labelInferior);
+        panelMesario = new JPanel();
     }
+    
+    
+    //########################MÉTODOS AUXILIARES################################
+    
+    //private boolean logar(String nome, String senha)
+    {
+        /*boolean logado = false;
+        if(nome.equals("login") && senha.equals("senha"))
+            logado = true;
+        return logado;*/
+    }  
+    
 }

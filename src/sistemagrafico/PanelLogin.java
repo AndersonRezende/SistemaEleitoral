@@ -12,8 +12,14 @@ import java.awt.FlowLayout;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.ContainerEvent;
+import java.awt.event.ContainerListener;
+import java.awt.event.FocusEvent;
+import java.awt.event.FocusListener;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
+import java.beans.PropertyChangeEvent;
+import java.beans.PropertyChangeListener;
 import java.util.Calendar;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -31,6 +37,7 @@ public class PanelLogin extends JPanel implements ActionListener, KeyListener
 {
     private Container container;
     private JPanel panelContainerTelaVez;
+    private JPanel panelLayoutLogin;
     private CardLayout cardManager;
     private JLabel labelEleicoes;
     private JLabel labelLogin;
@@ -40,7 +47,6 @@ public class PanelLogin extends JPanel implements ActionListener, KeyListener
     private JPasswordField passwordFieldSenha;
     private JButton buttonLogin;
     private Font fontLabelsInputs;
-    private JPanel panelLayoutLogin;
             
     
     public PanelLogin(JPanel panelLogin, Container container, CardLayout cardManager, JPanel panelContainerTelaVez)
@@ -48,6 +54,7 @@ public class PanelLogin extends JPanel implements ActionListener, KeyListener
         this.container = container;
         this.panelContainerTelaVez = panelContainerTelaVez;
         this.cardManager = cardManager;
+        
         labelEleicoes = new JLabel("ELEIÇÕES "+Calendar.getInstance().get(Calendar.YEAR));
         labelLogin = new JLabel("Login");
         labelSenha = new JLabel("Senha");
@@ -94,6 +101,8 @@ public class PanelLogin extends JPanel implements ActionListener, KeyListener
         panelLogin.add(panelLayoutLogin, BorderLayout.CENTER);
     }
 
+    
+    //ActionListener
     @Override
     public void actionPerformed(ActionEvent e) 
     {
@@ -102,30 +111,40 @@ public class PanelLogin extends JPanel implements ActionListener, KeyListener
             String login = (String) textFieldlogin.getText();
             String senha = new String(passwordFieldSenha.getPassword());
             if(login.equals("login") && senha.equals("senha"))
+            {
+                textFieldlogin.setText("");
+                passwordFieldSenha.setText("");
                 cardManager.show(panelContainerTelaVez, "panelMesario");
+            }
             else                                                            //Aqui contém o JOPTIONPANE
                 JOptionPane.showMessageDialog(container, "Usuário inválido, tente novamente!", "Erro ao fazer login", JOptionPane.ERROR_MESSAGE, null);
         }
     }
 
+    
+    //KeyListener
     @Override
     public void keyTyped(KeyEvent e) {}
 
     @Override
-    public void keyPressed(KeyEvent e) {
-        if (e.getKeyCode() == KeyEvent.VK_ENTER)
-               {
-                String login = (String) textFieldlogin.getText();
-                String senha = new String(passwordFieldSenha.getPassword());
-                if(login.equals("login") && senha.equals("senha"))
-                    cardManager.show(panelContainerTelaVez, "panelMesario");
-                else                                                            //Aqui contém o JOPTIONPANE
-                    JOptionPane.showMessageDialog(container, "Usuário inválido, tente novamente!", "Erro ao fazer login", JOptionPane.ERROR_MESSAGE, null);
-               }
+    public void keyPressed(KeyEvent e) 
+    {
+        if(e.getKeyCode() == KeyEvent.VK_ENTER)
+        {
+            String login = (String) textFieldlogin.getText();
+            String senha = new String(passwordFieldSenha.getPassword());
+            if(login.equals("login") && senha.equals("senha"))
+                cardManager.show(panelContainerTelaVez, "panelMesario");
+            else                                                            //Aqui contém o JOPTIONPANE
+            {
+                passwordFieldSenha.setText("");
+                JOptionPane.showMessageDialog(container, "Usuário inválido, tente novamente!", "Erro ao fazer login", JOptionPane.ERROR_MESSAGE, null);
+            }
+        }
+        
+        //if(e.getKeyCode() == KeyEvent.VK_CONTROL &&)
     }
 
     @Override
     public void keyReleased(KeyEvent e) {}
-
-    
 }

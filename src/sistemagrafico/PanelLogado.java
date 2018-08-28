@@ -7,18 +7,16 @@ package sistemagrafico;
 
 import java.awt.BorderLayout;
 import java.awt.CardLayout;
-import java.awt.Color;
 import java.awt.Container;
 import java.awt.Font;
 import java.awt.event.ComponentEvent;
 import java.awt.event.ComponentListener;
 import javax.swing.DefaultListModel;
+import javax.swing.JLabel;
 import javax.swing.JList;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
-import javax.swing.ListModel;
 import javax.swing.ListSelectionModel;
-import javax.swing.event.ListDataListener;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
 
@@ -28,13 +26,14 @@ import javax.swing.event.ListSelectionListener;
  */
 public class PanelLogado extends JPanel implements ListSelectionListener, ComponentListener
 {
-    private Font fontListOpcoesMenu = new Font(Font.SERIF, Font.PLAIN, 25);
+    private Font fontListOpcoesMenu;
     private Container container;
     private CardLayout cardManager;
     private JPanel panelContainerTelaVez;
     private JPanel panelLayoutLogado;
     private JList listOpcoesMenu;
     private DefaultListModel listModelOpcoesMenu;
+    private JLabel labelMesarioSuperior;
     
     PanelLogado(JPanel panelMesario, Container container, CardLayout cardManager, JPanel panelContainerTelaVez) 
     {
@@ -42,7 +41,14 @@ public class PanelLogado extends JPanel implements ListSelectionListener, Compon
         this.panelContainerTelaVez = panelContainerTelaVez;
         this.cardManager = cardManager;
         
+        fontListOpcoesMenu = new Font(Font.SERIF, Font.PLAIN, 25);
+        
         panelLayoutLogado = new JPanel(new BorderLayout());
+        
+        labelMesarioSuperior = new JLabel("SISTEMA ELEITORAL - MESÁRIO");
+        labelMesarioSuperior.setFont(new Font(Font.SERIF, Font.BOLD, 25));
+        labelMesarioSuperior.setHorizontalAlignment(JLabel.CENTER);
+        labelMesarioSuperior.setHorizontalTextPosition(JLabel.CENTER);
         
         listModelOpcoesMenu = new DefaultListModel();
         listModelOpcoesMenu.addElement("NOVO PROCESSO DE VOTAÇÃO");
@@ -51,13 +57,14 @@ public class PanelLogado extends JPanel implements ListSelectionListener, Compon
         listModelOpcoesMenu.addElement("SAIR");
         
         listOpcoesMenu = new JList(listModelOpcoesMenu);
-        listOpcoesMenu.setBounds(200,150,150,80);
         listOpcoesMenu.setFont(fontListOpcoesMenu);
         //listOpcoesMenu.setSelectionModel(ListSelectionModel.SINGLE_SELECTION);
         listOpcoesMenu.addListSelectionListener(this);  
         listOpcoesMenu.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
         
+        //panelLayoutLogado.add(labelMesarioSuperior, BorderLayout.NORTH);
         panelLayoutLogado.add(listOpcoesMenu, BorderLayout.WEST);
+        panelMesario.add(labelMesarioSuperior, BorderLayout.NORTH);
         panelMesario.add(panelLayoutLogado, BorderLayout.WEST);
         panelMesario.addComponentListener(this);
     }

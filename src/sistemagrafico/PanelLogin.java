@@ -7,11 +7,14 @@ package sistemagrafico;
 
 import java.awt.BorderLayout;
 import java.awt.CardLayout;
+import java.awt.Color;
 import java.awt.Container;
 import java.awt.FlowLayout;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.ComponentEvent;
+import java.awt.event.ComponentListener;
 import java.awt.event.ContainerEvent;
 import java.awt.event.ContainerListener;
 import java.awt.event.FocusEvent;
@@ -33,7 +36,7 @@ import javax.swing.JTextField;
  *
  * @author Anderson
  */
-public class PanelLogin extends JPanel implements ActionListener, KeyListener
+public class PanelLogin extends JPanel implements ActionListener, KeyListener, ComponentListener
 {
     private Container container;
     private JPanel panelContainerTelaVez;
@@ -99,8 +102,27 @@ public class PanelLogin extends JPanel implements ActionListener, KeyListener
         
         panelLogin.add(labelEleicoes, BorderLayout.NORTH);
         panelLogin.add(panelLayoutLogin, BorderLayout.CENTER);
+        panelLogin.addComponentListener(this);
     }
 
+    
+    public boolean logar(String login, String senha)
+    {
+        boolean logado = false;
+        if(login.equals("login") && senha.equals("senha"))
+            logado = true;
+        return logado;
+    }
+    
+    
+    public void trocarPanel()
+    {
+        textFieldlogin.setText("");
+        passwordFieldSenha.setText("");
+        this.updateUI();
+        cardManager.show(panelContainerTelaVez, "panelMesario");
+    }
+    
     
     //ActionListener
     @Override
@@ -110,12 +132,8 @@ public class PanelLogin extends JPanel implements ActionListener, KeyListener
         {
             String login = (String) textFieldlogin.getText();
             String senha = new String(passwordFieldSenha.getPassword());
-            if(login.equals("login") && senha.equals("senha"))
-            {
-                textFieldlogin.setText("");
-                passwordFieldSenha.setText("");
-                cardManager.show(panelContainerTelaVez, "panelMesario");
-            }
+            if(logar(login, senha))
+                trocarPanel();
             else                                                            //Aqui contém o JOPTIONPANE
                 JOptionPane.showMessageDialog(container, "Usuário inválido, tente novamente!", "Erro ao fazer login", JOptionPane.ERROR_MESSAGE, null);
         }
@@ -133,8 +151,8 @@ public class PanelLogin extends JPanel implements ActionListener, KeyListener
         {
             String login = (String) textFieldlogin.getText();
             String senha = new String(passwordFieldSenha.getPassword());
-            if(login.equals("login") && senha.equals("senha"))
-                cardManager.show(panelContainerTelaVez, "panelMesario");
+            if(logar(login, senha))
+                trocarPanel();
             else                                                            //Aqui contém o JOPTIONPANE
             {
                 passwordFieldSenha.setText("");
@@ -147,4 +165,25 @@ public class PanelLogin extends JPanel implements ActionListener, KeyListener
 
     @Override
     public void keyReleased(KeyEvent e) {}
+
+    //ComponentListener
+    @Override
+    public void componentResized(ComponentEvent e) {}
+
+    @Override
+    public void componentMoved(ComponentEvent e) {}
+
+    @Override
+    public void componentShown(ComponentEvent e) 
+    {
+        textFieldlogin.setText("");
+        passwordFieldSenha.setText("");
+    }
+
+    @Override
+    public void componentHidden(ComponentEvent e) 
+    {
+        textFieldlogin.setText("");
+        passwordFieldSenha.setText("");
+    }
 }

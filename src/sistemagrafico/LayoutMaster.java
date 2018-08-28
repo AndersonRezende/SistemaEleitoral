@@ -40,7 +40,7 @@ public class LayoutMaster extends JFrame
         
         panelPrincipal = new JPanel(new BorderLayout());
         panelLogin = new JPanel(new BorderLayout());
-        panelMesario = new JPanel();
+        panelMesario = new JPanel(new BorderLayout());
         
         panelLogin.setName("panelLogin");
         panelMesario.setName("panelMesario");

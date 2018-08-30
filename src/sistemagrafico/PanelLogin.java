@@ -1,10 +1,10 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * Aqui contém uma Interface: Login --> logar(login, senha)
  */
 package sistemagrafico;
 
+import enumeracao.EnumListaPanels;
+import interfaces.Login;
 import java.awt.BorderLayout;
 import java.awt.CardLayout;
 import java.awt.Color;
@@ -27,6 +27,7 @@ import java.util.Calendar;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JLabel;
+import javax.swing.JMenuBar;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JPasswordField;
@@ -36,7 +37,7 @@ import javax.swing.JTextField;
  *
  * @author Anderson
  */
-public class PanelLogin extends JPanel implements ActionListener, KeyListener, ComponentListener
+public class PanelLogin extends JPanel implements Login, ActionListener, KeyListener, ComponentListener
 {
     private Container container;
     private JPanel panelContainerTelaVez;
@@ -50,13 +51,14 @@ public class PanelLogin extends JPanel implements ActionListener, KeyListener, C
     private JPasswordField passwordFieldSenha;
     private JButton buttonLogin;
     private Font fontLabelsInputs;
-            
+    private JMenuBar menu;
     
-    public PanelLogin(JPanel panelLogin, Container container, CardLayout cardManager, JPanel panelContainerTelaVez)
+    public PanelLogin(JPanel panelLogin, Container container, CardLayout cardManager, JPanel panelContainerTelaVez, JMenuBar menu)
     {   
         this.container = container;
         this.panelContainerTelaVez = panelContainerTelaVez;
         this.cardManager = cardManager;
+        this.menu = menu;
         
         labelEleicoes = new JLabel("ELEIÇÕES "+Calendar.getInstance().get(Calendar.YEAR));
         labelLogin = new JLabel("Login");
@@ -106,7 +108,8 @@ public class PanelLogin extends JPanel implements ActionListener, KeyListener, C
     }
 
     
-    public boolean logar(String login, String senha)
+    @Override
+    public boolean logar(String login, String senha)                            //Puxar da zona de arquivos
     {
         boolean logado = false;
         if(login.equals("login") && senha.equals("senha"))
@@ -120,7 +123,7 @@ public class PanelLogin extends JPanel implements ActionListener, KeyListener, C
         textFieldlogin.setText("");
         passwordFieldSenha.setText("");
         this.updateUI();
-        cardManager.show(panelContainerTelaVez, "panelMesario");
+        cardManager.show(panelContainerTelaVez, EnumListaPanels.MESARIO.getOpcao());
     }
     
     
@@ -178,6 +181,8 @@ public class PanelLogin extends JPanel implements ActionListener, KeyListener, C
     {
         textFieldlogin.setText("");
         passwordFieldSenha.setText("");
+        menu.setEnabled(false);
+        menu.setVisible(false);
     }
 
     @Override
@@ -185,5 +190,7 @@ public class PanelLogin extends JPanel implements ActionListener, KeyListener, C
     {
         textFieldlogin.setText("");
         passwordFieldSenha.setText("");
+        menu.setEnabled(true);
+        menu.setVisible(true);
     }
 }

@@ -1,10 +1,10 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * AQUI CONTÉM O ENUM ENUMOPCOESMENU
  */
 package sistemagrafico;
 
+import enumeracao.EnumListaPanels;
+import enumeracao.EnumOpcoesMenu;
 import java.awt.BorderLayout;
 import java.awt.CardLayout;
 import java.awt.Container;
@@ -27,6 +27,7 @@ import javax.swing.event.ListSelectionListener;
 public class PanelLogado extends JPanel implements ListSelectionListener, ComponentListener
 {
     private Font fontListOpcoesMenu;
+    private Font fontLabelTextoSuperior;
     private Container container;
     private CardLayout cardManager;
     private JPanel panelContainerTelaVez;
@@ -42,19 +43,22 @@ public class PanelLogado extends JPanel implements ListSelectionListener, Compon
         this.cardManager = cardManager;
         
         fontListOpcoesMenu = new Font(Font.SERIF, Font.PLAIN, 25);
+        fontLabelTextoSuperior = new Font(Font.SERIF, Font.BOLD, 25);
         
         panelLayoutLogado = new JPanel(new BorderLayout());
         
         labelMesarioSuperior = new JLabel("SISTEMA ELEITORAL - MESÁRIO");
-        labelMesarioSuperior.setFont(new Font(Font.SERIF, Font.BOLD, 25));
+        labelMesarioSuperior.setFont(fontLabelTextoSuperior);
         labelMesarioSuperior.setHorizontalAlignment(JLabel.CENTER);
-        labelMesarioSuperior.setHorizontalTextPosition(JLabel.CENTER);
+        //labelMesarioSuperior.setHorizontalTextPosition(JLabel.CENTER);
         
         listModelOpcoesMenu = new DefaultListModel();
-        listModelOpcoesMenu.addElement("NOVO PROCESSO DE VOTAÇÃO");
-        listModelOpcoesMenu.addElement("LIBERAR PRÓXIMO VOTO");
-        listModelOpcoesMenu.addElement("FINALIZAR PROCESSO DE VOTAÇÃO");
-        listModelOpcoesMenu.addElement("SAIR");
+        //listModelOpcoesMenu.addElement("NOVO PROCESSO DE VOTAÇÃO");
+        //listModelOpcoesMenu.addElement("LIBERAR PRÓXIMO VOTO");
+        //listModelOpcoesMenu.addElement("FINALIZAR PROCESSO DE VOTAÇÃO");
+        //listModelOpcoesMenu.addElement("LOGOUT");
+        for (EnumOpcoesMenu opcao : EnumOpcoesMenu.values())
+            listModelOpcoesMenu.addElement(opcao.getOpcao());
         
         listOpcoesMenu = new JList(listModelOpcoesMenu);
         listOpcoesMenu.setFont(fontListOpcoesMenu);
@@ -75,11 +79,18 @@ public class PanelLogado extends JPanel implements ListSelectionListener, Compon
     {
         if(e.getSource() == listOpcoesMenu)
         {
-            if(listOpcoesMenu.getSelectedIndex() == (listModelOpcoesMenu.getSize() - 1))
+            //if(listOpcoesMenu.getSelectedIndex() == (listModelOpcoesMenu.getSize() - 1))
+            if(listOpcoesMenu.getSelectedValue().toString().equalsIgnoreCase(EnumOpcoesMenu.SAIR.getOpcao()))
             {   
-                int opcao = JOptionPane.showConfirmDialog(container, "Deseja realmente sair?", "Confirmação", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE, null);
+                int opcao = JOptionPane.showConfirmDialog(container, "Deseja fazer logout?", "Confirmação", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE, null);
                 if(opcao == JOptionPane.YES_OPTION)
-                    cardManager.show(panelContainerTelaVez, "panelLogin");
+                    cardManager.show(panelContainerTelaVez, EnumListaPanels.LOGIN.getOpcao());
+            }
+            if(listOpcoesMenu.getSelectedValue().toString().equalsIgnoreCase(EnumOpcoesMenu.NPV.getOpcao()))
+            {
+                int opcao = JOptionPane.showConfirmDialog(container, "Deseja iniciar um novo processo de votação?", "Confirmação", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE, null);
+                if(opcao == JOptionPane.YES_OPTION)
+                    cardManager.show(panelContainerTelaVez, EnumListaPanels.NOVO_PROC_VOTACAO.getOpcao());
             }
         }
         //listOpcoesMenu.setSelectedIndex(0);

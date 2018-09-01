@@ -21,4 +21,11 @@ public enum EnumOpcoesMenu
     
     public String getOpcao()
     {   return this.opcao;  }
+    
+    public String getOpcaoParaMenu()
+    {   
+        String aux = "" + opcao.charAt(0);
+        aux += opcao.substring(1).toLowerCase();
+        return aux;
+    }
 }

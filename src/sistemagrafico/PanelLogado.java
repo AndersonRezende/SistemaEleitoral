@@ -62,7 +62,6 @@ public class PanelLogado extends JPanel implements ListSelectionListener, Compon
         
         listOpcoesMenu = new JList(listModelOpcoesMenu);
         listOpcoesMenu.setFont(fontListOpcoesMenu);
-        //listOpcoesMenu.setSelectionModel(ListSelectionModel.SINGLE_SELECTION);
         listOpcoesMenu.addListSelectionListener(this);  
         listOpcoesMenu.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
         

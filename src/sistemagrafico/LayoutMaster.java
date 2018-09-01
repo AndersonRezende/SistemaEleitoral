@@ -4,6 +4,7 @@
 package sistemagrafico;
 
 import enumeracao.EnumListaPanels;
+import enumeracao.EnumOpcoesMenu;
 import java.awt.BorderLayout;
 import java.awt.CardLayout;
 import java.awt.Color;
@@ -14,6 +15,7 @@ import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.Calendar;
+import java.util.Locale;
 import javax.swing.BorderFactory;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -50,6 +52,7 @@ public class LayoutMaster extends JFrame implements ActionListener
     
     
     private JMenuItem menuItemArquivoSair;
+    private JMenuItem menuItemAcaoNovoProcessoVotacao;
     private JMenuItem menuItemAcaoCancelar;
     private JMenuItem menuItemAjudaSobre;
     
@@ -118,17 +121,20 @@ public class LayoutMaster extends JFrame implements ActionListener
         menuAjuda = new JMenu("Ajuda");
         
         menuItemArquivoSair = new JMenuItem("Sair");
+        menuItemAcaoNovoProcessoVotacao = new JMenuItem(EnumOpcoesMenu.NPV.getOpcaoParaMenu());
         menuItemAcaoCancelar = new JMenuItem("Cancelar");
         menuItemAjudaSobre = new JMenuItem("Sobre");
         
         menuArquivo.setMnemonic('A');
         menuAjuda.setMnemonic('j');
         menuItemArquivoSair.setMnemonic('S');
+        menuItemAcaoNovoProcessoVotacao.setMnemonic('N');
         menuItemAcaoCancelar.setMnemonic('C');
         menuItemAjudaSobre.setMnemonic('S');
         
-        
         menuArquivo.add(menuItemArquivoSair);
+        menuAcoes.add(menuItemAcaoNovoProcessoVotacao);
+        menuAcoes.addSeparator();
         menuAcoes.add(menuItemAcaoCancelar);
         menuAjuda.add(menuItemAjudaSobre);
         menu.add(menuArquivo);
@@ -136,6 +142,7 @@ public class LayoutMaster extends JFrame implements ActionListener
         menu.add(menuAjuda);
         
         menuItemArquivoSair.addActionListener(this);
+        menuItemAcaoNovoProcessoVotacao.addActionListener(this);
         menuItemAcaoCancelar.addActionListener(this);
         menuItemAjudaSobre.addActionListener(this);
     }
@@ -188,6 +195,12 @@ public class LayoutMaster extends JFrame implements ActionListener
             int opcao = JOptionPane.showConfirmDialog(container, "Deseja realmente cancelar essa operação?", "Confirmação", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE, null);
             if(opcao == JOptionPane.YES_OPTION)
                 cardManager.show(panelContainerTelaVez, EnumListaPanels.MESARIO.getOpcao());
+        }
+        if(e.getSource() == menuItemAcaoNovoProcessoVotacao)
+        {
+            int opcao = JOptionPane.showConfirmDialog(container, "Deseja iniciar um novo processo de votação?", "Confirmação", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE, null);
+            if(opcao == JOptionPane.YES_OPTION)
+                cardManager.show(panelContainerTelaVez, EnumListaPanels.NOVO_PROC_VOTACAO.getOpcao());
         }
     }
 }

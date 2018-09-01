@@ -1,0 +1,38 @@
+<eleicao>Eleições Presidenciais</eleicao>
+<cargos>
+	<cargo>
+		<titulo>Deputado Federal</titulo>
+		<vice></vice>
+		<digitos>4</digitos>
+		<votos>1</votos>
+		<imagem></imagem>
+	</cargo>
+	<cargo>
+		<titulo>Deputado Estadual</titulo>
+		<vice></vice>
+		<digitos>5</digitos>
+		<votos>1</votos>
+		<imagem></imagem>
+	</cargo>
+	<cargo>
+		<titulo>Senador</titulo>
+		<vice></vice>
+		<digitos>3</digitos>
+		<votos>2</votos>
+		<imagem></imagem>
+	</cargo>
+	<cargo>
+		<titulo>Governador</titulo>
+		<vice></vice>
+		<digitos>2</digitos>
+		<votos>1</votos>
+		<imagem></imagem>
+	</cargo>
+	<cargo>
+		<titulo>Presidente</titulo>
+		<vice>sim</vice>
+		<digitos>2</digitos>
+		<votos>1</votos>
+		<imagem></imagem>
+	</cargo>
+</cargos>

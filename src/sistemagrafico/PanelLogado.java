@@ -53,10 +53,6 @@ public class PanelLogado extends JPanel implements ListSelectionListener, Compon
         //labelMesarioSuperior.setHorizontalTextPosition(JLabel.CENTER);
         
         listModelOpcoesMenu = new DefaultListModel();
-        //listModelOpcoesMenu.addElement("NOVO PROCESSO DE VOTAÇÃO");
-        //listModelOpcoesMenu.addElement("LIBERAR PRÓXIMO VOTO");
-        //listModelOpcoesMenu.addElement("FINALIZAR PROCESSO DE VOTAÇÃO");
-        //listModelOpcoesMenu.addElement("LOGOUT");
         for (EnumOpcoesMenu opcao : EnumOpcoesMenu.values())
             listModelOpcoesMenu.addElement(opcao.getOpcao());
         

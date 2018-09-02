@@ -1,0 +1,15 @@
+<eleicao>Eleições Municipais</eleicao>
+<cargos>
+	<cargo>
+		<titulo>Vereador</titulo>
+		<vice>não</vice>
+		<digitos>5</digitos>
+		<votos>1</votos>
+	</cargo>
+	<cargo>
+		<titulo>Prefeito</titulo>
+		<vice>sim</vice>
+		<digitos>2</digitos>
+		<votos>1</votos>
+	</cargo>
+</cargos>

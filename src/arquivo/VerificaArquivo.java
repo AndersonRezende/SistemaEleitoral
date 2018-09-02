@@ -18,22 +18,27 @@ import java.io.IOException;
 public class VerificaArquivo 
 {
 
-    private static final String ABREELEICAO = "<eleicao>";
-    private static final String FECHAELEICAO = "</eleicao>";
-    private static final String ABRECARGOS = "<cargos>";
-    private static final String FECHACARGOS = "</cargos>";
-    private static final String ABRECARGO = "<cargo>";
-    private static final String FECHACARGO = "</cargo>";
-    private static final String ABRETITULO = "<titulo>";
-    private static final String FECHATITULO = "</titulo>";
-    private static final String ABREVICE = "<vice>";
-    private static final String FECHAVICE = "</vice>";
-    private static final String ABREDIGITOS = "<digitos>";
-    private static final String FECHADIGITOS = "</digitos>";
-    private static final String ABREVOTOS = "<votos>";
-    private static final String FECHAVOTOS = "</votos>";
-    private static final String ABREIMAGEM = "<imagem>";
-    private static final String FECHAIMAGEM = "</imagem>";
+    static final String ABREELEICAO = "<eleicao>";
+    static final String FECHAELEICAO = "</eleicao>";
+    static final String ABRECARGOS = "<cargos>";
+    static final String FECHACARGOS = "</cargos>";
+    static final String ABRECARGO = "<cargo>";
+    static final String FECHACARGO = "</cargo>";
+    static final String ABRETITULO = "<titulo>";
+    static final String FECHATITULO = "</titulo>";
+    static final String ABREVICE = "<vice>";
+    static final String FECHAVICE = "</vice>";
+    static final String ABREDIGITOS = "<digitos>";
+    static final String FECHADIGITOS = "</digitos>";
+    static final String ABREVOTOS = "<votos>";
+    static final String FECHAVOTOS = "</votos>";
+    
+    static final String ABREMESARIO = "<mesario>";
+    static final String FECHAMESARIO = "</mesario>";
+    static final String ABRELOGIN = "<login>";
+    static final String FECHALOGIN = "</login>";
+    static final String ABRESENHA = "<senha>";
+    static final String FECHASENHA = "</senha>";
 
     public static boolean checarArquivoEleicaoPresidencial(String caminhoArquivo) 
     {
@@ -55,14 +60,12 @@ public class VerificaArquivo
                 boolean abreFechaVice = false;
                 boolean abreFechaDigito = false;
                 boolean abreFechaVotos = false;
-                boolean abreFechaImagem = false;
 
                 FileReader fr = new FileReader(arquivo);
                 BufferedReader br = new BufferedReader(fr);
                 while (br.ready() && !erro)                                     //Enquanto tiver linhas para ler e erro não for verdadeiro
                 {
                     linha = br.readLine();
-                    //System.out.println(linha);
                     if (checarLinhaEleicao(linha) && !abreFechaEleicao)         //Verificação se é a primeira vez que esta checagem é realizada
                     {
                         if (abreFechaEleicao == false)                          //Se for falso, é porque é a primeira vez aqui e o arquivo pode estar certo
@@ -77,13 +80,11 @@ public class VerificaArquivo
                     }
                     
                     linha = br.readLine();
-                    //System.out.println(linha);
                     if (linha.contains(ABRECARGOS) && !erro)                    //Se estiver na seção de cargos e não tiver nenhum erro anterior
                     {
                         while (br.ready() && !erro && !abreFechaCargos)         //Fico preso aqui até chegar ao fim do arquivo ou encontrar erro ou não validar o abre e fecha cargos
                         {
                             linha = br.readLine();
-                            //System.out.println(linha);
                             if (linha.contains(ABRECARGO) && fechaCargo)        //Procurar a tag de inicialização do cargo
                             {
                                 fechaCargo = false;
@@ -106,12 +107,8 @@ public class VerificaArquivo
                                     abreFechaVotos = true;
                                 if (br.ready())
                                     linha = br.readLine();
-                                if (linha.contains(ABREIMAGEM) && linha.contains(FECHAIMAGEM))
-                                    abreFechaImagem = true;
-                                if (br.ready()) 
-                                    linha = br.readLine();                              
                                 
-                                if (linha.contains(FECHACARGO) && abreFechaTitulo && abreFechaVice && abreFechaDigito && abreFechaVotos && abreFechaImagem) 
+                                if (linha.contains(FECHACARGO) && abreFechaTitulo && abreFechaVice && abreFechaDigito && abreFechaVotos) 
                                 {
                                     abreCargo = false;
                                     fechaCargo = true;
@@ -119,7 +116,6 @@ public class VerificaArquivo
                                     abreFechaVice = false;
                                     abreFechaDigito = false;
                                     abreFechaVotos = false;
-                                    abreFechaImagem = false;
                                 } 
                                 else
                                 {
@@ -149,6 +145,8 @@ public class VerificaArquivo
                         erro = true;
                     }
                 }
+                br.close();
+                fr.close();
             } 
             catch (FileNotFoundException ex) 
             {

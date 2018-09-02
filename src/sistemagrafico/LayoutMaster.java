@@ -15,7 +15,6 @@ import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.Calendar;
-import java.util.Locale;
 import javax.swing.BorderFactory;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -72,13 +71,6 @@ public class LayoutMaster extends JFrame implements ActionListener
         panelLogin = new JPanel(new BorderLayout());
         panelMesario = new JPanel(new BorderLayout());
         panelNovoProcessoVotacao = new JPanel(new BorderLayout());
-        
-        //panelLogin.setName("panelLogin");
-        //panelMesario.setName("panelMesario");
-        //panelNovoProcessoVotacao.setName("panelNovoProcessoVotacao");
-        //panelContainerTelaVez.add(panelLogin, panelLogin.getName());
-        //panelContainerTelaVez.add(panelMesario, panelMesario.getName());
-        //panelContainerTelaVez.add(panelNovoProcessoVotacao, panelNovoProcessoVotacao.getName());
         
         panelLogin.setName(EnumListaPanels.LOGIN.getOpcao());
         panelMesario.setName(EnumListaPanels.MESARIO.getOpcao());

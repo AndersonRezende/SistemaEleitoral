@@ -3,11 +3,11 @@
  */
 package sistemagrafico;
 
+import arquivo.LeituraArquivo;
 import enumeracao.EnumListaPanels;
 import interfaces.Login;
 import java.awt.BorderLayout;
 import java.awt.CardLayout;
-import java.awt.Color;
 import java.awt.Container;
 import java.awt.FlowLayout;
 import java.awt.Font;
@@ -15,14 +15,8 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.ComponentEvent;
 import java.awt.event.ComponentListener;
-import java.awt.event.ContainerEvent;
-import java.awt.event.ContainerListener;
-import java.awt.event.FocusEvent;
-import java.awt.event.FocusListener;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
-import java.beans.PropertyChangeEvent;
-import java.beans.PropertyChangeListener;
 import java.util.Calendar;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -32,6 +26,7 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
+import objetos.Mesario;
 
 /**
  *
@@ -51,6 +46,7 @@ public class PanelLogin extends JPanel implements Login, ActionListener, KeyList
     private JPasswordField passwordFieldSenha;
     private JButton buttonLogin;
     private Font fontLabelsInputs;
+    private Font fontButton;
     private JMenuBar menu;
     
     public PanelLogin(JPanel panelLogin, Container container, CardLayout cardManager, JPanel panelContainerTelaVez, JMenuBar menu)
@@ -69,7 +65,9 @@ public class PanelLogin extends JPanel implements Login, ActionListener, KeyList
         passwordFieldSenha = new JPasswordField();
             
         buttonLogin = new JButton("LOGIN");      
+        buttonLogin.setFont(fontButton);
         
+        fontButton = new Font(Font.SERIF, Font.PLAIN, 15);
         fontLabelsInputs = new Font(Font.SERIF, Font.PLAIN, 20);
         panelLayoutLogin = new JPanel(new FlowLayout(FlowLayout.CENTER, 10, 10));
         
@@ -109,11 +107,10 @@ public class PanelLogin extends JPanel implements Login, ActionListener, KeyList
 
     
     @Override
-    public boolean logar(String login, String senha)                            //Puxar da zona de arquivos
+    public boolean logar(Mesario mesario)                                       //Puxar da zona de arquivos
     {
         boolean logado = false;
-        if(login.equals("login") && senha.equals("senha"))
-            logado = true;
+        logado = new LeituraArquivo().logar(mesario);
         return logado;
     }
     
@@ -135,7 +132,8 @@ public class PanelLogin extends JPanel implements Login, ActionListener, KeyList
         {
             String login = (String) textFieldlogin.getText();
             String senha = new String(passwordFieldSenha.getPassword());
-            if(logar(login, senha))
+            Mesario mesario = new Mesario(login, senha);
+            if(logar(mesario))
                 trocarPanel();
             else                                                            //Aqui contém o JOPTIONPANE
                 JOptionPane.showMessageDialog(container, "Usuário inválido, tente novamente!", "Erro ao fazer login", JOptionPane.ERROR_MESSAGE, null);
@@ -154,7 +152,8 @@ public class PanelLogin extends JPanel implements Login, ActionListener, KeyList
         {
             String login = (String) textFieldlogin.getText();
             String senha = new String(passwordFieldSenha.getPassword());
-            if(logar(login, senha))
+            Mesario mesario = new Mesario(login, senha);
+            if(logar(mesario))
                 trocarPanel();
             else                                                            //Aqui contém o JOPTIONPANE
             {

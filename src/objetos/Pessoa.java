@@ -3,15 +3,15 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package interfaces;
-
-import objetos.Mesario;
+package objetos;
 
 /**
  *
  * @author Anderson
  */
-public interface Login 
+public abstract class Pessoa 
 {
-    public boolean logar(Mesario mesario);  
+    public abstract String getNome();
+    
+    public abstract void setNome(String nome);
 }

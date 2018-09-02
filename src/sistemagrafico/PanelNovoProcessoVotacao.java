@@ -121,7 +121,7 @@ public class PanelNovoProcessoVotacao extends JPanel implements ActionListener, 
                     texto += "Possui vice: Não.\n";
                 texto += "Quantidade de dígitos para voto: "+eleicao.getDigitos()+".\n";
                 texto += "Quantidade de escolhas neste cargo: "+eleicao.getVotos()+".\n";
-                texto += "\n\n";
+                texto += "\n";
             }
         }
         textAreaDetalhesArquivo.setText(texto);
@@ -207,7 +207,8 @@ public class PanelNovoProcessoVotacao extends JPanel implements ActionListener, 
     {   textAreaDetalhesArquivo.setColumns((panelLayoutNovoProcessoVotacao.getWidth()*50)/(int) Toolkit.getDefaultToolkit().getScreenSize().getWidth());    }//Redimensiona proporcionalmente    
 
     @Override
-    public void componentMoved(ComponentEvent e){}
+    public void componentMoved(ComponentEvent e)
+    {   textAreaDetalhesArquivo.setColumns((panelLayoutNovoProcessoVotacao.getWidth()*50)/(int) Toolkit.getDefaultToolkit().getScreenSize().getWidth());    }
 
     @Override
     public void componentShown(ComponentEvent e) 

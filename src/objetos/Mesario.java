@@ -5,8 +5,6 @@
  */
 package objetos;
 
-import interfaces.Login;
-
 /**
  *
  * @author Anderson

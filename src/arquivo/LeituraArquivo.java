@@ -72,7 +72,6 @@ public class LeituraArquivo implements Login
                         contemSenha = false;
                         mesario = new Mesario(login, senha);
                         mesarios.add(mesario);
-                        System.out.println(""+login+"."+senha);
                     }
                 }
                 br.close();
@@ -86,6 +85,7 @@ public class LeituraArquivo implements Login
             System.err.println("Arquivo não encontrado.");
     return mesarios;
     }
+    
     
     @Override
     public boolean logar(Mesario mesario) 

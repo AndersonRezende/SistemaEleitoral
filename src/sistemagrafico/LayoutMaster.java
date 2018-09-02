@@ -51,6 +51,7 @@ public class LayoutMaster extends JFrame implements ActionListener
     
     
     private JMenuItem menuItemArquivoSair;
+    private JMenuItem menuItemAcaoMenuMesario;
     private JMenuItem menuItemAcaoNovoProcessoVotacao;
     private JMenuItem menuItemAcaoCancelar;
     private JMenuItem menuItemAjudaSobre;
@@ -113,18 +114,22 @@ public class LayoutMaster extends JFrame implements ActionListener
         menuAjuda = new JMenu("Ajuda");
         
         menuItemArquivoSair = new JMenuItem("Sair");
+        menuItemAcaoMenuMesario = new JMenuItem("Menu principal");
         menuItemAcaoNovoProcessoVotacao = new JMenuItem(EnumOpcoesMenu.NPV.getOpcaoParaMenu());
         menuItemAcaoCancelar = new JMenuItem("Cancelar");
         menuItemAjudaSobre = new JMenuItem("Sobre");
         
         menuArquivo.setMnemonic('A');
         menuAjuda.setMnemonic('j');
+        menuAcoes.setMnemonic('e');
         menuItemArquivoSair.setMnemonic('S');
+        menuItemAcaoMenuMesario.setMnemonic('M');
         menuItemAcaoNovoProcessoVotacao.setMnemonic('N');
         menuItemAcaoCancelar.setMnemonic('C');
         menuItemAjudaSobre.setMnemonic('S');
         
         menuArquivo.add(menuItemArquivoSair);
+        menuAcoes.add(menuItemAcaoMenuMesario);
         menuAcoes.add(menuItemAcaoNovoProcessoVotacao);
         menuAcoes.addSeparator();
         menuAcoes.add(menuItemAcaoCancelar);
@@ -134,6 +139,7 @@ public class LayoutMaster extends JFrame implements ActionListener
         menu.add(menuAjuda);
         
         menuItemArquivoSair.addActionListener(this);
+        menuItemAcaoMenuMesario.addActionListener(this);
         menuItemAcaoNovoProcessoVotacao.addActionListener(this);
         menuItemAcaoCancelar.addActionListener(this);
         menuItemAjudaSobre.addActionListener(this);
@@ -182,6 +188,12 @@ public class LayoutMaster extends JFrame implements ActionListener
             System.exit(0);
         if(e.getSource() == menuItemAjudaSobre)
             JOptionPane.showMessageDialog(container, stringTextoAjudaSobre, "AJUDA", JOptionPane.INFORMATION_MESSAGE, null);
+        if(e.getSource() == menuItemAcaoMenuMesario)
+        {
+            int opcao = JOptionPane.showConfirmDialog(container, "Deseja realmente voltar ao menu principal?", "Confirmação", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE, null);
+            if(opcao == JOptionPane.YES_OPTION)
+                cardManager.show(panelContainerTelaVez, EnumListaPanels.MESARIO.getOpcao());
+        }
         if(e.getSource() == menuItemAcaoCancelar)
         {
             int opcao = JOptionPane.showConfirmDialog(container, "Deseja realmente cancelar essa operação?", "Confirmação", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE, null);

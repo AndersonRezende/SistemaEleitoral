@@ -5,7 +5,7 @@
  */
 package sistemagrafico;
 
-import arquivo.ArquivoEleicao;
+import arquivo.LeituraArquivo;
 import arquivo.VerificaArquivo;
 import enumeracao.EnumListaPanels;
 import enumeracao.EnumOpcoesMenu;
@@ -106,7 +106,7 @@ public class PanelNovoProcessoVotacao extends JPanel implements ActionListener, 
     private void exibirInfoTextArea()
     {
         File file = new File(""+new File("").getAbsoluteFile()+"\\Arquivos\\Eleição\\"+listOpcoesMenu.getSelectedValue()+".txt");
-        ArrayList<Eleicao> eleicoes = ArquivoEleicao.lerArquivo(file.getPath());
+        ArrayList<Eleicao> eleicoes = LeituraArquivo.lerArquivoEleicao(file.getPath());
         String texto = "";
         
         if(eleicoes.size() > 0)

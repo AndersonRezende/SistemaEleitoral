@@ -137,7 +137,6 @@ public class VerificaArquivo
                                 }
                             }
                         }
-
                     } 
                     else                                                        //Se logo após checar o titulo de elição não tiver uma lista de cargos, então o arquivo está incorreto
                     {

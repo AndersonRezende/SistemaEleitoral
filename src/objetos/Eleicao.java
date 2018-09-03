@@ -39,5 +39,5 @@ public class Eleicao
     {   return digitos; }
 
     public int getVotos() 
-    {   return votos;   }    
+    {   return votos;   }
 }

@@ -8,4 +8,4 @@
   <li>Ao final do processo de votação, o sistema deverá apurar os resultados e informar quantos ganharam.</li>
 </ul>
 
-<strong>Em desenvolvimento</strong>
+<strong>Em desenvolvimento...</strong>

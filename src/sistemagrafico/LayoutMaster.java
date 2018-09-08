@@ -28,6 +28,7 @@ import javax.swing.JPanel;
 import objetos.Candidato;
 import objetos.Eleicao;
 import objetos.Eleitor;
+import objetos.auxiliares.ProcessoVotacao;
 
 /**
  *
@@ -35,6 +36,7 @@ import objetos.Eleitor;
  */
 public class LayoutMaster extends JFrame implements ActionListener
 {
+    private ProcessoVotacao processoVotacao;
     private ArrayList<Eleicao> eleicoes;
     private ArrayList<Candidato> candidatos;
     private ArrayList<Eleitor> eleitores;
@@ -76,6 +78,8 @@ public class LayoutMaster extends JFrame implements ActionListener
                 + "Versão 1.0.0\n"
                 + "Java: 1.8.0_151\n"
                 + "Copyright © Todos os direitos reservados.";
+        
+        processoVotacao = new ProcessoVotacao();
         
         panelPrincipal = new JPanel(new BorderLayout());
         panelLogin = new JPanel(new BorderLayout());
@@ -170,22 +174,12 @@ public class LayoutMaster extends JFrame implements ActionListener
     
     private void configurarTelaMesario()
     {
-        panelMesario = new PanelLogado(panelMesario, container, cardManager, panelContainerTelaVez);
+        panelMesario = new PanelLogado(panelMesario, container, cardManager, panelContainerTelaVez, processoVotacao);
     }
     
     private void configurarTelaNovoProcessoVotacao()
     {
-        panelNovoProcessoVotacao = new PanelNovoProcessoVotacao(panelNovoProcessoVotacao, container, cardManager, panelContainerTelaVez, eleicoes);
-    }
-    
-    //########################MÉTODOS AUXILIARES################################
-    
-    //private boolean logar(String nome, String senha)
-    {
-        /*boolean logado = false;
-        if(nome.equals("login") && senha.equals("senha"))
-            logado = true;
-        return logado;*/
+        panelNovoProcessoVotacao = new PanelNovoProcessoVotacao(panelNovoProcessoVotacao, container, cardManager, panelContainerTelaVez, eleicoes, processoVotacao);
     }
 
     

@@ -35,6 +35,7 @@ import javax.swing.ListSelectionModel;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
 import objetos.Eleicao;
+import objetos.auxiliares.ProcessoVotacao;
 
 /**
  *
@@ -42,6 +43,7 @@ import objetos.Eleicao;
  */
 public class PanelNovoProcessoVotacao extends JPanel implements ActionListener, ListSelectionListener, ComponentListener
 {
+    private ProcessoVotacao processoVotacao;
     private File arquivo;
     private File[] arquivos;
     private ArrayList<Eleicao> eleicoes;
@@ -64,12 +66,13 @@ public class PanelNovoProcessoVotacao extends JPanel implements ActionListener, 
     
     
     
-    public PanelNovoProcessoVotacao(JPanel panelNovoProcessoVotacao, Container container, CardLayout cardManager, JPanel panelContainerTelaVez, ArrayList<Eleicao> eleicoes)
+    public PanelNovoProcessoVotacao(JPanel panelNovoProcessoVotacao, Container container, CardLayout cardManager, JPanel panelContainerTelaVez, ArrayList<Eleicao> eleicoes, ProcessoVotacao processoVotacao)
     {
         this.eleicoes = eleicoes;
         this.container = container;
         this.panelContainerTelaVez = panelContainerTelaVez;
         this.cardManager = cardManager;
+        this.processoVotacao = processoVotacao;
             
         fontButton = new Font(Font.SERIF, Font.PLAIN, 15);
         fontListOpcoesMenu = new Font(Font.SERIF, Font.PLAIN, 25);
@@ -188,7 +191,8 @@ public class PanelNovoProcessoVotacao extends JPanel implements ActionListener, 
         if(e.getSource() == buttonSelecionar && buttonSelecionar.isEnabled() && !listOpcoesMenu.isSelectionEmpty())
         {
             //FrameEleitor fm = new FrameEleitor(container);
-            DialogEleitor de = new DialogEleitor(eleicoes);
+            processoVotacao.iniciarProcessoVotacao();
+            DialogEleitorMaster de = new DialogEleitorMaster(eleicoes);
         }
         if(e.getSource() == buttonCancelar)
         {

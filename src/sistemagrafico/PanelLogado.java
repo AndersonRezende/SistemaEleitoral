@@ -19,6 +19,7 @@ import javax.swing.JPanel;
 import javax.swing.ListSelectionModel;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
+import objetos.auxiliares.ProcessoVotacao;
 
 /**
  *
@@ -26,6 +27,7 @@ import javax.swing.event.ListSelectionListener;
  */
 public class PanelLogado extends JPanel implements ListSelectionListener, ComponentListener
 {
+    private ProcessoVotacao processoVotacao;
     private Font fontListOpcoesMenu;
     private Font fontLabelTextoSuperior;
     private Container container;
@@ -36,11 +38,13 @@ public class PanelLogado extends JPanel implements ListSelectionListener, Compon
     private DefaultListModel listModelOpcoesMenu;
     private JLabel labelMesarioSuperior;
     
-    PanelLogado(JPanel panelMesario, Container container, CardLayout cardManager, JPanel panelContainerTelaVez) 
+    
+    PanelLogado(JPanel panelMesario, Container container, CardLayout cardManager, JPanel panelContainerTelaVez, ProcessoVotacao processoVotacao) 
     {
         this.container = container;
         this.panelContainerTelaVez = panelContainerTelaVez;
         this.cardManager = cardManager;
+        this.processoVotacao = processoVotacao;
         
         fontListOpcoesMenu = new Font(Font.SERIF, Font.PLAIN, 25);
         fontLabelTextoSuperior = new Font(Font.SERIF, Font.BOLD, 25);
@@ -74,19 +78,40 @@ public class PanelLogado extends JPanel implements ListSelectionListener, Compon
     {
         if(e.getSource() == listOpcoesMenu)
         {
-            //if(listOpcoesMenu.getSelectedIndex() == (listModelOpcoesMenu.getSize() - 1))
+            //Só permite criar um novo processo de votação se a variavel que informa se há um processo de votação correndo estiver falsa
+            if(listOpcoesMenu.getSelectedValue().toString().equalsIgnoreCase(EnumOpcoesMenu.NPV.getOpcao()) && !processoVotacao.getProcessoVotacaoIniciado())
+            {
+                int opcao = JOptionPane.showConfirmDialog(container, "Deseja iniciar um novo processo de votação?", "Confirmação", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE, null);
+                if(opcao == JOptionPane.YES_OPTION)
+                    cardManager.show(panelContainerTelaVez, EnumListaPanels.NOVO_PROC_VOTACAO.getOpcao());
+            }
+            else
+            {   
+                if(listOpcoesMenu.getSelectedValue().toString().equalsIgnoreCase(EnumOpcoesMenu.NPV.getOpcao()) && processoVotacao.getProcessoVotacaoIniciado())
+                {
+                    JOptionPane.showMessageDialog(container, "Já existe um processo de eleição ocorrendo, finalize o processo atual antes de iniciar um novo!", "Erro", JOptionPane.ERROR_MESSAGE, null);
+                }
+            }
+            if(listOpcoesMenu.getSelectedValue().toString().equalsIgnoreCase(EnumOpcoesMenu.FPV.getOpcao()) && processoVotacao.getProcessoVotacaoIniciado())
+            {
+                int opcao = JOptionPane.showConfirmDialog(container, "Deseja finalizar o processo de votação corrente?", "Confirmação", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE, null);
+                //System.exit(0);
+                //Implementar mudança de tela e finalização do processo
+            }
+            else
+            {   
+                if(listOpcoesMenu.getSelectedValue().toString().equalsIgnoreCase(EnumOpcoesMenu.FPV.getOpcao()) && !processoVotacao.getProcessoVotacaoIniciado())
+                {
+                    JOptionPane.showMessageDialog(container, "Não há nenhum processo de votaçao ocorrendo!", "Erro", JOptionPane.ERROR_MESSAGE, null);
+                }
+            }
             if(listOpcoesMenu.getSelectedValue().toString().equalsIgnoreCase(EnumOpcoesMenu.SAIR.getOpcao()))
             {   
                 int opcao = JOptionPane.showConfirmDialog(container, "Deseja fazer logout?", "Confirmação", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE, null);
                 if(opcao == JOptionPane.YES_OPTION)
                     cardManager.show(panelContainerTelaVez, EnumListaPanels.LOGIN.getOpcao());
             }
-            if(listOpcoesMenu.getSelectedValue().toString().equalsIgnoreCase(EnumOpcoesMenu.NPV.getOpcao()))
-            {
-                int opcao = JOptionPane.showConfirmDialog(container, "Deseja iniciar um novo processo de votação?", "Confirmação", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE, null);
-                if(opcao == JOptionPane.YES_OPTION)
-                    cardManager.show(panelContainerTelaVez, EnumListaPanels.NOVO_PROC_VOTACAO.getOpcao());
-            }
+            
         }
         //listOpcoesMenu.setSelectedIndex(0);
     }

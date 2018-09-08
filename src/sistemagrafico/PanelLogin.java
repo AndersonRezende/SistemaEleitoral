@@ -17,6 +17,7 @@ import java.awt.event.ComponentEvent;
 import java.awt.event.ComponentListener;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
+import java.io.File;
 import java.util.Calendar;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -85,7 +86,7 @@ public class PanelLogin extends JPanel implements Login, ActionListener, KeyList
         textFieldlogin.addActionListener(this);
         buttonLogin.addActionListener(this);
         
-        ImageIcon icon = new ImageIcon("C:/Users/Anderson/Documents/NetBeansProjects/SistemaEleitoral/assets/eleicaoMini.png");
+        ImageIcon icon = new ImageIcon(""+new File("").getAbsoluteFile()+"/assets/eleicaoMini.png");
         JLabel labelImagem = new JLabel(icon);
         
         panelLayoutLogin.add(labelImagem);

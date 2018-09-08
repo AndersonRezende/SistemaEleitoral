@@ -42,6 +42,7 @@ public class PanelNovoProcessoVotacao extends JPanel implements ActionListener, 
 {
     private File arquivo;
     private File[] arquivos;
+    private ArrayList<Eleicao> eleicoes;
     private Font fontListOpcoesMenu;
     private Font fontLabelTextoSuperior;
     private Font fontButton;
@@ -61,8 +62,9 @@ public class PanelNovoProcessoVotacao extends JPanel implements ActionListener, 
     
     
     
-    public PanelNovoProcessoVotacao(JPanel panelNovoProcessoVotacao, Container container, CardLayout cardManager, JPanel panelContainerTelaVez)
+    public PanelNovoProcessoVotacao(JPanel panelNovoProcessoVotacao, Container container, CardLayout cardManager, JPanel panelContainerTelaVez, ArrayList<Eleicao> eleicoes)
     {
+        this.eleicoes = eleicoes;
         this.container = container;
         this.panelContainerTelaVez = panelContainerTelaVez;
         this.cardManager = cardManager;
@@ -106,7 +108,7 @@ public class PanelNovoProcessoVotacao extends JPanel implements ActionListener, 
     private void exibirInfoTextArea()
     {
         File file = new File(""+new File("").getAbsoluteFile()+"\\Arquivos\\Eleição\\"+listOpcoesMenu.getSelectedValue()+".txt");
-        ArrayList<Eleicao> eleicoes = LeituraArquivo.lerArquivoEleicao(file.getPath());
+        eleicoes = LeituraArquivo.lerArquivoEleicao(file.getPath());
         String texto = "";
         
         if(eleicoes.size() > 0)
@@ -143,6 +145,10 @@ public class PanelNovoProcessoVotacao extends JPanel implements ActionListener, 
             {
                 if(VerificaArquivo.checarArquivoEleicaoPresidencial(arquivoAux.getPath()))
                     listModelOpcoesMenu.addElement(arquivoAux.getName().substring(0, arquivoAux.getName().indexOf(".txt")));
+                else
+                {
+                    //EXCEPTION
+                }
             }
     }
 

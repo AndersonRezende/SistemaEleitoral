@@ -14,6 +14,8 @@ import java.awt.Font;
 import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.File;
+import java.util.ArrayList;
 import java.util.Calendar;
 import javax.swing.BorderFactory;
 import javax.swing.JFrame;
@@ -23,6 +25,9 @@ import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+import objetos.Candidato;
+import objetos.Eleicao;
+import objetos.Eleitor;
 
 /**
  *
@@ -30,6 +35,10 @@ import javax.swing.JPanel;
  */
 public class LayoutMaster extends JFrame implements ActionListener
 {
+    private ArrayList<Eleicao> eleicoes;
+    private ArrayList<Candidato> candidatos;
+    private ArrayList<Eleitor> eleitores;
+    
     private String stringTextoAjudaSobre;
     private Dimension tamanhoTela;
     private Container container = getContentPane();                            
@@ -99,7 +108,7 @@ public class LayoutMaster extends JFrame implements ActionListener
         this.setExtendedState(JFrame.MAXIMIZED_BOTH);
         this.setVisible( true );
         this.setMinimumSize(new Dimension(tamanhoTela.width/2, tamanhoTela.width/2));
-        this.setIconImage(Toolkit.getDefaultToolkit().getImage("C:/Users/Anderson/Documents/NetBeansProjects/SistemaEleitoral/assets/eleicaoLogo.png"));
+        this.setIconImage(Toolkit.getDefaultToolkit().getImage(""+new File("").getAbsoluteFile()+"/assets/eleicaoLogo.png"));
         this.setJMenuBar(menu);
     }
     
@@ -166,7 +175,7 @@ public class LayoutMaster extends JFrame implements ActionListener
     
     private void configurarTelaNovoProcessoVotacao()
     {
-        panelNovoProcessoVotacao = new PanelNovoProcessoVotacao(panelNovoProcessoVotacao, container, cardManager, panelContainerTelaVez);
+        panelNovoProcessoVotacao = new PanelNovoProcessoVotacao(panelNovoProcessoVotacao, container, cardManager, panelContainerTelaVez, eleicoes);
     }
     
     //########################MÉTODOS AUXILIARES################################

@@ -14,6 +14,7 @@ import java.awt.CardLayout;
 import java.awt.Color;
 import java.awt.Container;
 import java.awt.Font;
+import java.awt.Frame;
 import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -23,6 +24,7 @@ import java.io.File;
 import java.util.ArrayList;
 import javax.swing.DefaultListModel;
 import javax.swing.JButton;
+import javax.swing.JDialog;
 import javax.swing.JLabel;
 import javax.swing.JList;
 import javax.swing.JOptionPane;
@@ -185,7 +187,8 @@ public class PanelNovoProcessoVotacao extends JPanel implements ActionListener, 
     {
         if(e.getSource() == buttonSelecionar && buttonSelecionar.isEnabled() && !listOpcoesMenu.isSelectionEmpty())
         {
-            
+            //FrameEleitor fm = new FrameEleitor(container);
+            DialogEleitor de = new DialogEleitor(eleicoes);
         }
         if(e.getSource() == buttonCancelar)
         {

@@ -79,6 +79,7 @@ public class LayoutMaster extends JFrame implements ActionListener
                 + "Java: 1.8.0_151\n"
                 + "Copyright © Todos os direitos reservados.";
         
+        eleicoes = new ArrayList();
         processoVotacao = new ProcessoVotacao();
         
         panelPrincipal = new JPanel(new BorderLayout());
@@ -179,7 +180,7 @@ public class LayoutMaster extends JFrame implements ActionListener
     
     private void configurarTelaNovoProcessoVotacao()
     {
-        panelNovoProcessoVotacao = new PanelNovoProcessoVotacao(panelNovoProcessoVotacao, container, cardManager, panelContainerTelaVez, eleicoes, processoVotacao);
+        panelNovoProcessoVotacao = new PanelNovoProcessoVotacao(panelNovoProcessoVotacao, container, cardManager, panelContainerTelaVez, processoVotacao);
     }
 
     

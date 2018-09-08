@@ -66,7 +66,7 @@ public class PanelNovoProcessoVotacao extends JPanel implements ActionListener, 
     
     
     
-    public PanelNovoProcessoVotacao(JPanel panelNovoProcessoVotacao, Container container, CardLayout cardManager, JPanel panelContainerTelaVez, ArrayList<Eleicao> eleicoes, ProcessoVotacao processoVotacao)
+    public PanelNovoProcessoVotacao(JPanel panelNovoProcessoVotacao, Container container, CardLayout cardManager, JPanel panelContainerTelaVez, ProcessoVotacao processoVotacao)
     {
         this.eleicoes = eleicoes;
         this.container = container;
@@ -135,6 +135,8 @@ public class PanelNovoProcessoVotacao extends JPanel implements ActionListener, 
         textAreaDetalhesArquivo.setText(texto);
         scrollTextArea.getViewport().setViewPosition(new java.awt.Point(0, 0)); 
         textAreaDetalhesArquivo.setCaretPosition(0);
+        
+        processoVotacao.setEleicoes(eleicoes);
     }
         
     //-----------------------------CONFIGURAÇÕES--------------------------------
@@ -192,7 +194,9 @@ public class PanelNovoProcessoVotacao extends JPanel implements ActionListener, 
         {
             //FrameEleitor fm = new FrameEleitor(container);
             processoVotacao.iniciarProcessoVotacao();
-            DialogEleitorMaster de = new DialogEleitorMaster(eleicoes);
+            System.out.println("Tamanho lista: "+processoVotacao.getEleicoes().size());
+            cardManager.show(panelContainerTelaVez, EnumListaPanels.MESARIO.getOpcao());
+            //DialogEleitorMaster de = new DialogEleitorMaster(eleicoes);
         }
         if(e.getSource() == buttonCancelar)
         {

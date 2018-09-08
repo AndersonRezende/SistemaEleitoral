@@ -38,7 +38,7 @@ public class DialogEleitorMaster extends JDialog
         cardManager = new CardLayout();                                         
         panelDialogTelaVez = new JPanel(cardManager); 
         
-        panelsDialogVotoVez = new JPanel[eleicoes.size()];                      //A quantidade de panels é referente a quantidade de cargos votados
+        //panelsDialogVotoVez = new JPanel[eleicoes.size()];                      //A quantidade de panels é referente a quantidade de cargos votados
         
         
         

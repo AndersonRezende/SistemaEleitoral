@@ -5,6 +5,11 @@
  */
 package objetos.auxiliares;
 
+import java.util.ArrayList;
+import objetos.Candidato;
+import objetos.Eleicao;
+import objetos.Eleitor;
+
 /**
  *
  * @author Anderson
@@ -12,6 +17,10 @@ package objetos.auxiliares;
 public class ProcessoVotacao 
 {
     private boolean processoVotacaoIniciado;
+    private ArrayList<Eleicao> eleicoes;
+    private ArrayList<Candidato> candidatos;
+    private ArrayList<Eleitor> eleitores;
+    
     
     public ProcessoVotacao()
     {   this.processoVotacaoIniciado = false;   }
@@ -27,5 +36,22 @@ public class ProcessoVotacao
     
     public void finalizarProcessoVotacao()
     {   this.processoVotacaoIniciado = false;   }
-    
+
+    public ArrayList<Eleicao> getEleicoes() 
+    {   return eleicoes;    }
+
+    public ArrayList<Candidato> getCandidatos()     
+    {   return candidatos;  }
+
+    public ArrayList<Eleitor> getEleitores() 
+    {   return eleitores;   }
+
+    public void setEleicoes(ArrayList<Eleicao> eleicoes) 
+    {   this.eleicoes = eleicoes;   }
+
+    public void setCandidatos(ArrayList<Candidato> candidatos) 
+    {    this.candidatos = candidatos;  }
+
+    public void setEleitores(ArrayList<Eleitor> eleitores) 
+    {   this.eleitores = eleitores; }
 }

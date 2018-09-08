@@ -12,6 +12,7 @@ import java.awt.Dimension;
 import java.awt.Toolkit;
 import java.util.ArrayList;
 import javax.swing.JDialog;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
 import objetos.Candidato;
 import objetos.Eleicao;
@@ -38,15 +39,12 @@ public class DialogEleitorMaster extends JDialog
         cardManager = new CardLayout();                                         
         panelDialogTelaVez = new JPanel(cardManager); 
         
-        //panelsDialogVotoVez = new JPanel[eleicoes.size()];                      //A quantidade de panels é referente a quantidade de cargos votados
-        
-        
-        
-        
+        panelsDialogVotoVez = new JPanel[eleicoes.size()];                      //A quantidade de panels é referente a quantidade de cargos votados
         
         tamanhoTela = Toolkit.getDefaultToolkit().getScreenSize();
         container.setLayout(new BorderLayout());
-        container.add(panelDialogTelaVez);
+        container.add(panelDialogTelaVez, BorderLayout.CENTER);
+        container.add(new JLabel("Quantidade de panels a serem criados: "+eleicoes.size()), BorderLayout.NORTH);
         
         this.setResizable(false);
         this.setSize(tamanhoTela);

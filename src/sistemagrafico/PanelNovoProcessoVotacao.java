@@ -9,12 +9,12 @@ import arquivo.LeituraArquivo;
 import arquivo.VerificaArquivo;
 import enumeracao.EnumListaPanels;
 import enumeracao.EnumOpcoesMenu;
+import excecoes.FormatoIncorretoException;
 import java.awt.BorderLayout;
 import java.awt.CardLayout;
 import java.awt.Color;
 import java.awt.Container;
 import java.awt.Font;
-import java.awt.Frame;
 import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -24,7 +24,6 @@ import java.io.File;
 import java.util.ArrayList;
 import javax.swing.DefaultListModel;
 import javax.swing.JButton;
-import javax.swing.JDialog;
 import javax.swing.JLabel;
 import javax.swing.JList;
 import javax.swing.JOptionPane;
@@ -68,7 +67,6 @@ public class PanelNovoProcessoVotacao extends JPanel implements ActionListener, 
     
     public PanelNovoProcessoVotacao(JPanel panelNovoProcessoVotacao, Container container, CardLayout cardManager, JPanel panelContainerTelaVez, ProcessoVotacao processoVotacao)
     {
-        this.eleicoes = eleicoes;
         this.container = container;
         this.panelContainerTelaVez = panelContainerTelaVez;
         this.cardManager = cardManager;
@@ -85,7 +83,8 @@ public class PanelNovoProcessoVotacao extends JPanel implements ActionListener, 
         labelLayoutArquivos = new JLabel("ARQUIVOS DE ELEIÇÃO DISPONÍVEIS");
         labelLayoutArquivos.setFont(fontListOpcoesMenu);
 
-        configurarLista();
+        listModelOpcoesMenu = new DefaultListModel();
+        //configurarLista();
         configurarBotoes();
         configurarTextArea();
         
@@ -142,7 +141,8 @@ public class PanelNovoProcessoVotacao extends JPanel implements ActionListener, 
     //-----------------------------CONFIGURAÇÕES--------------------------------
     private void configurarLista()
     {
-        listModelOpcoesMenu = new DefaultListModel();
+        //listModelOpcoesMenu = new DefaultListModel();
+        listModelOpcoesMenu.removeAllElements();
 
         arquivo = new File(""+new File("").getAbsoluteFile()+"\\Arquivos\\Eleição");
         arquivos = arquivo.listFiles();
@@ -150,12 +150,15 @@ public class PanelNovoProcessoVotacao extends JPanel implements ActionListener, 
         for (File arquivoAux : arquivos) 
             if (arquivoAux.isFile()) 
             {
-                if(VerificaArquivo.checarArquivoEleicaoPresidencial(arquivoAux.getPath()))
-                    listModelOpcoesMenu.addElement(arquivoAux.getName().substring(0, arquivoAux.getName().indexOf(".txt")));
-                else
+                try
                 {
-                    //EXCEPTION
+                    if(VerificaArquivo.checarArquivoEleicaoPresidencial(arquivoAux.getPath()))
+                        listModelOpcoesMenu.addElement(arquivoAux.getName().substring(0, arquivoAux.getName().indexOf(".txt")));
+                    else
+                        throw new FormatoIncorretoException(arquivoAux.getName());
                 }
+                catch(FormatoIncorretoException ex)
+                {   JOptionPane.showMessageDialog(container, ex.getMessage(), "Erro no processamento do arquivo", JOptionPane.ERROR_MESSAGE, null);   }
             }
     }
 
@@ -186,17 +189,15 @@ public class PanelNovoProcessoVotacao extends JPanel implements ActionListener, 
         scrollTextArea.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
     }
 
+    
     //-------------------------------LISTENERS----------------------------------
     @Override
     public void actionPerformed(ActionEvent e) 
     {
         if(e.getSource() == buttonSelecionar && buttonSelecionar.isEnabled() && !listOpcoesMenu.isSelectionEmpty())
         {
-            //FrameEleitor fm = new FrameEleitor(container);
             processoVotacao.iniciarProcessoVotacao();
-            System.out.println("Tamanho lista: "+processoVotacao.getEleicoes().size());
             cardManager.show(panelContainerTelaVez, EnumListaPanels.MESARIO.getOpcao());
-            //DialogEleitorMaster de = new DialogEleitorMaster(eleicoes);
         }
         if(e.getSource() == buttonCancelar)
         {
@@ -234,6 +235,6 @@ public class PanelNovoProcessoVotacao extends JPanel implements ActionListener, 
 
     @Override
     public void componentHidden(ComponentEvent e) 
-    {   configurarLista();  }
+    {}
 
 }

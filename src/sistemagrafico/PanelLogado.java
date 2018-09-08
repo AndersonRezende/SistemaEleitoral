@@ -29,7 +29,6 @@ import objetos.auxiliares.ProcessoVotacao;
  */
 public class PanelLogado extends JPanel implements ListSelectionListener, ComponentListener
 {
-    private ArrayList<Eleicao> eleicoes;
     private ProcessoVotacao processoVotacao;
     private Font fontListOpcoesMenu;
     private Font fontLabelTextoSuperior;
@@ -48,7 +47,6 @@ public class PanelLogado extends JPanel implements ListSelectionListener, Compon
         this.panelContainerTelaVez = panelContainerTelaVez;
         this.cardManager = cardManager;
         this.processoVotacao = processoVotacao;
-        this.eleicoes = eleicoes;
         
         fontListOpcoesMenu = new Font(Font.SERIF, Font.PLAIN, 25);
         fontLabelTextoSuperior = new Font(Font.SERIF, Font.BOLD, 25);
@@ -99,10 +97,12 @@ public class PanelLogado extends JPanel implements ListSelectionListener, Compon
             
             if(listOpcoesMenu.getSelectedValue().toString().equalsIgnoreCase(EnumOpcoesMenu.FPV.getOpcao()) && processoVotacao.getProcessoVotacaoIniciado())
             {
-                //Finalizar processo de votação
-                JOptionPane.showConfirmDialog(container, "Deseja finalizar o processo de votação corrente?", "Confirmação", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE, null);
-                //System.exit(0);
-                //Implementar mudança de tela e finalização do processo
+                int opcao = JOptionPane.showConfirmDialog(container, "Deseja finalizar o processo de votação corrente?", "Confirmação", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE, null);
+                if(opcao == JOptionPane.YES_OPTION)
+                {
+                    processoVotacao.finalizarProcessoVotacao();
+                    //IMPLEMENTAR FINALIZAÇÃO
+                }
             }
             else
             {   
@@ -114,8 +114,8 @@ public class PanelLogado extends JPanel implements ListSelectionListener, Compon
             
             if(listOpcoesMenu.getSelectedValue().toString().equalsIgnoreCase(EnumOpcoesMenu.LPV.getOpcao()) && processoVotacao.getProcessoVotacaoIniciado())
             {
-                System.out.println(processoVotacao.getEleicoes().size());
-                //DialogEleitorMaster de = new DialogEleitorMaster(eleicoes);
+                //LER TITULO E CHECAR SE TA NA LISTA
+                DialogEleitorMaster de = new DialogEleitorMaster(processoVotacao.getEleicoes());
             }
             else
             {

@@ -32,6 +32,9 @@ public class VerificaArquivo
     static final String FECHADIGITOS = "</digitos>";
     static final String ABREVOTOS = "<votos>";
     static final String FECHAVOTOS = "</votos>";
+    static final String ABREELEITOS = "<eleitos>";
+    static final String FECHAELEITOS = "</eleitos>";
+    
     
     static final String ABREMESARIO = "<mesario>";
     static final String FECHAMESARIO = "</mesario>";
@@ -60,6 +63,7 @@ public class VerificaArquivo
                 boolean abreFechaVice = false;
                 boolean abreFechaDigito = false;
                 boolean abreFechaVotos = false;
+                boolean abreFechaEleitos = false;
 
                 FileReader fr = new FileReader(arquivo);
                 BufferedReader br = new BufferedReader(fr);
@@ -107,8 +111,12 @@ public class VerificaArquivo
                                     abreFechaVotos = true;
                                 if (br.ready())
                                     linha = br.readLine();
+                                if (linha.contains(ABREELEITOS) && linha.contains(FECHAELEITOS))
+                                    abreFechaEleitos = true;
+                                if (br.ready())
+                                    linha = br.readLine();
                                 
-                                if (linha.contains(FECHACARGO) && abreFechaTitulo && abreFechaVice && abreFechaDigito && abreFechaVotos) 
+                                if (linha.contains(FECHACARGO) && abreFechaTitulo && abreFechaVice && abreFechaDigito && abreFechaVotos && abreFechaEleitos) 
                                 {
                                     abreCargo = false;
                                     fechaCargo = true;
@@ -116,6 +124,7 @@ public class VerificaArquivo
                                     abreFechaVice = false;
                                     abreFechaDigito = false;
                                     abreFechaVotos = false;
+                                    abreFechaEleitos = false;
                                 } 
                                 else
                                 {

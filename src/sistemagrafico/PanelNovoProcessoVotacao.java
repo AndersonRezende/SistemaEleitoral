@@ -121,6 +121,7 @@ public class PanelNovoProcessoVotacao extends JPanel implements ActionListener, 
                     texto += "Possui vice: Não.\n";
                 texto += "Quantidade de dígitos para voto: "+eleicao.getDigitos()+".\n";
                 texto += "Quantidade de escolhas neste cargo: "+eleicao.getVotos()+".\n";
+                texto += "Quantidade de eleitos neste cargo: "+eleicao.getEleitos()+".\n";
                 texto += "\n";
             }
         }

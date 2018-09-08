@@ -14,6 +14,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
+import objetos.Candidato;
 import objetos.Eleicao;
 import objetos.Mesario;
 
@@ -37,6 +38,7 @@ public class LeituraArquivo implements Login
         boolean vice = false;
         int digitos = 0;
         int votos = 0;
+        int eleitos = 0;
         
         int inicio = 0;
         int fim = 0;
@@ -95,10 +97,16 @@ public class LeituraArquivo implements Login
                             fim = linha.indexOf(VerificaArquivo.FECHAVOTOS);
                             votos = Integer.parseInt(linha.substring(inicio, fim));
                         }
+                        if(linha.contains(VerificaArquivo.ABREELEITOS) && linha.contains(VerificaArquivo.FECHAELEITOS))
+                        {
+                            inicio = linha.indexOf(VerificaArquivo.ABREELEITOS)+VerificaArquivo.ABREELEITOS.length();
+                            fim = linha.indexOf(VerificaArquivo.FECHAELEITOS);
+                            eleitos = Integer.parseInt(linha.substring(inicio, fim));
+                        }
                         
                         if(linha.contains(VerificaArquivo.FECHACARGO) && !titulo.equals("") && (digitos > 0) && (votos > 0))
                         {
-                            eleicao = new Eleicao(nome, titulo, vice, digitos, votos);
+                            eleicao = new Eleicao(nome, titulo, vice, digitos, votos, eleitos);
                             eleicoes.add(eleicao);
                         }
                     }
@@ -112,6 +120,96 @@ public class LeituraArquivo implements Login
         }
         return eleicoes;
     }
+    
+    
+   /* private static ArrayList<Candidato> lerCandidato(String path)
+    {
+        File arquivo = new File(path);
+        ArrayList<Candidato> candidatos = new ArrayList();
+        Candidato candidato;
+        String nome = "";
+        String vice = "";
+        String partido = "";
+        String numero = "";
+        int votos = 0;
+        String cargo = ""; 
+        String titulo = "";
+        
+        String linha;
+        
+        if(arquivo.exists())
+        {
+            try
+            {
+                BufferedReader br = new BufferedReader(new InputStreamReader(new FileInputStream(arquivo.getAbsolutePath()), "ISO-8859-1"));
+                while(br.ready())
+                {
+                    linha=br.readLine();
+                    if(linha.contains("<nome>"))
+                    {
+                        linha = linha.replaceAll("<nome>", "");
+                        nome = linha;
+                    }
+                    if(linha.contains("<numero>"))
+                    {
+                        linha = linha.replaceAll("<numero>", "");
+                        numero = linha;
+                    }
+                    if(linha.contains("<partido>"))
+                    {
+                        linha = linha.replaceAll("<partido>", "");
+                        partido = linha;
+                    }
+                    if(linha.contains("<cargo>"))
+                    {
+                        linha = linha.replaceAll("<cargo>", "");
+                        cargo = linha;
+                    }
+                    if(linha.contains("<titulo>"))
+                    {
+                        linha = linha.replaceAll("<titulo>", "");
+                        titulo = linha;
+                    }
+                    if(linha.contains("<vice>"))
+                    {
+                        linha = linha.replaceAll("<vice>", "");
+                        vice = linha;
+                    }
+
+
+                    if(linha.contains("</politico>"))
+                    {    
+                        if(vice.length() > 1)
+                            c = new Candidato(nome, numero, partido, cargo, titulo, new Vice(vice));
+                        else
+                            c = new Candidato(nome, numero, partido, cargo, titulo);
+                        candidatos.add(c);
+                        nome = "";
+                        numero = "";
+                        partido = "";
+                        cargo = "";
+                        titulo = "";
+                        vice = "";
+                    }
+
+                    if(linha.contains("</politicos>"))
+                        break;
+
+
+                }
+                br.close();
+            }
+            catch (FileNotFoundException ex) 
+            {   System.err.println(ex); } 
+            catch (IOException ex) 
+            {   System.err.println(ex); }
+        }
+        else
+        {
+          System.out.println("Arquivo nÃ£o encontrado.");
+        }
+        return candidatos;
+    }*/
     
     
     public static ArrayList<Mesario> lerMesario()

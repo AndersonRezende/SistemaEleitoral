@@ -5,29 +5,34 @@
 		<vice></vice>
 		<digitos>4</digitos>
 		<votos>1</votos>
+		<eleitos>10</eleitos>
 	</cargo>
 	<cargo>
 		<titulo>Deputado Estadual</titulo>
 		<vice></vice>
 		<digitos>5</digitos>
 		<votos>1</votos>
+		<eleitos>10</eleitos>
 	</cargo>
 	<cargo>
 		<titulo>Senador</titulo>
 		<vice></vice>
 		<digitos>3</digitos>
 		<votos>2</votos>
+		<eleitos>3</eleitos>
 	</cargo>
 	<cargo>
 		<titulo>Governador</titulo>
-		<vice></vice>
+		<vice>sim</vice>
 		<digitos>2</digitos>
 		<votos>1</votos>
+		<eleitos>1</eleitos>
 	</cargo>
 	<cargo>
 		<titulo>Presidente</titulo>
 		<vice>sim</vice>
 		<digitos>2</digitos>
 		<votos>1</votos>
+		<eleitos>1</eleitos>
 	</cargo>
 </cargos>

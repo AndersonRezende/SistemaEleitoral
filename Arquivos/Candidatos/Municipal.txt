@@ -5,13 +5,11 @@
 		<vice>não</vice>
 		<digitos>5</digitos>
 		<votos>1</votos>
-		<eleitos>23</eleitos>
 	</cargo>
 	<cargo>
 		<titulo>Prefeito</titulo>
 		<vice>sim</vice>
 		<digitos>2</digitos>
 		<votos>1</votos>
-		<eleitos>1</eleitos>
 	</cargo>
 </cargos>

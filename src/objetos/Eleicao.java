@@ -16,14 +16,16 @@ public class Eleicao
     private boolean vice;
     private int digitos;
     private int votos;
+    private int eleitos;
 
-    public Eleicao(String eleicao, String titulo, boolean vice, int digitos, int votos) 
+    public Eleicao(String eleicao, String titulo, boolean vice, int digitos, int votos, int eleitos) 
     {
         this.eleicao = eleicao;
         this.titulo = titulo;
         this.vice = vice;
         this.digitos = digitos;
         this.votos = votos;
+        this.eleitos = eleitos;
     }
 
     public String getEleicao() 
@@ -40,4 +42,7 @@ public class Eleicao
 
     public int getVotos() 
     {   return votos;   }
+    
+    public int getEleitos()
+    {   return eleitos; }
 }

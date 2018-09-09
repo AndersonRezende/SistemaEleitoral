@@ -10,6 +10,7 @@ import arquivo.VerificaArquivo;
 import enumeracao.EnumListaPanels;
 import enumeracao.EnumOpcoesMenu;
 import excecoes.FormatoIncorretoException;
+import excecoes.HorarioIncorretoEleicaoException;
 import java.awt.BorderLayout;
 import java.awt.CardLayout;
 import java.awt.Color;
@@ -22,6 +23,9 @@ import java.awt.event.ComponentEvent;
 import java.awt.event.ComponentListener;
 import java.io.File;
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.DefaultListModel;
 import javax.swing.JButton;
 import javax.swing.JLabel;
@@ -196,8 +200,21 @@ public class PanelNovoProcessoVotacao extends JPanel implements ActionListener, 
     {
         if(e.getSource() == buttonSelecionar && buttonSelecionar.isEnabled() && !listOpcoesMenu.isSelectionEmpty())
         {
-            processoVotacao.iniciarProcessoVotacao();
-            cardManager.show(panelContainerTelaVez, EnumListaPanels.MESARIO.getOpcao());
+            if(!eleicoes.isEmpty())
+            {
+                if(eleicoes.get(0).podeIniciarVotacao(Calendar.getInstance().get(Calendar.HOUR_OF_DAY)))
+                {
+                    processoVotacao.iniciarProcessoVotacao();
+                    cardManager.show(panelContainerTelaVez, EnumListaPanels.MESARIO.getOpcao());
+                }
+                else
+                {
+                    try 
+                    {   throw new HorarioIncorretoEleicaoException(0);  } 
+                    catch (HorarioIncorretoEleicaoException ex) 
+                    {   JOptionPane.showMessageDialog(container, ex.getMessage(), "Erro ao iniciar eleição", JOptionPane.ERROR_MESSAGE, null); }
+                }
+            }
         }
         if(e.getSource() == buttonCancelar)
         {

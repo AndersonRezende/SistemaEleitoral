@@ -9,7 +9,7 @@ package objetos;
  *
  * @author Anderson
  */
-public class Eleicao 
+public class Eleicao extends ProcessoEleicao
 {
     private String eleicao;
     private String titulo;
@@ -45,4 +45,30 @@ public class Eleicao
     
     public int getEleitos()
     {   return eleitos; }
+
+    @Override
+    public int getHorarioInicioEleicao() 
+    {   return super.HORARIOINICIOELEICAO;  }
+
+    @Override
+    public int getHorarioFinalEleicao() 
+    {   return super.HORARIOFINALELEICAO;   }
+
+    @Override
+    public boolean podeIniciarVotacao(float hora) 
+    {
+        int horaAtual = (int) hora;
+        boolean podeIniciar = false;
+        podeIniciar = horaAtual >= super.HORARIOINICIOELEICAO;
+        return podeIniciar;
+    }
+
+    @Override
+    public boolean podeTerminarVotacao(float hora) 
+    {
+        int horaAtual = (int) hora;
+        boolean podeTerminar = false;
+        podeTerminar = horaAtual > super.HORARIOFINALELEICAO;
+        return podeTerminar;
+    }
 }

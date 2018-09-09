@@ -16,13 +16,14 @@ import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
+import java.util.ArrayList;
 import javax.swing.BorderFactory;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JDialog;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
-import javax.swing.JTextField;
+import objetos.Eleicao;
 import objetos.auxiliares.ProcessoVotacao;
 
 /**
@@ -33,48 +34,53 @@ public class DialogEleitorMaster extends JDialog implements ActionListener
 {
     private final String opcoesParaButtons[] = {"BRANCO", "CORRIGE", "CONFIRMA"};
     private final Color colorOpcoesParaButtons[] = {Color.white, Color.orange, Color.green};
+    private final String opcoesParaLabelsDisplayFixo[] = {"Número: ", "Nome: ", "Partido: ", "Vice: "};
+    
+    private int cargoVotacaoVez;
+            
+    private ProcessoVotacao processoVotacao;
     private Dimension tamanhoTela;
     private Container container = getContentPane();
     
     private Font fontButton;
+    private Font fontLabelDisplay;
     
     private CardLayout cardManager;
-    private JPanel panelDialogTelaVez;
+    
     private JPanel panelsDialogVotoVez[];
     private JPanel panelParaBotoes;
     private JPanel panelParaBotoesNumericos;
     private JPanel panelParaBotoesOpcoes;
     private JPanel panelParaBotoesInformacaoSuperior;
     private JPanel panelParaDisplay;
-    private JPanel panelParaDisplayParaLabelSuperior;
-    private JPanel panelParaDisplayParaLabelMeio;
-    private JPanel panelParaDisplayParaLabelInferior;
+    private JPanel panelParaDisplayParaParteSuperior;
+    private JPanel panelParaDisplayParaParteMeio;
+    private JPanel panelParaDisplayParaParteInferior;
+    private JPanel panelParaDisplayParaParteMeioParaNumeros;
+    private JPanel panelParaDisplayParaParteMeioCargos[];
+    private JPanel panelParaDisplayParaParteMeioNumeros[];
     
     
     private JButton buttonNumericoTela[];
     private JButton buttonOpcoesTela[];
-    private JTextField textFieldsTela[];
-    private ImageIcon imageIconTela[];
     private ImageIcon imageIconLogoJusticaEleitoral;
     private JLabel labelJusticaEleitoralTelaPrincipal;
-    private JLabel labelEleicaoTela[];
     private JLabel labelJusticaEleitoral;
     private JLabel labelLogoJusticaEleitoral;
+    private JLabel labelParaDisplayParaParteSuperior[];
+    private JLabel labelParaDisplayParaParteMeioFixo[];
+    private JLabel labelParaDisplayParaParteMeioDinamicos[];
     
     
     public DialogEleitorMaster(ProcessoVotacao processoVotacao)
     {
         this.setUndecorated(true);
-        
-        cardManager = new CardLayout();                                         
-        panelDialogTelaVez = new JPanel(cardManager); 
-        
-        panelsDialogVotoVez = new JPanel[processoVotacao.getEleicoes().size()];                      //A quantidade de panels é referente a quantidade de cargos votados
+        this.processoVotacao = processoVotacao;
         
         configurarPanelBotoes();
         configurarPanelDisplay();
-        configurarPanels();
         
+        cargoVotacaoVez = 0;
         
         tamanhoTela = Toolkit.getDefaultToolkit().getScreenSize();
         container.setLayout(new BorderLayout());
@@ -155,34 +161,61 @@ public class DialogEleitorMaster extends JDialog implements ActionListener
     }
     
     
-    public void configurarPanelDisplay()
+    public void configurarPanelDisplay()//ADICIONAR ESTE PANEL PARA UM CARD LAYOUT E GERAR UMA INICIALIZAÇÃO
     {
+        fontLabelDisplay = new Font(Font.SERIF, Font.BOLD, 25);
+        
         panelParaDisplay = new JPanel(new BorderLayout());
         panelParaDisplay.setBorder(BorderFactory.createLineBorder(Color.black, 5, false));
         panelParaDisplay.setBackground(Color.white);
         
-        panelParaDisplayParaLabelSuperior = new JPanel(new GridLayout(1,2));
-        panelParaDisplayParaLabelMeio = new JPanel(new GridLayout(4,2));
-        panelParaDisplayParaLabelInferior = new JPanel(new GridLayout(3,2));
+        panelParaDisplayParaParteSuperior = new JPanel(new GridLayout(2,1));
+        panelParaDisplayParaParteMeio = new JPanel(new GridLayout(4,2));
+        panelParaDisplayParaParteInferior = new JPanel(new GridLayout(3,2));
+        panelParaDisplayParaParteSuperior.setBackground(Color.white);
+        panelParaDisplayParaParteMeio.setBackground(Color.white);
+        panelParaDisplayParaParteInferior.setBackground(Color.white);
         
-        panelParaDisplayParaLabelSuperior.setBackground(Color.white);
-        panelParaDisplayParaLabelMeio.setBackground(Color.white);
-        panelParaDisplayParaLabelInferior.setBackground(Color.white);
+        labelParaDisplayParaParteSuperior = new JLabel[2];
+        labelParaDisplayParaParteSuperior[0] = new JLabel("SEU VOTO PARA");
+        labelParaDisplayParaParteSuperior[1] = new JLabel(processoVotacao.getEleicoes().get(cargoVotacaoVez).getTitulo());
+        for(JLabel labelAux : labelParaDisplayParaParteSuperior)
+        {
+            labelAux.setFont(fontLabelDisplay);
+            labelAux.setHorizontalAlignment(JLabel.CENTER);
+        }
+        panelParaDisplayParaParteSuperior.add(labelParaDisplayParaParteSuperior[0]);
+        panelParaDisplayParaParteSuperior.add(labelParaDisplayParaParteSuperior[1]);
+        
+        labelParaDisplayParaParteMeioFixo = new JLabel[4];
+        for(int index = 0; index < labelParaDisplayParaParteMeioFixo.length; index++)
+        {
+            labelParaDisplayParaParteMeioFixo[index] = new JLabel(opcoesParaLabelsDisplayFixo[index]);
+            labelParaDisplayParaParteMeioFixo[index].setFont(fontLabelDisplay);
+            panelParaDisplayParaParteMeio.add(labelParaDisplayParaParteMeioFixo[index]);
+        }
+        
+        
+        
+        cardManager = new CardLayout();
+        panelParaDisplayParaParteMeioParaNumeros = new JPanel(cardManager);
+        
+        ArrayList<Eleicao> eleicoes = processoVotacao.getEleicoes();
+        int panelsParaCriar = 0;
+        for(int index = 0; index < eleicoes.size(); index++)
+        {
+            panelsParaCriar += eleicoes.get(index).getEleitos();
+        }
+        
+        panelParaDisplayParaParteMeioCargos = new JPanel[processoVotacao.getEleicoes().size()];     //Vai criar panels para o tanto de cargos possíveis
         
         
         
         
         
-        panelParaDisplay.add(panelParaDisplayParaLabelSuperior, BorderLayout.NORTH);
-        panelParaDisplay.add(panelParaDisplayParaLabelMeio, BorderLayout.CENTER);
-        panelParaDisplay.add(panelParaDisplayParaLabelInferior, BorderLayout.SOUTH);
-    }
-    
-    
-    public void configurarPanels()
-    {
-        for(JPanel panelVotoVez : panelsDialogVotoVez)
-            panelVotoVez = new JPanel(new BorderLayout());   
+        panelParaDisplay.add(panelParaDisplayParaParteSuperior, BorderLayout.NORTH);
+        panelParaDisplay.add(panelParaDisplayParaParteMeio, BorderLayout.CENTER);
+        panelParaDisplay.add(panelParaDisplayParaParteInferior, BorderLayout.SOUTH);
     }
 
     

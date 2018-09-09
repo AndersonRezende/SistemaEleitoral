@@ -54,4 +54,13 @@ public class ProcessoVotacao
 
     public void setEleitores(ArrayList<Eleitor> eleitores) 
     {   this.eleitores = eleitores; }
+    
+    public int getMaiorNumeroDigitosEleicao()
+    {
+        int maiorNumeroDigitos = 0;
+        for(Eleicao eleicao : eleicoes)
+            if(eleicao.getDigitos() > maiorNumeroDigitos)
+                maiorNumeroDigitos = eleicao.getDigitos();
+        return maiorNumeroDigitos;
+    }
 }

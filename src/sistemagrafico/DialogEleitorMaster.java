@@ -6,7 +6,6 @@
 package sistemagrafico;
 
 import java.awt.BorderLayout;
-import java.awt.CardLayout;
 import java.awt.Color;
 import java.awt.Container;
 import java.awt.Dimension;
@@ -16,14 +15,14 @@ import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
-import java.util.ArrayList;
 import javax.swing.BorderFactory;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JDialog;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
-import objetos.Eleicao;
+import javax.swing.JTextField;
 import objetos.auxiliares.ProcessoVotacao;
 
 /**
@@ -32,6 +31,7 @@ import objetos.auxiliares.ProcessoVotacao;
  */
 public class DialogEleitorMaster extends JDialog implements ActionListener
 {
+    private int votacaoCargoVez;
     private final String opcoesParaButtons[] = {"BRANCO", "CORRIGE", "CONFIRMA"};
     private final Color colorOpcoesParaButtons[] = {Color.white, Color.orange, Color.green};
     private final String opcoesParaLabelsDisplayFixo[] = {"Número: ", "Nome: ", "Partido: ", "Vice: "};
@@ -45,9 +45,6 @@ public class DialogEleitorMaster extends JDialog implements ActionListener
     private Font fontButton;
     private Font fontLabelDisplay;
     
-    private CardLayout cardManager;
-    
-    private JPanel panelsDialogVotoVez[];
     private JPanel panelParaBotoes;
     private JPanel panelParaBotoesNumericos;
     private JPanel panelParaBotoesOpcoes;
@@ -57,9 +54,6 @@ public class DialogEleitorMaster extends JDialog implements ActionListener
     private JPanel panelParaDisplayParaParteMeio;
     private JPanel panelParaDisplayParaParteInferior;
     private JPanel panelParaDisplayParaParteMeioParaNumeros;
-    private JPanel panelParaDisplayParaParteMeioCargos[];
-    private JPanel panelParaDisplayParaParteMeioNumeros[];
-    
     
     private JButton buttonNumericoTela[];
     private JButton buttonOpcoesTela[];
@@ -69,16 +63,19 @@ public class DialogEleitorMaster extends JDialog implements ActionListener
     private JLabel labelLogoJusticaEleitoral;
     private JLabel labelParaDisplayParaParteSuperior[];
     private JLabel labelParaDisplayParaParteMeioFixo[];
-    private JLabel labelParaDisplayParaParteMeioDinamicos[];
-    
+    private JLabel labelParaDisplayParaParteMeioDinamico[];
+    private JTextField textFieldDigitos[];
     
     public DialogEleitorMaster(ProcessoVotacao processoVotacao)
     {
         this.setUndecorated(true);
         this.processoVotacao = processoVotacao;
         
+        votacaoCargoVez = 0;
+        
         configurarPanelBotoes();
         configurarPanelDisplay();
+        configurarExibicaoVez();
         
         cargoVotacaoVez = 0;
         
@@ -187,34 +184,60 @@ public class DialogEleitorMaster extends JDialog implements ActionListener
         panelParaDisplayParaParteSuperior.add(labelParaDisplayParaParteSuperior[0]);
         panelParaDisplayParaParteSuperior.add(labelParaDisplayParaParteSuperior[1]);
         
-        labelParaDisplayParaParteMeioFixo = new JLabel[4];
+        
+        
+        
+        //Crio um conjunto de textfield para os numeros e adiciono em um panel
+        textFieldDigitos = new JTextField[processoVotacao.getMaiorNumeroDigitosEleicao()];
+        panelParaDisplayParaParteMeioParaNumeros = new JPanel(new GridLayout(1, textFieldDigitos.length));
+        panelParaDisplayParaParteMeioParaNumeros.setBackground(Color.white);
+        for(int index = 0; index < textFieldDigitos.length; index++)
+        {
+            textFieldDigitos[index] = new JTextField(1);
+            textFieldDigitos[index].setFont(fontLabelDisplay);
+            textFieldDigitos[index].setEditable(false);
+            textFieldDigitos[index].setBackground(Color.white);
+            textFieldDigitos[index].setBorder(BorderFactory.createLineBorder(Color.black, 1, false));
+            panelParaDisplayParaParteMeioParaNumeros.add(textFieldDigitos[index]);
+        }
+        
+        labelParaDisplayParaParteMeioDinamico = new JLabel[3];
+        for(int index = 0; index < labelParaDisplayParaParteMeioDinamico.length; index++)
+        {
+            labelParaDisplayParaParteMeioDinamico[index] = new JLabel("Teste");
+            labelParaDisplayParaParteMeioDinamico[index].setFont(fontLabelDisplay);
+        }
+        
+        /*Nesta parte, estou criando a parte que tem o numero, nome, partido e vice*/
+        labelParaDisplayParaParteMeioFixo = new JLabel[4];  
         for(int index = 0; index < labelParaDisplayParaParteMeioFixo.length; index++)
         {
             labelParaDisplayParaParteMeioFixo[index] = new JLabel(opcoesParaLabelsDisplayFixo[index]);
             labelParaDisplayParaParteMeioFixo[index].setFont(fontLabelDisplay);
             panelParaDisplayParaParteMeio.add(labelParaDisplayParaParteMeioFixo[index]);
+            switch(index)
+            {
+                case 0:
+                        panelParaDisplayParaParteMeio.add(panelParaDisplayParaParteMeioParaNumeros);
+                break;
+                case 1:
+                        panelParaDisplayParaParteMeio.add(labelParaDisplayParaParteMeioDinamico[0]);
+                break;
+                case 2:
+                        panelParaDisplayParaParteMeio.add(labelParaDisplayParaParteMeioDinamico[1]);
+                break;
+                case 3:
+                        panelParaDisplayParaParteMeio.add(labelParaDisplayParaParteMeioDinamico[2]);
+                break;
+                
+            }
         }
-        
-        
-        
-        cardManager = new CardLayout();
-        panelParaDisplayParaParteMeioParaNumeros = new JPanel(cardManager);
-        
-        ArrayList<Eleicao> eleicoes = processoVotacao.getEleicoes();
-        int panelsParaCriar = 0;
-        for(int index = 0; index < eleicoes.size(); index++)
-        {
-            panelsParaCriar += eleicoes.get(index).getEleitos();
-        }
-        
-        panelParaDisplayParaParteMeioCargos = new JPanel[processoVotacao.getEleicoes().size()];     //Vai criar panels para o tanto de cargos possíveis
-        
-        
         
         
         
         panelParaDisplay.add(panelParaDisplayParaParteSuperior, BorderLayout.NORTH);
         panelParaDisplay.add(panelParaDisplayParaParteMeio, BorderLayout.CENTER);
+        //panelParaDisplay.add(foto, BorderLayout.EAST);
         panelParaDisplay.add(panelParaDisplayParaParteInferior, BorderLayout.SOUTH);
     }
 
@@ -223,6 +246,37 @@ public class DialogEleitorMaster extends JDialog implements ActionListener
     @Override
     public void actionPerformed(ActionEvent e) 
     {
-        System.exit(0);
+        if(e.getSource() == buttonOpcoesTela[0])                                //Branco sai
+            System.exit(0);
+        if(e.getSource() == buttonOpcoesTela[1])
+        {
+            for(JTextField textFieldAux : textFieldDigitos)
+                textFieldAux.setText("");
+        if(e.getSource() == buttonOpcoesTela[2])                                //Se confirmar vai pra proxima tela
+            configurarExibicaoVez();
+        }
+        if(e.getSource() == buttonNumericoTela[0])
+            JOptionPane.showMessageDialog(null, "Teste", "Teste", JOptionPane.INFORMATION_MESSAGE);
+    }
+
+    
+    //-----------------------------AUXILIARES-----------------------------------
+    private void configurarExibicaoVez() 
+    {
+        if(votacaoCargoVez == processoVotacao.getEleicoes().size())
+            this.dispose();
+        else
+        {
+            int auxCargoVez = processoVotacao.getEleicoes().get(votacaoCargoVez).getDigitos();
+            labelParaDisplayParaParteSuperior[1].setText(processoVotacao.getEleicoes().get(votacaoCargoVez).getTitulo());
+            for(int index = 0; index < textFieldDigitos.length; index++)
+            {
+                if(auxCargoVez <= index)
+                    textFieldDigitos[index].setVisible(false);
+                else
+                    textFieldDigitos[index].setVisible(true);
+            }
+            votacaoCargoVez ++;
+        }
     }
 }

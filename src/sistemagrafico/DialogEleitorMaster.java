@@ -16,6 +16,7 @@ import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
+import javax.swing.BorderFactory;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JDialog;
@@ -31,6 +32,7 @@ import objetos.auxiliares.ProcessoVotacao;
 public class DialogEleitorMaster extends JDialog implements ActionListener
 {
     private final String opcoesParaButtons[] = {"BRANCO", "CORRIGE", "CONFIRMA"};
+    private final Color colorOpcoesParaButtons[] = {Color.white, Color.orange, Color.green};
     private Dimension tamanhoTela;
     private Container container = getContentPane();
     
@@ -42,13 +44,19 @@ public class DialogEleitorMaster extends JDialog implements ActionListener
     private JPanel panelParaBotoes;
     private JPanel panelParaBotoesNumericos;
     private JPanel panelParaBotoesOpcoes;
-    private JPanel panelParaInformacaoSuperiorBotoes;
+    private JPanel panelParaBotoesInformacaoSuperior;
+    private JPanel panelParaDisplay;
+    private JPanel panelParaDisplayParaLabelSuperior;
+    private JPanel panelParaDisplayParaLabelMeio;
+    private JPanel panelParaDisplayParaLabelInferior;
+    
     
     private JButton buttonNumericoTela[];
     private JButton buttonOpcoesTela[];
     private JTextField textFieldsTela[];
     private ImageIcon imageIconTela[];
     private ImageIcon imageIconLogoJusticaEleitoral;
+    private JLabel labelJusticaEleitoralTelaPrincipal;
     private JLabel labelEleicaoTela[];
     private JLabel labelJusticaEleitoral;
     private JLabel labelLogoJusticaEleitoral;
@@ -63,17 +71,25 @@ public class DialogEleitorMaster extends JDialog implements ActionListener
         
         panelsDialogVotoVez = new JPanel[processoVotacao.getEleicoes().size()];                      //A quantidade de panels é referente a quantidade de cargos votados
         
-        configurarBotoes();
-        //configurarInputs();
+        configurarPanelBotoes();
+        configurarPanelDisplay();
         configurarPanels();
         
         
         tamanhoTela = Toolkit.getDefaultToolkit().getScreenSize();
         container.setLayout(new BorderLayout());
         container.add(panelParaBotoes,BorderLayout.EAST);
+        container.add(panelParaDisplay, BorderLayout.CENTER);
+        
+        
+        labelJusticaEleitoralTelaPrincipal = new JLabel("SISTEMA ELEITORAL BRASILEIRO");
+        labelJusticaEleitoralTelaPrincipal.setHorizontalAlignment(JLabel.CENTER);
+        labelJusticaEleitoralTelaPrincipal.setFont(new Font(Font.SERIF, Font.BOLD, 55));
+        
+        container.add(labelJusticaEleitoralTelaPrincipal, BorderLayout.NORTH);
+        container.add(new JLabel(imageIconLogoJusticaEleitoral), BorderLayout.SOUTH);
         
         //container.add(panelDialogTelaVez, BorderLayout.CENTER);
-        container.add(new JLabel("Quantidade de panels a serem criados: "+processoVotacao.getEleicoes().size()), BorderLayout.NORTH);
         
         this.setResizable(false);
         this.setSize(tamanhoTela);
@@ -83,12 +99,12 @@ public class DialogEleitorMaster extends JDialog implements ActionListener
     
     
     //-----------------------MÉTODOS DE CONFIGURAÇÃO----------------------------
-    public void configurarBotoes()
+    public void configurarPanelBotoes()
     {
         panelParaBotoesNumericos = new JPanel(new GridLayout(4,3));
         panelParaBotoesOpcoes = new JPanel(new GridLayout(1,3));
         panelParaBotoes = new JPanel(new BorderLayout());
-        panelParaInformacaoSuperiorBotoes = new JPanel(new GridLayout(1,2));
+        panelParaBotoesInformacaoSuperior = new JPanel(new GridLayout(1,2));
         
         fontButton = new Font(Font.SERIF, Font.BOLD, 35);
         
@@ -118,18 +134,7 @@ public class DialogEleitorMaster extends JDialog implements ActionListener
             buttonOpcoesTela[index] = new JButton(opcoesParaButtons[index]);
             buttonOpcoesTela[index].setFont(fontButton);
             buttonOpcoesTela[index].addActionListener(this);
-            switch(index)
-            {
-                case 0:
-                    buttonOpcoesTela[index].setBackground(Color.white);
-                break;
-                case 1:
-                    buttonOpcoesTela[index].setBackground(Color.orange);
-                break;
-                case 2:
-                    buttonOpcoesTela[index].setBackground(Color.green);
-                break;
-            }
+            buttonOpcoesTela[index].setBackground(colorOpcoesParaButtons[index]);
             panelParaBotoesOpcoes.add(buttonOpcoesTela[index]);
         }
         
@@ -139,13 +144,38 @@ public class DialogEleitorMaster extends JDialog implements ActionListener
         
         imageIconLogoJusticaEleitoral = new ImageIcon(""+new File("").getAbsoluteFile()+"/assets/justiçaEleitoralLogoMini.png");
         labelLogoJusticaEleitoral = new JLabel(imageIconLogoJusticaEleitoral);
+        labelLogoJusticaEleitoral.setHorizontalAlignment(JLabel.RIGHT);
         
-        panelParaInformacaoSuperiorBotoes.add(labelLogoJusticaEleitoral);
-        panelParaInformacaoSuperiorBotoes.add(labelJusticaEleitoral);
+        panelParaBotoesInformacaoSuperior.add(labelLogoJusticaEleitoral);
+        panelParaBotoesInformacaoSuperior.add(labelJusticaEleitoral);
         
-        panelParaBotoes.add(panelParaInformacaoSuperiorBotoes, BorderLayout.NORTH);
+        panelParaBotoes.add(panelParaBotoesInformacaoSuperior, BorderLayout.NORTH);
         panelParaBotoes.add(panelParaBotoesNumericos, BorderLayout.CENTER);
         panelParaBotoes.add(panelParaBotoesOpcoes, BorderLayout.SOUTH);
+    }
+    
+    
+    public void configurarPanelDisplay()
+    {
+        panelParaDisplay = new JPanel(new BorderLayout());
+        panelParaDisplay.setBorder(BorderFactory.createLineBorder(Color.black, 5, false));
+        panelParaDisplay.setBackground(Color.white);
+        
+        panelParaDisplayParaLabelSuperior = new JPanel(new GridLayout(1,2));
+        panelParaDisplayParaLabelMeio = new JPanel(new GridLayout(4,2));
+        panelParaDisplayParaLabelInferior = new JPanel(new GridLayout(3,2));
+        
+        panelParaDisplayParaLabelSuperior.setBackground(Color.white);
+        panelParaDisplayParaLabelMeio.setBackground(Color.white);
+        panelParaDisplayParaLabelInferior.setBackground(Color.white);
+        
+        
+        
+        
+        
+        panelParaDisplay.add(panelParaDisplayParaLabelSuperior, BorderLayout.NORTH);
+        panelParaDisplay.add(panelParaDisplayParaLabelMeio, BorderLayout.CENTER);
+        panelParaDisplay.add(panelParaDisplayParaLabelInferior, BorderLayout.SOUTH);
     }
     
     

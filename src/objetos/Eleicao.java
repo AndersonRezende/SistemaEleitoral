@@ -15,16 +15,14 @@ public class Eleicao extends ProcessoEleicao
     private String titulo;
     private boolean vice;
     private int digitos;
-    private int votos;
     private int eleitos;
 
-    public Eleicao(String eleicao, String titulo, boolean vice, int digitos, int votos, int eleitos) 
+    public Eleicao(String eleicao, String titulo, boolean vice, int digitos, int eleitos) 
     {
         this.eleicao = eleicao;
         this.titulo = titulo;
         this.vice = vice;
         this.digitos = digitos;
-        this.votos = votos;
         this.eleitos = eleitos;
     }
 
@@ -39,9 +37,6 @@ public class Eleicao extends ProcessoEleicao
 
     public int getDigitos() 
     {   return digitos; }
-
-    public int getVotos() 
-    {   return votos;   }
     
     public int getEleitos()
     {   return eleitos; }

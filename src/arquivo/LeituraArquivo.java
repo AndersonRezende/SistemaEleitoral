@@ -91,12 +91,6 @@ public class LeituraArquivo implements Login
                             fim = linha.indexOf(VerificaArquivo.FECHADIGITOS);
                             digitos = Integer.parseInt(linha.substring(inicio, fim));
                         }
-                        if(linha.contains(VerificaArquivo.ABREVOTOS) && linha.contains(VerificaArquivo.FECHAVOTOS))
-                        {
-                            inicio = linha.indexOf(VerificaArquivo.ABREVOTOS)+VerificaArquivo.ABREVOTOS.length();
-                            fim = linha.indexOf(VerificaArquivo.FECHAVOTOS);
-                            votos = Integer.parseInt(linha.substring(inicio, fim));
-                        }
                         if(linha.contains(VerificaArquivo.ABREELEITOS) && linha.contains(VerificaArquivo.FECHAELEITOS))
                         {
                             inicio = linha.indexOf(VerificaArquivo.ABREELEITOS)+VerificaArquivo.ABREELEITOS.length();
@@ -104,9 +98,9 @@ public class LeituraArquivo implements Login
                             eleitos = Integer.parseInt(linha.substring(inicio, fim));
                         }
                         
-                        if(linha.contains(VerificaArquivo.FECHACARGO) && !titulo.equals("") && (digitos > 0) && (votos > 0))
+                        if(linha.contains(VerificaArquivo.FECHACARGO) && !titulo.equals("") && (digitos > 0))
                         {
-                            eleicao = new Eleicao(nome, titulo, vice, digitos, votos, eleitos);
+                            eleicao = new Eleicao(nome, titulo, vice, digitos, eleitos);
                             eleicoes.add(eleicao);
                         }
                     }

@@ -62,7 +62,6 @@ public class VerificaArquivo
                 boolean abreFechaTitulo = false;
                 boolean abreFechaVice = false;
                 boolean abreFechaDigito = false;
-                boolean abreFechaVotos = false;
                 boolean abreFechaEleitos = false;
 
                 FileReader fr = new FileReader(arquivo);
@@ -107,23 +106,18 @@ public class VerificaArquivo
                                     abreFechaDigito = true;
                                 if (br.ready())
                                     linha = br.readLine();
-                                if (linha.contains(ABREVOTOS) && linha.contains(FECHAVOTOS))
-                                    abreFechaVotos = true;
-                                if (br.ready())
-                                    linha = br.readLine();
                                 if (linha.contains(ABREELEITOS) && linha.contains(FECHAELEITOS))
                                     abreFechaEleitos = true;
                                 if (br.ready())
                                     linha = br.readLine();
                                 
-                                if (linha.contains(FECHACARGO) && abreFechaTitulo && abreFechaVice && abreFechaDigito && abreFechaVotos && abreFechaEleitos) 
+                                if (linha.contains(FECHACARGO) && abreFechaTitulo && abreFechaVice && abreFechaDigito && abreFechaEleitos) 
                                 {
                                     abreCargo = false;
                                     fechaCargo = true;
                                     abreFechaTitulo = false;
                                     abreFechaVice = false;
                                     abreFechaDigito = false;
-                                    abreFechaVotos = false;
                                     abreFechaEleitos = false;
                                 } 
                                 else

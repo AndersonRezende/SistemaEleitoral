@@ -5,11 +5,13 @@
  */
 package objetos;
 
+import interfaces.Votar;
+
 /**
  *
  * @author Anderson
  */
-public class Candidato 
+public class Candidato implements Votar
 {
     private String numero;
     private String partido;
@@ -45,18 +47,6 @@ public class Candidato
     public void setPartido(String partido) 
     {   this.partido = partido; }
 
-    public int getQuantidadeVotos() 
-    {   return votos;  }
-
-    public boolean votar() 
-    {
-        boolean votou = false;
-        int aux = votos;
-        this.votos++;
-        votou = aux < votos;
-        return votou;
-    }
-
     public String getCargo() 
     {   return cargo;   }
 
@@ -65,4 +55,18 @@ public class Candidato
 
     public String getVice() 
     {   return vice.getNome();  }
+
+    @Override
+    public int getQuantidadeVotos() 
+    {   return votos;  }
+
+    @Override
+    public boolean votar() 
+    {
+        boolean votou = false;
+        int aux = votos;
+        this.votos++;
+        votou = aux < votos;
+        return votou;
+    }
 }

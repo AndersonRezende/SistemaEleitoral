@@ -5,11 +5,13 @@
  */
 package objetos;
 
+import interfaces.ChecarVotoEleitor;
+
 /**
  *
  * @author Anderson
  */
-public class Eleitor extends Pessoa 
+public class Eleitor extends Pessoa implements ChecarVotoEleitor
 {
     private String nome;
     private String titulo;
@@ -30,6 +32,7 @@ public class Eleitor extends Pessoa
     public void setTitulo(String titulo) 
     {   this.titulo = titulo;   }
     
+    @Override
     public boolean votou()
     {   return this.votou;  }
     

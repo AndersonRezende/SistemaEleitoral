@@ -6,12 +6,13 @@
 package objetos;
 
 import interfaces.ChecarVotoEleitor;
+import interfaces.Votar;
 
 /**
  *
  * @author Anderson
  */
-public class Eleitor extends Pessoa implements ChecarVotoEleitor
+public class Eleitor extends Pessoa implements ChecarVotoEleitor, Votar
 {
     private String nome;
     private String titulo;
@@ -23,18 +24,11 @@ public class Eleitor extends Pessoa implements ChecarVotoEleitor
         this.titulo = titulo;
     }
     
-    public void votar()
-    {   this.votou = true;  }
-    
     public String getTitulo() 
     {   return titulo;  }
 
     public void setTitulo(String titulo) 
     {   this.titulo = titulo;   }
-    
-    @Override
-    public boolean votou()
-    {   return this.votou;  }
     
     @Override
     public String getNome() 
@@ -43,4 +37,15 @@ public class Eleitor extends Pessoa implements ChecarVotoEleitor
     @Override
     public void setNome(String nome) 
     {   this.nome = nome;   }
+
+    @Override
+    public boolean votou()
+    {   return this.votou;  }
+    
+    @Override
+    public boolean votar() 
+    {
+        this.votou = true;
+        return votou;
+    }
 }

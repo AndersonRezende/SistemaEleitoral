@@ -36,6 +36,7 @@ import objetos.Mesario;
 public class PanelLogin extends JPanel implements Login, ActionListener, KeyListener, ComponentListener
 {
     private Container container;
+    private JPanel panelLogin;
     private JPanel panelContainerTelaVez;
     private JPanel panelLayoutLogin;
     private CardLayout cardManager;
@@ -56,6 +57,7 @@ public class PanelLogin extends JPanel implements Login, ActionListener, KeyList
         this.panelContainerTelaVez = panelContainerTelaVez;
         this.cardManager = cardManager;
         this.menu = menu;
+        this.panelLogin = panelLogin;
         
         labelEleicoes = new JLabel("ELEIÇÕES "+Calendar.getInstance().get(Calendar.YEAR));
         labelLogin = new JLabel("Login");
@@ -171,18 +173,19 @@ public class PanelLogin extends JPanel implements Login, ActionListener, KeyList
 
     //ComponentListener
     @Override
-    public void componentResized(ComponentEvent e) {}
+    public void componentResized(ComponentEvent e){}
 
     @Override
-    public void componentMoved(ComponentEvent e) {}
+    public void componentMoved(ComponentEvent e){}
 
     @Override
     public void componentShown(ComponentEvent e) 
     {
         textFieldlogin.setText("");
         passwordFieldSenha.setText("");
-        menu.setEnabled(false);
+        //menu.setEnabled(false);
         menu.setVisible(false);
+        System.out.println("Shown");
     }
 
     @Override
@@ -190,7 +193,8 @@ public class PanelLogin extends JPanel implements Login, ActionListener, KeyList
     {
         textFieldlogin.setText("");
         passwordFieldSenha.setText("");
-        menu.setEnabled(true);
+        //menu.setEnabled(true);
         menu.setVisible(true);
+        System.out.println("Hidden");
     }
 }

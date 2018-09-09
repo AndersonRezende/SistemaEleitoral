@@ -14,6 +14,8 @@ import java.awt.event.ComponentListener;
 import javax.swing.DefaultListModel;
 import javax.swing.JLabel;
 import javax.swing.JList;
+import javax.swing.JMenu;
+import javax.swing.JMenuBar;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.ListSelectionModel;
@@ -113,7 +115,7 @@ public class PanelLogado extends JPanel implements ListSelectionListener, Compon
             if(listOpcoesMenu.getSelectedValue().toString().equalsIgnoreCase(EnumOpcoesMenu.LPV.getOpcao()) && processoVotacao.getProcessoVotacaoIniciado())
             {
                 //LER TITULO E CHECAR SE TA NA LISTA
-                DialogEleitorMaster de = new DialogEleitorMaster(processoVotacao.getEleicoes());
+                DialogEleitorMaster de = new DialogEleitorMaster(processoVotacao);
             }
             else
             {

@@ -9,7 +9,9 @@ package interfaces;
  *
  * @author Anderson
  */
-public interface Votar 
+public interface VotacaoCandidato 
 {
-    public boolean votar();
+    public boolean receberVoto();
+    
+    public int getVotos();
 }

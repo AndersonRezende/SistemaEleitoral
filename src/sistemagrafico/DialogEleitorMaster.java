@@ -5,8 +5,6 @@
  */
 package sistemagrafico;
 
-import java.applet.Applet;
-import java.applet.AudioClip;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Container;
@@ -30,7 +28,6 @@ import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JDialog;
 import javax.swing.JLabel;
-import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 import objetos.auxiliares.ProcessoVotacao;
@@ -253,35 +250,15 @@ public class DialogEleitorMaster extends JDialog implements ActionListener
     public void actionPerformed(ActionEvent e) 
     {
         if(e.getSource() == buttonOpcoesTela[2])
-        {
-            try 
-            {   
-                AudioInputStream audioInputStream = AudioSystem.getAudioInputStream(new File(new File("").getAbsoluteFile()+"/assets/audios/ConfirmarVoto.wav").getAbsoluteFile()); 
-                Clip clip = AudioSystem.getClip();
-                clip.open(audioInputStream);
-                clip.start();
-            } 
-            catch (UnsupportedAudioFileException | IOException | LineUnavailableException ex) 
-            {   Logger.getLogger(DialogEleitorMaster.class.getName()).log(Level.SEVERE, null, ex);  }
-        }
+        {   tocarSom("inter");  }
         else
-        {
-            try 
-            {   
-                AudioInputStream audioInputStream = AudioSystem.getAudioInputStream(new File(new File("").getAbsoluteFile()+"/assets/audios/SomTecla.wav").getAbsoluteFile()); 
-                Clip clip = AudioSystem.getClip();
-                clip.open(audioInputStream);
-                clip.start();
-            } 
-            catch (UnsupportedAudioFileException | IOException | LineUnavailableException ex) 
-            {   Logger.getLogger(DialogEleitorMaster.class.getName()).log(Level.SEVERE, null, ex);  }
-        }
+        {   tocarSom("SomTecla");   }
         
         if(e.getSource() == buttonOpcoesTela[0])                                //Branco sai
         {    
             this.dispose();
         }
-        if(e.getSource() == buttonOpcoesTela[1])
+        if(e.getSource() == buttonOpcoesTela[1])                                //Corrige
         {
             limparTela();
         }
@@ -323,7 +300,7 @@ public class DialogEleitorMaster extends JDialog implements ActionListener
         digitoVez = 0;
         if(votacaoCargoVez == processoVotacao.getEleicoes().size())
         {
-            this.dispose();
+            finalizarVoto();
         }
         else
         {
@@ -350,16 +327,49 @@ public class DialogEleitorMaster extends JDialog implements ActionListener
                 textFieldDigitos[digitoVez].setText(""+numero);
             }
         }
+        else
+            alterarEstadoBotoes(false);
+        
         digitoVez++;
+    }
+    
+    
+    private void alterarEstadoBotoes(boolean estado)
+    {
+        for(JButton buttonAux : buttonNumericoTela)
+            buttonAux.setEnabled(estado);
     }
     
     
     private void limparTela()
     {
+        digitoVez = 0;
+        alterarEstadoBotoes(true);
         for(JTextField textFieldAux : textFieldDigitos)
             textFieldAux.setText("");
         
         for(JLabel labelAux : labelParaDisplayParaParteMeioDinamico)
             labelAux.setText("");
+    }
+    
+    
+    private void finalizarVoto()
+    {//Gravar em um arquivo de log com uma thread
+        tocarSom("fim");
+        this.dispose();
+    }
+    
+    
+    private void tocarSom(String nomeSom)
+    {
+        try
+        {   
+            AudioInputStream audioInputStream = AudioSystem.getAudioInputStream(new File(new File("").getAbsoluteFile()+"/assets/audios/"+nomeSom+".wav").getAbsoluteFile()); 
+            Clip clip = AudioSystem.getClip();
+            clip.open(audioInputStream);
+            clip.start();
+        } 
+        catch (UnsupportedAudioFileException | IOException | LineUnavailableException ex) 
+        {   Logger.getLogger(DialogEleitorMaster.class.getName()).log(Level.SEVERE, null, ex);  }
     }
 }

@@ -185,7 +185,6 @@ public class PanelLogin extends JPanel implements Login, ActionListener, KeyList
         passwordFieldSenha.setText("");
         //menu.setEnabled(false);
         menu.setVisible(false);
-        System.out.println("Shown");
     }
 
     @Override
@@ -195,6 +194,5 @@ public class PanelLogin extends JPanel implements Login, ActionListener, KeyList
         passwordFieldSenha.setText("");
         //menu.setEnabled(true);
         menu.setVisible(true);
-        System.out.println("Hidden");
     }
 }

@@ -35,8 +35,6 @@ public class DialogEleitorMaster extends JDialog implements ActionListener
     private final String opcoesParaButtons[] = {"BRANCO", "CORRIGE", "CONFIRMA"};
     private final Color colorOpcoesParaButtons[] = {Color.white, Color.orange, Color.green};
     private final String opcoesParaLabelsDisplayFixo[] = {"Número: ", "Nome: ", "Partido: ", "Vice: "};
-    
-    private int cargoVotacaoVez;
             
     private ProcessoVotacao processoVotacao;
     private Dimension tamanhoTela;
@@ -76,8 +74,6 @@ public class DialogEleitorMaster extends JDialog implements ActionListener
         configurarPanelBotoes();
         configurarPanelDisplay();
         configurarExibicaoVez();
-        
-        cargoVotacaoVez = 0;
         
         tamanhoTela = Toolkit.getDefaultToolkit().getScreenSize();
         container.setLayout(new BorderLayout());
@@ -175,7 +171,7 @@ public class DialogEleitorMaster extends JDialog implements ActionListener
         
         labelParaDisplayParaParteSuperior = new JLabel[2];
         labelParaDisplayParaParteSuperior[0] = new JLabel("SEU VOTO PARA");
-        labelParaDisplayParaParteSuperior[1] = new JLabel(processoVotacao.getEleicoes().get(cargoVotacaoVez).getTitulo());
+        labelParaDisplayParaParteSuperior[1] = new JLabel(processoVotacao.getEleicoes().get(votacaoCargoVez).getTitulo());
         for(JLabel labelAux : labelParaDisplayParaParteSuperior)
         {
             labelAux.setFont(fontLabelDisplay);
@@ -231,9 +227,7 @@ public class DialogEleitorMaster extends JDialog implements ActionListener
                 break;
                 
             }
-        }
-        
-        
+        }    
         
         panelParaDisplay.add(panelParaDisplayParaParteSuperior, BorderLayout.NORTH);
         panelParaDisplay.add(panelParaDisplayParaParteMeio, BorderLayout.CENTER);
@@ -247,12 +241,14 @@ public class DialogEleitorMaster extends JDialog implements ActionListener
     public void actionPerformed(ActionEvent e) 
     {
         if(e.getSource() == buttonOpcoesTela[0])                                //Branco sai
-            System.exit(0);
+            this.dispose();
         if(e.getSource() == buttonOpcoesTela[1])
         {
             for(JTextField textFieldAux : textFieldDigitos)
                 textFieldAux.setText("");
+        }
         if(e.getSource() == buttonOpcoesTela[2])                                //Se confirmar vai pra proxima tela
+        {
             configurarExibicaoVez();
         }
         if(e.getSource() == buttonNumericoTela[0])
@@ -264,7 +260,9 @@ public class DialogEleitorMaster extends JDialog implements ActionListener
     private void configurarExibicaoVez() 
     {
         if(votacaoCargoVez == processoVotacao.getEleicoes().size())
+        {
             this.dispose();
+        }
         else
         {
             int auxCargoVez = processoVotacao.getEleicoes().get(votacaoCargoVez).getDigitos();

@@ -5,6 +5,8 @@
  */
 package sistemagrafico;
 
+import java.applet.Applet;
+import java.applet.AudioClip;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Container;
@@ -15,6 +17,14 @@ import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.sound.sampled.AudioInputStream;
+import javax.sound.sampled.AudioSystem;
+import javax.sound.sampled.Clip;
+import javax.sound.sampled.LineUnavailableException;
+import javax.sound.sampled.UnsupportedAudioFileException;
 import javax.swing.BorderFactory;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -32,6 +42,7 @@ import objetos.auxiliares.ProcessoVotacao;
 public class DialogEleitorMaster extends JDialog implements ActionListener
 {
     private int votacaoCargoVez;
+    private int digitoVez;
     private final String opcoesParaButtons[] = {"BRANCO", "CORRIGE", "CONFIRMA"};
     private final Color colorOpcoesParaButtons[] = {Color.white, Color.orange, Color.green};
     private final String opcoesParaLabelsDisplayFixo[] = {"Número: ", "Nome: ", "Partido: ", "Vice: "};
@@ -70,6 +81,7 @@ public class DialogEleitorMaster extends JDialog implements ActionListener
         this.processoVotacao = processoVotacao;
         
         votacaoCargoVez = 0;
+        digitoVez = 0;
         
         configurarPanelBotoes();
         configurarPanelDisplay();
@@ -200,7 +212,7 @@ public class DialogEleitorMaster extends JDialog implements ActionListener
         labelParaDisplayParaParteMeioDinamico = new JLabel[3];
         for(int index = 0; index < labelParaDisplayParaParteMeioDinamico.length; index++)
         {
-            labelParaDisplayParaParteMeioDinamico[index] = new JLabel("Teste");
+            labelParaDisplayParaParteMeioDinamico[index] = new JLabel("");
             labelParaDisplayParaParteMeioDinamico[index].setFont(fontLabelDisplay);
         }
         
@@ -240,25 +252,75 @@ public class DialogEleitorMaster extends JDialog implements ActionListener
     @Override
     public void actionPerformed(ActionEvent e) 
     {
+        if(e.getSource() == buttonOpcoesTela[2])
+        {
+            try 
+            {   
+                AudioInputStream audioInputStream = AudioSystem.getAudioInputStream(new File(new File("").getAbsoluteFile()+"/assets/audios/ConfirmarVoto.wav").getAbsoluteFile()); 
+                Clip clip = AudioSystem.getClip();
+                clip.open(audioInputStream);
+                clip.start();
+            } 
+            catch (UnsupportedAudioFileException | IOException | LineUnavailableException ex) 
+            {   Logger.getLogger(DialogEleitorMaster.class.getName()).log(Level.SEVERE, null, ex);  }
+        }
+        else
+        {
+            try 
+            {   
+                AudioInputStream audioInputStream = AudioSystem.getAudioInputStream(new File(new File("").getAbsoluteFile()+"/assets/audios/SomTecla.wav").getAbsoluteFile()); 
+                Clip clip = AudioSystem.getClip();
+                clip.open(audioInputStream);
+                clip.start();
+            } 
+            catch (UnsupportedAudioFileException | IOException | LineUnavailableException ex) 
+            {   Logger.getLogger(DialogEleitorMaster.class.getName()).log(Level.SEVERE, null, ex);  }
+        }
+        
         if(e.getSource() == buttonOpcoesTela[0])                                //Branco sai
+        {    
             this.dispose();
+        }
         if(e.getSource() == buttonOpcoesTela[1])
         {
-            for(JTextField textFieldAux : textFieldDigitos)
-                textFieldAux.setText("");
+            limparTela();
         }
         if(e.getSource() == buttonOpcoesTela[2])                                //Se confirmar vai pra proxima tela
         {
             configurarExibicaoVez();
+            limparTela();
         }
+        
         if(e.getSource() == buttonNumericoTela[0])
-            JOptionPane.showMessageDialog(null, "Teste", "Teste", JOptionPane.INFORMATION_MESSAGE);
+        {   configurarExibirNumeroDigitado(0);   }
+        if(e.getSource() == buttonNumericoTela[1])
+        {   configurarExibirNumeroDigitado(1);   }
+        if(e.getSource() == buttonNumericoTela[2])
+        {   configurarExibirNumeroDigitado(2);   }
+        if(e.getSource() == buttonNumericoTela[3])
+        {   configurarExibirNumeroDigitado(3);   }
+        if(e.getSource() == buttonNumericoTela[4])
+        {   configurarExibirNumeroDigitado(4);   }
+        if(e.getSource() == buttonNumericoTela[5])
+        {   configurarExibirNumeroDigitado(5);   }
+        if(e.getSource() == buttonNumericoTela[6])
+        {   configurarExibirNumeroDigitado(6);   }
+        if(e.getSource() == buttonNumericoTela[7])
+        {   configurarExibirNumeroDigitado(7);   }
+        if(e.getSource() == buttonNumericoTela[8])
+        {   configurarExibirNumeroDigitado(8);   }
+        if(e.getSource() == buttonNumericoTela[9])
+        {   configurarExibirNumeroDigitado(9);   }
+        
+        
+       
     }
 
     
     //-----------------------------AUXILIARES-----------------------------------
     private void configurarExibicaoVez() 
     {
+        digitoVez = 0;
         if(votacaoCargoVez == processoVotacao.getEleicoes().size())
         {
             this.dispose();
@@ -276,5 +338,28 @@ public class DialogEleitorMaster extends JDialog implements ActionListener
             }
             votacaoCargoVez ++;
         }
+    }
+    
+    
+    private void configurarExibirNumeroDigitado(int numero)
+    {
+        if(textFieldDigitos.length > digitoVez)
+        {
+            if(textFieldDigitos[digitoVez].isVisible())
+            {
+                textFieldDigitos[digitoVez].setText(""+numero);
+            }
+        }
+        digitoVez++;
+    }
+    
+    
+    private void limparTela()
+    {
+        for(JTextField textFieldAux : textFieldDigitos)
+            textFieldAux.setText("");
+        
+        for(JLabel labelAux : labelParaDisplayParaParteMeioDinamico)
+            labelAux.setText("");
     }
 }

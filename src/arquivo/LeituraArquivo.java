@@ -269,6 +269,71 @@ public class LeituraArquivo implements Login
             System.err.println("Arquivo não encontrado.");
     return mesarios;
     }
+
+    
+    public static ArrayList<Eleitor> lerEleitor()
+    {
+        String nome = "";
+        String titulo = "";
+        boolean lendoEleitor = false;
+        boolean contemNome = false;
+        boolean contemTitulo = false;
+        int inicio = 0;
+        int fim = 0;
+        ArrayList<Eleitor> eleitores = new ArrayList();
+        Eleitor eleitor;
+        
+        String linha = "";
+        
+        File arquivo = new File(""+new File("").getAbsoluteFile()+"\\Arquivos\\Eleitores\\Eleitores.txt");
+        if(arquivo.exists())
+        {
+            try
+            {
+                BufferedReader br = new BufferedReader(new InputStreamReader(new FileInputStream(arquivo.getAbsolutePath()), "ISO-8859-1"));
+                while(br.ready())
+                {
+                    linha = br.readLine();
+                    if(linha.contains(VerificaArquivo.ABREELEITOR))
+                    {
+                        nome = "";
+                        titulo = "";
+                        lendoEleitor = true;
+                    }
+                    if(linha.contains(VerificaArquivo.ABRENOME) && lendoEleitor)
+                    {
+                        inicio = linha.indexOf(VerificaArquivo.ABRENOME)+VerificaArquivo.ABRENOME.length();
+                        fim = linha.indexOf(VerificaArquivo.FECHANOME);
+                        nome = linha.substring(inicio, fim);
+                        contemNome = true;
+                    }
+                    if(linha.contains(VerificaArquivo.ABRETITULO) && lendoEleitor)
+                    {
+                        inicio = linha.indexOf(VerificaArquivo.ABRETITULO)+VerificaArquivo.ABRETITULO.length();
+                        fim = linha.indexOf(VerificaArquivo.FECHATITULO);
+                        titulo = linha.substring(inicio, fim);
+                        contemTitulo = true;
+                    }
+                    if(linha.contains(VerificaArquivo.FECHAELEITOR) && lendoEleitor && contemNome && contemTitulo)
+                    {
+                        lendoEleitor = false;
+                        contemNome = false;
+                        contemTitulo = false;
+                        eleitor = new Mesario(nome, titulo);
+                        eleitores.add(eleitor);
+                    }
+                }
+                br.close();
+            }
+            catch (FileNotFoundException | UnsupportedEncodingException ex)
+            {   System.err.println(ex); }
+            catch (IOException ex)
+            {   System.err.println(ex); }
+        }
+        else
+            System.err.println("Arquivo não encontrado.");
+        return eleitores;
+    }
     
     
     @Override

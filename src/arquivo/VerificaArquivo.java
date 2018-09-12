@@ -42,7 +42,28 @@ public class VerificaArquivo
     static final String FECHALOGIN = "</login>";
     static final String ABRESENHA = "<senha>";
     static final String FECHASENHA = "</senha>";
+    
+    static final String ABREELEITOR = "<eleitor>";
+    static final String FECHAELEITOR = "</eleitor>";
+    static final String ABRENOME = "<nome>";
+    static final String FECHANOME = "</nome>";
+    static final String ABRETITULO = "<titulo>";
+    static final String FECHATITULO = "</titulo>";
 
+    static final String ABRENUMERO = "<numero>";
+    static final String FECHANUMERO = "</numero>";
+    static final String ABREPARTIDO = "<partido>";
+    static final String FECHAPARTIDO = "</partido>";
+    static final String ABREPARTIDOVICE = "<partidovice>";
+    static final String FECHAPARTIDOVICE = "</partidovice>";
+    static final String ABREVOTOS = "<votos>";
+    static final String FECHAVOTOS = "</votos>";
+    static final String ABREPOLITICO = "<politico>";
+    static final String FECHAPOLITICO = "</politico>";
+
+
+
+    
     public static boolean checarArquivoEleicaoPresidencial(String caminhoArquivo) 
     {
         boolean valido = false;

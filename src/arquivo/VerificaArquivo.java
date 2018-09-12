@@ -35,7 +35,6 @@ public class VerificaArquivo
     static final String ABREELEITOS = "<eleitos>";
     static final String FECHAELEITOS = "</eleitos>";
     
-    
     static final String ABREMESARIO = "<mesario>";
     static final String FECHAMESARIO = "</mesario>";
     static final String ABRELOGIN = "<login>";
@@ -47,8 +46,6 @@ public class VerificaArquivo
     static final String FECHAELEITOR = "</eleitor>";
     static final String ABRENOME = "<nome>";
     static final String FECHANOME = "</nome>";
-    static final String ABRETITULO = "<titulo>";
-    static final String FECHATITULO = "</titulo>";
 
     static final String ABRENUMERO = "<numero>";
     static final String FECHANUMERO = "</numero>";
@@ -56,8 +53,6 @@ public class VerificaArquivo
     static final String FECHAPARTIDO = "</partido>";
     static final String ABREPARTIDOVICE = "<partidovice>";
     static final String FECHAPARTIDOVICE = "</partidovice>";
-    static final String ABREVOTOS = "<votos>";
-    static final String FECHAVOTOS = "</votos>";
     static final String ABREPOLITICO = "<politico>";
     static final String FECHAPOLITICO = "</politico>";
 

@@ -1,9 +1,6 @@
-<lista>https://especiais.gazetadopovo.com.br/eleicoes/2018/candidatos/pe/deputado-estadual/</lista>
-Para pegar as fotos
-
-<eleicao>Eleições Presidenciais</eleicao>
 <politico>
 	<nome>A Marron</nome>
+	<titulo>51455145</titulo>
 	<cargo>Deputado Federal</cargo>
 	<numero>5145</numero>
 	<partido>PATRI</partido>
@@ -13,6 +10,7 @@ Para pegar as fotos
 </politico>
 <politico>
 	<nome>Rosalvo</nome>
+	<titulo>50875087</titulo>
 	<cargo>Deputado Federal</cargo>
 	<numero>5087</numero>
 	<partido>PSOL</partido>
@@ -21,7 +19,8 @@ Para pegar as fotos
 	<votos></votos>
 </politico>
 <politico>
-	<nome>Val do Povão</nome>
+	<nome>Val do Pov„o</nome>
+	<titulo>18881888</titulo>
 	<cargo>Deputado Federal</cargo>
 	<numero>1888</numero>
 	<partido>REDE</partido>
@@ -31,6 +30,7 @@ Para pegar as fotos
 </politico>
 <politico>
 	<nome>Cebolinha</nome>
+	<titulo>90999099</titulo>
 	<cargo>Deputado Federal</cargo>
 	<numero>9099</numero>
 	<partido>PROS</partido>
@@ -40,6 +40,7 @@ Para pegar as fotos
 </politico>
 <politico>
 	<nome>Jussara India</nome>
+	<titulo>54455445</titulo>
 	<cargo>Deputado Federal</cargo>
 	<numero>5445</numero>
 	<partido>PPL</partido>
@@ -49,6 +50,7 @@ Para pegar as fotos
 </politico>
 <politico>
 	<nome>Gonzaga Patriota</nome>
+	<titulo>40004000</titulo>
 	<cargo>Deputado Federal</cargo>
 	<numero>4000</numero>
 	<partido>PSB</partido>
@@ -58,6 +60,7 @@ Para pegar as fotos
 </politico>
 <politico>
 	<nome>Potyra</nome>
+	<titulo>27332733</titulo>
 	<cargo>Deputado Federal</cargo>
 	<numero>2733</numero>
 	<partido>DC</partido>
@@ -67,6 +70,7 @@ Para pegar as fotos
 </politico>
 <politico>
 	<nome>Odacy Amorim</nome>
+	<titulo>13441344</titulo>
 	<cargo>Deputado Federal</cargo>
 	<numero>1344</numero>
 	<partido>PT</partido>
@@ -76,6 +80,7 @@ Para pegar as fotos
 </politico>
 <politico>
 	<nome>Dr.Arnaldo Delmondes</nome>
+	<titulo>44334433</titulo>
 	<cargo>Deputado Federal</cargo>
 	<numero>4433</numero>
 	<partido>PRP</partido>
@@ -85,6 +90,7 @@ Para pegar as fotos
 </politico>
 <politico>
 	<nome>Geo Caldas</nome>
+	<titulo>17551755</titulo>
 	<cargo>Deputado Federal</cargo>
 	<numero>1755</numero>
 	<partido>PSL</partido>
@@ -94,6 +100,7 @@ Para pegar as fotos
 </politico>
 <politico>
 	<nome>Jorge Prestamista</nome>
+	<titulo>32223222</titulo>
 	<cargo>Deputado Federal</cargo>
 	<numero>3322</numero>
 	<partido>PMN</partido>
@@ -103,6 +110,7 @@ Para pegar as fotos
 </politico>
 <politico>
 	<nome>Osmarina Gomes</nome>
+	<titulo>22662266</titulo>
 	<cargo>Deputado Federal</cargo>
 	<numero>2266</numero>
 	<partido>PR</partido>
@@ -112,6 +120,7 @@ Para pegar as fotos
 </politico>
 <politico>
 	<nome>Aide de Biu Preto</nome>
+	<titulo>31453145</titulo>
 	<cargo>Deputado Federal</cargo>
 	<numero>3145</numero>
 	<partido>PHS</partido>
@@ -121,6 +130,7 @@ Para pegar as fotos
 </politico>
 <politico>
 	<nome>Charbel</nome>
+	<titulo>30303030</titulo>
 	<cargo>Deputado Federal</cargo>
 	<numero>3030</numero>
 	<partido>NOVO</partido>
@@ -130,6 +140,7 @@ Para pegar as fotos
 </politico>
 <politico>
 	<nome>Tonynho Rodrigues</nome>
+	<titulo>77887788</titulo>
 	<cargo>Deputado Federal</cargo>
 	<numero>7788</numero>
 	<partido>SOLIDARIEDADE</partido>
@@ -139,6 +150,7 @@ Para pegar as fotos
 </politico>
 <politico>
 	<nome>Adalberto Cavalcanti</nome>
+	<titulo>70007000</titulo>
 	<cargo>Deputado Federal</cargo>
 	<numero>7000</numero>
 	<partido>AVANTE</partido>
@@ -148,6 +160,7 @@ Para pegar as fotos
 </politico>
 <politico>
 	<nome>Fernando Filho</nome>
+	<titulo>25012501</titulo>
 	<cargo>Deputado Federal</cargo>
 	<numero>2501</numero>
 	<partido>DEM</partido>
@@ -156,7 +169,8 @@ Para pegar as fotos
 	<votos></votos>
 </politico>
 <politico>
-	<nome>Antônio Coelho</nome>
+	<nome>AntÙnio Coelho</nome>
+	<titulo>25000250</titulo>
 	<cargo>Deputado Estadual</cargo>
 	<numero>25000</numero>
 	<partido>DEM</partido>
@@ -166,6 +180,7 @@ Para pegar as fotos
 </politico>
 <politico>
 	<nome>Nino O Deputado Sem Teto</nome>
+	<titulo>251232512</titulo>
 	<cargo>Deputado Estadual</cargo>
 	<numero>25123</numero>
 	<partido>DEM</partido>
@@ -174,7 +189,8 @@ Para pegar as fotos
 	<votos></votos>
 </politico>
 <politico>
-	<nome>Andréa Lóssio</nome>
+	<nome>AndrÈa LÛssio</nome>
+	<titulo>181231812</titulo>
 	<cargo>Deputado Estadual</cargo>
 	<numero>18123</numero>
 	<partido>REDE</partido>
@@ -182,10 +198,11 @@ Para pegar as fotos
 	<partidovice></partidovice>
 	<votos></votos>
 </politico>
-<politico>
+<politico>--------------------------------------------------------------------------------
 	<nome>Maycon Do Brega</nome>
+	<titulo>104101041</titulo>
 	<cargo>Deputado Estadual</cargo>
-	<numero></numero>
+	<numero>10410</numero>
 	<partido>PRB</partido>
 	<vice></vice>
 	<partidovice></partidovice>
@@ -193,6 +210,7 @@ Para pegar as fotos
 </politico>
 <politico>
 	<nome>Ping</nome>
+	<titulo>274232742</titulo>
 	<cargo>Deputado Estadual</cargo>
 	<numero>27423</numero>
 	<partido>DC</partido>
@@ -201,7 +219,8 @@ Para pegar as fotos
 	<votos></votos>
 </politico>
 <politico>
-	<nome>Juraci Saúde e Seriedade</nome>
+	<nome>Juraci Sa˙de e Seriedade</nome>
+	<titulo>280072800</titulo>
 	<cargo>Deputado Estadual</cargo>
 	<numero>28007</numero>
 	<partido>PRTB</partido>
@@ -211,6 +230,7 @@ Para pegar as fotos
 </politico>
 <politico>
 	<nome>Lucas Ramos</nome>
+	<titulo>401104011</titulo>
 	<cargo>Deputado Estadual</cargo>
 	<numero>40110</numero>
 	<partido>PSB</partido>
@@ -220,6 +240,7 @@ Para pegar as fotos
 </politico>
 <politico>
 	<nome>Neco Lula Livre</nome>
+	<titulo>907779077</titulo>
 	<cargo>Deputado Estadual</cargo>
 	<numero>90777</numero>
 	<partido>PROS</partido>
@@ -228,7 +249,8 @@ Para pegar as fotos
 	<votos></votos>
 </politico>
 <politico>
-	<nome>Teresa Leitão</nome>
+	<nome>Teresa Leit„o</nome>
+	<titulo>136131361</titulo>
 	<cargo>Deputado Estadual</cargo>
 	<numero>13613</numero>
 	<partido>PT</partido>
@@ -238,6 +260,7 @@ Para pegar as fotos
 </politico>
 <politico>
 	<nome>Ronaldo Barba</nome>
+	<titulo>500015000</titulo>
 	<cargo>Deputado Estadual</cargo>
 	<numero>50001</numero>
 	<partido>PSOL</partido>
@@ -246,7 +269,8 @@ Para pegar as fotos
 	<votos></votos>
 </politico>
 <politico>
-	<nome>Marcos Leal O Irmão Legal</nome>
+	<nome>Marcos Leal O Irm„o Legal</nome>
+	<titulo>704567045</titulo>
 	<cargo>Deputado Estadual</cargo>
 	<numero>70456</numero>
 	<partido>AVANTE</partido>
@@ -255,7 +279,8 @@ Para pegar as fotos
 	<votos></votos>
 </politico>
 <politico>
-	<nome>Tânia Mãe de João</nome>
+	<nome>T‚nia M„e de Jo„o</nome>
+	<titulo>206132061</titulo>
 	<cargo>Deputado Estadual</cargo>
 	<numero>20613</numero>
 	<partido>PSC</partido>
@@ -265,6 +290,7 @@ Para pegar as fotos
 </politico>
 <politico>
 	<nome>Tieta do Agreste</nome>
+	<titulo>510045100</titulo>
 	<cargo>Deputado Estadual</cargo>
 	<numero>51004</numero>
 	<partido>PATRI</partido>
@@ -274,6 +300,7 @@ Para pegar as fotos
 </politico>
 <politico>
 	<nome>Meu Jovem</nome>
+	<titulo>230782307</titulo>
 	<cargo>Deputado Estadual</cargo>
 	<numero>23078</numero>
 	<partido>PPS</partido>
@@ -283,6 +310,7 @@ Para pegar as fotos
 </politico>
 <politico>
 	<nome>Jura da Bica O Amolado</nome>
+	<titulo>111441114</titulo>
 	<cargo>Deputado Estadual</cargo>
 	<numero>11144</numero>
 	<partido>PP</partido>
@@ -291,7 +319,8 @@ Para pegar as fotos
 	<votos></votos>
 </politico>
 <politico>
-	<nome>Irmão Isaias da Coxinha</nome>
+	<nome>Irm„o Isaias da Coxinha</nome>
+	<titulo>444104441</titulo>
 	<cargo>Deputado Estadual</cargo>
 	<numero>44410</numero>
 	<partido>PRP</partido>
@@ -300,7 +329,8 @@ Para pegar as fotos
 	<votos></votos>
 </politico>
 <politico>
-	<nome>Irmão da Kombi</nome>
+	<nome>Irm„o da Kombi</nome>
+	<titulo>657656576</titulo>
 	<cargo>Deputado Estadual</cargo>
 	<numero>65765</numero>
 	<partido>PCdoB</partido>
@@ -310,6 +340,7 @@ Para pegar as fotos
 </politico>	
 <politico>
 	<nome>Adriana Rocha</nome>
+	<titulo>18818818</titulo>
 	<cargo>Senador</cargo>
 	<numero>188</numero>
 	<partido>REDE</partido>
@@ -319,6 +350,7 @@ Para pegar as fotos
 </politico>
 <politico>
 	<nome>Albanise</nome>
+	<titulo>50050050</titulo>
 	<cargo>Senador</cargo>
 	<numero>500</numero>
 	<partido>PSOL</partido>
@@ -328,6 +360,7 @@ Para pegar as fotos
 </politico>
 <politico>
 	<nome>Alex Lima Rola</nome>
+	<titulo>29029029</titulo>
 	<cargo>Senador</cargo>
 	<numero>290</numero>
 	<partido>PCO</partido>
@@ -337,6 +370,7 @@ Para pegar as fotos
 </politico>
 <politico>
 	<nome>Bruno Araujo</nome>
+	<titulo>45645645</titulo>
 	<cargo>Senador</cargo>
 	<numero>456</numero>
 	<partido>PSDB</partido>
@@ -345,7 +379,8 @@ Para pegar as fotos
 	<votos></votos>
 </politico>
 <politico>
-	<nome>Eugênia</nome>
+	<nome>EugêÍnia</nome>
+	<titulo>50550550</titulo>
 	<cargo>Senador</cargo>
 	<numero>505</numero>
 	<partido>PSOL</partido>
@@ -355,6 +390,7 @@ Para pegar as fotos
 </politico>
 <politico>
 	<nome>Helio Cabral</nome>
+	<titulo>16116116</titulo>
 	<cargo>Senador</cargo>
 	<numero>161</numero>
 	<partido>PSTU</partido>
@@ -364,6 +400,7 @@ Para pegar as fotos
 </politico>
 <politico>
 	<nome>Humberto Costa</nome>
+	<titulo>13013000</titulo>
 	<cargo>Senador</cargo>
 	<numero>130</numero>
 	<partido>PT</partido>
@@ -373,6 +410,7 @@ Para pegar as fotos
 </politico>
 <politico>
 	<nome>Jarbas</nome>
+	<titulo>15615615</titulo>
 	<cargo>Senador</cargo>
 	<numero>156</numero>
 	<partido>MDB</partido>
@@ -382,15 +420,17 @@ Para pegar as fotos
 </politico>
 <politico>
 	<nome>Lidia Brunes</nome>
+	<titulo>90090090</titulo>
 	<cargo>Senador</cargo>
 	<numero>900</numero>
-	<partido><PROS/partido>
+	<partido>PROS</partido>
 	<vice></vice>
 	<partidovice></partidovice>
 	<votos></votos>
 </politico>
 <politico>
-	<nome>Mendonça Filho</nome>
+	<nome>Mendoncça Filho</nome>
+	<titulo>25225225</titulo>
 	<cargo>Senador</cargo>
 	<numero>252</numero>
 	<partido>DEM</partido>
@@ -400,6 +440,7 @@ Para pegar as fotos
 </politico>
 <politico>
 	<nome>Pastor Jairinho</nome>
+	<titulo>18018018</titulo>
 	<cargo>Senador</cargo>
 	<numero>180</numero>
 	<partido>REDE</partido>
@@ -409,6 +450,7 @@ Para pegar as fotos
 </politico>
 <politico>
 	<nome>Silvio Costa</nome>
+	<titulo>70070070</titulo>
 	<cargo>Senador</cargo>
 	<numero>700</numero>
 	<partido>AVANTE</partido>
@@ -417,7 +459,8 @@ Para pegar as fotos
 	<votos></votos>
 </politico>
 <politico>
-	<nome>Ana Patrícia Alves</nome>
+	<nome>Ana PatrÌcia Alves</nome>
+	<titulo>29292929</titulo>
 	<cargo>Governador</cargo>
 	<numero>29</numero>
 	<partido>PCO</partido>
@@ -427,6 +470,7 @@ Para pegar as fotos
 </politico>
 <politico>
 	<nome>Armando Monteiro</nome>
+	<titulo>14141414</titulo>
 	<cargo>Governador</cargo>
 	<numero>14</numero>
 	<partido>PTB</partido>
@@ -436,15 +480,17 @@ Para pegar as fotos
 </politico>
 <politico>
 	<nome>Dani Portela</nome>
+	<titulo>50505050</titulo>
 	<cargo>Governador</cargo>
 	<numero>50</numero>
 	<partido>PSOL</partido>
-	<vice>Gerlane Simões</vice>
+	<vice>Gerlane Simıes</vice>
 	<partidovice>PSOL</partidovice>
 	<votos></votos>
 </politico>
 <politico>
 	<nome>Julio Lossio</nome>
+	<titulo>18181818</titulo>
 	<cargo>Governador</cargo>
 	<numero>18</numero>
 	<partido>REDE</partido>
@@ -453,25 +499,28 @@ Para pegar as fotos
 	<votos></votos>
 </politico>
 <politico>
-	<nome>Maurício Rands</nome>
+	<nome>MaurÌcio Rands</nome>
+	<titulo>90909090</titulo>
 	<cargo>Governador</cargo>
 	<numero>90</numero>
 	<partido>PROS</partido>
-	<vice>Isabella de Roldão</vice>
+	<vice>Isabella de Rold„o</vice>
 	<partidovice>PDT</partidovice>
 	<votos></votos>
 </politico>
 <politico>
-	<nome>Paulo Câmara</nome>
+	<nome>Paulo C‚mara</nome>
+	<titulo>40404040</titulo>
 	<cargo>Governador</cargo>
 	<numero>40</numero>
 	<partido>PSB</partido>
-	<vice><Luciana Santos/vice>
+	<vice>Luciana Santos</vice>
 	<partidovice>PCdoB</partidovice>
 	<votos></votos>
 </politico>
 <politico>
 	<nome>Simone Fontana</nome>
+	<titulo>16161616</titulo>
 	<cargo>Governador</cargo>
 	<numero>16</numero>
 	<partido>PSTU</partido>
@@ -481,6 +530,7 @@ Para pegar as fotos
 </politico>
 <politico>
 	<nome>Alvaro Dias</nome>
+	<titulo>19191919</titulo>
 	<cargo>Presidente</cargo>
 	<numero>19</numero>
 	<partido>PODEMOS</partido>
@@ -490,6 +540,7 @@ Para pegar as fotos
 </politico>
 <politico>
 	<nome>Cabo Daciolo</nome>
+	<titulo>51515151</titulo>
 	<cargo>Presidente</cargo>
 	<numero>51</numero>
 	<partido>PATRIOTA</partido>
@@ -499,15 +550,17 @@ Para pegar as fotos
 </politico>
 <politico>
 	<nome>Ciro Gomes</nome>
+	<titulo>12121212</titulo>
 	<cargo>Presidente</cargo>
 	<numero>12</numero>
 	<partido>PDT</partido>
-	<vice>Kátia Abreu</vice>
+	<vice>K·tia Abreu</vice>
 	<partidovice>PDT</partidovice>
 	<votos></votos>
 </politico>
 <politico>
 	<nome>Eymael</nome>
+	<titulo>27272727</titulo>
 	<cargo>Presidente</cargo>
 	<numero>27</numero>
 	<partido>DC</partido>
@@ -517,15 +570,17 @@ Para pegar as fotos
 </politico>
 <politico>
 	<nome>Geraldo Alckimin</nome>
+	<titulo>45454545</titulo>
 	<cargo>Presidente</cargo>
 	<numero>45</numero>
 	<partido>PSDB</partido>
-	<vice>Ana Amélia Lemos</vice>
+	<vice>Ana Am·lia Lemos</vice>
 	<partidovice>PP</partidovice>
 	<votos></votos>
 </politico>
 <politico>
 	<nome>Guilherme Boulos</nome>
+	<titulo>50505050</titulo>
 	<cargo>Presidente</cargo>
 	<numero>50</numero>
 	<partido>PSOL</partido>
@@ -535,6 +590,7 @@ Para pegar as fotos
 </politico>
 <politico>
 	<nome>Henrique Meirelles</nome>
+	<titulo>15151515</titulo>
 	<cargo>Presidente</cargo>
 	<numero>15</numero>
 	<partido>MDB</partido>
@@ -544,15 +600,17 @@ Para pegar as fotos
 </politico>
 <politico>
 	<nome>Jair Bolsonaro</nome>
+	<titulo>17171717</titulo>
 	<cargo>Presidente</cargo>
 	<numero>17</numero>
 	<partido>PSL</partido>
-	<vice>General Mourão</vice>
-	<partidovice>PRTB</partidovice>
+	<vice>General Mour„o</vice>
+	<partidovice>PRTB</partidovice>
 	<votos></votos>
 </politico>
 <politico>
-	<nome>João Amoêdo</nome>
+	<nome>Jo„o Amoêdo</nome>
+	<titulo>30303030</titulo>
 	<cargo>Presidente</cargo>
 	<numero>30</numero>
 	<partido>NOVO</partido>
@@ -561,16 +619,18 @@ Para pegar as fotos
 	<votos></votos>
 </politico>
 <politico>
-	<nome>João Goulart Filho</nome>
+	<nome>Jo„o Goulart Filho</nome>
+	<titulo>54545454</titulo>
 	<cargo>Presidente</cargo>
 	<numero>54</numero>
 	<partido>PPL</partido>
-	<vice>Léo da Silva Alves</vice>
+	<vice>LÈo da Silva Alves</vice>
 	<partidovice>PPL</partidovice>
 	<votos></votos>
 </politico>
 <politico>
 	<nome>Marina Silva</nome>
+	<titulo>18181818</titulo>
 	<cargo>Presidente</cargo>
 	<numero>18</numero>
 	<partido>REDE</partido>
@@ -579,7 +639,8 @@ Para pegar as fotos
 	<votos></votos>
 </politico>
 <politico>
-	<nome>Vera Lúcia</nome>
+	<nome>Vera L˙cia</nome>
+	<titulo>16161616</titulo>
 	<cargo>Presidente</cargo>
 	<numero>16</numero>
 	<partido>PSTU</partido>

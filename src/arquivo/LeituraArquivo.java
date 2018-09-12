@@ -16,6 +16,7 @@ import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 import objetos.Candidato;
 import objetos.Eleicao;
+import objetos.Eleitor;
 import objetos.Mesario;
 
 /**
@@ -319,7 +320,7 @@ public class LeituraArquivo implements Login
                         lendoEleitor = false;
                         contemNome = false;
                         contemTitulo = false;
-                        eleitor = new Mesario(nome, titulo);
+                        eleitor = new Eleitor(nome, titulo);
                         eleitores.add(eleitor);
                     }
                 }
@@ -336,16 +337,19 @@ public class LeituraArquivo implements Login
     }
     
     
-    public static ArrayList<Politico> lerPolitico()
+    public static ArrayList<Candidato> lerPolitico(String path)
     {
         String nome = "";
+        String titulo = "";
         String cargo = "";
         int numero = 0;
         String partido = "";
         String vice = "";
         String partidoVice = "";
+        String votos = "";
         boolean lendoPolitico = false;
         boolean contemNome = false;
+        boolean contemTitulo = false;
         boolean contemCargo = false;
         boolean contemNumero = false;
         boolean contemPartido = false;
@@ -353,12 +357,12 @@ public class LeituraArquivo implements Login
         boolean contemPartidoVice = false;
         int inicio = 0;
         int fim = 0;
-        ArrayList<Politico> politicos = new ArrayList();
-        Politico politico;
+        ArrayList<Candidato> candidatos = new ArrayList();
+        Candidato candidato;
         
         String linha = "";
         
-        File arquivo = new File(""+new File("").getAbsoluteFile()+"\\Arquivos\\Politicos\\Politicos.txt");
+        File arquivo = new File(""+new File("").getAbsoluteFile()+"\\Arquivos\\Candidatos\\"+path+".txt");
         if(arquivo.exists())
         {
             try
@@ -367,9 +371,10 @@ public class LeituraArquivo implements Login
                 while(br.ready())
                 {
                     linha = br.readLine();
-                    if(linha.contains(VerificaArquivo.ABREELEITOR))
+                    if(linha.contains(VerificaArquivo.ABREPOLITICO))
                     {
                         nome = "";
+                        titulo = "";
                         cargo = "";
                         numero = 0;
                         partido = "";
@@ -383,6 +388,13 @@ public class LeituraArquivo implements Login
                         fim = linha.indexOf(VerificaArquivo.FECHANOME);
                         nome = linha.substring(inicio, fim);
                         contemNome = true;
+                    }
+                    if(linha.contains(VerificaArquivo.ABRETITULO) && lendoPolitico)
+                    {
+                        inicio = linha.indexOf(VerificaArquivo.ABRETITULO)+VerificaArquivo.ABRETITULO.length();
+                        fim = linha.indexOf(VerificaArquivo.FECHATITULO);
+                        titulo = linha.substring(inicio, fim);
+                        contemTitulo = true;
                     }
                     if(linha.contains(VerificaArquivo.ABRECARGO) && lendoPolitico)
                     {
@@ -416,12 +428,16 @@ public class LeituraArquivo implements Login
                     {
                         inicio = linha.indexOf(VerificaArquivo.ABREPARTIDOVICE)+VerificaArquivo.ABREPARTIDOVICE.length();
                         fim = linha.indexOf(VerificaArquivo.FECHAPARTIDOVICE);
-                        vice = linha.substring(inicio, fim);
+                        partidoVice = linha.substring(inicio, fim);
                         contemPartidoVice = true;
                     } //Incrementa parte de votos
                     
-                    if(linha.contains(VerificaArquivo.FECHAPOLITICO) && lendoPolitico && contemNome && contemCargo && contemNumero && contemPartido && contemVice && contemPartidoVice)
+                    if(linha.contains(VerificaArquivo.FECHAPOLITICO) && lendoPolitico && contemNome && contemTitulo && contemCargo && contemNumero && contemPartido && contemVice && contemPartidoVice)
                     {
+                        if(contemVice)
+                            candidato = new Candidato(nome, titulo, cargo, numero, partido, vice, partidoVice);
+                        else
+                            candidato = new Candidato(nome, titulo, cargo, numero, partido);
                         lendoPolitico = false;
                         contemNome = false;
                         contemCargo = false;
@@ -429,8 +445,7 @@ public class LeituraArquivo implements Login
                         contemPartido = false;
                         contemVice = false;
                         contemPartidoVice = false;
-                        politico = new Politico(nome, cargo, numero, partido, vice, partidoVice);
-                        politicos.add(politico);
+                        candidatos.add(candidato);
                     }
                 }
                 br.close();
@@ -442,7 +457,7 @@ public class LeituraArquivo implements Login
         }
         else
             System.err.println("Arquivo não encontrado.");
-        return eleitores;
+        return candidatos;
     }
 
     

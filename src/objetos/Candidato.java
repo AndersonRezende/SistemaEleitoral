@@ -13,32 +13,32 @@ import interfaces.VotacaoCandidato;
  */
 public class Candidato implements VotacaoCandidato
 {
-    private String numero;
+    private int numero;
     private String partido;
     private int votos;
     private String cargo;
     private Eleitor eleitor; 
     private Vice vice;
 
-    public Candidato(String numero, String partido, String cargo, String nome, String titulo) 
+    
+    public Candidato(String nome, String titulo, String cargo, int numero, String partido)
     {
+        this.eleitor = new Eleitor(nome,titulo);
+        this.cargo = cargo;
         this.numero = numero;
         this.partido = partido;
-        this.cargo = cargo;
-        this.votos = 0;
-        this.eleitor = new Eleitor(nome, titulo);
     }
     
-    public Candidato(String nome, String numero, String partido, String cargo, String titulo, Vice vice) 
+    public Candidato(String nome, String titulo, String cargo, int numero, String partido, String vice, String partidoVice)
     {
-        this(nome, numero, partido, cargo, titulo);
-        this.vice = new Vice(nome);
+        this(nome, titulo, cargo, numero, partido);
+        this.vice = new Vice(vice, partidoVice);
     }
     
-    public String getNumero() 
+    public int getNumero() 
     {   return numero;  }
 
-    public void setNumero(String numero) 
+    public void setNumero(int numero) 
     {   this.numero = numero;   }
 
     public String getPartido() 
@@ -52,9 +52,12 @@ public class Candidato implements VotacaoCandidato
 
     public void setCargo(String cargo) 
     {   this.cargo = cargo; }
-
-    public String getVice() 
-    {   return vice.getNome();  }
+    
+    public Vice getVice()
+    {   return vice;    }
+    
+    public Eleitor getEleitor()
+    {   return eleitor; }
 
     @Override
     public int getVotos() 

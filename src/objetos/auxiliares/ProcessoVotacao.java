@@ -6,7 +6,6 @@
 package objetos.auxiliares;
 
 import java.util.ArrayList;
-import java.util.Iterator;
 import objetos.Candidato;
 import objetos.Eleicao;
 import objetos.Eleitor;
@@ -66,14 +65,13 @@ public class ProcessoVotacao
     }
 
     public Candidato votar(int numero)
-    {
-         
+    {        
         Candidato candidato = null;
         if(candidatos != null)
         {
             for(int index = 0; index < candidatos.size(); index++)
             {
-                if(Integer.parseInt(candidatos.get(index).getNumero()) == numero)
+                if(candidatos.get(index).getNumero() == numero)
                 {
                     candidato = candidatos.get(index);
                     break;

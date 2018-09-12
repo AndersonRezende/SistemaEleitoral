@@ -2,523 +2,588 @@
 Para pegar as fotos
 
 <eleicao>Eleições Presidenciais</eleicao>
-<Deputado Federal>
+<politico>
 	<nome>A Marron</nome>
+	<cargo>Deputado Federal</cargo>
 	<numero>5145</numero>
 	<partido>PATRI</partido>
 	<vice></vice>
 	<partidovice></partidovice>
-	<votos>0</votos>
-</Deputado Federal>
-<Deputado Federal>
+	<votos></votos>
+</politico>
+<politico>
 	<nome>Rosalvo</nome>
+	<cargo>Deputado Federal</cargo>
 	<numero>5087</numero>
 	<partido>PSOL</partido>
 	<vice></vice>
 	<partidovice></partidovice>
-	<votos>0</votos>
-</Deputado Federal>
-<Deputado Federal>
+	<votos></votos>
+</politico>
+<politico>
 	<nome>Val do Povão</nome>
+	<cargo>Deputado Federal</cargo>
 	<numero>1888</numero>
 	<partido>REDE</partido>
 	<vice></vice>
 	<partidovice></partidovice>
-	<votos>0</votos>
-</Deputado Federal>
-<Deputado Federal>
+	<votos></votos>
+</politico>
+<politico>
 	<nome>Cebolinha</nome>
+	<cargo>Deputado Federal</cargo>
 	<numero>9099</numero>
 	<partido>PROS</partido>
 	<vice></vice>
 	<partidovice></partidovice>
-	<votos>0</votos>
-</Deputado Federal>
-<Deputado Federal>
+	<votos></votos>
+</politico>
+<politico>
 	<nome>Jussara India</nome>
+	<cargo>Deputado Federal</cargo>
 	<numero>5445</numero>
 	<partido>PPL</partido>
 	<vice></vice>
 	<partidovice></partidovice>
-	<votos>0</votos>
-</Deputado Federal>
-<Deputado Federal>
+	<votos></votos>
+</politico>
+<politico>
 	<nome>Gonzaga Patriota</nome>
+	<cargo>Deputado Federal</cargo>
 	<numero>4000</numero>
 	<partido>PSB</partido>
 	<vice></vice>
 	<partidovice></partidovice>
-	<votos>0</votos>
-</Deputado Federal>
-<Deputado Federal>
+	<votos></votos>
+</politico>
+<politico>
 	<nome>Potyra</nome>
+	<cargo>Deputado Federal</cargo>
 	<numero>2733</numero>
 	<partido>DC</partido>
 	<vice></vice>
 	<partidovice></partidovice>
-	<votos>0</votos>
-</Deputado Federal>
-<Deputado Federal>
+	<votos></votos>
+</politico>
+<politico>
 	<nome>Odacy Amorim</nome>
+	<cargo>Deputado Federal</cargo>
 	<numero>1344</numero>
 	<partido>PT</partido>
 	<vice></vice>
 	<partidovice></partidovice>
-	<votos>0</votos>
-</Deputado Federal>
-<Deputado Federal>
+	<votos></votos>
+</politico>
+<politico>
 	<nome>Dr.Arnaldo Delmondes</nome>
+	<cargo>Deputado Federal</cargo>
 	<numero>4433</numero>
 	<partido>PRP</partido>
 	<vice></vice>
 	<partidovice></partidovice>
-	<votos>0</votos>
-</Deputado Federal>
-<Deputado Federal>
+	<votos></votos>
+</politico>
+<politico>
 	<nome>Geo Caldas</nome>
+	<cargo>Deputado Federal</cargo>
 	<numero>1755</numero>
 	<partido>PSL</partido>
 	<vice></vice>
 	<partidovice></partidovice>
-	<votos>0</votos>
-</Deputado Federal>
-<Deputado Federal>
+	<votos></votos>
+</politico>
+<politico>
 	<nome>Jorge Prestamista</nome>
+	<cargo>Deputado Federal</cargo>
 	<numero>3322</numero>
 	<partido>PMN</partido>
 	<vice></vice>
 	<partidovice></partidovice>
-	<votos>0</votos>
-</Deputado Federal>
-<Deputado Federal>
+	<votos></votos>
+</politico>
+<politico>
 	<nome>Osmarina Gomes</nome>
+	<cargo>Deputado Federal</cargo>
 	<numero>2266</numero>
 	<partido>PR</partido>
 	<vice></vice>
 	<partidovice></partidovice>
-	<votos>0</votos>
-</Deputado Federal>
-<Deputado Federal>
+	<votos></votos>
+</politico>
+<politico>
 	<nome>Aide de Biu Preto</nome>
+	<cargo>Deputado Federal</cargo>
 	<numero>3145</numero>
 	<partido>PHS</partido>
 	<vice></vice>
 	<partidovice></partidovice>
-	<votos>0</votos>
-</Deputado Federal>
-<Deputado Federal>
+	<votos></votos>
+</politico>
+<politico>
 	<nome>Charbel</nome>
+	<cargo>Deputado Federal</cargo>
 	<numero>3030</numero>
 	<partido>NOVO</partido>
 	<vice></vice>
 	<partidovice></partidovice>
-	<votos>0</votos>
-</Deputado Federal>
-<Deputado Federal>
+	<votos></votos>
+</politico>
+<politico>
 	<nome>Tonynho Rodrigues</nome>
+	<cargo>Deputado Federal</cargo>
 	<numero>7788</numero>
 	<partido>SOLIDARIEDADE</partido>
 	<vice></vice>
 	<partidovice></partidovice>
-	<votos>0</votos>
-</Deputado Federal>
-<Deputado Federal>
+	<votos></votos>
+</politico>
+<politico>
 	<nome>Adalberto Cavalcanti</nome>
+	<cargo>Deputado Federal</cargo>
 	<numero>7000</numero>
 	<partido>AVANTE</partido>
 	<vice></vice>
 	<partidovice></partidovice>
-	<votos>0</votos>
-</Deputado Federal>
-<Deputado Federal>
+	<votos></votos>
+</politico>
+<politico>
 	<nome>Fernando Filho</nome>
+	<cargo>Deputado Federal</cargo>
 	<numero>2501</numero>
 	<partido>DEM</partido>
 	<vice></vice>
 	<partidovice></partidovice>
-	<votos>0</votos>
-</Deputado Federal>
-<Deputado Estadual>
+	<votos></votos>
+</politico>
+<politico>
 	<nome>Antônio Coelho</nome>
+	<cargo>Deputado Estadual</cargo>
 	<numero>25000</numero>
 	<partido>DEM</partido>
 	<vice></vice>
 	<partidovice></partidovice>
-	<votos>0</votos>
-</Deputado Estadual>
-<Deputado Estadual>
+	<votos></votos>
+</politico>
+<politico>
 	<nome>Nino O Deputado Sem Teto</nome>
+	<cargo>Deputado Estadual</cargo>
 	<numero>25123</numero>
 	<partido>DEM</partido>
 	<vice></vice>
 	<partidovice></partidovice>
-	<votos>0</votos>
-</Deputado Estadual>
-<Deputado Estadual>
+	<votos></votos>
+</politico>
+<politico>
 	<nome>Andréa Lóssio</nome>
+	<cargo>Deputado Estadual</cargo>
 	<numero>18123</numero>
 	<partido>REDE</partido>
 	<vice></vice>
 	<partidovice></partidovice>
-	<votos>0</votos>
-</Deputado Estadual>
-<Deputado Estadual>
+	<votos></votos>
+</politico>
+<politico>
 	<nome>Maycon Do Brega</nome>
+	<cargo>Deputado Estadual</cargo>
 	<numero></numero>
 	<partido>PRB</partido>
 	<vice></vice>
 	<partidovice></partidovice>
-	<votos>0</votos>
-</Deputado Estadual>
-<Deputado Estadual>
+	<votos></votos>
+</politico>
+<politico>
 	<nome>Ping</nome>
+	<cargo>Deputado Estadual</cargo>
 	<numero>27423</numero>
 	<partido>DC</partido>
 	<vice></vice>
 	<partidovice></partidovice>
-	<votos>0</votos>
-</Deputado Estadual>
-<Deputado Estadual>
+	<votos></votos>
+</politico>
+<politico>
 	<nome>Juraci Saúde e Seriedade</nome>
+	<cargo>Deputado Estadual</cargo>
 	<numero>28007</numero>
 	<partido>PRTB</partido>
 	<vice></vice>
 	<partidovice></partidovice>
-	<votos>0</votos>
-</Deputado Estadual>
-<Deputado Estadual>
+	<votos></votos>
+</politico>
+<politico>
 	<nome>Lucas Ramos</nome>
+	<cargo>Deputado Estadual</cargo>
 	<numero>40110</numero>
 	<partido>PSB</partido>
 	<vice></vice>
 	<partidovice></partidovice>
-	<votos>0</votos>
-</Deputado Estadual>
-<Deputado Estadual>
+	<votos></votos>
+</politico>
+<politico>
 	<nome>Neco Lula Livre</nome>
+	<cargo>Deputado Estadual</cargo>
 	<numero>90777</numero>
 	<partido>PROS</partido>
 	<vice></vice>
 	<partidovice></partidovice>
-	<votos>0</votos>
-</Deputado Estadual>
-<Deputado Estadual>
+	<votos></votos>
+</politico>
+<politico>
 	<nome>Teresa Leitão</nome>
+	<cargo>Deputado Estadual</cargo>
 	<numero>13613</numero>
 	<partido>PT</partido>
 	<vice></vice>
 	<partidovice></partidovice>
-	<votos>0</votos>
-</Deputado Estadual>
-<Deputado Estadual>
+	<votos></votos>
+</politico>
+<politico>
 	<nome>Ronaldo Barba</nome>
+	<cargo>Deputado Estadual</cargo>
 	<numero>50001</numero>
 	<partido>PSOL</partido>
 	<vice></vice>
 	<partidovice></partidovice>
-	<votos>0</votos>
-</Deputado Estadual>
-<Deputado Estadual>
+	<votos></votos>
+</politico>
+<politico>
 	<nome>Marcos Leal O Irmão Legal</nome>
+	<cargo>Deputado Estadual</cargo>
 	<numero>70456</numero>
 	<partido>AVANTE</partido>
 	<vice></vice>
 	<partidovice></partidovice>
-	<votos>0</votos>
-</Deputado Estadual>
-<Deputado Estadual>
+	<votos></votos>
+</politico>
+<politico>
 	<nome>Tânia Mãe de João</nome>
+	<cargo>Deputado Estadual</cargo>
 	<numero>20613</numero>
 	<partido>PSC</partido>
 	<vice></vice>
 	<partidovice></partidovice>
-	<votos>0</votos>
-</Deputado Estadual>
-<Deputado Estadual>
+	<votos></votos>
+</politico>
+<politico>
 	<nome>Tieta do Agreste</nome>
+	<cargo>Deputado Estadual</cargo>
 	<numero>51004</numero>
 	<partido>PATRI</partido>
 	<vice></vice>
 	<partidovice></partidovice>
-	<votos>0</votos>
-</Deputado Estadual>
-<Deputado Estadual>
+	<votos></votos>
+</politico>
+<politico>
 	<nome>Meu Jovem</nome>
+	<cargo>Deputado Estadual</cargo>
 	<numero>23078</numero>
 	<partido>PPS</partido>
 	<vice></vice>
 	<partidovice></partidovice>
-	<votos>0</votos>
-</Deputado Estadual>
-<Deputado Estadual>
+	<votos></votos>
+</politico>
+<politico>
 	<nome>Jura da Bica O Amolado</nome>
+	<cargo>Deputado Estadual</cargo>
 	<numero>11144</numero>
 	<partido>PP</partido>
 	<vice></vice>
 	<partidovice></partidovice>
-	<votos>0</votos>
-</Deputado Estadual>
-<Deputado Estadual>
+	<votos></votos>
+</politico>
+<politico>
 	<nome>Irmão Isaias da Coxinha</nome>
+	<cargo>Deputado Estadual</cargo>
 	<numero>44410</numero>
 	<partido>PRP</partido>
 	<vice></vice>
 	<partidovice></partidovice>
-	<votos>0</votos>
-</Deputado Estadual>
-<Deputado Estadual>
+	<votos></votos>
+</politico>
+<politico>
 	<nome>Irmão da Kombi</nome>
+	<cargo>Deputado Estadual</cargo>
 	<numero>65765</numero>
 	<partido>PCdoB</partido>
 	<vice></vice>
 	<partidovice></partidovice>
-	<votos>0</votos>
-</Deputado Estadual>	
-<Senador>
+	<votos></votos>
+</politico>	
+<politico>
 	<nome>Adriana Rocha</nome>
+	<cargo>Senador</cargo>
 	<numero>188</numero>
 	<partido>REDE</partido>
 	<vice></vice>
 	<partidovice></partidovice>
-	<votos>0</votos>
-</Senador>
-<Senador>
+	<votos></votos>
+</politico>
+<politico>
 	<nome>Albanise</nome>
+	<cargo>Senador</cargo>
 	<numero>500</numero>
 	<partido>PSOL</partido>
 	<vice></vice>
 	<partidovice></partidovice>
-	<votos>0</votos>
-</Senador>
-<Senador>
+	<votos></votos>
+</politico>
+<politico>
 	<nome>Alex Lima Rola</nome>
+	<cargo>Senador</cargo>
 	<numero>290</numero>
 	<partido>PCO</partido>
 	<vice></vice>
 	<partidovice></partidovice>
-	<votos>0</votos>
-</Senador>
-<Senador>
+	<votos></votos>
+</politico>
+<politico>
 	<nome>Bruno Araujo</nome>
+	<cargo>Senador</cargo>
 	<numero>456</numero>
 	<partido>PSDB</partido>
 	<vice></vice>
 	<partidovice></partidovice>
-	<votos>0</votos>
-</Senador>
-<Senador>
+	<votos></votos>
+</politico>
+<politico>
 	<nome>Eugênia</nome>
+	<cargo>Senador</cargo>
 	<numero>505</numero>
 	<partido>PSOL</partido>
 	<vice></vice>
 	<partidovice></partidovice>
-	<votos>0</votos>
-</Senador>
-<Senador>
+	<votos></votos>
+</politico>
+<politico>
 	<nome>Helio Cabral</nome>
+	<cargo>Senador</cargo>
 	<numero>161</numero>
 	<partido>PSTU</partido>
 	<vice></vice>
 	<partidovice></partidovice>
-	<votos>0</votos>
-</Senador>
-<Senador>
+	<votos></votos>
+</politico>
+<politico>
 	<nome>Humberto Costa</nome>
+	<cargo>Senador</cargo>
 	<numero>130</numero>
 	<partido>PT</partido>
 	<vice></vice>
 	<partidovice></partidovice>
-	<votos>0</votos>
-</Senador>
-<Senador>
+	<votos></votos>
+</politico>
+<politico>
 	<nome>Jarbas</nome>
+	<cargo>Senador</cargo>
 	<numero>156</numero>
 	<partido>MDB</partido>
 	<vice></vice>
 	<partidovice></partidovice>
-	<votos>0</votos>
-</Senador>
-<Senador>
+	<votos></votos>
+</politico>
+<politico>
 	<nome>Lidia Brunes</nome>
+	<cargo>Senador</cargo>
 	<numero>900</numero>
 	<partido><PROS/partido>
 	<vice></vice>
 	<partidovice></partidovice>
-	<votos>0</votos>
-</Senador>
-<Senador>
+	<votos></votos>
+</politico>
+<politico>
 	<nome>Mendonça Filho</nome>
+	<cargo>Senador</cargo>
 	<numero>252</numero>
 	<partido>DEM</partido>
 	<vice></vice>
 	<partidovice></partidovice>
-	<votos>0</votos>
-</Senador>
-<Senador>
+	<votos></votos>
+</politico>
+<politico>
 	<nome>Pastor Jairinho</nome>
+	<cargo>Senador</cargo>
 	<numero>180</numero>
 	<partido>REDE</partido>
 	<vice></vice>
 	<partidovice></partidovice>
-	<votos>0</votos>
-</Senador>
-<Senador>
+	<votos></votos>
+</politico>
+<politico>
 	<nome>Silvio Costa</nome>
+	<cargo>Senador</cargo>
 	<numero>700</numero>
 	<partido>AVANTE</partido>
 	<vice></vice>
 	<partidovice></partidovice>
-	<votos>0</votos>
-</Senador>
-<Governador>
+	<votos></votos>
+</politico>
+<politico>
 	<nome>Ana Patrícia Alves</nome>
+	<cargo>Governador</cargo>
 	<numero>29</numero>
 	<partido>PCO</partido>
 	<vice>Gilson Lopes de Oliveira</vice>
 	<partidovice>PCO</partidovice>
-	<votos>0</votos>
-</Governador>
-<Governador>
+	<votos></votos>
+</politico>
+<politico>
 	<nome>Armando Monteiro</nome>
+	<cargo>Governador</cargo>
 	<numero>14</numero>
 	<partido>PTB</partido>
 	<vice>Fred Ferreira</vice>
 	<partidovice>PSC</partidovice>
-	<votos>0</votos>
-</Governador>
-<Governador>
+	<votos></votos>
+</politico>
+<politico>
 	<nome>Dani Portela</nome>
+	<cargo>Governador</cargo>
 	<numero>50</numero>
 	<partido>PSOL</partido>
 	<vice>Gerlane Simões</vice>
 	<partidovice>PSOL</partidovice>
-	<votos>0</votos>
-</Governador>
-<Governador>
+	<votos></votos>
+</politico>
+<politico>
 	<nome>Julio Lossio</nome>
+	<cargo>Governador</cargo>
 	<numero>18</numero>
 	<partido>REDE</partido>
 	<vice>Luciano Bezerra</vice>
 	<partidovice>REDE</partidovice>
-	<votos>0</votos>
-</Governador>
-<Governador>
+	<votos></votos>
+</politico>
+<politico>
 	<nome>Maurício Rands</nome>
+	<cargo>Governador</cargo>
 	<numero>90</numero>
 	<partido>PROS</partido>
 	<vice>Isabella de Roldão</vice>
 	<partidovice>PDT</partidovice>
-	<votos>0</votos>
-</Governador>
-<Governador>
+	<votos></votos>
+</politico>
+<politico>
 	<nome>Paulo Câmara</nome>
+	<cargo>Governador</cargo>
 	<numero>40</numero>
 	<partido>PSB</partido>
 	<vice><Luciana Santos/vice>
 	<partidovice>PCdoB</partidovice>
-	<votos>0</votos>
-</Governador>
-<Governador>
+	<votos></votos>
+</politico>
+<politico>
 	<nome>Simone Fontana</nome>
+	<cargo>Governador</cargo>
 	<numero>16</numero>
 	<partido>PSTU</partido>
 	<vice>Jair Pedro</vice>
 	<partidovice>PSTU</partidovice>
-	<votos>0</votos>
-</Governador>
-<Presidente>
+	<votos></votos>
+</politico>
+<politico>
 	<nome>Alvaro Dias</nome>
+	<cargo>Presidente</cargo>
 	<numero>19</numero>
 	<partido>PODEMOS</partido>
 	<vice>Paulo Rabello</vice>
 	<partidovice>PSC</partidovice>
-	<votos>0</votos>
-</Presidente>
-<Presidente>
+	<votos></votos>
+</politico>
+<politico>
 	<nome>Cabo Daciolo</nome>
+	<cargo>Presidente</cargo>
 	<numero>51</numero>
 	<partido>PATRIOTA</partido>
 	<vice>Suelene Balduino</vice>
 	<partidovice>PATRIOTA</partidovice>
-	<votos>0</votos>
-</Presidente>
-<Presidente>
+	<votos></votos>
+</politico>
+<politico>
 	<nome>Ciro Gomes</nome>
+	<cargo>Presidente</cargo>
 	<numero>12</numero>
 	<partido>PDT</partido>
 	<vice>Kátia Abreu</vice>
 	<partidovice>PDT</partidovice>
-	<votos>0</votos>
-</Presidente>
-<Presidente>
+	<votos></votos>
+</politico>
+<politico>
 	<nome>Eymael</nome>
+	<cargo>Presidente</cargo>
 	<numero>27</numero>
 	<partido>DC</partido>
 	<vice>Helvio Costa</vice>
 	<partidovice>DC</partidovice>
-	<votos>0</votos>
-</Presidente>
-<Presidente>
+	<votos></votos>
+</politico>
+<politico>
 	<nome>Geraldo Alckimin</nome>
+	<cargo>Presidente</cargo>
 	<numero>45</numero>
 	<partido>PSDB</partido>
 	<vice>Ana Amélia Lemos</vice>
 	<partidovice>PP</partidovice>
-	<votos>0</votos>
-</Presidente>
-<Presidente>
+	<votos></votos>
+</politico>
+<politico>
 	<nome>Guilherme Boulos</nome>
+	<cargo>Presidente</cargo>
 	<numero>50</numero>
 	<partido>PSOL</partido>
 	<vice>Sonia Guajajara</vice>
 	<partidovice>PSOL</partidovice>
-	<votos>0</votos>
-</Presidente>
-<Presidente>
+	<votos></votos>
+</politico>
+<politico>
 	<nome>Henrique Meirelles</nome>
+	<cargo>Presidente</cargo>
 	<numero>15</numero>
 	<partido>MDB</partido>
 	<vice>Germano Rigotto</vice>
 	<partidovice>MDB</partidovice>
-	<votos>0</votos>
-</Presidente>
-<Presidente>
+	<votos></votos>
+</politico>
+<politico>
 	<nome>Jair Bolsonaro</nome>
+	<cargo>Presidente</cargo>
 	<numero>17</numero>
 	<partido>PSL</partido>
 	<vice>General Mourão</vice>
 	<partidovice>PRTB</partidovice>
-	<votos>0</votos>
-</Presidente>
-<Presidente>
+	<votos></votos>
+</politico>
+<politico>
 	<nome>João Amoêdo</nome>
+	<cargo>Presidente</cargo>
 	<numero>30</numero>
 	<partido>NOVO</partido>
 	<vice>Professor Christian</vice>
 	<partidovice>NOVO</partidovice>
-	<votos>0</votos>
-</Presidente>
-<Presidente>
+	<votos></votos>
+</politico>
+<politico>
 	<nome>João Goulart Filho</nome>
+	<cargo>Presidente</cargo>
 	<numero>54</numero>
 	<partido>PPL</partido>
 	<vice>Léo da Silva Alves</vice>
 	<partidovice>PPL</partidovice>
-	<votos>0</votos>
-</Presidente>
-<Presidente>
+	<votos></votos>
+</politico>
+<politico>
 	<nome>Marina Silva</nome>
+	<cargo>Presidente</cargo>
 	<numero>18</numero>
 	<partido>REDE</partido>
 	<vice>Eduardo Jorge</vice>
 	<partidovice>PV</partidovice>
-	<votos>0</votos>
-</Presidente>
-<Presidente>
+	<votos></votos>
+</politico>
+<politico>
 	<nome>Vera Lúcia</nome>
+	<cargo>Presidente</cargo>
 	<numero>16</numero>
 	<partido>PSTU</partido>
 	<vice>Hertz</vice>
 	<partidovice>PSTU</partidovice>
-	<votos>0</votos>
-</Presidente>
+	<votos></votos>
+</politico>

@@ -313,7 +313,7 @@ public class LeituraArquivo implements Login
                         fim = linha.indexOf(VerificaArquivo.FECHATITULO);
                         titulo = linha.substring(inicio, fim);
                         contemTitulo = true;
-                    }
+                    }   //adicionar abrevotos e fecha votos quando testar...
                     if(linha.contains(VerificaArquivo.FECHAELEITOR) && lendoEleitor && contemNome && contemTitulo)
                     {
                         lendoEleitor = false;
@@ -334,6 +334,117 @@ public class LeituraArquivo implements Login
             System.err.println("Arquivo não encontrado.");
         return eleitores;
     }
+    
+    
+    public static ArrayList<Politico> lerPolitico()
+    {
+        String nome = "";
+        String cargo = "";
+        int numero = 0;
+        String partido = "";
+        String vice = "";
+        String partidoVice = "";
+        boolean lendoPolitico = false;
+        boolean contemNome = false;
+        boolean contemCargo = false;
+        boolean contemNumero = false;
+        boolean contemPartido = false;
+        boolean contemVice = false;
+        boolean contemPartidoVice = false;
+        int inicio = 0;
+        int fim = 0;
+        ArrayList<Politico> politicos = new ArrayList();
+        Politico politico;
+        
+        String linha = "";
+        
+        File arquivo = new File(""+new File("").getAbsoluteFile()+"\\Arquivos\\Politicos\\Politicos.txt");
+        if(arquivo.exists())
+        {
+            try
+            {
+                BufferedReader br = new BufferedReader(new InputStreamReader(new FileInputStream(arquivo.getAbsolutePath()), "ISO-8859-1"));
+                while(br.ready())
+                {
+                    linha = br.readLine();
+                    if(linha.contains(VerificaArquivo.ABREELEITOR))
+                    {
+                        nome = "";
+                        cargo = "";
+                        numero = 0;
+                        partido = "";
+                        vice = "";
+                        partidoVice = "";
+                        lendoPolitico = true;
+                    }
+                    if(linha.contains(VerificaArquivo.ABRENOME) && lendoPolitico)
+                    {
+                        inicio = linha.indexOf(VerificaArquivo.ABRENOME)+VerificaArquivo.ABRENOME.length();
+                        fim = linha.indexOf(VerificaArquivo.FECHANOME);
+                        nome = linha.substring(inicio, fim);
+                        contemNome = true;
+                    }
+                    if(linha.contains(VerificaArquivo.ABRECARGO) && lendoPolitico)
+                    {
+                        inicio = linha.indexOf(VerificaArquivo.ABRECARGO)+VerificaArquivo.ABRECARGO.length();
+                        fim = linha.indexOf(VerificaArquivo.FECHACARGO);
+                        cargo = linha.substring(inicio, fim);
+                        contemCargo = true;
+                    }
+                    if(linha.contains(VerificaArquivo.ABRENUMERO) && lendoPolitico)
+                    {
+                        inicio = linha.indexOf(VerificaArquivo.ABRENUMERO)+VerificaArquivo.ABRENUMERO.length();
+                        fim = linha.indexOf(VerificaArquivo.FECHANUMERO);
+                        numero = Integer.parseInt(linha.substring(inicio, fim));
+                        contemNumero = true;
+                    }
+                    if(linha.contains(VerificaArquivo.ABREPARTIDO) && lendoPolitico)
+                    {
+                        inicio = linha.indexOf(VerificaArquivo.ABREPARTIDO)+VerificaArquivo.ABREPARTIDO.length();
+                        fim = linha.indexOf(VerificaArquivo.FECHAPARTIDO);
+                        partido = linha.substring(inicio, fim);
+                        contemPartido = true;
+                    }
+                    if(linha.contains(VerificaArquivo.ABREVICE) && lendoPolitico)
+                    {
+                        inicio = linha.indexOf(VerificaArquivo.ABREVICE)+VerificaArquivo.ABREVICE.length();
+                        fim = linha.indexOf(VerificaArquivo.FECHAVICE);
+                        vice = linha.substring(inicio, fim);
+                        contemVice = true;
+                    }
+                    if(linha.contains(VerificaArquivo.ABREPARTIDOVICE) && lendoPolitico)
+                    {
+                        inicio = linha.indexOf(VerificaArquivo.ABREPARTIDOVICE)+VerificaArquivo.ABREPARTIDOVICE.length();
+                        fim = linha.indexOf(VerificaArquivo.FECHAPARTIDOVICE);
+                        vice = linha.substring(inicio, fim);
+                        contemPartidoVice = true;
+                    } //Incrementa parte de votos
+                    
+                    if(linha.contains(VerificaArquivo.FECHAPOLITICO) && lendoPolitico && contemNome && contemCargo && contemNumero && contemPartido && contemVice && contemPartidoVice)
+                    {
+                        lendoPolitico = false;
+                        contemNome = false;
+                        contemCargo = false;
+                        contemNumero = false;
+                        contemPartido = false;
+                        contemVice = false;
+                        contemPartidoVice = false;
+                        politico = new Politico(nome, cargo, numero, partido, vice, partidoVice);
+                        politicos.add(politico);
+                    }
+                }
+                br.close();
+            }
+            catch (FileNotFoundException | UnsupportedEncodingException ex)
+            {   System.err.println(ex); }
+            catch (IOException ex)
+            {   System.err.println(ex); }
+        }
+        else
+            System.err.println("Arquivo não encontrado.");
+        return eleitores;
+    }
+
     
     
     @Override

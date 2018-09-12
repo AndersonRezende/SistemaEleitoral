@@ -2,7 +2,7 @@
 <cargos>
 	<cargo>
 		<titulo>Vereador</titulo>
-		<vice>não</vice>
+		<vice></vice>
 		<digitos>5</digitos>
 		<eleitos>23</eleitos>
 	</cargo>

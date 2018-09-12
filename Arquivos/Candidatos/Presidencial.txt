@@ -259,7 +259,7 @@ Para pegar as fotos
 	<votos>0</votos>
 </Deputado Estadual>
 <Deputado Estadual>
-	<nome>Irm‹o Isaias Coxinha</nome>
+	<nome>Irm‹o Isaias da Coxinha</nome>
 	<numero>44410</numero>
 	<partido>PRP</partido>
 	<vice></vice>
@@ -273,8 +273,7 @@ Para pegar as fotos
 	<vice></vice>
 	<partidovice></partidovice>
 	<votos>0</votos>
-</Deputado Estadual>
-==============================================	
+</Deputado Estadual>	
 <Senador>
 	<nome>Adriana Rocha</nome>
 	<numero>188</numero>

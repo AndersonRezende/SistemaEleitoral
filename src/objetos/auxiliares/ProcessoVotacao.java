@@ -6,6 +6,7 @@
 package objetos.auxiliares;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import objetos.Candidato;
 import objetos.Eleicao;
 import objetos.Eleitor;
@@ -14,7 +15,7 @@ import objetos.Eleitor;
  *
  * @author Anderson
  */
-public class ProcessoVotacao 
+public class ProcessoVotacao
 {
     private boolean processoVotacaoIniciado;
     private ArrayList<Eleicao> eleicoes;
@@ -62,5 +63,23 @@ public class ProcessoVotacao
             if(eleicao.getDigitos() > maiorNumeroDigitos)
                 maiorNumeroDigitos = eleicao.getDigitos();
         return maiorNumeroDigitos;
+    }
+
+    public Candidato votar(int numero)
+    {
+         
+        Candidato candidato = null;
+        if(candidatos != null)
+        {
+            for(int index = 0; index < candidatos.size(); index++)
+            {
+                if(Integer.parseInt(candidatos.get(index).getNumero()) == numero)
+                {
+                    candidato = candidatos.get(index);
+                    break;
+                }
+            } 
+        }
+        return candidato;
     }
 }

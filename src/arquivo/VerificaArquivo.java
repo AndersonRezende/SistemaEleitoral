@@ -42,6 +42,13 @@ public class VerificaArquivo
     static final String FECHALOGIN = "</login>";
     static final String ABRESENHA = "<senha>";
     static final String FECHASENHA = "</senha>";
+    
+    static final String ABREELEITOR = "<eleitor>";
+    static final String FECHAELEITOR = "</eleitor>";
+    static final String ABRENOME = "<nome>";
+    static final String FECHANOME = "</nome>";
+    static final String ABRETITULO = "<titulo>";
+    static final String FECHATITULO = "</titulo>";
 
     public static boolean checarArquivoEleicaoPresidencial(String caminhoArquivo) 
     {

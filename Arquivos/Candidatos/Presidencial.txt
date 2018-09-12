@@ -99,7 +99,7 @@ Para pegar as fotos
 	<votos>0</votos>
 </Deputado Federal>
 <Deputado Federal>
-	<nome>Aide de Bin Preto</nome>
+	<nome>Aide de Biu Preto</nome>
 	<numero>3145</numero>
 	<partido>PHS</partido>
 	<vice></vice>
@@ -107,7 +107,7 @@ Para pegar as fotos
 	<votos>0</votos>
 </Deputado Federal>
 <Deputado Federal>
-	<nome>Carhbel</nome>
+	<nome>Charbel</nome>
 	<numero>3030</numero>
 	<partido>NOVO</partido>
 	<vice></vice>
@@ -273,7 +273,8 @@ Para pegar as fotos
 	<vice></vice>
 	<partidovice></partidovice>
 	<votos>0</votos>
-</Deputado Estadual>	
+</Deputado Estadual>
+==============================================	
 <Senador>
 	<nome>Adriana Rocha</nome>
 	<numero>188</numero>
@@ -370,8 +371,6 @@ Para pegar as fotos
 	<partidovice></partidovice>
 	<votos>0</votos>
 </Senador>
-	
-	
 <Governador>
 	<nome>Ana Patr’cia Alves</nome>
 	<numero>29</numero>

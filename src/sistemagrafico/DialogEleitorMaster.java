@@ -28,6 +28,7 @@ import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JDialog;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 import objetos.Candidato;
@@ -434,9 +435,16 @@ public class DialogEleitorMaster extends JDialog implements ActionListener
     
     private void alteraEstadoLabels(boolean visivel)
     {
-        icon = new ImageIcon(""+new File("").getAbsoluteFile()+"/Arquivos/Candidatos/usuario.jpg");
-        //labelImagem = new JLabel(icon);//********************************
-        labelImagem.setVisible(visivel);
+        Candidato c = processoVotacao.getInfoCandidato(getNumeroDigitado(), votacaoCargoVez-1);
+        if(c != null)
+        {
+            //icon = new ImageIcon(""+new File("").getAbsoluteFile()+"/Arquivos/Candidatos/Presidencial/Deputado Estadual Andréa Lóssio.jpg");
+            icon = new ImageIcon(""+new File("").getAbsoluteFile()+"\\Arquivos\\Candidatos\\Presidencial\\"+c.getCargo()+" "+c.getEleitor().getNome()+".jpg");
+            labelImagem.setIcon(icon);
+            labelImagem.setVisible(visivel);
+        }
+        else
+            labelImagem.setVisible(false);
         
         for(JLabel labelAux : labelParaDisplayParaParteMeioDinamico)
         {

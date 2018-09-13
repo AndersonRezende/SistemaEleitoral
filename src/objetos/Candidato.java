@@ -72,4 +72,14 @@ public class Candidato implements VotacaoCandidato
         votou = votos > aux;
         return votou;
     }
+    
+    public boolean temVice()
+    {
+        boolean temVice = false;
+        temVice = this.vice != null;
+        return temVice;
+    }
+    
+    public String getNomeVice()
+    {   return vice.getNome();  }
 }

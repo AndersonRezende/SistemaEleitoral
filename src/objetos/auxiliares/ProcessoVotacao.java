@@ -64,14 +64,23 @@ public class ProcessoVotacao
         return maiorNumeroDigitos;
     }
 
-    public Candidato votar(int numero)
+    public Candidato votar(int numero, int votacaoCargoVez)
     {        
+        Candidato candidato = null;
+        candidato = getInfoCandidato(numero, votacaoCargoVez);
+        if(candidato != null)
+            candidato.receberVoto();
+        return candidato;
+    }
+    
+    public Candidato getInfoCandidato(int numero, int votacaoCargoVez)
+    {
         Candidato candidato = null;
         if(candidatos != null)
         {
             for(int index = 0; index < candidatos.size(); index++)
             {
-                if(candidatos.get(index).getNumero() == numero)
+                if(candidatos.get(index).getNumero() == numero && eleicoes.get(votacaoCargoVez).getTitulo().equals(candidatos.get(index).getCargo()))
                 {
                     candidato = candidatos.get(index);
                     break;

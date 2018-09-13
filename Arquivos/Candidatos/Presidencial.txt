@@ -198,7 +198,7 @@
 	<partidovice></partidovice>
 	<votos></votos>
 </politico>
-<politico>--------------------------------------------------------------------------------
+<politico>
 	<nome>Maycon Do Brega</nome>
 	<titulo>104101041</titulo>
 	<cargo>Deputado Estadual</cargo>

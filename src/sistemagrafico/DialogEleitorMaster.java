@@ -28,8 +28,10 @@ import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JDialog;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
+import objetos.Candidato;
 import objetos.auxiliares.ProcessoVotacao;
 
 /**
@@ -264,6 +266,7 @@ public class DialogEleitorMaster extends JDialog implements ActionListener
         }
         if(e.getSource() == buttonOpcoesTela[2])                                //Se confirmar vai pra proxima tela
         {
+            registrarVoto();
             configurarExibicaoVez();
             limparTela();
         }
@@ -295,14 +298,14 @@ public class DialogEleitorMaster extends JDialog implements ActionListener
 
     
     //-----------------------------AUXILIARES-----------------------------------
-    private void configurarExibicaoVez() 
+    private void configurarExibicaoVez()                                        //Este método prepara as telas de acorodo com os itens necessários
     {
         digitoVez = 0;
-        if(votacaoCargoVez == processoVotacao.getEleicoes().size())
+        if(votacaoCargoVez == processoVotacao.getEleicoes().size())             //Se estiver no último cargo, finaliza a votação
         {
             finalizarVoto();
         }
-        else
+        else                                                                    //Senão, pega a quantidade de digitos da votação e seta no textField de acordo com a necessidade
         {
             int auxCargoVez = processoVotacao.getEleicoes().get(votacaoCargoVez).getDigitos();
             labelParaDisplayParaParteSuperior[1].setText(processoVotacao.getEleicoes().get(votacaoCargoVez).getTitulo());
@@ -318,7 +321,7 @@ public class DialogEleitorMaster extends JDialog implements ActionListener
     }
     
     
-    private void configurarExibirNumeroDigitado(int numero)
+    private void configurarExibirNumeroDigitado(int numero)                     //Este método configura a exibição dos numeros no textField
     {
         if(textFieldDigitos.length > digitoVez)                                 //Se digitoVez for maior, vai ultrapassar o limite do vetor
         {
@@ -330,21 +333,29 @@ public class DialogEleitorMaster extends JDialog implements ActionListener
         }
         if(textFieldDigitos.length == digitoVez + 1)                            //Se tiver no limite do vetor, desabilita o vetor
             alterarEstadoBotoes(false);
-        
         digitoVez++;
     }
     
     
-    private void alterarEstadoBotoes(boolean estado)
+    private void alterarEstadoBotoes(boolean estado)                            //Este método é chamado quando todos os textfields já estiverem completos
     {
         for(JButton buttonAux : buttonNumericoTela)
             buttonAux.setEnabled(estado);
+        Candidato candidato = processoVotacao.getInfoCandidato(getNumeroDigitado(), votacaoCargoVez-1);
+        if(candidato != null)
+        {
+            labelParaDisplayParaParteMeioDinamico[0].setText(candidato.getEleitor().getNome());
+            labelParaDisplayParaParteMeioDinamico[1].setText(candidato.getPartido());
+            if(candidato.temVice())
+                labelParaDisplayParaParteMeioDinamico[2].setText(candidato.getNomeVice());
+        }
+        //Exibir o candidato (foto)
     }
     
     
-    private void limparTela()
+    private void limparTela()                                                   //Este método realiza a limpeza dos itens da tela
     {
-        digitoVez = 0;
+        digitoVez = 0;                                                          //Esta variável indica qual a posição do textField
         alterarEstadoBotoes(true);
         for(JTextField textFieldAux : textFieldDigitos)
             textFieldAux.setText("");
@@ -372,5 +383,33 @@ public class DialogEleitorMaster extends JDialog implements ActionListener
         } 
         catch (UnsupportedAudioFileException | IOException | LineUnavailableException ex) 
         {   Logger.getLogger(DialogEleitorMaster.class.getName()).log(Level.SEVERE, null, ex);  }
+    }
+    
+    
+    private void registrarVoto()
+    {
+        Candidato c = processoVotacao.votar(getNumeroDigitado(), votacaoCargoVez-1);
+        if(c != null)
+        {
+            JOptionPane.showMessageDialog(container, "Nome: "+c.getEleitor().getNome());
+            JOptionPane.showMessageDialog(container, "Votos: "+c.getVotos());
+        }
+        else
+            JOptionPane.showMessageDialog(container, "Votos nulo");
+    }
+    
+    private int getNumeroDigitado()
+    {
+        String numeroAux = "";
+        int numero = 0;
+        int index = 0;
+        while(textFieldDigitos.length > index && textFieldDigitos[index].isVisible())
+        {
+            numeroAux += textFieldDigitos[index].getText();
+            index++;
+        }
+        numero = Integer.parseInt(numeroAux);
+        
+        return numero;
     }
 }

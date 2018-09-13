@@ -15,7 +15,8 @@ public class ArquivoNaoEncontradoException extends Exception
     private String mensagem;
     
     public ArquivoNaoEncontradoException(String tipoArquivo)
-    {   this.mensagem = "Não foi possível localizar o arquivo de "+tipoArquivo+"."; }
+    {   this.mensagem = "Não foi possível localizar o arquivo contendo os "+tipoArquivo+".\n"
+            + "Certifique-se que o mesmo se encontra na pasta e com o nome correto."; }
     
     @Override
     public String getMessage()

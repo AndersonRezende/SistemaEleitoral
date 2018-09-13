@@ -9,6 +9,7 @@ import arquivo.LeituraArquivo;
 import arquivo.VerificaArquivo;
 import enumeracao.EnumListaPanels;
 import enumeracao.EnumOpcoesMenu;
+import excecoes.ArquivoNaoEncontradoException;
 import excecoes.FormatoIncorretoException;
 import excecoes.HorarioIncorretoEleicaoException;
 import java.awt.BorderLayout;
@@ -148,7 +149,6 @@ public class PanelNovoProcessoVotacao extends JPanel implements ActionListener, 
     //-----------------------------CONFIGURAÇÕES--------------------------------
     private void configurarLista()
     {
-        //listModelOpcoesMenu = new DefaultListModel();
         listModelOpcoesMenu.removeAllElements();
 
         arquivo = new File(""+new File("").getAbsoluteFile()+"\\Arquivos\\Eleição");
@@ -173,16 +173,35 @@ public class PanelNovoProcessoVotacao extends JPanel implements ActionListener, 
     private boolean lerArquivos(String nomeArquivo)
     {
         boolean leitura = false;
-        if(VerificaArquivo.checarArquivoCandidatos(nomeArquivo) && VerificaArquivo.checarArquivoEleitor(nomeArquivo))
+        if(VerificaArquivo.checarArquivoCandidatos(nomeArquivo))
         {
             candidatos = LeituraArquivo.lerPolitico(nomeArquivo);
-            eleitores = LeituraArquivo.lerEleitor(nomeArquivo);
             processoVotacao.setCandidatos(candidatos);
+            leitura = true;
+        }
+        else
+        {
+            try
+            {   throw new ArquivoNaoEncontradoException("candidatos");  }
+            catch (ArquivoNaoEncontradoException ex) 
+            {   JOptionPane.showMessageDialog(container, ex.getMessage(), "Erro ao iniciar eleição", JOptionPane.ERROR_MESSAGE, null); }
+            leitura = false;
+        }
+        if(VerificaArquivo.checarArquivoEleitor(nomeArquivo))
+        {
+            eleitores = LeituraArquivo.lerEleitor(nomeArquivo);
             processoVotacao.setEleitores(eleitores);
             leitura = true;
         }
         else
+        {
+            try
+            {   throw new ArquivoNaoEncontradoException("eleitores");  }
+            catch (ArquivoNaoEncontradoException ex) 
+            {   JOptionPane.showMessageDialog(container, ex.getMessage(), "Erro ao iniciar eleição", JOptionPane.ERROR_MESSAGE, null); }
             leitura = false;
+        }
+        
         return leitura;
     }
 

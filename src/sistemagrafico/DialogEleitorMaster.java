@@ -71,6 +71,7 @@ public class DialogEleitorMaster extends JDialog implements ActionListener
     private JLabel labelParaDisplayParaParteSuperior[];
     private JLabel labelParaDisplayParaParteMeioFixo[];
     private JLabel labelParaDisplayParaParteMeioDinamico[];
+    private JLabel labelParaDisplayParaParteInferior[];
     private JTextField textFieldDigitos[];
     
     private ImageIcon icon;   
@@ -176,8 +177,8 @@ public class DialogEleitorMaster extends JDialog implements ActionListener
         panelParaDisplay.setBackground(Color.white);
         
         panelParaDisplayParaParteSuperior = new JPanel(new GridLayout(2,1));
-        panelParaDisplayParaParteMeio = new JPanel(new GridLayout(4,2));
-        panelParaDisplayParaParteInferior = new JPanel(new GridLayout(3,2));
+        panelParaDisplayParaParteMeio = new JPanel(new GridLayout(5,2));
+        panelParaDisplayParaParteInferior = new JPanel(new GridLayout(3,1));
         panelParaDisplayParaParteSuperior.setBackground(Color.white);
         panelParaDisplayParaParteMeio.setBackground(Color.white);
         panelParaDisplayParaParteInferior.setBackground(Color.white);
@@ -241,16 +242,30 @@ public class DialogEleitorMaster extends JDialog implements ActionListener
                 
             }
         }
-        alteraEstadoLabels(false);
         
-        icon = new ImageIcon(""+new File("").getAbsoluteFile()+"/Arquivos/Candidatos/Presidencial/Gorvernador Julio Lossio.jpg");
+        icon = new ImageIcon(""+new File("").getAbsoluteFile()+"/Arquivos/Candidatos/usuario.jpg");
         labelImagem = new JLabel(icon);//********************************
-        panelParaDisplayParaParteInferior.add(labelImagem);
+        labelImagem.setVisible(false);
+        panelParaDisplayParaParteMeio.add(labelImagem);
+        
+        //JLabel meuLabel = new JLabel("");
+        panelParaDisplayParaParteInferior.setBorder(BorderFactory.createLineBorder(Color.black, 2));
+        
+        labelParaDisplayParaParteInferior = new JLabel[3];
+        labelParaDisplayParaParteInferior[0] = new JLabel("Aperte a tecla:");
+        labelParaDisplayParaParteInferior[1] = new JLabel("    CONFIRMA para CONFIRMAR este voto");
+        labelParaDisplayParaParteInferior[2] = new JLabel("    CORRIGE para REINICIAR este voto");
+        for(JLabel labelAux : labelParaDisplayParaParteInferior)
+        {
+            labelAux.setFont(fontLabelDisplay);
+            panelParaDisplayParaParteInferior.add(labelAux);
+        }
         
         panelParaDisplay.add(panelParaDisplayParaParteSuperior, BorderLayout.NORTH);
         panelParaDisplay.add(panelParaDisplayParaParteMeio, BorderLayout.CENTER);
         //panelParaDisplay.add(foto, BorderLayout.EAST);
         panelParaDisplay.add(panelParaDisplayParaParteInferior, BorderLayout.SOUTH);
+        alteraEstadoLabels(false);
     }
 
     
@@ -360,6 +375,7 @@ public class DialogEleitorMaster extends JDialog implements ActionListener
             alteraEstadoLabels(false);
             labelParaDisplayParaParteMeioDinamico[0].setText("VOTO NULO");
             labelParaDisplayParaParteMeioDinamico[0].setVisible(true);
+            panelParaDisplayParaParteInferior.setVisible(true);
         }
         //Exibir o candidato (foto)
     }
@@ -424,5 +440,6 @@ public class DialogEleitorMaster extends JDialog implements ActionListener
         }
         for(int index = 1; index < labelParaDisplayParaParteMeioFixo.length; index++)   //O label de numero é sempre visivel
             labelParaDisplayParaParteMeioFixo[index].setVisible(visivel);
+        panelParaDisplayParaParteInferior.setVisible(visivel);
     }
 }

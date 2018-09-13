@@ -138,13 +138,12 @@ public class PanelLogin extends JPanel implements Login, ActionListener, KeyList
             Mesario mesario = new Mesario(login, senha);
             if(logar(mesario))
                 trocarPanel();
-            else                                                            //Aqui contém o JOPTIONPANE
+            else
                 JOptionPane.showMessageDialog(container, "Usuário inválido, tente novamente!", "Erro ao fazer login", JOptionPane.ERROR_MESSAGE, null);
         }
     }
 
     
-    //KeyListener
     @Override
     public void keyTyped(KeyEvent e) {}
 

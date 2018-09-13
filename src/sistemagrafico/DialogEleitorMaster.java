@@ -320,14 +320,15 @@ public class DialogEleitorMaster extends JDialog implements ActionListener
     
     private void configurarExibirNumeroDigitado(int numero)
     {
-        if(textFieldDigitos.length > digitoVez)
+        if(textFieldDigitos.length > digitoVez)                                 //Se digitoVez for maior, vai ultrapassar o limite do vetor
         {
-            if(textFieldDigitos[digitoVez].isVisible())
-            {
+            if(textFieldDigitos[digitoVez].isVisible())                         //Se o textField for visível, set o texto com o numero
                 textFieldDigitos[digitoVez].setText(""+numero);
-            }
+            if(textFieldDigitos.length > digitoVez + 1)                         //Se o proximo digito vez for menor que o tamanho maximo do vetor...
+                if(!textFieldDigitos[digitoVez + 1].isVisible())                //Se o proximo espaço do vetor não for visível
+                    alterarEstadoBotoes(false);                                 //Desabilita os botões
         }
-        else
+        if(textFieldDigitos.length == digitoVez + 1)                            //Se tiver no limite do vetor, desabilita o vetor
             alterarEstadoBotoes(false);
         
         digitoVez++;

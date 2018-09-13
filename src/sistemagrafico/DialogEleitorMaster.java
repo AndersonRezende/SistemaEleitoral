@@ -246,6 +246,7 @@ public class DialogEleitorMaster extends JDialog implements ActionListener
         icon = new ImageIcon(""+new File("").getAbsoluteFile()+"/Arquivos/Candidatos/usuario.jpg");
         labelImagem = new JLabel(icon);//********************************
         labelImagem.setVisible(false);
+        panelParaDisplayParaParteMeio.add(new JLabel(""));
         panelParaDisplayParaParteMeio.add(labelImagem);
         
         //JLabel meuLabel = new JLabel("");
@@ -433,6 +434,10 @@ public class DialogEleitorMaster extends JDialog implements ActionListener
     
     private void alteraEstadoLabels(boolean visivel)
     {
+        icon = new ImageIcon(""+new File("").getAbsoluteFile()+"/Arquivos/Candidatos/usuario.jpg");
+        //labelImagem = new JLabel(icon);//********************************
+        labelImagem.setVisible(visivel);
+        
         for(JLabel labelAux : labelParaDisplayParaParteMeioDinamico)
         {
             labelAux.setText("");

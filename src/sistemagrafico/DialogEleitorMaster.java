@@ -28,7 +28,6 @@ import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JDialog;
 import javax.swing.JLabel;
-import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 import objetos.Candidato;
@@ -73,6 +72,9 @@ public class DialogEleitorMaster extends JDialog implements ActionListener
     private JLabel labelParaDisplayParaParteMeioFixo[];
     private JLabel labelParaDisplayParaParteMeioDinamico[];
     private JTextField textFieldDigitos[];
+    
+    private ImageIcon icon;   
+    private JLabel labelImagem;
     
     public DialogEleitorMaster(ProcessoVotacao processoVotacao)
     {
@@ -238,7 +240,11 @@ public class DialogEleitorMaster extends JDialog implements ActionListener
                 break;
                 
             }
-        }    
+        }
+        alteraEstadoLabels(false);
+        
+        icon = new ImageIcon(""+new File("").getAbsoluteFile()+"/assets/eleicaoMini.png");
+        labelImagem = new JLabel(icon);//********************************
         
         panelParaDisplay.add(panelParaDisplayParaParteSuperior, BorderLayout.NORTH);
         panelParaDisplay.add(panelParaDisplayParaParteMeio, BorderLayout.CENTER);
@@ -290,10 +296,7 @@ public class DialogEleitorMaster extends JDialog implements ActionListener
         if(e.getSource() == buttonNumericoTela[8])
         {   configurarExibirNumeroDigitado(8);   }
         if(e.getSource() == buttonNumericoTela[9])
-        {   configurarExibirNumeroDigitado(9);   }
-        
-        
-       
+        {   configurarExibirNumeroDigitado(9);   }    
     }
 
     
@@ -344,10 +347,17 @@ public class DialogEleitorMaster extends JDialog implements ActionListener
         Candidato candidato = processoVotacao.getInfoCandidato(getNumeroDigitado(), votacaoCargoVez-1);
         if(candidato != null)
         {
+            alteraEstadoLabels(true);
             labelParaDisplayParaParteMeioDinamico[0].setText(candidato.getEleitor().getNome());
             labelParaDisplayParaParteMeioDinamico[1].setText(candidato.getPartido());
             if(candidato.temVice())
                 labelParaDisplayParaParteMeioDinamico[2].setText(candidato.getNomeVice());
+        }
+        else
+        {
+            alteraEstadoLabels(false);
+            labelParaDisplayParaParteMeioDinamico[0].setText("VOTO NULO");
+            labelParaDisplayParaParteMeioDinamico[0].setVisible(true);
         }
         //Exibir o candidato (foto)
     }
@@ -359,9 +369,7 @@ public class DialogEleitorMaster extends JDialog implements ActionListener
         alterarEstadoBotoes(true);
         for(JTextField textFieldAux : textFieldDigitos)
             textFieldAux.setText("");
-        
-        for(JLabel labelAux : labelParaDisplayParaParteMeioDinamico)
-            labelAux.setText("");
+        alteraEstadoLabels(false);
     }
     
     
@@ -387,18 +395,9 @@ public class DialogEleitorMaster extends JDialog implements ActionListener
     
     
     private void registrarVoto()
-    {
-        Candidato c = processoVotacao.votar(getNumeroDigitado(), votacaoCargoVez-1);
-        if(c != null)
-        {
-            JOptionPane.showMessageDialog(container, "Nome: "+c.getEleitor().getNome());
-            JOptionPane.showMessageDialog(container, "Votos: "+c.getVotos());
-        }
-        else
-            JOptionPane.showMessageDialog(container, "Votos nulo");
-    }
+    {   Candidato c = processoVotacao.votar(getNumeroDigitado(), votacaoCargoVez-1);    }
     
-    private int getNumeroDigitado()
+    private int getNumeroDigitado()//ajustar numero vazio
     {
         String numeroAux = "";
         int numero = 0;
@@ -408,8 +407,20 @@ public class DialogEleitorMaster extends JDialog implements ActionListener
             numeroAux += textFieldDigitos[index].getText();
             index++;
         }
-        numero = Integer.parseInt(numeroAux);
+        if(!numeroAux.equals(""))
+            numero = Integer.parseInt(numeroAux);
         
         return numero;
+    }
+    
+    private void alteraEstadoLabels(boolean visivel)
+    {
+        for(JLabel labelAux : labelParaDisplayParaParteMeioDinamico)
+        {
+            labelAux.setText("");
+            labelAux.setVisible(visivel);
+        }
+        for(int index = 1; index < labelParaDisplayParaParteMeioFixo.length; index++)   //O label de numero é sempre visivel
+            labelParaDisplayParaParteMeioFixo[index].setVisible(visivel);
     }
 }

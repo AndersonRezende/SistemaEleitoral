@@ -12,7 +12,7 @@ package objetos;
  */
 public abstract class ProcessoEleicao 
 {
-    protected final int HORARIOINICIOELEICAO = 7;
+    protected final int HORARIOINICIOELEICAO = 0;
     protected final int HORARIOFINALELEICAO = 17;
     protected final int HORARIOTOLERANTEFINALIZARVOTACAO = 1;
     

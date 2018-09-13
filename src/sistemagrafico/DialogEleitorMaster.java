@@ -243,8 +243,9 @@ public class DialogEleitorMaster extends JDialog implements ActionListener
         }
         alteraEstadoLabels(false);
         
-        icon = new ImageIcon(""+new File("").getAbsoluteFile()+"/assets/eleicaoMini.png");
+        icon = new ImageIcon(""+new File("").getAbsoluteFile()+"/Arquivos/Candidatos/Presidencial/Gorvernador Julio Lossio.jpg");
         labelImagem = new JLabel(icon);//********************************
+        panelParaDisplayParaParteInferior.add(labelImagem);
         
         panelParaDisplay.add(panelParaDisplayParaParteSuperior, BorderLayout.NORTH);
         panelParaDisplay.add(panelParaDisplayParaParteMeio, BorderLayout.CENTER);
@@ -272,6 +273,7 @@ public class DialogEleitorMaster extends JDialog implements ActionListener
         }
         if(e.getSource() == buttonOpcoesTela[2])                                //Se confirmar vai pra proxima tela
         {
+            //Adicionar metodo para checar se tem numero
             registrarVoto();
             configurarExibicaoVez();
             limparTela();

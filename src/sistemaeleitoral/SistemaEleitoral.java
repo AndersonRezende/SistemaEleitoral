@@ -5,6 +5,7 @@
  */
 package sistemaeleitoral;
 
+import arquivo.LeituraArquivo;
 import javax.swing.JFrame;
 import sistemagrafico.LayoutMaster;
 

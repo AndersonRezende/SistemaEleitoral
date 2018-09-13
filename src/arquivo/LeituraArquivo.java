@@ -117,96 +117,6 @@ public class LeituraArquivo implements Login
     }
     
     
-   /* private static ArrayList<Candidato> lerCandidato(String path)
-    {
-        File arquivo = new File(path);
-        ArrayList<Candidato> candidatos = new ArrayList();
-        Candidato candidato;
-        String nome = "";
-        String vice = "";
-        String partido = "";
-        String numero = "";
-        int votos = 0;
-        String cargo = ""; 
-        String titulo = "";
-        
-        String linha;
-        
-        if(arquivo.exists())
-        {
-            try
-            {
-                BufferedReader br = new BufferedReader(new InputStreamReader(new FileInputStream(arquivo.getAbsolutePath()), "ISO-8859-1"));
-                while(br.ready())
-                {
-                    linha=br.readLine();
-                    if(linha.contains("<nome>"))
-                    {
-                        linha = linha.replaceAll("<nome>", "");
-                        nome = linha;
-                    }
-                    if(linha.contains("<numero>"))
-                    {
-                        linha = linha.replaceAll("<numero>", "");
-                        numero = linha;
-                    }
-                    if(linha.contains("<partido>"))
-                    {
-                        linha = linha.replaceAll("<partido>", "");
-                        partido = linha;
-                    }
-                    if(linha.contains("<cargo>"))
-                    {
-                        linha = linha.replaceAll("<cargo>", "");
-                        cargo = linha;
-                    }
-                    if(linha.contains("<titulo>"))
-                    {
-                        linha = linha.replaceAll("<titulo>", "");
-                        titulo = linha;
-                    }
-                    if(linha.contains("<vice>"))
-                    {
-                        linha = linha.replaceAll("<vice>", "");
-                        vice = linha;
-                    }
-
-
-                    if(linha.contains("</politico>"))
-                    {    
-                        if(vice.length() > 1)
-                            c = new Candidato(nome, numero, partido, cargo, titulo, new Vice(vice));
-                        else
-                            c = new Candidato(nome, numero, partido, cargo, titulo);
-                        candidatos.add(c);
-                        nome = "";
-                        numero = "";
-                        partido = "";
-                        cargo = "";
-                        titulo = "";
-                        vice = "";
-                    }
-
-                    if(linha.contains("</politicos>"))
-                        break;
-
-
-                }
-                br.close();
-            }
-            catch (FileNotFoundException ex) 
-            {   System.err.println(ex); } 
-            catch (IOException ex) 
-            {   System.err.println(ex); }
-        }
-        else
-        {
-          System.out.println("Arquivo nÃ£o encontrado.");
-        }
-        return candidatos;
-    }*/
-    
-    
     public static ArrayList<Mesario> lerMesario()
     {
         String login = "";
@@ -272,7 +182,7 @@ public class LeituraArquivo implements Login
     }
 
     
-    public static ArrayList<Eleitor> lerEleitor()
+    public static ArrayList<Eleitor> lerEleitor(String nomeArquivo)
     {
         String nome = "";
         String titulo = "";
@@ -286,7 +196,7 @@ public class LeituraArquivo implements Login
         
         String linha = "";
         
-        File arquivo = new File(""+new File("").getAbsoluteFile()+"\\Arquivos\\Eleitores\\Eleitores.txt");
+        File arquivo = new File(""+new File("").getAbsoluteFile()+"\\Arquivos\\Eleitores\\"+nomeArquivo+".txt");
         if(arquivo.exists())
         {
             try
@@ -337,7 +247,7 @@ public class LeituraArquivo implements Login
     }
     
     
-    public static ArrayList<Candidato> lerPolitico(String path)
+    public static ArrayList<Candidato> lerPolitico(String nomeArquivo)
     {
         String nome = "";
         String titulo = "";
@@ -362,7 +272,7 @@ public class LeituraArquivo implements Login
         
         String linha = "";
         
-        File arquivo = new File(""+new File("").getAbsoluteFile()+"\\Arquivos\\Candidatos\\"+path+".txt");
+        File arquivo = new File(""+new File("").getAbsoluteFile()+"\\Arquivos\\Candidatos\\"+nomeArquivo+".txt");
         if(arquivo.exists())
         {
             try
@@ -438,6 +348,7 @@ public class LeituraArquivo implements Login
                             candidato = new Candidato(nome, titulo, cargo, numero, partido, vice, partidoVice);
                         else
                             candidato = new Candidato(nome, titulo, cargo, numero, partido);
+                        
                         lendoPolitico = false;
                         contemNome = false;
                         contemCargo = false;
@@ -459,7 +370,6 @@ public class LeituraArquivo implements Login
             System.err.println("Arquivo não encontrado.");
         return candidatos;
     }
-
     
     
     @Override
@@ -476,7 +386,6 @@ public class LeituraArquivo implements Login
                 break;
             }
         }
-        
         return logado;
     }
 }

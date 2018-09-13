@@ -37,7 +37,9 @@ import javax.swing.JTextArea;
 import javax.swing.ListSelectionModel;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
+import objetos.Candidato;
 import objetos.Eleicao;
+import objetos.Eleitor;
 import objetos.auxiliares.ProcessoVotacao;
 
 /**
@@ -50,6 +52,8 @@ public class PanelNovoProcessoVotacao extends JPanel implements ActionListener, 
     private File arquivo;
     private File[] arquivos;
     private ArrayList<Eleicao> eleicoes;
+    private ArrayList<Candidato> candidatos;
+    private ArrayList<Eleitor> eleitores;
     private Font fontListOpcoesMenu;
     private Font fontLabelTextoSuperior;
     private Font fontButton;
@@ -155,7 +159,7 @@ public class PanelNovoProcessoVotacao extends JPanel implements ActionListener, 
             {
                 try
                 {
-                    if(VerificaArquivo.checarArquivoEleicaoPresidencial(arquivoAux.getPath()))
+                    if(VerificaArquivo.checarArquivoEleicao(arquivoAux.getPath()))
                         listModelOpcoesMenu.addElement(arquivoAux.getName().substring(0, arquivoAux.getName().indexOf(".txt")));
                     else
                         throw new FormatoIncorretoException(arquivoAux.getName());
@@ -163,6 +167,23 @@ public class PanelNovoProcessoVotacao extends JPanel implements ActionListener, 
                 catch(FormatoIncorretoException ex)
                 {   JOptionPane.showMessageDialog(container, ex.getMessage(), "Erro no processamento do arquivo", JOptionPane.ERROR_MESSAGE, null);   }
             }
+    }
+    
+    
+    private boolean lerArquivos(String nomeArquivo)
+    {
+        boolean leitura = false;
+        if(VerificaArquivo.checarArquivoCandidatos(nomeArquivo) && VerificaArquivo.checarArquivoEleitor(nomeArquivo))
+        {
+            candidatos = LeituraArquivo.lerPolitico(nomeArquivo);
+            eleitores = LeituraArquivo.lerEleitor(nomeArquivo);
+            processoVotacao.setCandidatos(candidatos);
+            processoVotacao.setEleitores(eleitores);
+            leitura = true;
+        }
+        else
+            leitura = false;
+        return leitura;
     }
 
     private void configurarBotoes()
@@ -203,8 +224,13 @@ public class PanelNovoProcessoVotacao extends JPanel implements ActionListener, 
             {
                 if(eleicoes.get(0).podeIniciarVotacao(Calendar.getInstance().get(Calendar.HOUR_OF_DAY)))
                 {
-                    processoVotacao.iniciarProcessoVotacao();
-                    cardManager.show(panelContainerTelaVez, EnumListaPanels.MESARIO.getOpcao());
+                    if(lerArquivos(listOpcoesMenu.getSelectedValue().toString()))
+                    {
+                        processoVotacao.iniciarProcessoVotacao();
+                        cardManager.show(panelContainerTelaVez, EnumListaPanels.MESARIO.getOpcao());
+                    }
+                    else
+                    {   JOptionPane.showMessageDialog(container, "Não foi possível carregar os arquivos necessários para esta eleição.", "Erro", JOptionPane.ERROR_MESSAGE, null);    }
                 }
                 else
                 {

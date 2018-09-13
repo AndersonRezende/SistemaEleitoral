@@ -59,7 +59,27 @@ public class VerificaArquivo
 
 
     
-    public static boolean checarArquivoEleicaoPresidencial(String caminhoArquivo) 
+    public static boolean checarArquivoCandidatos(String nomeArquivo) 
+    {
+        boolean valido = false;
+        File arquivo = new File(""+new File("").getAbsoluteFile()+"\\Arquivos\\Candidatos\\"+nomeArquivo+".txt");
+        valido = arquivo.exists();
+        
+        return valido;
+    }
+    
+    
+    public static boolean checarArquivoEleitor(String nomeArquivo) 
+    {
+        boolean valido = false;
+        File arquivo = new File(""+new File("").getAbsoluteFile()+"\\Arquivos\\Eleitores\\"+nomeArquivo+".txt");
+        valido = arquivo.exists();
+        
+        return valido;
+    }
+            
+    
+    public static boolean checarArquivoEleicao(String caminhoArquivo) 
     {
         boolean valido = false;
 

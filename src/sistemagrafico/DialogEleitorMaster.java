@@ -5,6 +5,7 @@
  */
 package sistemagrafico;
 
+import arquivo.LogArquivo;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Container;
@@ -287,13 +288,9 @@ public class DialogEleitorMaster extends JDialog implements ActionListener
         {   tocarSom("SomTecla");   }
         
         if(e.getSource() == buttonOpcoesTela[0])                                //Branco sai
-        {    
-            votoBranco();
-        }
+        {   votoBranco();   }
         if(e.getSource() == buttonOpcoesTela[1])                                //Corrige
-        {
-            limparTela();
-        }
+        {   limparTela();   }
         if(e.getSource() == buttonOpcoesTela[2])                                //Se confirmar vai pra proxima tela
         {
             //Adicionar metodo para checar se tem numero
@@ -405,6 +402,7 @@ public class DialogEleitorMaster extends JDialog implements ActionListener
     {//Gravar em um arquivo de log com uma thread
         tocarSom("fim");
         //grava log
+        LogArquivo.gravaDados(logVotacao.getVotosRegistrados());
         
         this.dispose();
     }

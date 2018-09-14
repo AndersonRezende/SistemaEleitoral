@@ -37,8 +37,8 @@ public class LogVotacao
         
         String data = dia+ SEPARADORDATA +mes+ SEPARADORDATA +ano;
         String horario = hora+ SEPARADORHORA +minuto+ SEPARADORHORA +segundo;
-        String informacao = "";
-        horario = "[" +data + " - " + horario + "]";
+        String informacao = "\n";
+        horario += "[" +data + " - " + horario + "]";
         
         informacao = horario + " -> {";
         for(String dado : dados)

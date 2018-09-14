@@ -28,10 +28,10 @@ import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JDialog;
 import javax.swing.JLabel;
-import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 import objetos.Candidato;
+import objetos.LogVotacao;
 import objetos.auxiliares.ProcessoVotacao;
 
 /**
@@ -46,6 +46,7 @@ public class DialogEleitorMaster extends JDialog implements ActionListener
     private final Color colorOpcoesParaButtons[] = {Color.white, Color.orange, Color.green};
     private final String opcoesParaLabelsDisplayFixo[] = {"Número: ", "Nome: ", "Partido: ", "Vice: "};
             
+    private LogVotacao logVotacao;
     private ProcessoVotacao processoVotacao;
     private Dimension tamanhoTela;
     private Container container = getContentPane();
@@ -82,6 +83,7 @@ public class DialogEleitorMaster extends JDialog implements ActionListener
     {
         this.setUndecorated(true);
         this.processoVotacao = processoVotacao;
+        logVotacao = new LogVotacao();
         
         votacaoCargoVez = 0;
         digitoVez = 0;
@@ -294,6 +296,7 @@ public class DialogEleitorMaster extends JDialog implements ActionListener
             registrarVoto();
             configurarExibicaoVez();
             limparTela();
+            //Cria thread pra gravar
         }
         
         if(e.getSource() == buttonNumericoTela[0])
@@ -396,6 +399,8 @@ public class DialogEleitorMaster extends JDialog implements ActionListener
     private void finalizarVoto()
     {//Gravar em um arquivo de log com uma thread
         tocarSom("fim");
+        //grava log
+        
         this.dispose();
     }
     
@@ -415,7 +420,18 @@ public class DialogEleitorMaster extends JDialog implements ActionListener
     
     
     private void registrarVoto()
-    {   Candidato c = processoVotacao.votar(getNumeroDigitado(), votacaoCargoVez-1);    }
+    {   
+        Candidato c = processoVotacao.votar(getNumeroDigitado(), votacaoCargoVez-1);
+        if(c != null)
+        {
+            if(c.temVice())
+                logVotacao.adicionarRegistroVoto(c.getEleitor().getNome(), c.getCargo(), c.getPartido(), ""+c.getNumero(), c.getNomeVice(), ""+c.getVotos());
+            else
+                logVotacao.adicionarRegistroVoto(c.getEleitor().getNome(), c.getCargo(), c.getPartido(), ""+c.getNumero(), ""+c.getVotos());
+        }
+        else
+            logVotacao.adicionarRegistroVoto("Voto nulo");
+    }
     
     private int getNumeroDigitado()//ajustar numero vazio
     {
@@ -439,7 +455,7 @@ public class DialogEleitorMaster extends JDialog implements ActionListener
         if(c != null)
         {
             //icon = new ImageIcon(""+new File("").getAbsoluteFile()+"/Arquivos/Candidatos/Presidencial/Deputado Estadual Andréa Lóssio.jpg");
-            icon = new ImageIcon(""+new File("").getAbsoluteFile()+"\\Arquivos\\Candidatos\\Presidencial\\"+c.getCargo()+" "+c.getEleitor().getNome()+".jpga");
+            icon = new ImageIcon(""+new File("").getAbsoluteFile()+"\\Arquivos\\Candidatos\\Presidencial\\"+c.getCargo()+" "+c.getEleitor().getNome()+".jpg");
             labelImagem.setIcon(icon);
             labelImagem.setVisible(visivel);
         }

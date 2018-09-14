@@ -54,7 +54,12 @@ public class Candidato implements VotacaoCandidato
     {   this.cargo = cargo; }
     
     public Vice getVice()
-    {   return vice;    }
+    {   
+        Vice vice = null;
+        if(this.temVice())
+            vice = this.vice;
+        return vice;
+    }
     
     public Eleitor getEleitor()
     {   return eleitor; }
@@ -76,7 +81,9 @@ public class Candidato implements VotacaoCandidato
     public boolean temVice()
     {
         boolean temVice = false;
-        temVice = this.vice != null;
+        if(vice != null)
+            if(!vice.getNome().equals(""))
+                temVice = true;
         return temVice;
     }
     

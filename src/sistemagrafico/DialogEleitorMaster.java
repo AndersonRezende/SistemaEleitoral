@@ -74,6 +74,7 @@ public class DialogEleitorMaster extends JDialog implements ActionListener
     private JLabel labelParaDisplayParaParteMeioFixo[];
     private JLabel labelParaDisplayParaParteMeioDinamico[];
     private JLabel labelParaDisplayParaParteInferior[];
+    private JLabel labelVotoBranco;
     private JTextField textFieldDigitos[];
     
     private ImageIcon icon;   
@@ -250,7 +251,9 @@ public class DialogEleitorMaster extends JDialog implements ActionListener
         icon = new ImageIcon(""+new File("").getAbsoluteFile()+"/Arquivos/Candidatos/usuario.jpg");
         labelImagem = new JLabel(icon);//********************************
         labelImagem.setVisible(false);
-        panelParaDisplayParaParteMeio.add(new JLabel(""));
+        labelVotoBranco = new JLabel("VOTO EM BRANCO");
+        labelVotoBranco.setVisible(false);
+        panelParaDisplayParaParteMeio.add(labelVotoBranco);
         panelParaDisplayParaParteMeio.add(labelImagem);
         
         //JLabel meuLabel = new JLabel("");
@@ -285,7 +288,7 @@ public class DialogEleitorMaster extends JDialog implements ActionListener
         
         if(e.getSource() == buttonOpcoesTela[0])                                //Branco sai
         {    
-            this.dispose();
+            votoBranco();
         }
         if(e.getSource() == buttonOpcoesTela[1])                                //Corrige
         {
@@ -435,6 +438,7 @@ public class DialogEleitorMaster extends JDialog implements ActionListener
             logVotacao.adicionarRegistroVoto("Voto nulo");
     }
     
+    
     private int getNumeroDigitado()//ajustar numero vazio
     {
         String numeroAux = "";
@@ -450,6 +454,7 @@ public class DialogEleitorMaster extends JDialog implements ActionListener
         
         return numero;
     }
+    
     
     private void alteraEstadoLabels(boolean visivel)
     {
@@ -472,5 +477,13 @@ public class DialogEleitorMaster extends JDialog implements ActionListener
         for(int index = 1; index < labelParaDisplayParaParteMeioFixo.length; index++)   //O label de numero é sempre visivel
             labelParaDisplayParaParteMeioFixo[index].setVisible(visivel);
         panelParaDisplayParaParteInferior.setVisible(visivel);
+    }
+    
+    
+    private void votoBranco()
+    {
+        alterarEstadoBotoes(false);
+        //buttonOpcoesTela[2].setEnabled(true);
+        labelParaDisplayParaParteMeioDinamico[0].setText("VOTO EM BRANCO");
     }
 }

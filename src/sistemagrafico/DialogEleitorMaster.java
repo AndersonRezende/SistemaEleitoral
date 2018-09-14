@@ -153,6 +153,7 @@ public class DialogEleitorMaster extends JDialog implements ActionListener
             buttonOpcoesTela[index].setBackground(colorOpcoesParaButtons[index]);
             panelParaBotoesOpcoes.add(buttonOpcoesTela[index]);
         }
+        buttonOpcoesTela[2].setEnabled(false);
         
         labelJusticaEleitoral = new JLabel("JUSTIÇA ELEITORAL");
         labelJusticaEleitoral.setFont(fontButton);
@@ -364,6 +365,7 @@ public class DialogEleitorMaster extends JDialog implements ActionListener
     
     private void alterarEstadoBotoes(boolean estado)                            //Este método é chamado quando todos os textfields já estiverem completos
     {
+        buttonOpcoesTela[2].setEnabled(!estado);
         for(JButton buttonAux : buttonNumericoTela)
             buttonAux.setEnabled(estado);
         Candidato candidato = processoVotacao.getInfoCandidato(getNumeroDigitado(), votacaoCargoVez-1);

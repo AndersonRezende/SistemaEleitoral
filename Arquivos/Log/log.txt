@@ -1,18 +1,26 @@
-﻿
-
-[13/8/2018 - 23:2:22] -> {[Fernando Filho][Deputado Federal][DEM][2501][1]}
 
 
-[13/8/2018 - 23:2:24] -> {[Antônio Coelho][Deputado Estadual][DEM][25000][1]}
+[14/8/2018 - 21:9:24] -> {[Voto nulo]}
+
+[14/8/2018 - 21:9:26] -> {[Voto nulo]}
+
+[14/8/2018 - 21:9:27] -> {[Voto nulo]}
+
+[14/8/2018 - 21:9:29] -> {[Voto nulo]}
+
+[14/8/2018 - 21:9:31] -> {[Voto nulo]}
+
+[14/8/2018 - 21:9:32] -> {[Voto nulo]}
 
 
-[13/8/2018 - 23:2:25] -> {[Voto nulo]}
+[14/8/2018 - 21:11:38] -> {[Fernando Filho][Deputado Federal][DEM][2501][1]}
 
+[14/8/2018 - 21:11:42] -> {[Antônio Coelho][Deputado Estadual][DEM][25000][1]}
 
-[13/8/2018 - 23:2:27] -> {[Silvio Costa][Senador][AVANTE][700][1]}
+[14/8/2018 - 21:11:43] -> {[Voto nulo]}
 
+[14/8/2018 - 21:11:45] -> {[Voto nulo]}
 
-[13/8/2018 - 23:2:30] -> {[Julio Lossio][Governador][REDE][18][Luciano Bezerra][1]}
+[14/8/2018 - 21:11:49] -> {[Julio Lossio][Governador][REDE][18][Luciano Bezerra][1]}
 
-
-[13/8/2018 - 23:2:31] -> {[Marina Silva][Presidente][REDE][18][Eduardo Jorge][1]}
+[14/8/2018 - 21:11:53] -> {[Henrique Meirelles][Presidente][MDB][15][Germano Rigotto][1]}

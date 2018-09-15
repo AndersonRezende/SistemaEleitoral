@@ -1,4 +1,4 @@
-<eleicao>Eleições Presidenciais</eleicao>
+<eleicao>Presidencial</eleicao>
 <cargos>
 	<cargo>
 		<titulo>Deputado Federal</titulo>

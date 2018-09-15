@@ -460,7 +460,7 @@ public class DialogEleitorMaster extends JDialog implements ActionListener
         if(c != null)
         {
             //icon = new ImageIcon(""+new File("").getAbsoluteFile()+"/Arquivos/Candidatos/Presidencial/Deputado Estadual Andréa Lóssio.jpg");
-            icon = new ImageIcon(""+new File("").getAbsoluteFile()+"\\Arquivos\\Candidatos\\Presidencial\\"+c.getCargo()+" "+c.getEleitor().getNome()+".jpg");
+            icon = new ImageIcon(""+new File("").getAbsoluteFile()+"\\Arquivos\\Candidatos\\"+processoVotacao.getEleicoes().get(0).getEleicao()+"\\"+c.getCargo()+" "+c.getEleitor().getNome()+".jpg");
             labelImagem.setIcon(icon);
             labelImagem.setVisible(visivel);
         }

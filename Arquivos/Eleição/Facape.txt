@@ -1,0 +1,15 @@
+<eleicao>Facape</eleicao>
+<cargos>
+	<cargo>
+		<titulo>Melhor Materia</titulo>
+		<vice></vice>
+		<digitos>1</digitos>
+		<eleitos>1</eleitos>
+	</cargo>
+	<cargo>
+		<titulo>Pior Materia</titulo>
+		<vice></vice>
+		<digitos>1</digitos>
+		<eleitos>1</eleitos>
+	</cargo>
+</cargos>

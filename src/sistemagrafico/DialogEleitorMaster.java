@@ -7,6 +7,7 @@ package sistemagrafico;
 
 import arquivo.LogArquivo;
 import java.awt.BorderLayout;
+import java.awt.CardLayout;
 import java.awt.Color;
 import java.awt.Container;
 import java.awt.Dimension;
@@ -29,7 +30,9 @@ import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JDialog;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+import javax.swing.JProgressBar;
 import javax.swing.JTextField;
 import objetos.Candidato;
 import objetos.LogVotacao;
@@ -64,6 +67,10 @@ public class DialogEleitorMaster extends JDialog implements ActionListener
     private JPanel panelParaDisplayParaParteMeio;
     private JPanel panelParaDisplayParaParteInferior;
     private JPanel panelParaDisplayParaParteMeioParaNumeros;
+    private JPanel panelParaDisplayFim;
+    
+    private JPanel panelContainer;
+    private CardLayout cardManager;    
     
     private JButton buttonNumericoTela[];
     private JButton buttonOpcoesTela[];
@@ -76,7 +83,9 @@ public class DialogEleitorMaster extends JDialog implements ActionListener
     private JLabel labelParaDisplayParaParteMeioDinamico[];
     private JLabel labelParaDisplayParaParteInferior[];
     private JLabel labelVotoBranco;
+    private JLabel labelFimVotacao;
     private JTextField textFieldDigitos[];
+    private JProgressBar progressBarFinalizarVoto;
     
     private ImageIcon icon;   
     private JLabel labelImagem;
@@ -97,7 +106,8 @@ public class DialogEleitorMaster extends JDialog implements ActionListener
         tamanhoTela = Toolkit.getDefaultToolkit().getScreenSize();
         container.setLayout(new BorderLayout());
         container.add(panelParaBotoes,BorderLayout.EAST);
-        container.add(panelParaDisplay, BorderLayout.CENTER);
+        //container.add(panelParaDisplay, BorderLayout.CENTER);
+        container.add(panelContainer, BorderLayout.CENTER);
         
         
         labelJusticaEleitoralTelaPrincipal = new JLabel("SISTEMA ELEITORAL BRASILEIRO");
@@ -270,10 +280,41 @@ public class DialogEleitorMaster extends JDialog implements ActionListener
             panelParaDisplayParaParteInferior.add(labelAux);
         }
         
+        
+        progressBarFinalizarVoto = new JProgressBar();
+        progressBarFinalizarVoto.setBorderPainted(true);
+        progressBarFinalizarVoto.setString("%");
+        progressBarFinalizarVoto.setValue(0);
+        progressBarFinalizarVoto.setFont(new Font(Font.SERIF, Font.BOLD, 40));
+                
+        labelFimVotacao = new JLabel("FIM");
+        labelFimVotacao.setFont(new Font(Font.SERIF, Font.BOLD, 60));
+        labelFimVotacao.setHorizontalAlignment(JLabel.CENTER);
+        //labelFimVotacao.setVisible(false);
+        
+        panelParaDisplayFim = new JPanel(new GridLayout(5,1));
+        panelParaDisplayFim.setBorder(BorderFactory.createLineBorder(Color.black, 5, false));
+        panelParaDisplayFim.setBackground(Color.white);
+        
+        panelParaDisplayFim.add(new JLabel(""));
+        panelParaDisplayFim.add(progressBarFinalizarVoto);
+        panelParaDisplayFim.add(labelFimVotacao);
+        panelParaDisplayFim.add(new JLabel(""));
+        panelParaDisplayFim.add(new JLabel(""));
+        
+        
+        
+        
         panelParaDisplay.add(panelParaDisplayParaParteSuperior, BorderLayout.NORTH);
         panelParaDisplay.add(panelParaDisplayParaParteMeio, BorderLayout.CENTER);
         //panelParaDisplay.add(foto, BorderLayout.EAST);
         panelParaDisplay.add(panelParaDisplayParaParteInferior, BorderLayout.SOUTH);
+        
+        cardManager = new CardLayout();
+        panelContainer = new JPanel(cardManager);
+        panelContainer.add(panelParaDisplay);
+        panelContainer.add(panelParaDisplayFim);
+        
         alteraEstadoLabels(false);
     }
 
@@ -384,7 +425,6 @@ public class DialogEleitorMaster extends JDialog implements ActionListener
             labelParaDisplayParaParteMeioDinamico[0].setVisible(true);
             panelParaDisplayParaParteInferior.setVisible(true);
         }
-        //Exibir o candidato (foto)
     }
     
     
@@ -404,7 +444,11 @@ public class DialogEleitorMaster extends JDialog implements ActionListener
         //grava log
         LogArquivo.gravaDados(logVotacao.getVotosRegistrados());
         
-        this.dispose();
+        progressBarFinalizarVoto.setValue(70);
+        progressBarFinalizarVoto.setStringPainted(true);
+        progressBarFinalizarVoto.setString(progressBarFinalizarVoto.getValue()+"%");
+        cardManager.next(panelContainer);
+        //this.dispose();
     }
     
     
@@ -425,6 +469,7 @@ public class DialogEleitorMaster extends JDialog implements ActionListener
     private void registrarVoto()
     {   
         Candidato c = processoVotacao.votar(getNumeroDigitado(), votacaoCargoVez-1);
+        //System.out.print(processoVotacao.getInfoCandidato(getNumeroDigitado(), votacaoCargoVez-1));
         if(c != null)
         {
             if(c.temVice())

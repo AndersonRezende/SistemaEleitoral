@@ -1,4 +1,4 @@
-<eleicao>Eleições Municipais</eleicao>
+<eleicao>Municipal</eleicao>
 <cargos>
 	<cargo>
 		<titulo>Vereador</titulo>

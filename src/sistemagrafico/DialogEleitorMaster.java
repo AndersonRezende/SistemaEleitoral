@@ -338,11 +338,9 @@ public class DialogEleitorMaster extends JDialog implements ActionListener
         {   limparTela();   }
         if(e.getSource() == buttonOpcoesTela[2])                                //Se confirmar vai pra proxima tela
         {
-            //Adicionar metodo para checar se tem numero
             registrarVoto();
             configurarExibicaoVez();
             limparTela();
-            //Cria thread pra gravar
         }
         
         if(e.getSource() == buttonNumericoTela[0])
@@ -443,9 +441,8 @@ public class DialogEleitorMaster extends JDialog implements ActionListener
     
     
     private void finalizarVoto()
-    {//Gravar em um arquivo de log com uma thread
+    {
         tocarSom("fim");
-        //grava log
         LogArquivo.gravaDados(logVotacao.getVotosRegistrados());
         
         
@@ -538,8 +535,8 @@ public class DialogEleitorMaster extends JDialog implements ActionListener
     
     private void votoBranco()
     {
+        limparTela();
         alterarEstadoBotoes(false);
-        //buttonOpcoesTela[2].setEnabled(true);
         icon = new ImageIcon(""+new File("").getAbsoluteFile()+"\\Arquivos\\Candidatos\\usuario.jpg");
         labelParaDisplayParaParteMeioDinamico[0].setText("VOTO EM BRANCO");
     }

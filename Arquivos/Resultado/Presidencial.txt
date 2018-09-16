@@ -1,0 +1,410 @@
+
+<politico>
+<nome>A Marron</nome>
+<partido>PATRI</partido>
+<numero>5145</numero>
+<votos>0</votos>
+</politico>
+<politico>
+<nome>Rosalvo</nome>
+<partido>PSOL</partido>
+<numero>5087</numero>
+<votos>0</votos>
+</politico>
+<politico>
+<nome>Val do Povão</nome>
+<partido>REDE</partido>
+<numero>1888</numero>
+<votos>0</votos>
+</politico>
+<politico>
+<nome>Cebolinha</nome>
+<partido>PROS</partido>
+<numero>9099</numero>
+<votos>0</votos>
+</politico>
+<politico>
+<nome>Jussara India</nome>
+<partido>PPL</partido>
+<numero>5445</numero>
+<votos>0</votos>
+</politico>
+<politico>
+<nome>Gonzaga Patriota</nome>
+<partido>PSB</partido>
+<numero>4000</numero>
+<votos>0</votos>
+</politico>
+<politico>
+<nome>Potyra</nome>
+<partido>DC</partido>
+<numero>2733</numero>
+<votos>0</votos>
+</politico>
+<politico>
+<nome>Odacy Amorim</nome>
+<partido>PT</partido>
+<numero>1344</numero>
+<votos>0</votos>
+</politico>
+<politico>
+<nome>Dr.Arnaldo Delmondes</nome>
+<partido>PRP</partido>
+<numero>4433</numero>
+<votos>0</votos>
+</politico>
+<politico>
+<nome>Geo Caldas</nome>
+<partido>PSL</partido>
+<numero>1755</numero>
+<votos>0</votos>
+</politico>
+<politico>
+<nome>Jorge Prestamista</nome>
+<partido>PMN</partido>
+<numero>3322</numero>
+<votos>0</votos>
+</politico>
+<politico>
+<nome>Osmarina Gomes</nome>
+<partido>PR</partido>
+<numero>2266</numero>
+<votos>0</votos>
+</politico>
+<politico>
+<nome>Aide de Biu Preto</nome>
+<partido>PHS</partido>
+<numero>3145</numero>
+<votos>0</votos>
+</politico>
+<politico>
+<nome>Charbel</nome>
+<partido>NOVO</partido>
+<numero>3030</numero>
+<votos>0</votos>
+</politico>
+<politico>
+<nome>Tonynho Rodrigues</nome>
+<partido>SOLIDARIEDADE</partido>
+<numero>7788</numero>
+<votos>0</votos>
+</politico>
+<politico>
+<nome>Adalberto Cavalcanti</nome>
+<partido>AVANTE</partido>
+<numero>7000</numero>
+<votos>0</votos>
+</politico>
+<politico>
+<nome>Fernando Filho</nome>
+<partido>DEM</partido>
+<numero>2501</numero>
+<votos>0</votos>
+</politico>
+<politico>
+<nome>Antônio Coelho</nome>
+<partido>DEM</partido>
+<numero>25000</numero>
+<votos>0</votos>
+</politico>
+<politico>
+<nome>Nino O Deputado Sem Teto</nome>
+<partido>DEM</partido>
+<numero>25123</numero>
+<votos>0</votos>
+</politico>
+<politico>
+<nome>Andréa Lóssio</nome>
+<partido>REDE</partido>
+<numero>18123</numero>
+<votos>0</votos>
+</politico>
+<politico>
+<nome>Maycon Do Brega</nome>
+<partido>PRB</partido>
+<numero>10410</numero>
+<votos>0</votos>
+</politico>
+<politico>
+<nome>Ping</nome>
+<partido>DC</partido>
+<numero>27423</numero>
+<votos>0</votos>
+</politico>
+<politico>
+<nome>Juraci Saúde e Seriedade</nome>
+<partido>PRTB</partido>
+<numero>28007</numero>
+<votos>0</votos>
+</politico>
+<politico>
+<nome>Lucas Ramos</nome>
+<partido>PSB</partido>
+<numero>40110</numero>
+<votos>0</votos>
+</politico>
+<politico>
+<nome>Neco Lula Livre</nome>
+<partido>PROS</partido>
+<numero>90777</numero>
+<votos>0</votos>
+</politico>
+<politico>
+<nome>Teresa Leitão</nome>
+<partido>PT</partido>
+<numero>13613</numero>
+<votos>0</votos>
+</politico>
+<politico>
+<nome>Ronaldo Barba</nome>
+<partido>PSOL</partido>
+<numero>50001</numero>
+<votos>0</votos>
+</politico>
+<politico>
+<nome>Marcos Leal O Irmão Legal</nome>
+<partido>AVANTE</partido>
+<numero>70456</numero>
+<votos>0</votos>
+</politico>
+<politico>
+<nome>Tânia Mãe de João</nome>
+<partido>PSC</partido>
+<numero>20613</numero>
+<votos>0</votos>
+</politico>
+<politico>
+<nome>Tieta do Agreste</nome>
+<partido>PATRI</partido>
+<numero>51004</numero>
+<votos>0</votos>
+</politico>
+<politico>
+<nome>Meu Jovem</nome>
+<partido>PPS</partido>
+<numero>23078</numero>
+<votos>0</votos>
+</politico>
+<politico>
+<nome>Jura da Bica O Amolado</nome>
+<partido>PP</partido>
+<numero>11144</numero>
+<votos>0</votos>
+</politico>
+<politico>
+<nome>Irmão Isaias da Coxinha</nome>
+<partido>PRP</partido>
+<numero>44410</numero>
+<votos>0</votos>
+</politico>
+<politico>
+<nome>Irmão da Kombi</nome>
+<partido>PCdoB</partido>
+<numero>65765</numero>
+<votos>0</votos>
+</politico>
+<politico>
+<nome>Adriana Rocha</nome>
+<partido>REDE</partido>
+<numero>188</numero>
+<votos>0</votos>
+</politico>
+<politico>
+<nome>Albanise</nome>
+<partido>PSOL</partido>
+<numero>500</numero>
+<votos>0</votos>
+</politico>
+<politico>
+<nome>Alex Lima Rola</nome>
+<partido>PCO</partido>
+<numero>290</numero>
+<votos>0</votos>
+</politico>
+<politico>
+<nome>Bruno Araujo</nome>
+<partido>PSDB</partido>
+<numero>456</numero>
+<votos>0</votos>
+</politico>
+<politico>
+<nome>Eugênia</nome>
+<partido>PSOL</partido>
+<numero>505</numero>
+<votos>0</votos>
+</politico>
+<politico>
+<nome>Helio Cabral</nome>
+<partido>PSTU</partido>
+<numero>161</numero>
+<votos>0</votos>
+</politico>
+<politico>
+<nome>Humberto Costa</nome>
+<partido>PT</partido>
+<numero>130</numero>
+<votos>0</votos>
+</politico>
+<politico>
+<nome>Jarbas</nome>
+<partido>MDB</partido>
+<numero>156</numero>
+<votos>0</votos>
+</politico>
+<politico>
+<nome>Lidia Brunes</nome>
+<partido>PROS</partido>
+<numero>900</numero>
+<votos>0</votos>
+</politico>
+<politico>
+<nome>Mendonca Filho</nome>
+<partido>DEM</partido>
+<numero>252</numero>
+<votos>0</votos>
+</politico>
+<politico>
+<nome>Pastor Jairinho</nome>
+<partido>REDE</partido>
+<numero>180</numero>
+<votos>0</votos>
+</politico>
+<politico>
+<nome>Silvio Costa</nome>
+<partido>AVANTE</partido>
+<numero>700</numero>
+<votos>0</votos>
+</politico>
+<politico>
+<nome>Ana Patrícia Alves</nome>
+<partido>PCO</partido>
+<numero>29</numero>
+<votos>0</votos>
+<vice>Gilson Lopes de Oliveira</vice>
+</politico>
+<politico>
+<nome>Armando Monteiro</nome>
+<partido>PTB</partido>
+<numero>14</numero>
+<votos>0</votos>
+<vice>Fred Ferreira</vice>
+</politico>
+<politico>
+<nome>Dani Portela</nome>
+<partido>PSOL</partido>
+<numero>50</numero>
+<votos>0</votos>
+<vice>Gerlane Simões</vice>
+</politico>
+<politico>
+<nome>Julio Lossio</nome>
+<partido>REDE</partido>
+<numero>18</numero>
+<votos>0</votos>
+<vice>Luciano Bezerra</vice>
+</politico>
+<politico>
+<nome>Maurício Rands</nome>
+<partido>PROS</partido>
+<numero>90</numero>
+<votos>0</votos>
+<vice>Isabella de Roldão</vice>
+</politico>
+<politico>
+<nome>Paulo Câmara</nome>
+<partido>PSB</partido>
+<numero>40</numero>
+<votos>0</votos>
+<vice>Luciana Santos</vice>
+</politico>
+<politico>
+<nome>Simone Fontana</nome>
+<partido>PSTU</partido>
+<numero>16</numero>
+<votos>0</votos>
+<vice>Jair Pedro</vice>
+</politico>
+<politico>
+<nome>Alvaro Dias</nome>
+<partido>PODEMOS</partido>
+<numero>19</numero>
+<votos>0</votos>
+<vice>Paulo Rabello</vice>
+</politico>
+<politico>
+<nome>Cabo Daciolo</nome>
+<partido>PATRIOTA</partido>
+<numero>51</numero>
+<votos>0</votos>
+<vice>Suelene Balduino</vice>
+</politico>
+<politico>
+<nome>Ciro Gomes</nome>
+<partido>PDT</partido>
+<numero>12</numero>
+<votos>0</votos>
+<vice>Kátia Abreu</vice>
+</politico>
+<politico>
+<nome>Eymael</nome>
+<partido>DC</partido>
+<numero>27</numero>
+<votos>0</votos>
+<vice>Helvio Costa</vice>
+</politico>
+<politico>
+<nome>Geraldo Alckimin</nome>
+<partido>PSDB</partido>
+<numero>45</numero>
+<votos>0</votos>
+<vice>Ana Amália Lemos</vice>
+</politico>
+<politico>
+<nome>Guilherme Boulos</nome>
+<partido>PSOL</partido>
+<numero>50</numero>
+<votos>0</votos>
+<vice>Sonia Guajajara</vice>
+</politico>
+<politico>
+<nome>Henrique Meirelles</nome>
+<partido>MDB</partido>
+<numero>15</numero>
+<votos>0</votos>
+<vice>Germano Rigotto</vice>
+</politico>
+<politico>
+<nome>Jair Bolsonaro</nome>
+<partido>PSL</partido>
+<numero>17</numero>
+<votos>0</votos>
+<vice>General Mourão</vice>
+</politico>
+<politico>
+<nome>João Amodo</nome>
+<partido>NOVO</partido>
+<numero>30</numero>
+<votos>0</votos>
+<vice>Professor Christian</vice>
+</politico>
+<politico>
+<nome>João Goulart Filho</nome>
+<partido>PPL</partido>
+<numero>54</numero>
+<votos>0</votos>
+<vice>Léo da Silva Alves</vice>
+</politico>
+<politico>
+<nome>Marina Silva</nome>
+<partido>REDE</partido>
+<numero>18</numero>
+<votos>0</votos>
+<vice>Eduardo Jorge</vice>
+</politico>
+<politico>
+<nome>Vera Lúcia</nome>
+<partido>PSTU</partido>
+<numero>16</numero>
+<votos>0</votos>
+<vice>Hertz</vice>
+</politico>

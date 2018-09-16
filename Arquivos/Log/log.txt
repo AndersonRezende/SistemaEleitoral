@@ -995,3 +995,204 @@
 
 
 [15/8/2018 - 13:24:46] -> {[POO][Melhor Materia][POS][1][1]}
+
+
+[15/8/2018 - 13:36:21] -> {[Programação Orientada a Objetos][Melhor Materia][POS][6][1]}
+
+[15/8/2018 - 13:36:24] -> {[Metodologia Cientifica][Pior Materia][POS][1][1]}
+
+
+[15/8/2018 - 23:50:39] -> {[Fernando Filho][Deputado Federal][DEM][2501][1]}
+
+[15/8/2018 - 23:50:42] -> {[Antônio Coelho][Deputado Estadual][DEM][25000][1]}
+
+[15/8/2018 - 23:50:48] -> {[Voto nulo]}
+
+[15/8/2018 - 23:50:50] -> {[Lidia Brunes][Senador][PROS][900][1]}
+
+[15/8/2018 - 23:50:52] -> {[Julio Lossio][Governador][REDE][18][Luciano Bezerra][1]}
+
+[15/8/2018 - 23:50:53] -> {[Henrique Meirelles][Presidente][MDB][15][Germano Rigotto][1]}
+
+
+[15/8/2018 - 23:52:41] -> {[Fernando Filho][Deputado Federal][DEM][2501][1]}
+
+[15/8/2018 - 23:52:43] -> {[Antônio Coelho][Deputado Estadual][DEM][25000][1]}
+
+[15/8/2018 - 23:52:45] -> {[Voto nulo]}
+
+[15/8/2018 - 23:52:47] -> {[Voto nulo]}
+
+[15/8/2018 - 23:52:54] -> {[Julio Lossio][Governador][REDE][18][Luciano Bezerra][1]}
+
+[15/8/2018 - 23:52:58] -> {[Marina Silva][Presidente][REDE][18][Eduardo Jorge][1]}
+
+
+[15/8/2018 - 23:56:25] -> {[Fernando Filho][Deputado Federal][DEM][2501][1]}
+
+[15/8/2018 - 23:56:27] -> {[Antônio Coelho][Deputado Estadual][DEM][25000][1]}
+
+[15/8/2018 - 23:56:31] -> {[Voto nulo]}
+
+[15/8/2018 - 23:56:32] -> {[Voto nulo]}
+
+[15/8/2018 - 23:56:34] -> {[Julio Lossio][Governador][REDE][18][Luciano Bezerra][1]}
+
+[15/8/2018 - 23:56:40] -> {[Marina Silva][Presidente][REDE][18][Eduardo Jorge][1]}
+
+
+[15/8/2018 - 23:57:46] -> {[Fernando Filho][Deputado Federal][DEM][2501][1]}
+
+[15/8/2018 - 23:57:46] -> {[Voto nulo]}
+
+[15/8/2018 - 23:57:47] -> {[Voto nulo]}
+
+[15/8/2018 - 23:57:53] -> {[Lidia Brunes][Senador][PROS][900][1]}
+
+[15/8/2018 - 23:57:55] -> {[Maurício Rands][Governador][PROS][90][Isabella de Roldão][1]}
+
+[15/8/2018 - 23:57:56] -> {[Voto nulo]}
+
+
+[16/8/2018 - 0:2:46] -> {[Voto nulo]}
+
+[16/8/2018 - 0:2:48] -> {[Voto nulo]}
+
+[16/8/2018 - 0:2:49] -> {[Voto nulo]}
+
+[16/8/2018 - 0:2:50] -> {[Voto nulo]}
+
+[16/8/2018 - 0:2:52] -> {[Voto nulo]}
+
+[16/8/2018 - 0:2:53] -> {[Voto nulo]}
+
+
+[16/8/2018 - 0:4:19] -> {[Fernando Filho][Deputado Federal][DEM][2501][1]}
+
+[16/8/2018 - 0:4:21] -> {[Voto nulo]}
+
+[16/8/2018 - 0:4:22] -> {[Voto nulo]}
+
+[16/8/2018 - 0:4:29] -> {[Lidia Brunes][Senador][PROS][900][1]}
+
+[16/8/2018 - 0:4:31] -> {[Voto nulo]}
+
+[16/8/2018 - 0:4:32] -> {[Voto nulo]}
+
+
+[16/8/2018 - 0:8:19] -> {[Fernando Filho][Deputado Federal][DEM][2501][1]}
+
+[16/8/2018 - 0:8:21] -> {[Antônio Coelho][Deputado Estadual][DEM][25000][1]}
+
+[16/8/2018 - 0:8:24] -> {[Silvio Costa][Senador][AVANTE][700][1]}
+
+[16/8/2018 - 0:8:27] -> {[Lidia Brunes][Senador][PROS][900][1]}
+
+[16/8/2018 - 0:8:29] -> {[Julio Lossio][Governador][REDE][18][Luciano Bezerra][1]}
+
+[16/8/2018 - 0:8:33] -> {[Marina Silva][Presidente][REDE][18][Eduardo Jorge][1]}
+
+
+[16/8/2018 - 0:11:34] -> {[Voto nulo]}
+
+[16/8/2018 - 0:11:35] -> {[Voto nulo]}
+
+[16/8/2018 - 0:11:36] -> {[Voto nulo]}
+
+[16/8/2018 - 0:11:37] -> {[Voto nulo]}
+
+[16/8/2018 - 0:11:38] -> {[Voto nulo]}
+
+[16/8/2018 - 0:11:39] -> {[Voto nulo]}
+
+
+[16/8/2018 - 0:12:13] -> {[Voto nulo]}
+
+[16/8/2018 - 0:12:15] -> {[Voto nulo]}
+
+[16/8/2018 - 0:12:16] -> {[Voto nulo]}
+
+[16/8/2018 - 0:12:16] -> {[Voto nulo]}
+
+[16/8/2018 - 0:12:17] -> {[Voto nulo]}
+
+[16/8/2018 - 0:12:20] -> {[Voto nulo]}
+
+
+[16/8/2018 - 0:16:7] -> {[Voto nulo]}
+
+[16/8/2018 - 0:16:8] -> {[Voto nulo]}
+
+
+[16/8/2018 - 0:20:31] -> {[Voto nulo]}
+
+[16/8/2018 - 0:20:32] -> {[Voto nulo]}
+
+
+[16/8/2018 - 0:21:49] -> {[Voto nulo]}
+
+[16/8/2018 - 0:21:50] -> {[Voto nulo]}
+
+
+[16/8/2018 - 1:4:1] -> {[Voto nulo]}
+
+[16/8/2018 - 1:4:2] -> {[Voto nulo]}
+
+
+[16/8/2018 - 1:5:0] -> {[Voto nulo]}
+
+[16/8/2018 - 1:5:1] -> {[Voto nulo]}
+
+
+[16/8/2018 - 1:8:23] -> {[Voto nulo]}
+
+[16/8/2018 - 1:8:24] -> {[Voto nulo]}
+
+
+[16/8/2018 - 1:10:21] -> {[Voto nulo]}
+
+[16/8/2018 - 1:10:22] -> {[Voto nulo]}
+
+
+[16/8/2018 - 1:11:14] -> {[Voto nulo]}
+
+[16/8/2018 - 1:11:15] -> {[Voto nulo]}
+
+[16/8/2018 - 1:11:16] -> {[Voto nulo]}
+
+[16/8/2018 - 1:11:17] -> {[Voto nulo]}
+
+[16/8/2018 - 1:11:18] -> {[Voto nulo]}
+
+[16/8/2018 - 1:11:19] -> {[Voto nulo]}
+
+
+[16/8/2018 - 1:11:44] -> {[Voto nulo]}
+
+[16/8/2018 - 1:11:45] -> {[Voto nulo]}
+
+[16/8/2018 - 1:11:45] -> {[Voto nulo]}
+
+[16/8/2018 - 1:11:46] -> {[Voto nulo]}
+
+[16/8/2018 - 1:11:46] -> {[Voto nulo]}
+
+[16/8/2018 - 1:11:47] -> {[Voto nulo]}
+
+
+[16/8/2018 - 1:13:46] -> {[Voto nulo]}
+
+[16/8/2018 - 1:13:47] -> {[Voto nulo]}
+
+[16/8/2018 - 1:13:48] -> {[Voto nulo]}
+
+[16/8/2018 - 1:13:48] -> {[Voto nulo]}
+
+[16/8/2018 - 1:13:49] -> {[Voto nulo]}
+
+[16/8/2018 - 1:13:51] -> {[Voto nulo]}
+
+
+[16/8/2018 - 1:14:10] -> {[Voto nulo]}
+
+[16/8/2018 - 1:14:11] -> {[Voto nulo]}

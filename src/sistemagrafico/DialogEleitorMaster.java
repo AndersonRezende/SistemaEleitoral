@@ -6,6 +6,7 @@
 package sistemagrafico;
 
 import arquivo.LogArquivo;
+import arquivo.Resultado;
 import java.awt.BorderLayout;
 import java.awt.CardLayout;
 import java.awt.Color;
@@ -36,7 +37,10 @@ import javax.swing.JProgressBar;
 import javax.swing.JTextField;
 import objetos.Candidato;
 import objetos.LogVotacao;
+import objetos.auxiliares.ObjetoCompartilhado;
 import objetos.auxiliares.ProcessoVotacao;
+import objetos.auxiliares.ThreadProgressBar;
+import objetos.auxiliares.ThreadGravarResultado;
 
 /**
  *
@@ -444,10 +448,19 @@ public class DialogEleitorMaster extends JDialog implements ActionListener
         //grava log
         LogArquivo.gravaDados(logVotacao.getVotosRegistrados());
         
-        progressBarFinalizarVoto.setValue(70);
+        
+        cardManager.next(panelContainer);
+        
         progressBarFinalizarVoto.setStringPainted(true);
         progressBarFinalizarVoto.setString(progressBarFinalizarVoto.getValue()+"%");
-        cardManager.next(panelContainer);
+        //Resultado.gravarResultado(processoVotacao, progressBarFinalizarVoto);
+        
+        
+        ObjetoCompartilhado oc = new ObjetoCompartilhado();
+        ThreadProgressBar tpb = new ThreadProgressBar(oc, progressBarFinalizarVoto);
+        ThreadGravarResultado tgr = new ThreadGravarResultado(oc, processoVotacao);
+        tgr.start();
+        tpb.start();
         //this.dispose();
     }
     
@@ -527,6 +540,7 @@ public class DialogEleitorMaster extends JDialog implements ActionListener
     {
         alterarEstadoBotoes(false);
         //buttonOpcoesTela[2].setEnabled(true);
+        icon = new ImageIcon(""+new File("").getAbsoluteFile()+"\\Arquivos\\Candidatos\\usuario.jpg");
         labelParaDisplayParaParteMeioDinamico[0].setText("VOTO EM BRANCO");
     }
 }

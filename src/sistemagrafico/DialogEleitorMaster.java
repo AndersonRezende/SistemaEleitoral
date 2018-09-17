@@ -367,6 +367,9 @@ public class DialogEleitorMaster extends JDialog implements ActionListener
         {   configurarExibirNumeroDigitado(8);   }
         if(e.getSource() == buttonNumericoTela[9])
         {   configurarExibirNumeroDigitado(9);   }    
+        
+        if(fechar)
+            this.dispose();
     }
 
     //-----------------------------AUXILIARES-----------------------------------
@@ -447,7 +450,7 @@ public class DialogEleitorMaster extends JDialog implements ActionListener
     {
         tocarSom("fim");
         LogArquivo.gravaDados(logVotacao.getVotosRegistrados());
-        
+        fechar = true;
         
         cardManager.next(panelContainer);
         
@@ -469,6 +472,7 @@ public class DialogEleitorMaster extends JDialog implements ActionListener
         tgr.start();
         tpb.start();
         eleitor.votar();
+        
         //this.dispose();
     }
     

@@ -73,7 +73,7 @@ public class LayoutMaster extends JFrame implements ActionListener
     {
         super("SISTEMA ELEITORAL"); 
         tamanhoTela = Toolkit.getDefaultToolkit().getScreenSize();
-        stringTextoAjudaSobre = "AJUDA\n\n"
+        stringTextoAjudaSobre = "SOBRE\n\n"
                 + "Sistema eleitoral "+Calendar.getInstance().get(Calendar.YEAR)+".\n"
                 + "Versão 1.0.0\n"
                 + "Java: 1.8.0_151\n"

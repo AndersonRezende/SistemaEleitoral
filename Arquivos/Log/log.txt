@@ -1479,3 +1479,37 @@
 [16/8/2018 - 22:22:23] -> {[Programação Orientada a Objetos][Melhor Materia][POS][6][1]}
 
 [16/8/2018 - 22:22:29] -> {[Metodologia Cientifica][Pior Materia][POS][1][1]}
+
+
+[16/8/2018 - 22:33:32] -> {[Programação Orientada a Objetos][Melhor Materia][POS][6][1]}
+
+[16/8/2018 - 22:33:34] -> {[Metodologia Cientifica][Pior Materia][POS][1][1]}
+
+
+[16/8/2018 - 22:35:40] -> {[Programação Orientada a Objetos][Melhor Materia][POS][6][1]}
+
+[16/8/2018 - 22:35:41] -> {[Metodologia Cientifica][Pior Materia][POS][1][1]}
+
+
+[16/8/2018 - 22:35:40] -> {[Programação Orientada a Objetos][Melhor Materia][POS][6][1]}
+
+[16/8/2018 - 22:35:41] -> {[Metodologia Cientifica][Pior Materia][POS][1][1]}
+
+[16/8/2018 - 22:35:43] -> {[Voto nulo]}
+
+
+[16/8/2018 - 22:36:11] -> {[Programação Orientada a Objetos][Melhor Materia][POS][6][1]}
+
+[16/8/2018 - 22:36:12] -> {[Metodologia Cientifica][Pior Materia][POS][1][1]}
+
+
+[16/8/2018 - 22:36:11] -> {[Programação Orientada a Objetos][Melhor Materia][POS][6][1]}
+
+[16/8/2018 - 22:36:12] -> {[Metodologia Cientifica][Pior Materia][POS][1][1]}
+
+[16/8/2018 - 22:36:20] -> {[Metodologia Cientifica][Pior Materia][POS][1][2]}
+
+
+[16/8/2018 - 22:37:54] -> {[Programação Orientada a Objetos][Melhor Materia][POS][6][1]}
+
+[16/8/2018 - 22:37:55] -> {[Metodologia Cientifica][Pior Materia][POS][1][1]}

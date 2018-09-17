@@ -348,28 +348,65 @@ public class DialogEleitorMaster extends JDialog implements ActionListener
         }
         
         if(e.getSource() == buttonNumericoTela[0])
-        {   configurarExibirNumeroDigitado(0);   }
+        {   
+            configurarExibirNumeroDigitado(0);
+            if(fechar)
+                this.dispose();
+        }
         if(e.getSource() == buttonNumericoTela[1])
-        {   configurarExibirNumeroDigitado(1);   }
+        {   
+            configurarExibirNumeroDigitado(1);
+            if(fechar)
+                this.dispose();
+        }
         if(e.getSource() == buttonNumericoTela[2])
-        {   configurarExibirNumeroDigitado(2);   }
+        {   
+            configurarExibirNumeroDigitado(2);   
+            if(fechar)
+                this.dispose();
+        }
         if(e.getSource() == buttonNumericoTela[3])
-        {   configurarExibirNumeroDigitado(3);   }
+        {   
+            configurarExibirNumeroDigitado(3);
+            if(fechar)
+                this.dispose();
+        }
         if(e.getSource() == buttonNumericoTela[4])
-        {   configurarExibirNumeroDigitado(4);   }
+        {   
+            configurarExibirNumeroDigitado(4);
+            if(fechar)
+                this.dispose();
+        }
         if(e.getSource() == buttonNumericoTela[5])
-        {   configurarExibirNumeroDigitado(5);   }
+        {   
+            configurarExibirNumeroDigitado(5);   
+            if(fechar)
+                this.dispose();
+        }
         if(e.getSource() == buttonNumericoTela[6])
-        {   configurarExibirNumeroDigitado(6);   }
+        {   
+            configurarExibirNumeroDigitado(6);
+            if(fechar)
+                this.dispose();
+        }
         if(e.getSource() == buttonNumericoTela[7])
-        {   configurarExibirNumeroDigitado(7);   }
+        {   
+            configurarExibirNumeroDigitado(7);
+            if(fechar)
+                this.dispose();
+        }
         if(e.getSource() == buttonNumericoTela[8])
-        {   configurarExibirNumeroDigitado(8);   }
+        {   
+            configurarExibirNumeroDigitado(8);
+            if(fechar)
+                this.dispose();
+        }
         if(e.getSource() == buttonNumericoTela[9])
-        {   configurarExibirNumeroDigitado(9);   }    
-        
-        if(fechar)
-            this.dispose();
+        {   
+            configurarExibirNumeroDigitado(9);
+            if(fechar)
+                this.dispose();
+        }
     }
 
     //-----------------------------AUXILIARES-----------------------------------

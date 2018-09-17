@@ -1513,3 +1513,29 @@
 [16/8/2018 - 22:37:54] -> {[Programação Orientada a Objetos][Melhor Materia][POS][6][1]}
 
 [16/8/2018 - 22:37:55] -> {[Metodologia Cientifica][Pior Materia][POS][1][1]}
+
+
+[17/8/2018 - 16:19:59] -> {[Fernando Filho][Deputado Federal][DEM][2501][1]}
+
+[17/8/2018 - 16:20:1] -> {[Antônio Coelho][Deputado Estadual][DEM][25000][1]}
+
+[17/8/2018 - 16:20:4] -> {[Silvio Costa][Senador][AVANTE][700][1]}
+
+[17/8/2018 - 16:20:6] -> {[Lidia Brunes][Senador][PROS][900][1]}
+
+[17/8/2018 - 16:20:8] -> {[Julio Lossio][Governador][REDE][18][Luciano Bezerra][1]}
+
+[17/8/2018 - 16:20:10] -> {[Marina Silva][Presidente][REDE][18][Eduardo Jorge][1]}
+
+
+[17/8/2018 - 16:21:53] -> {[Fernando Filho][Deputado Federal][DEM][2501][1]}
+
+[17/8/2018 - 16:21:55] -> {[Antônio Coelho][Deputado Estadual][DEM][25000][1]}
+
+[17/8/2018 - 16:21:56] -> {[Lidia Brunes][Senador][PROS][900][1]}
+
+[17/8/2018 - 16:21:58] -> {[Voto nulo]}
+
+[17/8/2018 - 16:22:0] -> {[Julio Lossio][Governador][REDE][18][Luciano Bezerra][1]}
+
+[17/8/2018 - 16:22:4] -> {[Marina Silva][Presidente][REDE][18][Eduardo Jorge][1]}

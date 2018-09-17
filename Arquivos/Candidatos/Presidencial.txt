@@ -648,3 +648,13 @@
 	<partidovice>PSTU</partidovice>
 	<votos></votos>
 </politico>
+<politico>
+	<nome>Fernando Haddad</nome>
+	<titulo>13131313</titulo>
+	<cargo>Presidente</cargo>
+	<numero>13</numero>
+	<partido>PT</partido>
+	<vice>Manuela D’Ávila</vice>
+	<partidovice>PCdoB</partidovice>
+	<votos></votos>
+</politico>

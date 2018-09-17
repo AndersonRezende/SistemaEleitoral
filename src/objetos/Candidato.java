@@ -89,4 +89,8 @@ public class Candidato implements VotacaoCandidato
     
     public String getNomeVice()
     {   return vice.getNome();  }
+    
+    
+    public String getPartidoVice()
+    {   return vice.getPartido();  }
 }

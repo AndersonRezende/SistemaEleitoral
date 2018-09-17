@@ -12,17 +12,17 @@ package objetos;
 class Vice 
 {
     private String nome;
-    private String partidoVice;
+    private String partido;
 
-    public Vice(String nome, String partidoVice)
+    public Vice(String nome, String partido)
     {   
         this.nome = nome;
-        this.partidoVice = partidoVice;
+        this.partido = partido;
     }
 
     public String getNome() 
     {   return nome;    }
     
-    public String getPartidoVice()
-    {   return partidoVice; }
+    public String getPartido()
+    {   return partido; }
 }

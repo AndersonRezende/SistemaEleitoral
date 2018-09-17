@@ -21,7 +21,7 @@ public class Candidato implements VotacaoCandidato
     private Vice vice;
 
     
-    public Candidato(String nome, String titulo, String cargo, int numero, String partido)
+    public Candidato(String nome, String titulo, String cargo, int numero, String partido, int votos)
     {
         this.eleitor = new Eleitor(nome,titulo);
         this.cargo = cargo;
@@ -29,9 +29,9 @@ public class Candidato implements VotacaoCandidato
         this.partido = partido;
     }
     
-    public Candidato(String nome, String titulo, String cargo, int numero, String partido, String vice, String partidoVice)
+    public Candidato(String nome, String titulo, String cargo, int numero, String partido, int votos, String vice, String partidoVice)
     {
-        this(nome, titulo, cargo, numero, partido);
+        this(nome, titulo, cargo, numero, partido, votos);
         this.vice = new Vice(vice, partidoVice);
     }
     

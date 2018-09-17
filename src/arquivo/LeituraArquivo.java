@@ -247,7 +247,7 @@ public class LeituraArquivo implements Login
     }
     
     
-    public static ArrayList<Candidato> lerPolitico(String nomeArquivo)
+    public static ArrayList<Candidato> lerPolitico(String nomeArquivo, boolean lerVotos)
     {
         String nome = "";
         String titulo = "";
@@ -256,7 +256,7 @@ public class LeituraArquivo implements Login
         String partido = "";
         String vice = "";
         String partidoVice = "";
-        String votos = "";
+        int votos = 0;
         boolean lendoPolitico = false;
         boolean contemNome = false;
         boolean contemTitulo = false;
@@ -265,6 +265,7 @@ public class LeituraArquivo implements Login
         boolean contemPartido = false;
         boolean contemVice = false;
         boolean contemPartidoVice = false;
+        boolean contemVotos = false;
         int inicio = 0;
         int fim = 0;
         ArrayList<Candidato> candidatos = new ArrayList();
@@ -290,6 +291,7 @@ public class LeituraArquivo implements Login
                         partido = "";
                         vice = "";
                         partidoVice = "";
+                        votos = 0;
                         lendoPolitico = true;
                     }
                     if(linha.contains(VerificaArquivo.ABRENOME) && lendoPolitico)
@@ -340,14 +342,23 @@ public class LeituraArquivo implements Login
                         fim = linha.indexOf(VerificaArquivo.FECHAPARTIDOVICE);
                         partidoVice = linha.substring(inicio, fim);
                         contemPartidoVice = true;
-                    } //Incrementa parte de votos
-                    
-                    if(linha.contains(VerificaArquivo.FECHAPOLITICO) && lendoPolitico && contemNome && contemTitulo && contemCargo && contemNumero && contemPartido && contemVice && contemPartidoVice)
+                    }
+                    if(linha.contains(VerificaArquivo.ABREVOTOS) && lendoPolitico)
+                    {
+                        inicio = linha.indexOf(VerificaArquivo.ABREVOTOS)+VerificaArquivo.ABREVOTOS.length();
+                        fim = linha.indexOf(VerificaArquivo.FECHAVOTOS);
+                        if(lerVotos)
+                            votos = Integer.parseInt(linha.substring(inicio, fim));
+                        else
+                            votos = 0;
+                        contemVotos = true;
+                    }                    
+                    if(linha.contains(VerificaArquivo.FECHAPOLITICO) && lendoPolitico && contemNome && contemTitulo && contemCargo && contemNumero && contemPartido && contemVice && contemPartidoVice && contemVotos)
                     {
                         if(contemVice)
-                            candidato = new Candidato(nome, titulo, cargo, numero, partido, vice, partidoVice);
+                            candidato = new Candidato(nome, titulo, cargo, numero, partido, votos, vice, partidoVice);
                         else
-                            candidato = new Candidato(nome, titulo, cargo, numero, partido);
+                            candidato = new Candidato(nome, titulo, cargo, numero, partido, votos);
                         
                         lendoPolitico = false;
                         contemNome = false;
@@ -356,6 +367,7 @@ public class LeituraArquivo implements Login
                         contemPartido = false;
                         contemVice = false;
                         contemPartidoVice = false;
+                        contemVotos = false;
                         candidatos.add(candidato);
                     }
                 }

@@ -457,7 +457,7 @@
 	<partido>AVANTE</partido>
 	<vice></vice>
 	<partidovice><partidovice>
-	<votos>0</votos>
+	<votos>1</votos>
 </politico>
 <politico>
 	<nome>Ana Patrícia Alves</nome>

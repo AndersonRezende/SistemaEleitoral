@@ -173,7 +173,7 @@ public class PanelNovoProcessoVotacao extends JPanel implements ActionListener, 
         boolean leitura = false;
         if(VerificaArquivo.checarArquivoCandidatos(nomeArquivo))
         {
-            candidatos = LeituraArquivo.lerPolitico(nomeArquivo);
+            candidatos = LeituraArquivo.lerPolitico(nomeArquivo, false);
             processoVotacao.setCandidatos(candidatos);
             leitura = true;
         }

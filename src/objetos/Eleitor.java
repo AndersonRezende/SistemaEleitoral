@@ -5,14 +5,13 @@
  */
 package objetos;
 
-import interfaces.ChecarVotoEleitor;
-import interfaces.Votar;
+import interfaces.Votacao;
 
 /**
  *
  * @author Anderson
  */
-public class Eleitor extends Pessoa implements ChecarVotoEleitor, Votar
+public class Eleitor extends Pessoa implements Votacao
 {
     private String nome;
     private String titulo;

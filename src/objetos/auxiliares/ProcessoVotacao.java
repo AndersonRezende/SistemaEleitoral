@@ -89,4 +89,54 @@ public class ProcessoVotacao
         }
         return candidato;
     }
+    
+    
+    public boolean eleitorJaVotou(String titulo)
+    {
+        boolean resultado = false;
+        
+        for(Eleitor eleitor : eleitores)
+        {
+            if(eleitor.getTitulo().equals(titulo) && eleitor.votou())
+            {
+                resultado = true;
+                break;
+            }
+        }
+        
+        return resultado;
+    }
+    
+    
+    public boolean eleitorVotaAqui(String titulo)
+    {
+        boolean resultado = false;
+        
+        for(Eleitor eleitor : eleitores)
+        {
+            if(eleitor.getTitulo().equals(titulo))
+            {
+                resultado = true;
+                break;
+            }
+        }
+        
+        return resultado;
+    }
+    
+    
+    public Eleitor getEleitor(String titulo)
+    {
+        Eleitor eleitor = null;
+
+        int index = 0;
+        while(index < eleitores.size() && eleitor == null)
+        {
+            if(eleitores.get(index).getTitulo().equals(titulo))
+                eleitor = eleitores.get(index);
+            index++;
+        }
+        
+        return eleitor;
+    }    
 }

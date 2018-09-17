@@ -6,7 +6,6 @@
 package sistemagrafico;
 
 import arquivo.LogArquivo;
-import arquivo.Resultado;
 import java.awt.BorderLayout;
 import java.awt.CardLayout;
 import java.awt.Color;
@@ -31,11 +30,11 @@ import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JDialog;
 import javax.swing.JLabel;
-import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JProgressBar;
 import javax.swing.JTextField;
 import objetos.Candidato;
+import objetos.Eleitor;
 import objetos.LogVotacao;
 import objetos.auxiliares.ObjetoCompartilhado;
 import objetos.auxiliares.ProcessoVotacao;
@@ -48,6 +47,8 @@ import objetos.auxiliares.ThreadGravarResultado;
  */
 public class DialogEleitorMaster extends JDialog implements ActionListener
 {
+    private Eleitor eleitor;
+    private boolean fechar;
     private int votacaoCargoVez;
     private int digitoVez;
     private final String opcoesParaButtons[] = {"BRANCO", "CORRIGE", "CONFIRMA"};
@@ -94,12 +95,14 @@ public class DialogEleitorMaster extends JDialog implements ActionListener
     private ImageIcon icon;   
     private JLabel labelImagem;
     
-    public DialogEleitorMaster(ProcessoVotacao processoVotacao)
+    public DialogEleitorMaster(ProcessoVotacao processoVotacao, Eleitor eleitor)
     {
         this.setUndecorated(true);
         this.processoVotacao = processoVotacao;
+        this.eleitor = eleitor;
         logVotacao = new LogVotacao();
         
+        fechar = false;
         votacaoCargoVez = 0;
         digitoVez = 0;
         
@@ -292,8 +295,9 @@ public class DialogEleitorMaster extends JDialog implements ActionListener
         progressBarFinalizarVoto.setFont(new Font(Font.SERIF, Font.BOLD, 40));
                 
         labelFimVotacao = new JLabel("FIM");
-        labelFimVotacao.setFont(new Font(Font.SERIF, Font.BOLD, 60));
+        labelFimVotacao.setFont(new Font(Font.SERIF, Font.BOLD, 120));
         labelFimVotacao.setHorizontalAlignment(JLabel.CENTER);
+        labelFimVotacao.setVisible(false);
         //labelFimVotacao.setVisible(false);
         
         panelParaDisplayFim = new JPanel(new GridLayout(5,1));
@@ -365,7 +369,6 @@ public class DialogEleitorMaster extends JDialog implements ActionListener
         {   configurarExibirNumeroDigitado(9);   }    
     }
 
-    
     //-----------------------------AUXILIARES-----------------------------------
     private void configurarExibicaoVez()                                        //Este método prepara as telas de acorodo com os itens necessários
     {
@@ -452,12 +455,20 @@ public class DialogEleitorMaster extends JDialog implements ActionListener
         progressBarFinalizarVoto.setString(progressBarFinalizarVoto.getValue()+"%");
         //Resultado.gravarResultado(processoVotacao, progressBarFinalizarVoto);
         
+        for(JButton buttonAux : buttonNumericoTela)
+            buttonAux.setEnabled(false);
+        for(JButton buttonAux : buttonOpcoesTela)
+            buttonAux.setEnabled(false);
+        for(JTextField textFieldAux : textFieldDigitos)
+            textFieldAux.setEnabled(false);
         
         ObjetoCompartilhado oc = new ObjetoCompartilhado();
-        ThreadProgressBar tpb = new ThreadProgressBar(oc, progressBarFinalizarVoto);
+        ThreadProgressBar tpb = new ThreadProgressBar(oc, progressBarFinalizarVoto, labelFimVotacao);
+        
         ThreadGravarResultado tgr = new ThreadGravarResultado(oc, processoVotacao);
         tgr.start();
         tpb.start();
+        eleitor.votar();
         //this.dispose();
     }
     

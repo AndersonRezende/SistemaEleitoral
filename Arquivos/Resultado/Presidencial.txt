@@ -99,13 +99,13 @@
 <nome>Fernando Filho</nome>
 <partido>DEM</partido>
 <numero>2501</numero>
-<votos>0</votos>
+<votos>1</votos>
 </politico>
 <politico>
 <nome>Antônio Coelho</nome>
 <partido>DEM</partido>
 <numero>25000</numero>
-<votos>0</votos>
+<votos>1</votos>
 </politico>
 <politico>
 <nome>Nino O Deputado Sem Teto</nome>
@@ -255,7 +255,7 @@
 <nome>Lidia Brunes</nome>
 <partido>PROS</partido>
 <numero>900</numero>
-<votos>0</votos>
+<votos>1</votos>
 </politico>
 <politico>
 <nome>Mendonca Filho</nome>
@@ -273,7 +273,7 @@
 <nome>Silvio Costa</nome>
 <partido>AVANTE</partido>
 <numero>700</numero>
-<votos>0</votos>
+<votos>1</votos>
 </politico>
 <politico>
 <nome>Ana Patrícia Alves</nome>
@@ -300,7 +300,7 @@
 <nome>Julio Lossio</nome>
 <partido>REDE</partido>
 <numero>18</numero>
-<votos>0</votos>
+<votos>1</votos>
 <vice>Luciano Bezerra</vice>
 </politico>
 <politico>
@@ -398,7 +398,7 @@
 <nome>Marina Silva</nome>
 <partido>REDE</partido>
 <numero>18</numero>
-<votos>0</votos>
+<votos>1</votos>
 <vice>Eduardo Jorge</vice>
 </politico>
 <politico>

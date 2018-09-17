@@ -3,24 +3,29 @@
  */
 package sistemagrafico;
 
+import arquivo.VerificaArquivo;
 import enumeracao.EnumListaPanels;
 import enumeracao.EnumOpcoesMenu;
+import excecoes.FormatoIncorretoException;
+import excecoes.JaVotouException;
 import java.awt.BorderLayout;
 import java.awt.CardLayout;
 import java.awt.Container;
 import java.awt.Font;
 import java.awt.event.ComponentEvent;
 import java.awt.event.ComponentListener;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.DefaultListModel;
 import javax.swing.JLabel;
 import javax.swing.JList;
-import javax.swing.JMenu;
-import javax.swing.JMenuBar;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.ListSelectionModel;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
+import objetos.Candidato;
+import objetos.Eleitor;
 import objetos.auxiliares.ProcessoVotacao;
 
 /**
@@ -115,7 +120,23 @@ public class PanelLogado extends JPanel implements ListSelectionListener, Compon
             if(listOpcoesMenu.getSelectedValue().toString().equalsIgnoreCase(EnumOpcoesMenu.LPV.getOpcao()) && processoVotacao.getProcessoVotacaoIniciado())
             {
                 //LER TITULO E CHECAR SE TA NA LISTA
-                DialogEleitorMaster de = new DialogEleitorMaster(processoVotacao);
+                String titulo = JOptionPane.showInputDialog(container, "Informe o número do título de eleitor:", "Número do título de eleitor", JOptionPane.QUESTION_MESSAGE);
+                Eleitor eleitor = processoVotacao.getEleitor(titulo);
+                if(eleitor != null)
+                {
+                    try
+                    {
+                        if(!eleitor.votou())
+                        {   DialogEleitorMaster de = new DialogEleitorMaster(processoVotacao, eleitor);  }
+                        else
+                        {   throw new JaVotouException(eleitor.getNome());  }
+                    }
+                    catch(JaVotouException ex)
+                    {   JOptionPane.showMessageDialog(container, ex.getMessage(), ""+ex.getMessage(), JOptionPane.ERROR_MESSAGE, null);   }
+                }
+                else
+                {   JOptionPane.showConfirmDialog(container, "O eleitor não foi localizado, certifique-se que o titulo esteja correto e que o mesmo vote nesta seção", 
+                                                             "Erro ao localizar eleitor", JOptionPane.OK_CANCEL_OPTION, JOptionPane.ERROR_MESSAGE, null); }
             }
             else
             {

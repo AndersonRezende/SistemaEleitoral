@@ -22,6 +22,7 @@ public class Eleitor extends Pessoa implements ChecarVotoEleitor, Votar
     {
         this.nome = nome;
         this.titulo = titulo;
+        this.votou = false;
     }
     
     public String getTitulo() 

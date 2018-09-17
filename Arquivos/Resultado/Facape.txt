@@ -1,0 +1,85 @@
+
+<politico>
+<nome>Metodologia Cientifica</nome>
+<partido>POS</partido>
+<numero>1</numero>
+<votos>0</votos>
+</politico>
+<politico>
+<nome>Gestão de Pojetos</nome>
+<partido>POS</partido>
+<numero>2</numero>
+<votos>0</votos>
+</politico>
+<politico>
+<nome>Engenharia de Requisitos</nome>
+<partido>POS</partido>
+<numero>1</numero>
+<votos>0</votos>
+</politico>
+<politico>
+<nome>Análise Orientada a Objetos</nome>
+<partido>POS</partido>
+<numero>4</numero>
+<votos>0</votos>
+</politico>
+<politico>
+<nome>Design de Interfaces e Usabilidade</nome>
+<partido>POS</partido>
+<numero>5</numero>
+<votos>0</votos>
+</politico>
+<politico>
+<nome>Programação Orientada a Objetos</nome>
+<partido>POS</partido>
+<numero>6</numero>
+<votos>1</votos>
+</politico>
+<politico>
+<nome>Processo de Desenvolvimento de Software</nome>
+<partido>POS</partido>
+<numero>7</numero>
+<votos>0</votos>
+</politico>
+<politico>
+<nome>Metodologia Cientifica</nome>
+<partido>POS</partido>
+<numero>1</numero>
+<votos>1</votos>
+</politico>
+<politico>
+<nome>Gestão de Pojetos</nome>
+<partido>POS</partido>
+<numero>2</numero>
+<votos>0</votos>
+</politico>
+<politico>
+<nome>Engenharia de Requisitos</nome>
+<partido>POS</partido>
+<numero>1</numero>
+<votos>0</votos>
+</politico>
+<politico>
+<nome>Análise Orientada a Objetos</nome>
+<partido>POS</partido>
+<numero>4</numero>
+<votos>0</votos>
+</politico>
+<politico>
+<nome>Design de Interfaces e Usabilidade</nome>
+<partido>POS</partido>
+<numero>5</numero>
+<votos>0</votos>
+</politico>
+<politico>
+<nome>Programação Orientada a Objetos</nome>
+<partido>POS</partido>
+<numero>6</numero>
+<votos>0</votos>
+</politico>
+<politico>
+<nome>Processo de Desenvolvimento de Software</nome>
+<partido>POS</partido>
+<numero>7</numero>
+<votos>0</votos>
+</politico>

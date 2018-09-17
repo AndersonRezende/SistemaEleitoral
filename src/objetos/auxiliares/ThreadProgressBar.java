@@ -5,6 +5,7 @@
  */
 package objetos.auxiliares;
 
+import javax.swing.JLabel;
 import javax.swing.JProgressBar;
 
 /**
@@ -14,13 +15,15 @@ import javax.swing.JProgressBar;
 public class ThreadProgressBar extends Thread
 {
     JProgressBar progressBar;
+    JLabel labelFimVotacao;
     ObjetoCompartilhado oc;
     
     
-    public ThreadProgressBar(ObjetoCompartilhado oc, JProgressBar progressBar)
+    public ThreadProgressBar(ObjetoCompartilhado oc, JProgressBar progressBar, JLabel labelFimVotacao)
     {
         this.progressBar = progressBar;
         this.oc = oc;
+        this.labelFimVotacao = labelFimVotacao;
     }
 
     @Override
@@ -42,6 +45,7 @@ public class ThreadProgressBar extends Thread
             }
         }
         while(progressBar.getValue() < 100);
+        labelFimVotacao.setVisible(true);
     }
     
 }

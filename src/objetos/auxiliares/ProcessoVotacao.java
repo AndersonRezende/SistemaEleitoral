@@ -1,10 +1,10 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * Aqui é implementado as duas Interfaces: ChecagemEleicao e ChecagemEleitor
  */
 package objetos.auxiliares;
 
+import interfaces.ChecagemEleicao;
+import interfaces.ChecagemEleitor;
 import java.util.ArrayList;
 import objetos.Candidato;
 import objetos.Eleicao;
@@ -14,7 +14,7 @@ import objetos.Eleitor;
  *
  * @author Anderson
  */
-public class ProcessoVotacao
+public class ProcessoVotacao implements ChecagemEleicao, ChecagemEleitor
 {
     private boolean processoVotacaoIniciado;
     private ArrayList<Eleicao> eleicoes;
@@ -55,6 +55,8 @@ public class ProcessoVotacao
     public void setEleitores(ArrayList<Eleitor> eleitores) 
     {   this.eleitores = eleitores; }
     
+    
+    @Override
     public int getMaiorNumeroDigitosEleicao()
     {
         int maiorNumeroDigitos = 0;
@@ -64,6 +66,7 @@ public class ProcessoVotacao
         return maiorNumeroDigitos;
     }
 
+    @Override
     public Candidato votar(int numero, int votacaoCargoVez)
     {        
         Candidato candidato = null;
@@ -73,6 +76,7 @@ public class ProcessoVotacao
         return candidato;
     }
     
+    @Override
     public Candidato getInfoCandidato(int numero, int votacaoCargoVez)
     {
         Candidato candidato = null;

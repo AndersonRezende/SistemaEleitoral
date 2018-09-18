@@ -5,6 +5,8 @@
  */
 package objetos;
 
+import objetos.auxiliares.ProcessoEleicao;
+
 /**
  *
  * @author Anderson

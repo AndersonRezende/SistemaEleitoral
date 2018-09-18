@@ -9,7 +9,7 @@ package objetos;
  *
  * @author Anderson
  */
-class Vice 
+class Vice extends Pessoa
 {
     private String nome;
     private String partido;
@@ -20,9 +20,14 @@ class Vice
         this.partido = partido;
     }
 
-    public String getNome() 
-    {   return nome;    }
-    
     public String getPartido()
     {   return partido; }
+    
+    @Override
+    public String getNome() 
+    {   return nome;    }
+  
+    @Override
+    public void setNome(String nome) 
+    {   this.nome = nome;   }
 }

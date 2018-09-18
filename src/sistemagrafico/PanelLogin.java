@@ -1,5 +1,5 @@
 /*
- * Aqui contém uma Interface: Login --> logar(login, senha)
+ * Aqui é utilizada a Interface Login
  */
 package sistemagrafico;
 

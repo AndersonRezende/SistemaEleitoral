@@ -1552,3 +1552,29 @@
 [17/8/2018 - 16:36:27] -> {[Julio Lossio][Governador][REDE][18][Luciano Bezerra][1]}
 
 [17/8/2018 - 16:36:31] -> {[Marina Silva][Presidente][REDE][18][Eduardo Jorge][1]}
+
+
+[17/8/2018 - 21:11:13] -> {[Fernando Filho][Deputado Federal][DEM][2501][1]}
+
+[17/8/2018 - 21:11:15] -> {[Antônio Coelho][Deputado Estadual][DEM][25000][1]}
+
+[17/8/2018 - 21:11:18] -> {[Voto nulo]}
+
+[17/8/2018 - 21:11:20] -> {[Silvio Costa][Senador][AVANTE][700][1]}
+
+[17/8/2018 - 21:11:26] -> {[Julio Lossio][Governador][REDE][18][Luciano Bezerra][1]}
+
+[17/8/2018 - 21:11:29] -> {[Marina Silva][Presidente][REDE][18][Eduardo Jorge][1]}
+
+
+[17/8/2018 - 21:13:31] -> {[Fernando Filho][Deputado Federal][DEM][2501][1]}
+
+[17/8/2018 - 21:13:33] -> {[Antônio Coelho][Deputado Estadual][DEM][25000][1]}
+
+[17/8/2018 - 21:13:35] -> {[Voto nulo]}
+
+[17/8/2018 - 21:13:37] -> {[Voto nulo]}
+
+[17/8/2018 - 21:13:40] -> {[Julio Lossio][Governador][REDE][18][Luciano Bezerra][1]}
+
+[17/8/2018 - 21:13:42] -> {[Marina Silva][Presidente][REDE][18][Eduardo Jorge][1]}

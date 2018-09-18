@@ -427,7 +427,7 @@
 	<partido>PROS</partido>
 	<vice></vice>
 	<partidovice><partidovice>
-	<votos>1</votos>
+	<votos>0</votos>
 </politico>
 <politico>
 	<nome>Mendonca Filho</nome>
@@ -457,7 +457,7 @@
 	<partido>AVANTE</partido>
 	<vice></vice>
 	<partidovice><partidovice>
-	<votos>1</votos>
+	<votos>0</votos>
 </politico>
 <politico>
 	<nome>Ana Patrícia Alves</nome>
@@ -465,7 +465,7 @@
 	<cargo>Governador</cargo>
 	<numero>29</numero>
 	<partido>PCO</partido>
-	<vice>objetos.Vice@687cdefa</vice>
+	<vice>Gilson Lopes de Oliveira</vice>
 	<partidovice>PCO<partidovice>
 	<votos>0</votos>
 </politico>
@@ -475,7 +475,7 @@
 	<cargo>Governador</cargo>
 	<numero>14</numero>
 	<partido>PTB</partido>
-	<vice>objetos.Vice@66bb3d85</vice>
+	<vice>Fred Ferreira</vice>
 	<partidovice>PSC<partidovice>
 	<votos>0</votos>
 </politico>
@@ -485,7 +485,7 @@
 	<cargo>Governador</cargo>
 	<numero>50</numero>
 	<partido>PSOL</partido>
-	<vice>objetos.Vice@6284b58a</vice>
+	<vice>Gerlane Simões</vice>
 	<partidovice>PSOL<partidovice>
 	<votos>0</votos>
 </politico>
@@ -495,7 +495,7 @@
 	<cargo>Governador</cargo>
 	<numero>18</numero>
 	<partido>REDE</partido>
-	<vice>objetos.Vice@278637be</vice>
+	<vice>Luciano Bezerra</vice>
 	<partidovice>REDE<partidovice>
 	<votos>1</votos>
 </politico>
@@ -505,7 +505,7 @@
 	<cargo>Governador</cargo>
 	<numero>90</numero>
 	<partido>PROS</partido>
-	<vice>objetos.Vice@2903b6ba</vice>
+	<vice>Isabella de Roldão</vice>
 	<partidovice>PDT<partidovice>
 	<votos>0</votos>
 </politico>
@@ -515,7 +515,7 @@
 	<cargo>Governador</cargo>
 	<numero>40</numero>
 	<partido>PSB</partido>
-	<vice>objetos.Vice@16ebf10a</vice>
+	<vice>Luciana Santos</vice>
 	<partidovice>PCdoB<partidovice>
 	<votos>0</votos>
 </politico>
@@ -525,7 +525,7 @@
 	<cargo>Governador</cargo>
 	<numero>16</numero>
 	<partido>PSTU</partido>
-	<vice>objetos.Vice@51842eb8</vice>
+	<vice>Jair Pedro</vice>
 	<partidovice>PSTU<partidovice>
 	<votos>0</votos>
 </politico>
@@ -535,7 +535,7 @@
 	<cargo>Presidente</cargo>
 	<numero>19</numero>
 	<partido>PODEMOS</partido>
-	<vice>objetos.Vice@47a9c8f1</vice>
+	<vice>Paulo Rabello</vice>
 	<partidovice>PSC<partidovice>
 	<votos>0</votos>
 </politico>
@@ -545,7 +545,7 @@
 	<cargo>Presidente</cargo>
 	<numero>51</numero>
 	<partido>PATRIOTA</partido>
-	<vice>objetos.Vice@732b00d8</vice>
+	<vice>Suelene Balduino</vice>
 	<partidovice>PATRIOTA<partidovice>
 	<votos>0</votos>
 </politico>
@@ -555,7 +555,7 @@
 	<cargo>Presidente</cargo>
 	<numero>12</numero>
 	<partido>PDT</partido>
-	<vice>objetos.Vice@3a81dc16</vice>
+	<vice>Kátia Abreu</vice>
 	<partidovice>PDT<partidovice>
 	<votos>0</votos>
 </politico>
@@ -565,7 +565,7 @@
 	<cargo>Presidente</cargo>
 	<numero>27</numero>
 	<partido>DC</partido>
-	<vice>objetos.Vice@4a80c410</vice>
+	<vice>Helvio Costa</vice>
 	<partidovice>DC<partidovice>
 	<votos>0</votos>
 </politico>
@@ -575,7 +575,7 @@
 	<cargo>Presidente</cargo>
 	<numero>45</numero>
 	<partido>PSDB</partido>
-	<vice>objetos.Vice@43e773f1</vice>
+	<vice>Ana Amália Lemos</vice>
 	<partidovice>PP<partidovice>
 	<votos>0</votos>
 </politico>
@@ -585,7 +585,7 @@
 	<cargo>Presidente</cargo>
 	<numero>50</numero>
 	<partido>PSOL</partido>
-	<vice>objetos.Vice@68619695</vice>
+	<vice>Sonia Guajajara</vice>
 	<partidovice>PSOL<partidovice>
 	<votos>0</votos>
 </politico>
@@ -595,7 +595,7 @@
 	<cargo>Presidente</cargo>
 	<numero>15</numero>
 	<partido>MDB</partido>
-	<vice>objetos.Vice@5c3486e3</vice>
+	<vice>Germano Rigotto</vice>
 	<partidovice>MDB<partidovice>
 	<votos>0</votos>
 </politico>
@@ -605,7 +605,7 @@
 	<cargo>Presidente</cargo>
 	<numero>17</numero>
 	<partido>PSL</partido>
-	<vice>objetos.Vice@10587931</vice>
+	<vice>General Mourão</vice>
 	<partidovice>PRTB<partidovice>
 	<votos>0</votos>
 </politico>
@@ -615,7 +615,7 @@
 	<cargo>Presidente</cargo>
 	<numero>30</numero>
 	<partido>NOVO</partido>
-	<vice>objetos.Vice@6858f830</vice>
+	<vice>Professor Christian</vice>
 	<partidovice>NOVO<partidovice>
 	<votos>0</votos>
 </politico>
@@ -625,7 +625,7 @@
 	<cargo>Presidente</cargo>
 	<numero>54</numero>
 	<partido>PPL</partido>
-	<vice>objetos.Vice@c691e90</vice>
+	<vice>Léo da Silva Alves</vice>
 	<partidovice>PPL<partidovice>
 	<votos>0</votos>
 </politico>
@@ -635,7 +635,7 @@
 	<cargo>Presidente</cargo>
 	<numero>18</numero>
 	<partido>REDE</partido>
-	<vice>objetos.Vice@74129260</vice>
+	<vice>Eduardo Jorge</vice>
 	<partidovice>PV<partidovice>
 	<votos>1</votos>
 </politico>
@@ -645,7 +645,7 @@
 	<cargo>Presidente</cargo>
 	<numero>16</numero>
 	<partido>PSTU</partido>
-	<vice>objetos.Vice@2750ec22</vice>
+	<vice>Hertz</vice>
 	<partidovice>PSTU<partidovice>
 	<votos>0</votos>
 </politico>
@@ -655,7 +655,7 @@
 	<cargo>Presidente</cargo>
 	<numero>13</numero>
 	<partido>PT</partido>
-	<vice>objetos.Vice@8660980</vice>
+	<vice>Manuela DÁvila</vice>
 	<partidovice>PCdoB<partidovice>
 	<votos>0</votos>
 </politico>

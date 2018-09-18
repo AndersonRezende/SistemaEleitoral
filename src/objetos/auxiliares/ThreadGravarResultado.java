@@ -66,7 +66,7 @@ public class ThreadGravarResultado extends Thread
                 bw.newLine();
                 if(candidatos.get(index).temVice())
                 {
-                    bw.write("\t" + VerificaArquivo.ABREVICE + candidatos.get(index).getVice() + VerificaArquivo.FECHAVICE);
+                    bw.write("\t" + VerificaArquivo.ABREVICE + candidatos.get(index).getNomeVice() + VerificaArquivo.FECHAVICE);
                     bw.newLine();
                     bw.write("\t" + VerificaArquivo.ABREPARTIDOVICE + candidatos.get(index).getPartidoVice() + VerificaArquivo.ABREPARTIDOVICE);
                     bw.newLine();

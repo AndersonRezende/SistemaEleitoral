@@ -47,7 +47,6 @@ public class ThreadGravarResultado extends Thread
         {
             FileWriter fw = new FileWriter(arquivo, false);
             BufferedWriter bw = new BufferedWriter(fw);
-            bw.newLine();
 
             while(index < candidatos.size())
             {
@@ -68,14 +67,14 @@ public class ThreadGravarResultado extends Thread
                 {
                     bw.write("\t" + VerificaArquivo.ABREVICE + candidatos.get(index).getNomeVice() + VerificaArquivo.FECHAVICE);
                     bw.newLine();
-                    bw.write("\t" + VerificaArquivo.ABREPARTIDOVICE + candidatos.get(index).getPartidoVice() + VerificaArquivo.ABREPARTIDOVICE);
+                    bw.write("\t" + VerificaArquivo.ABREPARTIDOVICE + candidatos.get(index).getPartidoVice() + VerificaArquivo.FECHAPARTIDOVICE);
                     bw.newLine();
                 }
                 else
                 {
                     bw.write("\t" + VerificaArquivo.ABREVICE + VerificaArquivo.FECHAVICE);
                     bw.newLine();
-                    bw.write("\t" + VerificaArquivo.ABREPARTIDOVICE + VerificaArquivo.ABREPARTIDOVICE);
+                    bw.write("\t" + VerificaArquivo.ABREPARTIDOVICE + VerificaArquivo.FECHAPARTIDOVICE);
                     bw.newLine();
                 }
                 bw.write("\t" + VerificaArquivo.ABREVOTOS + candidatos.get(index).getVotos() + VerificaArquivo.FECHAVOTOS);

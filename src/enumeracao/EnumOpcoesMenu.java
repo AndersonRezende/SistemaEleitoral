@@ -12,6 +12,7 @@ public enum EnumOpcoesMenu
     NPV("NOVO PROCESSO DE VOTAÇÃO"),
     LPV("LIBERAR PRÓXIMA VOTAÇÃO"),
     FPV("FINALIZAR PROCESSO DE VOTAÇÃO"),
+    RPV("RESULTADO DO PROCESSO DE VOTAÇÃO"),
     SAIR("SAIR");
     
     public String opcao;

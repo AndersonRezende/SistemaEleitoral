@@ -1578,3 +1578,80 @@
 [17/8/2018 - 21:13:40] -> {[Julio Lossio][Governador][REDE][18][Luciano Bezerra][1]}
 
 [17/8/2018 - 21:13:42] -> {[Marina Silva][Presidente][REDE][18][Eduardo Jorge][1]}
+
+
+[19/8/2018 - 16:5:20] -> {[Programação Orientada a Objetos][Melhor Materia][POS][6][1]}
+
+[19/8/2018 - 16:5:23] -> {[Metodologia Cientifica][Pior Materia][POS][1][1]}
+
+
+[19/8/2018 - 16:5:39] -> {[Fernando Filho][Deputado Federal][DEM][2501][1]}
+
+[19/8/2018 - 16:5:42] -> {[Antônio Coelho][Deputado Estadual][DEM][25000][1]}
+
+[19/8/2018 - 16:5:44] -> {[Silvio Costa][Senador][AVANTE][700][1]}
+
+[19/8/2018 - 16:5:46] -> {[Lidia Brunes][Senador][PROS][900][1]}
+
+[19/8/2018 - 16:5:48] -> {[Julio Lossio][Governador][REDE][18][Luciano Bezerra][1]}
+
+[19/8/2018 - 16:5:50] -> {[Marina Silva][Presidente][REDE][18][Eduardo Jorge][1]}
+
+
+[19/8/2018 - 17:19:5] -> {[Programação Orientada a Objetos][Melhor Materia][POS][6][1]}
+
+[19/8/2018 - 17:19:7] -> {[Metodologia Cientifica][Pior Materia][POS][1][1]}
+
+
+[19/8/2018 - 17:19:37] -> {[Programação Orientada a Objetos][Melhor Materia][POS][6][1]}
+
+[19/8/2018 - 17:19:39] -> {[Metodologia Cientifica][Pior Materia][POS][1][1]}
+
+
+[19/8/2018 - 17:43:38] -> {[Voto nulo]}
+
+[19/8/2018 - 17:43:38] -> {[Voto nulo]}
+
+[19/8/2018 - 17:43:39] -> {[Voto nulo]}
+
+[19/8/2018 - 17:43:40] -> {[Voto nulo]}
+
+[19/8/2018 - 17:43:40] -> {[Voto nulo]}
+
+[19/8/2018 - 17:43:42] -> {[Voto nulo]}
+
+
+[19/8/2018 - 17:44:13] -> {[Fernando Filho][Deputado Federal][DEM][2501][1]}
+
+[19/8/2018 - 17:44:16] -> {[Antônio Coelho][Deputado Estadual][DEM][25000][1]}
+
+[19/8/2018 - 17:44:18] -> {[Silvio Costa][Senador][AVANTE][700][1]}
+
+[19/8/2018 - 17:44:20] -> {[Lidia Brunes][Senador][PROS][900][1]}
+
+[19/8/2018 - 17:44:21] -> {[Julio Lossio][Governador][REDE][18][Luciano Bezerra][1]}
+
+[19/8/2018 - 17:44:23] -> {[Marina Silva][Presidente][REDE][18][Eduardo Jorge][1]}
+
+
+[19/8/2018 - 17:52:35] -> {[Fernando Filho][Deputado Federal][DEM][2501][1]}
+
+[19/8/2018 - 17:52:36] -> {[Voto nulo]}
+
+[19/8/2018 - 17:52:37] -> {[Voto nulo]}
+
+[19/8/2018 - 17:52:38] -> {[Voto nulo]}
+
+[19/8/2018 - 17:52:38] -> {[Voto nulo]}
+
+[19/8/2018 - 17:52:39] -> {[Voto nulo]}
+
+
+[19/8/2018 - 18:6:23] -> {[Programação Orientada a Objetos][Melhor Materia][POS][6][1]}
+
+[19/8/2018 - 18:6:25] -> {[Metodologia Cientifica][Pior Materia][POS][1][1]}
+
+
+[19/8/2018 - 18:8:7] -> {[Programação Orientada a Objetos][Melhor Materia][POS][6][1]}
+
+[19/8/2018 - 18:8:9] -> {[Metodologia Cientifica][Pior Materia][POS][1][1]}

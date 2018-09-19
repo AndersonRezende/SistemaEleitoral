@@ -271,7 +271,13 @@ public class LeituraArquivo extends Arquivo implements Login
         
         String linha = "";
         
-        File arquivo = new File(""+new File("").getAbsoluteFile()+"\\Arquivos\\Candidatos\\"+nomeArquivo+".txt");
+        File arquivo = null;
+        
+        if(!lerVotos)
+            arquivo = new File(""+new File("").getAbsoluteFile()+"\\Arquivos\\Candidatos\\"+nomeArquivo+".txt");
+        else
+            arquivo = new File(""+new File("").getAbsoluteFile()+"\\Arquivos\\Resultado\\"+nomeArquivo+".txt");
+        
         if(arquivo.exists())
         {
             try

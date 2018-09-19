@@ -3,10 +3,8 @@
  */
 package sistemagrafico;
 
-import arquivo.VerificaArquivo;
 import enumeracao.EnumListaPanels;
 import enumeracao.EnumOpcoesMenu;
-import excecoes.FormatoIncorretoException;
 import excecoes.JaVotouException;
 import java.awt.BorderLayout;
 import java.awt.CardLayout;
@@ -14,8 +12,6 @@ import java.awt.Container;
 import java.awt.Font;
 import java.awt.event.ComponentEvent;
 import java.awt.event.ComponentListener;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.swing.DefaultListModel;
 import javax.swing.JLabel;
 import javax.swing.JList;
@@ -24,7 +20,6 @@ import javax.swing.JPanel;
 import javax.swing.ListSelectionModel;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
-import objetos.Candidato;
 import objetos.Eleitor;
 import objetos.auxiliares.ProcessoVotacao;
 
@@ -44,6 +39,7 @@ public class PanelLogado extends JPanel implements ListSelectionListener, Compon
     private JList listOpcoesMenu;
     private DefaultListModel listModelOpcoesMenu;
     private JLabel labelMesarioSuperior;
+    private boolean liberarResultado;
     
     
     PanelLogado(JPanel panelMesario, Container container, CardLayout cardManager, JPanel panelContainerTelaVez, ProcessoVotacao processoVotacao) 
@@ -52,6 +48,7 @@ public class PanelLogado extends JPanel implements ListSelectionListener, Compon
         this.panelContainerTelaVez = panelContainerTelaVez;
         this.cardManager = cardManager;
         this.processoVotacao = processoVotacao;
+        this.liberarResultado = false;
         
         fontListOpcoesMenu = new Font(Font.SERIF, Font.PLAIN, 25);
         fontLabelTextoSuperior = new Font(Font.SERIF, Font.BOLD, 25);
@@ -85,7 +82,9 @@ public class PanelLogado extends JPanel implements ListSelectionListener, Compon
     {
         if(e.getSource() == listOpcoesMenu)
         {
-            //Só permite criar um novo processo de votação se a variavel que informa se há um processo de votação correndo estiver falsa
+           /* Opção para um NOVO PROCESSO DE VOTAÇÃO
+            * Só permite criar um novo processo de votação se a variavel que informa se há um processo de votação correndo estiver falsa
+            */
             if(listOpcoesMenu.getSelectedValue().toString().equalsIgnoreCase(EnumOpcoesMenu.NPV.getOpcao()) && !processoVotacao.getProcessoVotacaoIniciado())
             {   //Novo processo de votação
                 int opcao = JOptionPane.showConfirmDialog(container, "Deseja iniciar um novo processo de votação?", "Confirmação", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE, null);
@@ -95,28 +94,30 @@ public class PanelLogado extends JPanel implements ListSelectionListener, Compon
             else
             {   
                 if(listOpcoesMenu.getSelectedValue().toString().equalsIgnoreCase(EnumOpcoesMenu.NPV.getOpcao()) && processoVotacao.getProcessoVotacaoIniciado())
-                {
-                    JOptionPane.showMessageDialog(container, "Já existe um processo de eleição ocorrendo, finalize o processo atual antes de iniciar um novo!", "Erro", JOptionPane.ERROR_MESSAGE, null);
-                }
+                {   JOptionPane.showMessageDialog(container, "Já existe um processo de eleição ocorrendo, finalize o processo atual antes de iniciar um novo!", "Erro", JOptionPane.ERROR_MESSAGE, null);   }
             }
             
+            /* Opção para FINALIZAR PROCESSO DE VOTAÇÃO
+            * Só permite finalizar se tiver um processo ocorrendo
+            */
             if(listOpcoesMenu.getSelectedValue().toString().equalsIgnoreCase(EnumOpcoesMenu.FPV.getOpcao()) && processoVotacao.getProcessoVotacaoIniciado())
             {
                 int opcao = JOptionPane.showConfirmDialog(container, "Deseja finalizar o processo de votação corrente?", "Confirmação", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE, null);
                 if(opcao == JOptionPane.YES_OPTION)
                 {
                     processoVotacao.finalizarProcessoVotacao();
-                    //IMPLEMENTAR FINALIZAÇÃO
+                    liberarResultado = true;
                 }
             }
             else
             {   
                 if(listOpcoesMenu.getSelectedValue().toString().equalsIgnoreCase(EnumOpcoesMenu.FPV.getOpcao()) && !processoVotacao.getProcessoVotacaoIniciado())
-                {
-                    JOptionPane.showMessageDialog(container, "Não há nenhum processo de votaçao ocorrendo!", "Erro", JOptionPane.ERROR_MESSAGE, null);
-                }
+                {   JOptionPane.showMessageDialog(container, "Não há nenhum processo de votaçao ocorrendo!", "Erro", JOptionPane.ERROR_MESSAGE, null);  }
             }
             
+            /* Opção para um LIBERAR PRÓXIMA VOTAÇÃO
+            * Só libera a próxima votação se o número do titulo de eleitor estiver correto e se o mesmo não tiver votado
+            */
             if(listOpcoesMenu.getSelectedValue().toString().equalsIgnoreCase(EnumOpcoesMenu.LPV.getOpcao()) && processoVotacao.getProcessoVotacaoIniciado())
             {
                 //LER TITULO E CHECAR SE TA NA LISTA
@@ -132,7 +133,7 @@ public class PanelLogado extends JPanel implements ListSelectionListener, Compon
                                          + "Nome: "+eleitor.getNome() + "\n"
                                          + "Título de eleitor: "+eleitor.getTitulo();
                             if(JOptionPane.showConfirmDialog(container, mensagem, "Confirmação", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE, null) == JOptionPane.YES_OPTION)
-                            {   DialogEleitorMaster de = new DialogEleitorMaster(processoVotacao, eleitor); }
+                            {   DialogEleitorMaster dem = new DialogEleitorMaster(processoVotacao, eleitor); }
                         }
                         else
                         {   throw new JaVotouException(eleitor.getNome());  }
@@ -147,8 +148,18 @@ public class PanelLogado extends JPanel implements ListSelectionListener, Compon
             else
             {
                 if(listOpcoesMenu.getSelectedValue().toString().equalsIgnoreCase(EnumOpcoesMenu.LPV.getOpcao()) && !processoVotacao.getProcessoVotacaoIniciado())
+                {   JOptionPane.showMessageDialog(container, "Não há nenhum processo de votaçao ocorrendo!", "Erro", JOptionPane.ERROR_MESSAGE, null);  }
+            }
+            
+            /* Procedimento para exibição dos resultados
+            * Só libera o resultado se a opção escolhida for igual ao enum LPV, se não tiver nenhum processo rodando e se já ocorreu um processo de votação recetemente
+            */
+            if(listOpcoesMenu.getSelectedValue().toString().equalsIgnoreCase(EnumOpcoesMenu.RPV.getOpcao()) && !processoVotacao.getProcessoVotacaoIniciado() && liberarResultado)
+            {
+                int resposta = JOptionPane.showConfirmDialog(container, "Deseja visualizar os resultados?", "Resultados", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE, null);
+                if(resposta == JOptionPane.YES_OPTION)
                 {
-                    JOptionPane.showMessageDialog(container, "Não há nenhum processo de votaçao ocorrendo!", "Erro", JOptionPane.ERROR_MESSAGE, null);
+                    DialogResultado dres = new DialogResultado(processoVotacao);
                 }
             }
             

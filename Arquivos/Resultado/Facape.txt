@@ -1,0 +1,140 @@
+<politico>
+	<nome>Metodologia Cientifica</nome>
+	<titulo>1</titulo>
+	<cargo>Melhor Materia</cargo>
+	<numero>1</numero>
+	<partido>POS</partido>
+	<vice></vice>
+	<partidovice></partidovice>
+	<votos>0</votos>
+</politico>
+<politico>
+	<nome>Gestão de Pojetos</nome>
+	<titulo>2</titulo>
+	<cargo>Melhor Materia</cargo>
+	<numero>2</numero>
+	<partido>POS</partido>
+	<vice></vice>
+	<partidovice></partidovice>
+	<votos>0</votos>
+</politico>
+<politico>
+	<nome>Engenharia de Requisitos</nome>
+	<titulo>3</titulo>
+	<cargo>Melhor Materia</cargo>
+	<numero>1</numero>
+	<partido>POS</partido>
+	<vice></vice>
+	<partidovice></partidovice>
+	<votos>0</votos>
+</politico>
+<politico>
+	<nome>Análise Orientada a Objetos</nome>
+	<titulo>4</titulo>
+	<cargo>Melhor Materia</cargo>
+	<numero>4</numero>
+	<partido>POS</partido>
+	<vice></vice>
+	<partidovice></partidovice>
+	<votos>0</votos>
+</politico>
+<politico>
+	<nome>Design de Interfaces e Usabilidade</nome>
+	<titulo>5</titulo>
+	<cargo>Melhor Materia</cargo>
+	<numero>5</numero>
+	<partido>POS</partido>
+	<vice></vice>
+	<partidovice></partidovice>
+	<votos>0</votos>
+</politico>
+<politico>
+	<nome>Programação Orientada a Objetos</nome>
+	<titulo>6</titulo>
+	<cargo>Melhor Materia</cargo>
+	<numero>6</numero>
+	<partido>POS</partido>
+	<vice></vice>
+	<partidovice></partidovice>
+	<votos>1</votos>
+</politico>
+<politico>
+	<nome>Processo de Desenvolvimento de Software</nome>
+	<titulo>7</titulo>
+	<cargo>Melhor Materia</cargo>
+	<numero>7</numero>
+	<partido>POS</partido>
+	<vice></vice>
+	<partidovice></partidovice>
+	<votos>0</votos>
+</politico>
+<politico>
+	<nome>Metodologia Cientifica</nome>
+	<titulo>1</titulo>
+	<cargo>Pior Materia</cargo>
+	<numero>1</numero>
+	<partido>POS</partido>
+	<vice></vice>
+	<partidovice></partidovice>
+	<votos>1</votos>
+</politico>
+<politico>
+	<nome>Gestão de Pojetos</nome>
+	<titulo>2</titulo>
+	<cargo>Pior Materia</cargo>
+	<numero>2</numero>
+	<partido>POS</partido>
+	<vice></vice>
+	<partidovice></partidovice>
+	<votos>0</votos>
+</politico>
+<politico>
+	<nome>Engenharia de Requisitos</nome>
+	<titulo>3</titulo>
+	<cargo>Pior Materia</cargo>
+	<numero>1</numero>
+	<partido>POS</partido>
+	<vice></vice>
+	<partidovice></partidovice>
+	<votos>0</votos>
+</politico>
+<politico>
+	<nome>Análise Orientada a Objetos</nome>
+	<titulo>4</titulo>
+	<cargo>Pior Materia</cargo>
+	<numero>4</numero>
+	<partido>POS</partido>
+	<vice></vice>
+	<partidovice></partidovice>
+	<votos>0</votos>
+</politico>
+<politico>
+	<nome>Design de Interfaces e Usabilidade</nome>
+	<titulo>5</titulo>
+	<cargo>Pior Materia</cargo>
+	<numero>5</numero>
+	<partido>POS</partido>
+	<vice></vice>
+	<partidovice></partidovice>
+	<votos>0</votos>
+</politico>
+<politico>
+	<nome>Programação Orientada a Objetos</nome>
+	<titulo>6</titulo>
+	<cargo>Pior Materia</cargo>
+	<numero>6</numero>
+	<partido>POS</partido>
+	<vice></vice>
+	<partidovice></partidovice>
+	<votos>0</votos>
+</politico>
+<politico>
+	<nome>Processo de Desenvolvimento de Software</nome>
+	<titulo>7</titulo>
+	<cargo>Pior Materia</cargo>
+	<numero>7</numero>
+	<partido>POS</partido>
+	<vice></vice>
+	<partidovice></partidovice>
+	<votos>0</votos>
+</politico>

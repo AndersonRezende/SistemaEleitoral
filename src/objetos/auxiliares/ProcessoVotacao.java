@@ -1,5 +1,5 @@
 /*
- * Aqui é implementado as duas Interfaces: ChecagemEleicao e ChecagemEleitor
+ * Aqui são implementado as duas Interfaces: ChecagemEleicao e ChecagemEleitor
  */
 package objetos.auxiliares;
 
@@ -95,6 +95,7 @@ public class ProcessoVotacao implements ChecagemEleicao, ChecagemEleitor
     }
     
     
+    @Override
     public boolean eleitorJaVotou(String titulo)
     {
         boolean resultado = false;
@@ -112,6 +113,7 @@ public class ProcessoVotacao implements ChecagemEleicao, ChecagemEleitor
     }
     
     
+    @Override
     public boolean eleitorVotaAqui(String titulo)
     {
         boolean resultado = false;
@@ -129,6 +131,7 @@ public class ProcessoVotacao implements ChecagemEleicao, ChecagemEleitor
     }
     
     
+    @Override
     public Eleitor getEleitor(String titulo)
     {
         Eleitor eleitor = null;

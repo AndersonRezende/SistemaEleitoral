@@ -21,7 +21,7 @@ import objetos.Mesario;
  *
  * @author Anderson
  */
-public class LeituraArquivo implements Login
+public class LeituraArquivo extends Arquivo implements Login
 {
     
     
@@ -54,16 +54,16 @@ public class LeituraArquivo implements Login
                 {
                     linha = br.readLine();
                     
-                    inicio = linha.indexOf(VerificaArquivo.ABREELEICAO)+VerificaArquivo.ABREELEICAO.length();
-                    fim = linha.indexOf(VerificaArquivo.FECHAELEICAO);
+                    inicio = linha.indexOf(ABREELEICAO)+ABREELEICAO.length();
+                    fim = linha.indexOf(FECHAELEICAO);
                     nome = linha.substring(inicio, fim);
                     if(br.ready())
                         linha = br.readLine();                                  //<cargos>
                     
-                    while(br.ready() && !linha.contains(VerificaArquivo.FECHACARGOS))
+                    while(br.ready() && !linha.contains(FECHACARGOS))
                     {   
                         linha = br.readLine();
-                        if(linha.contains(VerificaArquivo.ABRECARGO))
+                        if(linha.contains(ABRECARGO))
                         {
                             titulo = "";
                             vice = false;
@@ -71,33 +71,33 @@ public class LeituraArquivo implements Login
                             votos = 0;
                         }
                         
-                        if(linha.contains(VerificaArquivo.ABRETITULO) && linha.contains(VerificaArquivo.FECHATITULO))
+                        if(linha.contains(ABRETITULO) && linha.contains(FECHATITULO))
                         {
-                            inicio = linha.indexOf(VerificaArquivo.ABRETITULO)+VerificaArquivo.ABRETITULO.length();
-                            fim = linha.indexOf(VerificaArquivo.FECHATITULO);
+                            inicio = linha.indexOf(ABRETITULO)+ABRETITULO.length();
+                            fim = linha.indexOf(FECHATITULO);
                             titulo = linha.substring(inicio, fim);
                         }
-                        if(linha.contains(VerificaArquivo.ABREVICE) && linha.contains(VerificaArquivo.FECHAVICE))
+                        if(linha.contains(ABREVICE) && linha.contains(FECHAVICE))
                         {
-                            inicio = linha.indexOf(VerificaArquivo.ABREVICE)+VerificaArquivo.ABREVICE.length();
-                            fim = linha.indexOf(VerificaArquivo.FECHAVICE);
+                            inicio = linha.indexOf(ABREVICE)+ABREVICE.length();
+                            fim = linha.indexOf(FECHAVICE);
                             String aux = linha.substring(inicio, fim);
                             vice = aux.equalsIgnoreCase("sim");
                         }
-                        if(linha.contains(VerificaArquivo.ABREDIGITOS) && linha.contains(VerificaArquivo.FECHADIGITOS))
+                        if(linha.contains(ABREDIGITOS) && linha.contains(FECHADIGITOS))
                         {
-                            inicio = linha.indexOf(VerificaArquivo.ABREDIGITOS)+VerificaArquivo.ABREDIGITOS.length();
-                            fim = linha.indexOf(VerificaArquivo.FECHADIGITOS);
+                            inicio = linha.indexOf(ABREDIGITOS)+ABREDIGITOS.length();
+                            fim = linha.indexOf(FECHADIGITOS);
                             digitos = Integer.parseInt(linha.substring(inicio, fim));
                         }
-                        if(linha.contains(VerificaArquivo.ABREELEITOS) && linha.contains(VerificaArquivo.FECHAELEITOS))
+                        if(linha.contains(ABREELEITOS) && linha.contains(FECHAELEITOS))
                         {
-                            inicio = linha.indexOf(VerificaArquivo.ABREELEITOS)+VerificaArquivo.ABREELEITOS.length();
-                            fim = linha.indexOf(VerificaArquivo.FECHAELEITOS);
+                            inicio = linha.indexOf(ABREELEITOS)+ABREELEITOS.length();
+                            fim = linha.indexOf(FECHAELEITOS);
                             eleitos = Integer.parseInt(linha.substring(inicio, fim));
                         }
                         
-                        if(linha.contains(VerificaArquivo.FECHACARGO) && !titulo.equals("") && (digitos > 0))
+                        if(linha.contains(FECHACARGO) && !titulo.equals("") && (digitos > 0))
                         {
                             eleicao = new Eleicao(nome, titulo, vice, digitos, eleitos);
                             eleicoes.add(eleicao);
@@ -138,27 +138,27 @@ public class LeituraArquivo implements Login
                 while(br.ready())
                 {
                     linha = br.readLine();
-                    if(linha.contains(VerificaArquivo.ABREMESARIO))
+                    if(linha.contains(ABREMESARIO))
                     {
                         login = "";
                         senha = "";
                         lendoMesario = true;
                     }
-                    if(linha.contains(VerificaArquivo.ABRELOGIN) && lendoMesario)
+                    if(linha.contains(ABRELOGIN) && lendoMesario)
                     {
-                        inicio = linha.indexOf(VerificaArquivo.ABRELOGIN)+VerificaArquivo.ABRELOGIN.length();
-                        fim = linha.indexOf(VerificaArquivo.FECHALOGIN);
+                        inicio = linha.indexOf(ABRELOGIN)+ABRELOGIN.length();
+                        fim = linha.indexOf(FECHALOGIN);
                         login = linha.substring(inicio, fim);
                         contemLogin = true;
                     }
-                    if(linha.contains(VerificaArquivo.ABRESENHA) && lendoMesario)
+                    if(linha.contains(ABRESENHA) && lendoMesario)
                     {
-                        inicio = linha.indexOf(VerificaArquivo.ABRESENHA)+VerificaArquivo.ABRESENHA.length();
-                        fim = linha.indexOf(VerificaArquivo.FECHASENHA);
+                        inicio = linha.indexOf(ABRESENHA)+ABRESENHA.length();
+                        fim = linha.indexOf(FECHASENHA);
                         senha = linha.substring(inicio, fim);
                         contemSenha = true;
                     }
-                    if(linha.contains(VerificaArquivo.FECHAMESARIO) && lendoMesario && contemLogin && contemSenha)
+                    if(linha.contains(FECHAMESARIO) && lendoMesario && contemLogin && contemSenha)
                     {
                         lendoMesario = false;
                         contemLogin = false;
@@ -203,27 +203,27 @@ public class LeituraArquivo implements Login
                 while(br.ready())
                 {
                     linha = br.readLine();
-                    if(linha.contains(VerificaArquivo.ABREELEITOR))
+                    if(linha.contains(ABREELEITOR))
                     {
                         nome = "";
                         titulo = "";
                         lendoEleitor = true;
                     }
-                    if(linha.contains(VerificaArquivo.ABRENOME) && lendoEleitor)
+                    if(linha.contains(ABRENOME) && lendoEleitor)
                     {
-                        inicio = linha.indexOf(VerificaArquivo.ABRENOME)+VerificaArquivo.ABRENOME.length();
-                        fim = linha.indexOf(VerificaArquivo.FECHANOME);
+                        inicio = linha.indexOf(ABRENOME)+ABRENOME.length();
+                        fim = linha.indexOf(FECHANOME);
                         nome = linha.substring(inicio, fim);
                         contemNome = true;
                     }
-                    if(linha.contains(VerificaArquivo.ABRETITULO) && lendoEleitor)
+                    if(linha.contains(ABRETITULO) && lendoEleitor)
                     {
-                        inicio = linha.indexOf(VerificaArquivo.ABRETITULO)+VerificaArquivo.ABRETITULO.length();
-                        fim = linha.indexOf(VerificaArquivo.FECHATITULO);
+                        inicio = linha.indexOf(ABRETITULO)+ABRETITULO.length();
+                        fim = linha.indexOf(FECHATITULO);
                         titulo = linha.substring(inicio, fim);
                         contemTitulo = true;
                     }   //adicionar abrevotos e fecha votos quando testar...
-                    if(linha.contains(VerificaArquivo.FECHAELEITOR) && lendoEleitor && contemNome && contemTitulo)
+                    if(linha.contains(FECHAELEITOR) && lendoEleitor && contemNome && contemTitulo)
                     {
                         lendoEleitor = false;
                         contemNome = false;
@@ -280,7 +280,7 @@ public class LeituraArquivo implements Login
                 while(br.ready())
                 {
                     linha = br.readLine();
-                    if(linha.contains(VerificaArquivo.ABREPOLITICO))
+                    if(linha.contains(ABREPOLITICO))
                     {
                         nome = "";
                         titulo = "";
@@ -292,66 +292,66 @@ public class LeituraArquivo implements Login
                         votos = 0;
                         lendoPolitico = true;
                     }
-                    if(linha.contains(VerificaArquivo.ABRENOME) && lendoPolitico)
+                    if(linha.contains(ABRENOME) && lendoPolitico)
                     {
-                        inicio = linha.indexOf(VerificaArquivo.ABRENOME)+VerificaArquivo.ABRENOME.length();
-                        fim = linha.indexOf(VerificaArquivo.FECHANOME);
+                        inicio = linha.indexOf(ABRENOME)+ABRENOME.length();
+                        fim = linha.indexOf(FECHANOME);
                         nome = linha.substring(inicio, fim);
                         contemNome = true;
                     }
-                    if(linha.contains(VerificaArquivo.ABRETITULO) && lendoPolitico)
+                    if(linha.contains(ABRETITULO) && lendoPolitico)
                     {
-                        inicio = linha.indexOf(VerificaArquivo.ABRETITULO)+VerificaArquivo.ABRETITULO.length();
-                        fim = linha.indexOf(VerificaArquivo.FECHATITULO);
+                        inicio = linha.indexOf(ABRETITULO)+ABRETITULO.length();
+                        fim = linha.indexOf(FECHATITULO);
                         titulo = linha.substring(inicio, fim);
                         contemTitulo = true;
                     }
-                    if(linha.contains(VerificaArquivo.ABRECARGO) && lendoPolitico)
+                    if(linha.contains(ABRECARGO) && lendoPolitico)
                     {
-                        inicio = linha.indexOf(VerificaArquivo.ABRECARGO)+VerificaArquivo.ABRECARGO.length();
-                        fim = linha.indexOf(VerificaArquivo.FECHACARGO);
+                        inicio = linha.indexOf(ABRECARGO)+ABRECARGO.length();
+                        fim = linha.indexOf(FECHACARGO);
                         cargo = linha.substring(inicio, fim);
                         contemCargo = true;
                     }
-                    if(linha.contains(VerificaArquivo.ABRENUMERO) && lendoPolitico)
+                    if(linha.contains(ABRENUMERO) && lendoPolitico)
                     {
-                        inicio = linha.indexOf(VerificaArquivo.ABRENUMERO)+VerificaArquivo.ABRENUMERO.length();
-                        fim = linha.indexOf(VerificaArquivo.FECHANUMERO);
+                        inicio = linha.indexOf(ABRENUMERO)+ABRENUMERO.length();
+                        fim = linha.indexOf(FECHANUMERO);
                         numero = Integer.parseInt(linha.substring(inicio, fim));
                         contemNumero = true;
                     }
-                    if(linha.contains(VerificaArquivo.ABREPARTIDO) && lendoPolitico)
+                    if(linha.contains(ABREPARTIDO) && lendoPolitico)
                     {
-                        inicio = linha.indexOf(VerificaArquivo.ABREPARTIDO)+VerificaArquivo.ABREPARTIDO.length();
-                        fim = linha.indexOf(VerificaArquivo.FECHAPARTIDO);
+                        inicio = linha.indexOf(ABREPARTIDO)+ABREPARTIDO.length();
+                        fim = linha.indexOf(FECHAPARTIDO);
                         partido = linha.substring(inicio, fim);
                         contemPartido = true;
                     }
-                    if(linha.contains(VerificaArquivo.ABREVICE) && lendoPolitico)
+                    if(linha.contains(ABREVICE) && lendoPolitico)
                     {
-                        inicio = linha.indexOf(VerificaArquivo.ABREVICE)+VerificaArquivo.ABREVICE.length();
-                        fim = linha.indexOf(VerificaArquivo.FECHAVICE);
+                        inicio = linha.indexOf(ABREVICE)+ABREVICE.length();
+                        fim = linha.indexOf(FECHAVICE);
                         vice = linha.substring(inicio, fim);
                         contemVice = true;
                     }
-                    if(linha.contains(VerificaArquivo.ABREPARTIDOVICE) && lendoPolitico)
+                    if(linha.contains(ABREPARTIDOVICE) && lendoPolitico)
                     {
-                        inicio = linha.indexOf(VerificaArquivo.ABREPARTIDOVICE)+VerificaArquivo.ABREPARTIDOVICE.length();
-                        fim = linha.indexOf(VerificaArquivo.FECHAPARTIDOVICE);
+                        inicio = linha.indexOf(ABREPARTIDOVICE)+ABREPARTIDOVICE.length();
+                        fim = linha.indexOf(FECHAPARTIDOVICE);
                         partidoVice = linha.substring(inicio, fim);
                         contemPartidoVice = true;
                     }
-                    if(linha.contains(VerificaArquivo.ABREVOTOS) && lendoPolitico)
+                    if(linha.contains(ABREVOTOS) && lendoPolitico)
                     {
-                        inicio = linha.indexOf(VerificaArquivo.ABREVOTOS)+VerificaArquivo.ABREVOTOS.length();
-                        fim = linha.indexOf(VerificaArquivo.FECHAVOTOS);
+                        inicio = linha.indexOf(ABREVOTOS)+ABREVOTOS.length();
+                        fim = linha.indexOf(FECHAVOTOS);
                         if(lerVotos)
                             votos = Integer.parseInt(linha.substring(inicio, fim));
                         else
                             votos = 0;
                         contemVotos = true;
                     }                    
-                    if(linha.contains(VerificaArquivo.FECHAPOLITICO) && lendoPolitico && contemNome && contemTitulo && contemCargo && contemNumero && contemPartido && contemVice && contemPartidoVice && contemVotos)
+                    if(linha.contains(FECHAPOLITICO) && lendoPolitico && contemNome && contemTitulo && contemCargo && contemNumero && contemPartido && contemVice && contemPartidoVice && contemVotos)
                     {
                         if(contemVice)
                             candidato = new Candidato(nome, titulo, cargo, numero, partido, votos, vice, partidoVice);

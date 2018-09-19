@@ -1,5 +1,5 @@
 /*
- * Aqui é implementado a Interface VotacaoCandidato
+ * Aqui é implementado a Interface VotacaoCandidato, possui composição e agregação e o Polimorfismo de Sobrecarga
  */
 package objetos;
 

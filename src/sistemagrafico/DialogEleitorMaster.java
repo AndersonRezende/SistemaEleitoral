@@ -35,7 +35,7 @@ import javax.swing.JProgressBar;
 import javax.swing.JTextField;
 import objetos.Candidato;
 import objetos.Eleitor;
-import objetos.LogVotacao;
+import objetos.auxiliares.LogVotacao;
 import objetos.auxiliares.ObjetoCompartilhado;
 import objetos.auxiliares.ProcessoVotacao;
 import objetos.auxiliares.ThreadProgressBar;

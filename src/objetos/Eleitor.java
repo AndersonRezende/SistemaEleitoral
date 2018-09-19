@@ -1,5 +1,6 @@
 /*
  * Aqui é implementada a Interface Votacao
+ * Esta classe possui um acoplamento dinâmico da classe Pessoa nos metodos getNome e setNome
  */
 package objetos;
 
@@ -11,13 +12,12 @@ import interfaces.Votacao;
  */
 public class Eleitor extends Pessoa implements Votacao
 {
-    private String nome;
     private String titulo;
     private boolean votou;
 
     public Eleitor(String nome, String titulo) 
     {
-        this.nome = nome;
+        super(nome);
         this.titulo = titulo;
         this.votou = false;
     }
@@ -30,11 +30,11 @@ public class Eleitor extends Pessoa implements Votacao
     
     @Override
     public String getNome() 
-    {   return this.nome;   }
+    {   return super.getNome();   }
 
     @Override
     public void setNome(String nome) 
-    {   this.nome = nome;   }
+    {   super.setNome(nome);   }
 
     @Override
     public boolean votou()

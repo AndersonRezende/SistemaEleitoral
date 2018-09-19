@@ -1,7 +1,5 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * Esta classe possui um acoplamento dinâmico da classe Pessoa nos metodos getNome e setNome
  */
 package objetos;
 
@@ -11,12 +9,11 @@ package objetos;
  */
 class Vice extends Pessoa
 {
-    private String nome;
     private String partido;
 
     public Vice(String nome, String partido)
     {   
-        this.nome = nome;
+        super(nome);
         this.partido = partido;
     }
 
@@ -25,9 +22,9 @@ class Vice extends Pessoa
     
     @Override
     public String getNome() 
-    {   return nome;    }
+    {   return super.getNome();    }
   
     @Override
     public void setNome(String nome) 
-    {   this.nome = nome;   }
+    {   super.setNome(nome);   }
 }

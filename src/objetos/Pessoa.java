@@ -9,9 +9,18 @@ package objetos;
  *
  * @author Anderson
  */
-public abstract class Pessoa 
+public class Pessoa 
 {
-    public abstract String getNome();
+    private String nome;
     
-    public abstract void setNome(String nome);
+    public Pessoa(String nome)
+    {
+        this.nome = nome;
+    }
+    
+    public String getNome()
+    {   return this.nome;   }
+    
+    public void setNome(String nome)
+    {   this.nome = nome;   }
 }

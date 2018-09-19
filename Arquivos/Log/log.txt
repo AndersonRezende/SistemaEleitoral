@@ -1655,3 +1655,23 @@
 [19/8/2018 - 18:8:7] -> {[Programação Orientada a Objetos][Melhor Materia][POS][6][1]}
 
 [19/8/2018 - 18:8:9] -> {[Metodologia Cientifica][Pior Materia][POS][1][1]}
+
+
+[19/8/2018 - 20:10:5] -> {[Programação Orientada a Objetos][Melhor Materia][POS][6][1]}
+
+[19/8/2018 - 20:10:6] -> {[Metodologia Cientifica][Pior Materia][POS][1][1]}
+
+
+[19/8/2018 - 20:13:42] -> {[Programação Orientada a Objetos][Melhor Materia][POS][6][1]}
+
+[19/8/2018 - 20:13:43] -> {[Metodologia Cientifica][Pior Materia][POS][1][1]}
+
+
+[19/8/2018 - 20:15:38] -> {[Programação Orientada a Objetos][Melhor Materia][POS][6][1]}
+
+[19/8/2018 - 20:15:40] -> {[Metodologia Cientifica][Pior Materia][POS][1][1]}
+
+
+[19/8/2018 - 20:18:28] -> {[Programação Orientada a Objetos][Melhor Materia][POS][6][1]}
+
+[19/8/2018 - 20:18:29] -> {[Metodologia Cientifica][Pior Materia][POS][1][1]}

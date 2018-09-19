@@ -8,6 +8,7 @@ package sistemagrafico;
 import arquivo.LeituraArquivo;
 import java.awt.Container;
 import java.awt.Dimension;
+import java.awt.FlowLayout;
 import java.awt.Toolkit;
 import javax.swing.JDialog;
 import javax.swing.JLabel;
@@ -24,6 +25,7 @@ public class DialogResultado extends JDialog
     
     public DialogResultado(ProcessoVotacao processoVotacao)
     {
+        container.setLayout(new FlowLayout());
         processoVotacao.setCandidatos(LeituraArquivo.lerPolitico(processoVotacao.getEleicoes().get(0).getEleicao(), true));
         for(int index = 0; index < processoVotacao.getCandidatos().size(); index++)
         {

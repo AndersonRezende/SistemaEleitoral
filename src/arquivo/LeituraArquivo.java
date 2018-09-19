@@ -349,9 +349,11 @@ public class LeituraArquivo extends Arquivo implements Login
                     }
                     if(linha.contains(ABREVOTOS) && lendoPolitico)
                     {
+                        String aux = "";
                         inicio = linha.indexOf(ABREVOTOS)+ABREVOTOS.length();
                         fim = linha.indexOf(FECHAVOTOS);
-                        if(lerVotos)
+                        aux = linha.substring(inicio, fim);
+                        if(lerVotos && !aux.equals(""))
                             votos = Integer.parseInt(linha.substring(inicio, fim));
                         else
                             votos = 0;

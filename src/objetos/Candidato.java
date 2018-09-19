@@ -25,6 +25,7 @@ public class Candidato implements VotacaoCandidato
         this.cargo = cargo;
         this.numero = numero;
         this.partido = partido;
+        this.votos = votos;
     }
     
     public Candidato(String nome, String titulo, String cargo, int numero, String partido, int votos, String vice, String partidoVice)

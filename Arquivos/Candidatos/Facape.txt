@@ -22,7 +22,7 @@
 	<nome>Engenharia de Requisitos</nome>
 	<titulo>3</titulo>
 	<cargo>Melhor Materia</cargo>
-	<numero>1</numero>
+	<numero>3</numero>
 	<partido>POS</partido>
 	<vice></vice>
 	<partidovice></partidovice>
@@ -93,7 +93,7 @@
 	<nome>Engenharia de Requisitos</nome>
 	<titulo>3</titulo>
 	<cargo>Pior Materia</cargo>
-	<numero>1</numero>
+	<numero>3</numero>
 	<partido>POS</partido>
 	<vice></vice>
 	<partidovice></partidovice>

@@ -162,6 +162,11 @@ public class PanelLogado extends JPanel implements ListSelectionListener, Compon
                     DialogResultado dres = new DialogResultado(processoVotacao);
                 }
             }
+            else
+            {
+                if(listOpcoesMenu.getSelectedValue().toString().equalsIgnoreCase(EnumOpcoesMenu.RPV.getOpcao()) && !processoVotacao.getProcessoVotacaoIniciado() && !liberarResultado)
+                {   JOptionPane.showMessageDialog(container, "Não ocorreu nenhum processo de eleição!", "Erro", JOptionPane.ERROR_MESSAGE, null);   }
+            }
             
             if(listOpcoesMenu.getSelectedValue().toString().equalsIgnoreCase(EnumOpcoesMenu.SAIR.getOpcao()))
             {   //Sair

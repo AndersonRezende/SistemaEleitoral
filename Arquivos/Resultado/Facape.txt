@@ -9,7 +9,7 @@
 	<votos>0</votos>
 </politico>
 <politico>
-	<nome>Gest√£o de Pojetos</nome>
+	<nome>Gest„o de Pojetos</nome>
 	<titulo>2</titulo>
 	<cargo>Melhor Materia</cargo>
 	<numero>2</numero>
@@ -22,14 +22,14 @@
 	<nome>Engenharia de Requisitos</nome>
 	<titulo>3</titulo>
 	<cargo>Melhor Materia</cargo>
-	<numero>1</numero>
+	<numero>3</numero>
 	<partido>POS</partido>
 	<vice></vice>
 	<partidovice></partidovice>
 	<votos>0</votos>
 </politico>
 <politico>
-	<nome>An√°lise Orientada a Objetos</nome>
+	<nome>An·lise Orientada a Objetos</nome>
 	<titulo>4</titulo>
 	<cargo>Melhor Materia</cargo>
 	<numero>4</numero>
@@ -49,7 +49,7 @@
 	<votos>0</votos>
 </politico>
 <politico>
-	<nome>Programa√ß√£o Orientada a Objetos</nome>
+	<nome>ProgramaÁ„o Orientada a Objetos</nome>
 	<titulo>6</titulo>
 	<cargo>Melhor Materia</cargo>
 	<numero>6</numero>
@@ -79,7 +79,7 @@
 	<votos>1</votos>
 </politico>
 <politico>
-	<nome>Gest√£o de Pojetos</nome>
+	<nome>Gest„o de Pojetos</nome>
 	<titulo>2</titulo>
 	<cargo>Pior Materia</cargo>
 	<numero>2</numero>
@@ -92,14 +92,14 @@
 	<nome>Engenharia de Requisitos</nome>
 	<titulo>3</titulo>
 	<cargo>Pior Materia</cargo>
-	<numero>1</numero>
+	<numero>3</numero>
 	<partido>POS</partido>
 	<vice></vice>
 	<partidovice></partidovice>
 	<votos>0</votos>
 </politico>
 <politico>
-	<nome>An√°lise Orientada a Objetos</nome>
+	<nome>An·lise Orientada a Objetos</nome>
 	<titulo>4</titulo>
 	<cargo>Pior Materia</cargo>
 	<numero>4</numero>
@@ -119,7 +119,7 @@
 	<votos>0</votos>
 </politico>
 <politico>
-	<nome>Programa√ß√£o Orientada a Objetos</nome>
+	<nome>ProgramaÁ„o Orientada a Objetos</nome>
 	<titulo>6</titulo>
 	<cargo>Pior Materia</cargo>
 	<numero>6</numero>

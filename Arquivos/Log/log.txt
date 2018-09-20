@@ -1675,3 +1675,164 @@
 [19/8/2018 - 20:18:28] -> {[Programação Orientada a Objetos][Melhor Materia][POS][6][1]}
 
 [19/8/2018 - 20:18:29] -> {[Metodologia Cientifica][Pior Materia][POS][1][1]}
+
+
+[19/8/2018 - 20:24:45] -> {[Programação Orientada a Objetos][Melhor Materia][POS][6][1]}
+
+[19/8/2018 - 20:24:46] -> {[Metodologia Cientifica][Pior Materia][POS][1][1]}
+
+
+[19/8/2018 - 22:58:51] -> {[Programação Orientada a Objetos][Melhor Materia][POS][6][1]}
+
+[19/8/2018 - 22:58:52] -> {[Metodologia Cientifica][Pior Materia][POS][1][1]}
+
+
+[19/8/2018 - 23:2:50] -> {[Programação Orientada a Objetos][Melhor Materia][POS][6][1]}
+
+[19/8/2018 - 23:2:51] -> {[Metodologia Cientifica][Pior Materia][POS][1][1]}
+
+
+[19/8/2018 - 23:7:30] -> {[Fernando Filho][Deputado Federal][DEM][2501][1]}
+
+[19/8/2018 - 23:7:31] -> {[Voto nulo]}
+
+[19/8/2018 - 23:7:31] -> {[Voto nulo]}
+
+[19/8/2018 - 23:7:32] -> {[Voto nulo]}
+
+[19/8/2018 - 23:7:33] -> {[Voto nulo]}
+
+[19/8/2018 - 23:7:34] -> {[Voto nulo]}
+
+
+[19/8/2018 - 23:10:13] -> {[Programação Orientada a Objetos][Melhor Materia][POS][6][1]}
+
+[19/8/2018 - 23:10:16] -> {[Metodologia Cientifica][Pior Materia][POS][1][1]}
+
+
+[19/8/2018 - 23:14:53] -> {[Programação Orientada a Objetos][Melhor Materia][POS][6][1]}
+
+[19/8/2018 - 23:14:54] -> {[Metodologia Cientifica][Pior Materia][POS][1][1]}
+
+
+[19/8/2018 - 23:15:20] -> {[Design de Interfaces e Usabilidade][Melhor Materia][POS][5][1]}
+
+[19/8/2018 - 23:15:22] -> {[Metodologia Cientifica][Pior Materia][POS][1][2]}
+
+
+[19/8/2018 - 23:16:44] -> {[Fernando Filho][Deputado Federal][DEM][2501][1]}
+
+[19/8/2018 - 23:16:46] -> {[Antônio Coelho][Deputado Estadual][DEM][25000][1]}
+
+[19/8/2018 - 23:16:49] -> {[Silvio Costa][Senador][AVANTE][700][1]}
+
+[19/8/2018 - 23:16:50] -> {[Voto nulo]}
+
+[19/8/2018 - 23:16:53] -> {[Julio Lossio][Governador][REDE][18][Luciano Bezerra][1]}
+
+[19/8/2018 - 23:16:59] -> {[Marina Silva][Presidente][REDE][18][Eduardo Jorge][1]}
+
+
+[19/8/2018 - 23:17:8] -> {[Fernando Filho][Deputado Federal][DEM][2501][2]}
+
+[19/8/2018 - 23:17:10] -> {[Antônio Coelho][Deputado Estadual][DEM][25000][2]}
+
+[19/8/2018 - 23:17:12] -> {[Lidia Brunes][Senador][PROS][900][1]}
+
+[19/8/2018 - 23:17:14] -> {[Voto nulo]}
+
+[19/8/2018 - 23:17:17] -> {[Julio Lossio][Governador][REDE][18][Luciano Bezerra][2]}
+
+[19/8/2018 - 23:17:19] -> {[Marina Silva][Presidente][REDE][18][Eduardo Jorge][2]}
+
+
+[19/8/2018 - 23:24:14] -> {[Programação Orientada a Objetos][Melhor Materia][POS][6][1]}
+
+[19/8/2018 - 23:24:15] -> {[Metodologia Cientifica][Pior Materia][POS][1][1]}
+
+
+[19/8/2018 - 23:24:42] -> {[Programação Orientada a Objetos][Melhor Materia][POS][6][2]}
+
+[19/8/2018 - 23:25:10] -> {[Metodologia Cientifica][Pior Materia][POS][1][2]}
+
+
+[19/8/2018 - 23:26:18] -> {[Fernando Filho][Deputado Federal][DEM][2501][1]}
+
+[19/8/2018 - 23:26:21] -> {[Antônio Coelho][Deputado Estadual][DEM][25000][1]}
+
+[19/8/2018 - 23:26:22] -> {[Lidia Brunes][Senador][PROS][900][1]}
+
+[19/8/2018 - 23:26:23] -> {[Voto nulo]}
+
+[19/8/2018 - 23:26:25] -> {[Julio Lossio][Governador][REDE][18][Luciano Bezerra][1]}
+
+[19/8/2018 - 23:26:27] -> {[Jair Bolsonaro][Presidente][PSL][17][General Mourão][1]}
+
+
+[19/8/2018 - 23:26:37] -> {[Fernando Filho][Deputado Federal][DEM][2501][2]}
+
+[19/8/2018 - 23:26:38] -> {[Antônio Coelho][Deputado Estadual][DEM][25000][2]}
+
+[19/8/2018 - 23:26:40] -> {[Silvio Costa][Senador][AVANTE][700][1]}
+
+[19/8/2018 - 23:26:42] -> {[Lidia Brunes][Senador][PROS][900][2]}
+
+[19/8/2018 - 23:26:44] -> {[Julio Lossio][Governador][REDE][18][Luciano Bezerra][2]}
+
+[19/8/2018 - 23:26:46] -> {[Marina Silva][Presidente][REDE][18][Eduardo Jorge][1]}
+
+
+[19/8/2018 - 23:32:26] -> {[Fernando Filho][Deputado Federal][DEM][2501][1]}
+
+[19/8/2018 - 23:32:29] -> {[Antônio Coelho][Deputado Estadual][DEM][25000][1]}
+
+[19/8/2018 - 23:32:30] -> {[Lidia Brunes][Senador][PROS][900][1]}
+
+[19/8/2018 - 23:32:32] -> {[Silvio Costa][Senador][AVANTE][700][1]}
+
+[19/8/2018 - 23:32:34] -> {[Voto nulo]}
+
+[19/8/2018 - 23:32:38] -> {[Marina Silva][Presidente][REDE][18][Eduardo Jorge][1]}
+
+
+[19/8/2018 - 23:32:58] -> {[Fernando Filho][Deputado Federal][DEM][2501][2]}
+
+[19/8/2018 - 23:33:5] -> {[Antônio Coelho][Deputado Estadual][DEM][25000][2]}
+
+[19/8/2018 - 23:33:37] -> {[Pastor Jairinho][Senador][REDE][180][1]}
+
+[19/8/2018 - 23:34:3] -> {[Mendonca Filho][Senador][DEM][252][1]}
+
+[19/8/2018 - 23:34:6] -> {[Julio Lossio][Governador][REDE][18][Luciano Bezerra][1]}
+
+[19/8/2018 - 23:34:8] -> {[Marina Silva][Presidente][REDE][18][Eduardo Jorge][2]}
+
+
+[19/8/2018 - 23:38:15] -> {[Programação Orientada a Objetos][Melhor Materia][POS][6][1]}
+
+[19/8/2018 - 23:38:20] -> {[Metodologia Cientifica][Pior Materia][POS][1][1]}
+
+
+[19/8/2018 - 23:39:23] -> {[Programação Orientada a Objetos][Melhor Materia][POS][6][2]}
+
+[19/8/2018 - 23:39:44] -> {[Metodologia Cientifica][Pior Materia][POS][1][2]}
+
+
+[19/8/2018 - 23:46:30] -> {[Programação Orientada a Objetos][Melhor Materia][POS][6][1]}
+
+[19/8/2018 - 23:46:31] -> {[Engenharia de Requisitos][Pior Materia][POS][3][1]}
+
+
+[19/8/2018 - 23:53:19] -> {[Programação Orientada a Objetos][Melhor Materia][POS][6][1]}
+
+[19/8/2018 - 23:53:20] -> {[Engenharia de Requisitos][Pior Materia][POS][3][1]}
+
+
+[19/8/2018 - 23:54:3] -> {[Programação Orientada a Objetos][Melhor Materia][POS][6][1]}
+
+[19/8/2018 - 23:54:4] -> {[Metodologia Cientifica][Pior Materia][POS][1][1]}
+
+
+[19/8/2018 - 23:54:52] -> {[Programação Orientada a Objetos][Melhor Materia][POS][6][1]}
+
+[19/8/2018 - 23:54:53] -> {[Metodologia Cientifica][Pior Materia][POS][1][1]}

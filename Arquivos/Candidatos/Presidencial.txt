@@ -429,7 +429,7 @@
 	<votos></votos>
 </politico>
 <politico>
-	<nome>Mendoncça Filho</nome>
+	<nome>Mendonca Filho</nome>
 	<titulo>25225225</titulo>
 	<cargo>Senador</cargo>
 	<numero>252</numero>

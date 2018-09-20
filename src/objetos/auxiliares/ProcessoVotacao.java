@@ -146,4 +146,18 @@ public class ProcessoVotacao implements ChecagemEleicao, ChecagemEleitor
         
         return eleitor;
     }    
+    
+    
+    public int getQuantidadeElementosPorCargo(String cargo)
+    {
+        int quantidade = 0;
+        
+        for(Candidato candidato : candidatos)
+        {
+            if(candidato.getCargo().equalsIgnoreCase(cargo))
+                quantidade++;
+        }
+        
+        return quantidade;
+    }
 }

@@ -1,5 +1,13 @@
 /*
  * Aqui é implementado a Interface VotacaoCandidato, possui composição e agregação e o Polimorfismo de Sobrecarga
+ * AQUI CONTÉM POLIMORFISMO DE SOBRECARGA (CONSTRUTOR)
+ * AQUI É IMPLEMENTADO UMA INTERFACE
+ * Polimorfismo de sobrecarga criado no construtor da classe “Candidato”, pois alguns 
+ * candidatos têm vice e outros não, logo um construtor possui os atributos do vice e o outro não.
+ * 
+ * A classe “Candidato” implementa a interface “VotacaoCandidato” que fornece a 
+ * assinatura dos métodos “receberVoto” e “getVotos” que é utilizado para o candidato 
+ * receber um voto e checar a quantidade de votos do mesmo, respectivamente.
  */
 package objetos;
 

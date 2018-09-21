@@ -1,5 +1,6 @@
 /*
  * AQUI TEM UM ENUM UTILIZADO NO PANELLOGADO COM AS OPÇÕES DO MENU
+ * Enum criado no pacote “enumeracao” no arquivo enum “EnumOpcoesMenu” para exibir as opções do menu.
  */
 package enumeracao;
 

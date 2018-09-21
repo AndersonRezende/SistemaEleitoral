@@ -1,7 +1,11 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * AQUI CONTÉM ATRIBUTO FINAL EM SUPERCLASSE (HORARIOINICIOELEICAO)
+ * AQUI CONTÉM UMA CLASSE ABSTRATA
+ * Atributo final “HORARIOINICIOELEICAO” criado na superclasse “ProcessoEleicao” 
+ * para checar se o horário de início das eleições está correto para que a mesma possa acontecer.
+ * 
+ * Classe abstrata “ProcessoEleicao” que contém os elementos, assinaturas de métodos 
+ * básicos e constantes necessárias para que o procedimento de eleição possa ocorrer.
  */
 package objetos.auxiliares;
 

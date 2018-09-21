@@ -1,6 +1,9 @@
 /*
  * Esta classe possui um acoplamento dinâmico da classe Pessoa nos metodos getNome e setNome
  * Esta classe possui o POLIMORFISMO DE SUBTIPAGEM no método getDados da classe Pessoa
+ * AQUI CONTÉM UM ACOPLAMENTO DINÂMICO (GETNOME)
+ * A classe “Vice” estende da classe “Pessoa”, na classe “Pessoa” existe o método “getNome”, 
+ * este método é chamado na classe “Vice” para obter o nome do vice candidato.
  */
 package objetos;
 

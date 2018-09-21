@@ -1,5 +1,11 @@
 /*
  * Aqui existe um polimorfismo de coerção explicita
+ * AQUI EXISTE UM POLIMORFISMO DE COERÇÃO EXPLICITA
+ * Atributo “eleição” da Classe “Eleicao” definido como String para que possa armazenar o nome do tipo de eleição corrente.
+ * AQUI CONTÉM POLIMORFISMO DE COERÇÃO EXPLÍCITO (MÉTODO PODEINICIARELEICAO)
+ * Utilizado no método “podeIniciarVotacao” da classe “Eleicao”, este método recebe um 
+ * valor flutuante que representa a fração da hora atual e converte em um inteiro que é 
+ * utilizado para checar se o horário está correto para iniciar o processo de votação.
  */
 package objetos;
 

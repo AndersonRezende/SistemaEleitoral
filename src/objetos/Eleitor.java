@@ -2,6 +2,16 @@
  * Aqui é implementada a Interface Votacao
  * Esta classe possui um acoplamento dinâmico da classe Pessoa nos metodos getNome e setNome
  * Esta classe possui o POLIMORFISMO DE SUBTIPAGEM no método getDados da classe Pessoa
+ * AQUI CONTÉM COMPOSIÇÃO (ELEITOR)
+ * AQUI CONTÉM AGREGAÇÃO (VICE)
+ * AQUI É IMPLEMENTADO UMA INTERFACE
+ * Composição do tipo “Eleitor” na classe “Candidato”, pois não faz sentido existir candidato que não seja também um eleitor.
+ *
+ * Agregação do tipo “Vice” na classe “Candidato”, pois pode existir candidato que não tenha vice.
+ *  
+ * A classe “Eleitor” implementa a interface “Votacao” que fornece a assinatura 
+ * dos métodos “votar” e “votou” que é utilizado para o eleitor realizar seu voto e 
+ * checar se o mesmo já votou, respectivamente.
  */
 package objetos;
 

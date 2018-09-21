@@ -1,5 +1,15 @@
 /*
  * Aqui é implementado a Interface Login
+ * AQUI É IMPLEMENTADO UMA INTERFACE
+ * AQUI CONTÉM A LEITURA DO ARQUIVO
+ * A classe “LeituraArquivo” implementa a interface “Login” que fornece a assinatura 
+ * do método “logar” para a classe implementar. 
+ * 
+ * Ao término da votação de cada eleitor, quando o mesmo finalizar o último voto, 
+ * os dados dos candidatos serão armazenados em um arquivo na pasta, “Resultado”, 
+ * que conterá os dados dos candidatos e a quantidade de votos dos mesmos. 
+ * Estes dados serão recuperados mais tarde, quando o mesário finalizar o processo de 
+ * eleição, ao exibir a tela de “Resultado”. 
  */
 package arquivo;
 
@@ -36,7 +46,6 @@ public class LeituraArquivo extends Arquivo implements Login
         String titulo = "";
         boolean vice = false;
         int digitos = 0;
-        int votos = 0;
         int eleitos = 0;
         
         int inicio = 0;
@@ -66,7 +75,6 @@ public class LeituraArquivo extends Arquivo implements Login
                             titulo = "";
                             vice = false;
                             digitos = 0;
-                            votos = 0;
                         }
                         
                         if(linha.contains(ABRETITULO) && linha.contains(FECHATITULO))

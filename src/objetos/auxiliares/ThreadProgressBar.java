@@ -1,7 +1,8 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * AQUI CONTÉM CONSTRUTOR DECLARADO
+ * Construtor declarado nas classes “ThreadGravarResultado” e  “ThreadProgressBar” 
+ * para realizar configuração iniciais nos objetos de gravação de dados e da barra 
+ * de progresso ao gravar os mesmos, consecutivamente.
  */
 package objetos.auxiliares;
 

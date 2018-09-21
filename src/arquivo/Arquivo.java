@@ -1,5 +1,13 @@
 /*
  * Classe abstrata aqui
+ * AQUI CONTÉM CONSTANTES
+ * AQUI CONTÉM UMA CLASSE ABSTRATA
+ * Constante “ABRECARGO” na classe “Arquivo” criada para identificar a tag de marcação 
+ * que informa ao programa em qual parte do arquivo contém o cargo do candidato. 
+ * A constante em questão é utilizada na classe “LeituraArquivo”.
+ * 
+ * Classe abstrata “Arquivo” que contém os métodos e constantes necessárias para 
+ * realizar o trabalho das classes manipuladoras de arquivos.
  */
 package arquivo;
 

@@ -1,7 +1,15 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * AQUI CONTÉM CONSTRUTOR DECLARADO
+ * AQUI CONTÉM A GRAVAÇÃO DO ARQUIVO
+ * Construtor declarado nas classes “ThreadGravarResultado” e  “ThreadProgressBar” 
+ * para realizar configuração iniciais nos objetos de gravação de dados e da barra 
+ * de progresso ao gravar os mesmos, consecutivamente.
+ * 
+ * Ao término da votação de cada eleitor, quando o mesmo finalizar o último voto, 
+ * os dados dos candidatos serão armazenados em um arquivo na pasta, “Resultado”, 
+ * que conterá os dados dos candidatos e a quantidade de votos dos mesmos. 
+ * Estes dados serão recuperados mais tarde, quando o mesário finalizar o processo de 
+ * eleição, ao exibir a tela de “Resultado”. 
  */
 package objetos.auxiliares;
 
@@ -11,9 +19,7 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.io.OutputStream;
 import java.io.OutputStreamWriter;
-import java.io.PrintWriter;
 import java.util.ArrayList;
 import objetos.Candidato;
 /**

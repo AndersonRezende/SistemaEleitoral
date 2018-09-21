@@ -1,5 +1,13 @@
 /*
  * Aqui são implementado as duas Interfaces: ChecagemEleicao e ChecagemEleitor
+ * AQUI CONTÉM UM ARRAYLIST
+ * AQUI É IMPLEMENTADO UMA INTERFACE
+ * ArrayList criado na classe “ProcessoVotacao” do tipo Candidato para conter todos os candidatos do processo de eleição escolhido.
+ *
+ * A classe “ProcessoVotacao” implementa duas interfaces, sendo elas: “ChecagemEleicao” 
+ * e “ChecagemEleitor”, que fornecem a assinatura dos métodos “eleitorJaVotou”, “eleitorVotaAqui”, 
+ * “getEleitor”, “getMaiorNumeroDigitosEleicao”, “getInfoCandidato”, “votar” que são utilizadas para 
+ * determinar os procedimentos que deverão acontecer na classe.
  */
 package objetos.auxiliares;
 
@@ -179,14 +187,14 @@ public class ProcessoVotacao implements ChecagemEleicao, ChecagemEleitor
         boolean achou = false;
         int percorreCandidatos = 0;
         
-        for(int index = 0; index < eleicoes.size(); index++)
+        for(int cargos = 0; cargos < eleicoes.size(); cargos++)
         {
             achou = false;
-            for(int candidatosEleitos = 0; candidatosEleitos < eleicoes.get(index).getEleitos(); candidatosEleitos++)
+            for(int candidatosEleitos = 0; candidatosEleitos < eleicoes.get(cargos).getEleitos(); candidatosEleitos++)
             {
                 while(!achou)
                 {
-                    if(candidatosOrdernados.get(percorreCandidatos).getCargo().equalsIgnoreCase(eleicoes.get(index).getTitulo()))
+                    if(candidatosOrdernados.get(percorreCandidatos).getCargo().equalsIgnoreCase(eleicoes.get(cargos).getTitulo()))
                     {
                         eleitos.add(candidatosOrdernados.get(percorreCandidatos));
                         achou = true;

@@ -1,7 +1,8 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * AQUI CONTÉM UMA EXCEÇÃO
+ * a classe “FormatoIncorretoException” foi criada para tratar as exceções que ocorrem 
+ * quando for verificado que um determinado arquivo está no formato correto. 
+ * Exemplo: arquivo de eleição com tags incompletas.
  */
 package excecoes;
 

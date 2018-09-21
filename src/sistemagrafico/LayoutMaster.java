@@ -1,5 +1,8 @@
 /*
  * AQUI CONTÉM JOPTIONPANE
+ * AQUI É PARTE DE UM PACOTE
+ * O pacote “sistemagrafico” é referente as classes que constroem os recursos gráficos 
+ * do sistema: Janelas, botões, caixas de diálogo, etc.
  */
 package sistemagrafico;
 

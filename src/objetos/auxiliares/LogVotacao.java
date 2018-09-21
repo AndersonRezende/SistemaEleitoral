@@ -1,7 +1,7 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * AQUI CONTÉM MÉTODO COM ARGUMENTOS VARIADOS
+ * No método “adicionarRegistroVoto” da classe “LogVotacao” é utilizado uma lista 
+ * de argumentos variados que serão utilizados para gravar o log de dados que foram computados na urna;
  */
 package objetos.auxiliares;
 

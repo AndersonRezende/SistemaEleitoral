@@ -1,7 +1,7 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * AQUI CONTÉM ATRIBUTOS ENCAPSULADOS
+ * Todos os atributos de classes não estáticas são do private. Exemplo: atributo “login” e “senha” da 
+ * Classe “Mesario” são do tipo private para que não possam ser alterados diretamente.
  */
 package objetos;
 

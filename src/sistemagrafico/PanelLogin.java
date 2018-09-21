@@ -1,5 +1,8 @@
 /*
  * Aqui é utilizada a Interface Login
+ * AQUI CONTÉM UMA CAIXA DE DIÁLOGO
+ * na classe “PanelLogin” existe uma caixa de diálogo que é exibida quando o usuário (mesário) 
+ * estiver colocando as informações incorretas de login. 
  */
 package sistemagrafico;
 

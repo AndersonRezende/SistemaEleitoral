@@ -1,5 +1,9 @@
 /*
  * Trabalhar aqui a sobrescrita do metodo de checagem
+ * AQUI CONTÉM MÉTODO ESTÁTICO
+ * Método estático “checarArquivoEleicao” criado na classe “VerificaArquivo” é 
+ * utilizado para verificar se o arquivo de eleição está no formato correto para 
+ * que o mesmo possa ser lido e convertido em objeto.
  */
 package arquivo;
 

@@ -152,6 +152,7 @@ public class ProcessoVotacao implements ChecagemEleicao, ChecagemEleitor
     {
         int quantidade = 0;
         
+        //quantidade = candidatos.stream().filter((candidato) -> (candidato.getCargo().equalsIgnoreCase(cargo))).map((_item) -> 1).reduce(quantidade, Integer::sum);
         for(Candidato candidato : candidatos)
         {
             if(candidato.getCargo().equalsIgnoreCase(cargo))

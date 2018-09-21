@@ -8,6 +8,7 @@ package sistemagrafico;
 import arquivo.LeituraArquivo;
 import java.awt.BorderLayout;
 import java.awt.CardLayout;
+import java.awt.Color;
 import java.awt.Container;
 import java.awt.Dimension;
 import java.awt.Font;
@@ -15,10 +16,12 @@ import java.awt.GridLayout;
 import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import javax.swing.BorderFactory;
 import javax.swing.JButton;
 import javax.swing.JDialog;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JScrollPane;
 import objetos.auxiliares.ProcessoVotacao;
 
 /**
@@ -33,17 +36,18 @@ public class DialogResultado extends JDialog implements ActionListener
     
     private Container container = getContentPane();
     private Font fontLabelTextoSuperior;
+    private Font fontLabelResultado;
     
     private CardLayout cardManager;      
     private JPanel panelParaBotoesControleTela;
     private JPanel panelContainerTelaVez;
     private JPanel panelsTelaVez[];
+    private JPanel panelsTelaVezGrid[];
     
     private JButton buttonControleTelaVez[];
     
     private JLabel labelSuperiorContainer;
     private JLabel labelCargos[];
-    private JLabel labelCargosPoliticos[][];                                    //O primeiro vetor é para relacionar com o cargo e o segundo, é para relacionar com o nome do politico
     
     
     public DialogResultado(ProcessoVotacao processoVotacao)
@@ -55,6 +59,8 @@ public class DialogResultado extends JDialog implements ActionListener
         panelContainerTelaVez = new JPanel(cardManager);
         
         fontLabelTextoSuperior = new Font(Font.SERIF, Font.BOLD, 25);
+        fontLabelResultado = new Font(Font.SERIF, Font.BOLD, 20);
+        
         labelSuperiorContainer = new JLabel("RESULTADO");
         labelSuperiorContainer.setFont(fontLabelTextoSuperior);
         labelSuperiorContainer.setHorizontalAlignment(JLabel.CENTER);
@@ -67,9 +73,9 @@ public class DialogResultado extends JDialog implements ActionListener
             buttonControleTelaVez[index].setFont(fontLabelTextoSuperior);
             buttonControleTelaVez[index].addActionListener(this);
             if(index == 0)
-                panelParaBotoesControleTela.add(buttonControleTelaVez[index], BorderLayout.WEST);
-            if(index == 1)
                 panelParaBotoesControleTela.add(buttonControleTelaVez[index], BorderLayout.EAST);
+            if(index == 1)
+                panelParaBotoesControleTela.add(buttonControleTelaVez[index], BorderLayout.WEST);
             
         } 
         configuraPanels();
@@ -83,7 +89,7 @@ public class DialogResultado extends JDialog implements ActionListener
         //this.setUndecorated(true);
         this.setResizable(false);
         //this.setSize(tamanhoTela);
-        this.setSize(1000,1000);//AJUSTAR
+        this.setSize(1500,1000);//AJUSTAR
         
         this.setModal(true);
         this.setVisible(true);
@@ -93,30 +99,76 @@ public class DialogResultado extends JDialog implements ActionListener
     public void configuraPanels()
     {
         panelsTelaVez = new JPanel[processoVotacao.getEleicoes().size()];       // Aqui é criado um painel para cada tipo de cargo que existir
+        panelsTelaVezGrid = new JPanel[processoVotacao.getEleicoes().size()];
         labelCargos = new JLabel[processoVotacao.getEleicoes().size()];         // Aqui é criado um label para cada cargo das eleições
         
+        JLabel labelNome;
+        JLabel labelNumero;
+        JLabel labelPartido;
+        JLabel labelVotos;
+        JScrollPane scrollPane;
         for(int index = 0; index < labelCargos.length; index++)
-        {   labelCargos[index] = new JLabel(processoVotacao.getEleicoes().get(index).getEleicao()+" - "+processoVotacao.getEleicoes().get(index).getTitulo());  }
+        {   
+            labelCargos[index] = new JLabel(processoVotacao.getEleicoes().get(index).getEleicao()+" - "+processoVotacao.getEleicoes().get(index).getTitulo());
+            labelCargos[index].setHorizontalAlignment(JLabel.CENTER);
+            labelCargos[index].setFont(fontLabelTextoSuperior);
+        }
         
         for(int indexCargos = 0; indexCargos < panelsTelaVez.length; indexCargos++)                                     //Este for percorre todos os paineis, e por consequência, os cargos
         {
-            panelsTelaVez[indexCargos] = new JPanel(new GridLayout(1 + processoVotacao.getQuantidadeElementosPorCargo(processoVotacao.getEleicoes().get(indexCargos).getTitulo()), 4));
+            panelsTelaVez[indexCargos] = new JPanel(new BorderLayout());
+            panelsTelaVezGrid[indexCargos] = new JPanel(new GridLayout(1 + processoVotacao.getQuantidadeElementosPorCargo(processoVotacao.getEleicoes().get(indexCargos).getTitulo()), 4));
             
-            panelsTelaVez[indexCargos].add(new JLabel("Nome"));
-            panelsTelaVez[indexCargos].add(new JLabel("Número"));
-            panelsTelaVez[indexCargos].add(new JLabel("Partido"));
-            panelsTelaVez[indexCargos].add(new JLabel("Votos"));
+            panelsTelaVez[indexCargos].add(labelCargos[indexCargos], BorderLayout.NORTH);
+            
+            labelNome = new JLabel("Nome");
+            labelNumero = new JLabel("Número");
+            labelPartido = new JLabel("Partido");
+            labelVotos = new JLabel("Votos");
+            
+            labelNome.setBorder(BorderFactory.createLineBorder(Color.black));
+            labelNumero.setBorder(BorderFactory.createLineBorder(Color.black));
+            labelPartido.setBorder(BorderFactory.createLineBorder(Color.black));
+            labelVotos.setBorder(BorderFactory.createLineBorder(Color.black));
+            
+            labelNome.setFont(fontLabelResultado);
+            labelNumero.setFont(fontLabelResultado);
+            labelPartido.setFont(fontLabelResultado);
+            labelVotos.setFont(fontLabelResultado);
+            
+            panelsTelaVezGrid[indexCargos].add(labelNome);
+            panelsTelaVezGrid[indexCargos].add(labelNumero);
+            panelsTelaVezGrid[indexCargos].add(labelPartido);
+            panelsTelaVezGrid[indexCargos].add(labelVotos);
             
             for(int indexPoliticos = 0; indexPoliticos < processoVotacao.getCandidatos().size(); indexPoliticos++)                 //Este for percorre todos os cargos
             {
                 if(processoVotacao.getEleicoes().get(indexCargos).getTitulo().equalsIgnoreCase(processoVotacao.getCandidatos().get(indexPoliticos).getCargo()))
                 {
-                    panelsTelaVez[indexCargos].add(new JLabel(processoVotacao.getCandidatos().get(indexPoliticos).getEleitor().getNome()));
-                    panelsTelaVez[indexCargos].add(new JLabel(""+processoVotacao.getCandidatos().get(indexPoliticos).getNumero()));
-                    panelsTelaVez[indexCargos].add(new JLabel(processoVotacao.getCandidatos().get(indexPoliticos).getPartido()));
-                    panelsTelaVez[indexCargos].add(new JLabel(""+processoVotacao.getCandidatos().get(indexPoliticos).getVotos()));
+                    labelNome = new JLabel(processoVotacao.getCandidatos().get(indexPoliticos).getEleitor().getNome());
+                    labelNumero = new JLabel(""+processoVotacao.getCandidatos().get(indexPoliticos).getNumero());
+                    labelPartido = new JLabel(processoVotacao.getCandidatos().get(indexPoliticos).getPartido());
+                    labelVotos = new JLabel(""+processoVotacao.getCandidatos().get(indexPoliticos).getVotos());
+                    
+                    labelNome.setFont(fontLabelResultado);
+                    labelNumero.setFont(fontLabelResultado);
+                    labelPartido.setFont(fontLabelResultado);
+                    labelVotos.setFont(fontLabelResultado);
+                    
+                    labelNome.setBorder(BorderFactory.createLineBorder(Color.black));
+                    labelNumero.setBorder(BorderFactory.createLineBorder(Color.black));
+                    labelPartido.setBorder(BorderFactory.createLineBorder(Color.black));
+                    labelVotos.setBorder(BorderFactory.createLineBorder(Color.black));
+                    
+                    panelsTelaVezGrid[indexCargos].add(labelNome);
+                    panelsTelaVezGrid[indexCargos].add(labelNumero);
+                    panelsTelaVezGrid[indexCargos].add(labelPartido);
+                    panelsTelaVezGrid[indexCargos].add(labelVotos);
                 }
             }
+            scrollPane = new JScrollPane(panelsTelaVezGrid[indexCargos]);
+            scrollPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
+            panelsTelaVez[indexCargos].add(scrollPane, BorderLayout.CENTER);
             panelContainerTelaVez.add(panelsTelaVez[indexCargos]);
         }
     }

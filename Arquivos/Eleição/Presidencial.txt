@@ -19,12 +19,6 @@
 		<eleitos>3</eleitos>
 	</cargo>
 	<cargo>
-		<titulo>Senador</titulo>
-		<vice></vice>
-		<digitos>3</digitos>
-		<eleitos>3</eleitos>
-	</cargo>
-	<cargo>
 		<titulo>Governador</titulo>
 		<vice>sim</vice>
 		<digitos>2</digitos>

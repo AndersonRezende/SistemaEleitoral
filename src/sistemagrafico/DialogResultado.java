@@ -22,6 +22,7 @@ import javax.swing.JDialog;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
+import objetos.Candidato;
 import objetos.auxiliares.ProcessoVotacao;
 
 /**
@@ -54,6 +55,7 @@ public class DialogResultado extends JDialog implements ActionListener
     {
         this.processoVotacao = processoVotacao;
         this.processoVotacao.setCandidatos(LeituraArquivo.lerPolitico(processoVotacao.getEleicoes().get(0).getEleicao(), true));
+        
         container.setLayout(new BorderLayout());
         cardManager = new CardLayout();                                         
         panelContainerTelaVez = new JPanel(cardManager);

@@ -6,6 +6,7 @@ package objetos.auxiliares;
 import interfaces.ChecagemEleicao;
 import interfaces.ChecagemEleitor;
 import java.util.ArrayList;
+import java.util.Collections;
 import objetos.Candidato;
 import objetos.Eleicao;
 import objetos.Eleitor;
@@ -160,5 +161,40 @@ public class ProcessoVotacao implements ChecagemEleicao, ChecagemEleitor
         }
         
         return quantidade;
+    }
+    
+    
+    public ArrayList<Candidato> getListaOrdenadaMaiorVoto()
+    {
+        Collections.sort(candidatos, new ComparadorCandidatos());
+       
+        return this.candidatos;
+    }
+    
+    
+    public ArrayList<Candidato> getEleitos()
+    {
+        ArrayList<Candidato> eleitos = new ArrayList();
+        ArrayList<Candidato> candidatosOrdernados = getListaOrdenadaMaiorVoto();
+        boolean achou = false;
+        int percorreCandidatos = 0;
+        
+        for(int index = 0; index < eleicoes.size(); index++)
+        {
+            achou = false;
+            for(int candidatosEleitos = 0; candidatosEleitos < eleicoes.get(index).getEleitos(); candidatosEleitos++)
+            {
+                while(!achou)
+                {
+                    if(candidatosOrdernados.get(percorreCandidatos).getCargo().equalsIgnoreCase(eleicoes.get(index).getTitulo()))
+                    {
+                        eleitos.add(candidatosOrdernados.get(percorreCandidatos));
+                        achou = true;
+                    }
+                    percorreCandidatos++;
+                }
+            }
+        }
+        return eleitos;
     }
 }

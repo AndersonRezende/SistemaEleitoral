@@ -166,7 +166,7 @@
 	<partido>DEM</partido>
 	<vice></vice>
 	<partidovice></partidovice>
-	<votos>0</votos>
+	<votos>2</votos>
 </politico>
 <politico>
 	<nome>AntÙnio Coelho</nome>
@@ -176,7 +176,7 @@
 	<partido>DEM</partido>
 	<vice></vice>
 	<partidovice></partidovice>
-	<votos>0</votos>
+	<votos>2</votos>
 </politico>
 <politico>
 	<nome>Nino O Deputado Sem Teto</nome>
@@ -426,7 +426,7 @@
 	<partido>PROS</partido>
 	<vice></vice>
 	<partidovice></partidovice>
-	<votos>0</votos>
+	<votos>1</votos>
 </politico>
 <politico>
 	<nome>Mendonca Filho</nome>
@@ -436,7 +436,7 @@
 	<partido>DEM</partido>
 	<vice></vice>
 	<partidovice></partidovice>
-	<votos>0</votos>
+	<votos>1</votos>
 </politico>
 <politico>
 	<nome>Pastor Jairinho</nome>
@@ -456,7 +456,7 @@
 	<partido>AVANTE</partido>
 	<vice></vice>
 	<partidovice></partidovice>
-	<votos>0</votos>
+	<votos>1</votos>
 </politico>
 <politico>
 	<nome>Ana PatrÌcia Alves</nome>
@@ -496,7 +496,7 @@
 	<partido>REDE</partido>
 	<vice>Luciano Bezerra</vice>
 	<partidovice>REDE</partidovice>
-	<votos>0</votos>
+	<votos>2</votos>
 </politico>
 <politico>
 	<nome>MaurÌcio Rands</nome>
@@ -606,7 +606,7 @@
 	<partido>PSL</partido>
 	<vice>General Mour„o</vice>
 	<partidovice>PRTB</partidovice>
-	<votos>0</votos>
+	<votos>1</votos>
 </politico>
 <politico>
 	<nome>Jo„o Amoêdo</nome>
@@ -636,7 +636,7 @@
 	<partido>REDE</partido>
 	<vice>Eduardo Jorge</vice>
 	<partidovice>PV</partidovice>
-	<votos>0</votos>
+	<votos>1</votos>
 </politico>
 <politico>
 	<nome>Vera L˙cia</nome>

@@ -46,8 +46,6 @@ public class LeituraArquivo extends Arquivo implements Login
         {
             try
             {
-                //FileReader fr = new FileReader(arquivo);
-                //BufferedReader br = new BufferedReader(fr);
                 BufferedReader br = new BufferedReader(new InputStreamReader(new FileInputStream(arquivo.getAbsolutePath()), "ISO-8859-1"));
 
                 if(br.ready())                                                   //Enquanto tiver linhas para ler e erro não for verdadeiro

@@ -130,8 +130,7 @@ public class PanelLogado extends JPanel implements ListSelectionListener, Compon
                         if(!eleitor.votou())
                         {   
                             String mensagem = "Os dados do eleitor estão corretos?\n\n"
-                                         + "Nome: "+eleitor.getNome() + "\n"
-                                         + "Título de eleitor: "+eleitor.getTitulo();
+                                         + eleitor.getDados();
                             if(JOptionPane.showConfirmDialog(container, mensagem, "Confirmação", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE, null) == JOptionPane.YES_OPTION)
                             {   DialogEleitorMaster dem = new DialogEleitorMaster(processoVotacao, eleitor); }
                         }

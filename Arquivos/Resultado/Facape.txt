@@ -26,7 +26,7 @@
 	<partido>POS</partido>
 	<vice></vice>
 	<partidovice></partidovice>
-	<votos>1</votos>
+	<votos>0</votos>
 </politico>
 <politico>
 	<nome>Análise Orientada a Objetos</nome>
@@ -56,7 +56,7 @@
 	<partido>POS</partido>
 	<vice></vice>
 	<partidovice></partidovice>
-	<votos>2</votos>
+	<votos>1</votos>
 </politico>
 <politico>
 	<nome>Processo de Desenvolvimento de Software</nome>
@@ -76,7 +76,7 @@
 	<partido>POS</partido>
 	<vice></vice>
 	<partidovice></partidovice>
-	<votos>2</votos>
+	<votos>1</votos>
 </politico>
 <politico>
 	<nome>Gestão de Pojetos</nome>
@@ -86,7 +86,7 @@
 	<partido>POS</partido>
 	<vice></vice>
 	<partidovice></partidovice>
-	<votos>1</votos>
+	<votos>0</votos>
 </politico>
 <politico>
 	<nome>Engenharia de Requisitos</nome>

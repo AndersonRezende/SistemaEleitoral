@@ -1,6 +1,7 @@
 /*
  * Aqui é implementada a Interface Votacao
  * Esta classe possui um acoplamento dinâmico da classe Pessoa nos metodos getNome e setNome
+ * Esta classe possui o POLIMORFISMO DE SUBTIPAGEM no método getDados da classe Pessoa
  */
 package objetos;
 
@@ -45,5 +46,13 @@ public class Eleitor extends Pessoa implements Votacao
     {
         this.votou = true;
         return votou;
+    }
+    
+    @Override
+    public String getDados()
+    {
+        String dados = "Nome: "+super.getDados() +"\n"
+                     + "Titulo: "+this.getTitulo() +"\n";
+        return dados;
     }
 }

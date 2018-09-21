@@ -2073,3 +2073,74 @@
 [21/8/2018 - 0:48:29] -> {[Engenharia de Requisitos][Melhor Materia][POS][3][1]}
 
 [21/8/2018 - 0:48:31] -> {[Gestão de Pojetos][Pior Materia][POS][2][1]}
+
+
+[21/8/2018 - 9:49:1] -> {[Programação Orientada a Objetos][Melhor Materia][POS][6][1]}
+
+[21/8/2018 - 9:49:3] -> {[Metodologia Cientifica][Pior Materia][POS][1][1]}
+
+
+[21/8/2018 - 10:35:29] -> {[Voto nulo]}
+
+[21/8/2018 - 10:35:30] -> {[Voto nulo]}
+
+[21/8/2018 - 10:35:32] -> {[Voto nulo]}
+
+[21/8/2018 - 10:35:41] -> {[Julio Lossio][Governador][REDE][18][Luciano Bezerra][1]}
+
+[21/8/2018 - 10:36:38] -> {[Marina Silva][Presidente][REDE][18][Eduardo Jorge][1]}
+
+
+[21/8/2018 - 10:44:55] -> {[Fernando Filho][Deputado Federal][DEM][2501][1]}
+
+[21/8/2018 - 10:44:57] -> {[Voto nulo]}
+
+[21/8/2018 - 10:44:59] -> {[Voto nulo]}
+
+[21/8/2018 - 10:45:5] -> {[Dani Portela][Governador][PSOL][50][Gerlane Simões][1]}
+
+[21/8/2018 - 10:45:10] -> {[Guilherme Boulos][Presidente][PSOL][50][Sonia Guajajara][1]}
+
+
+[21/8/2018 - 10:48:14] -> {[Voto nulo]}
+
+[21/8/2018 - 10:48:16] -> {[Voto nulo]}
+
+[21/8/2018 - 10:48:18] -> {[Voto nulo]}
+
+[21/8/2018 - 10:48:19] -> {[Voto nulo]}
+
+[21/8/2018 - 10:48:22] -> {[Marina Silva][Presidente][REDE][18][Eduardo Jorge][1]}
+
+
+[21/8/2018 - 10:50:21] -> {[Voto nulo]}
+
+[21/8/2018 - 10:50:22] -> {[Voto nulo]}
+
+[21/8/2018 - 10:50:24] -> {[Voto nulo]}
+
+[21/8/2018 - 10:50:26] -> {[Voto nulo]}
+
+[21/8/2018 - 10:50:29] -> {[Voto nulo]}
+
+
+[21/8/2018 - 11:8:32] -> {[Fernando Filho][Deputado Federal][DEM][2501][1]}
+
+[21/8/2018 - 11:8:46] -> {[Antônio Coelho][Deputado Estadual][DEM][25000][1]}
+
+[21/8/2018 - 11:8:55] -> {[Silvio Costa][Senador][AVANTE][700][1]}
+
+[21/8/2018 - 11:8:58] -> {[Julio Lossio][Governador][REDE][18][Luciano Bezerra][1]}
+
+[21/8/2018 - 11:9:1] -> {[Guilherme Boulos][Presidente][PSOL][50][Sonia Guajajara][1]}
+
+
+[21/8/2018 - 11:13:5] -> {[Voto nulo]}
+
+[21/8/2018 - 11:13:7] -> {[Voto nulo]}
+
+[21/8/2018 - 11:13:9] -> {[Voto nulo]}
+
+[21/8/2018 - 11:13:12] -> {[Voto nulo]}
+
+[21/8/2018 - 11:13:15] -> {[Voto nulo]}

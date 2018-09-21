@@ -1,7 +1,6 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * Aqui contém o polimorfismo de SUBTIPAGEM no método getDados();
+ * É utilizado em: Eleitor e em Vice
  */
 package objetos;
 
@@ -23,4 +22,7 @@ public class Pessoa
     
     public void setNome(String nome)
     {   this.nome = nome;   }
+    
+    public String getDados()
+    {   return this.nome;   }
 }

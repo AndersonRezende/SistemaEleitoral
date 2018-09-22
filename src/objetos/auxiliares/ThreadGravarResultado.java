@@ -98,11 +98,10 @@ public class ThreadGravarResultado extends Thread
                 porcentagem = (100 * index) / candidatos.size();
                 oc.setValor(porcentagem);
                 index++;
-                try {
-                    Thread.sleep(10);
-                 } catch (Exception e) {
-                    e.printStackTrace();
-                 }
+                try 
+                {   Thread.sleep(10);   } 
+                catch (Exception e) 
+                 {  e.printStackTrace();    }
             }
             oc.setValor(100);
 

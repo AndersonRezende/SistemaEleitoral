@@ -76,7 +76,7 @@
 	<partido>POS</partido>
 	<vice></vice>
 	<partidovice></partidovice>
-	<votos>1</votos>
+	<votos>0</votos>
 </politico>
 <politico>
 	<nome>Gestão de Pojetos</nome>
@@ -106,7 +106,7 @@
 	<partido>POS</partido>
 	<vice></vice>
 	<partidovice></partidovice>
-	<votos>0</votos>
+	<votos>1</votos>
 </politico>
 <politico>
 	<nome>Design de Interfaces e Usabilidade</nome>

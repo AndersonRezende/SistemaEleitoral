@@ -173,7 +173,7 @@ public class LayoutMaster extends JFrame implements ActionListener
     
     private void configurarTelaLogin()
     {
-        panelLogin = new PanelLogin(panelLogin, container, cardManager, panelContainerTelaVez, menu);
+        panelLogin = new PanelLogin(panelLogin, container, cardManager, panelContainerTelaVez, menu, processoVotacao);
     }
     
     private void configurarTelaMesario()

@@ -29,16 +29,17 @@ import javax.swing.BorderFactory;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JDialog;
-import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JProgressBar;
 import javax.swing.JTextField;
 import objetos.Candidato;
 import objetos.Eleitor;
+import objetos.auxiliares.ChecagemTempo;
 import objetos.auxiliares.LogVotacao;
 import objetos.auxiliares.ObjetoCompartilhado;
 import objetos.auxiliares.ProcessoVotacao;
+import objetos.auxiliares.ThreadChecagemTempo;
 import objetos.auxiliares.ThreadProgressBar;
 import objetos.auxiliares.ThreadGravarResultado;
 
@@ -60,6 +61,7 @@ public class DialogEleitorMaster extends JDialog implements ActionListener
     private ProcessoVotacao processoVotacao;
     private Dimension tamanhoTela;
     private Container container = getContentPane();
+    private ChecagemTempo<Eleitor> ct;
     
     private Font fontButton;
     private Font fontLabelDisplay;
@@ -96,12 +98,17 @@ public class DialogEleitorMaster extends JDialog implements ActionListener
     private ImageIcon icon;   
     private JLabel labelImagem;
     
+    private ThreadChecagemTempo tct;
+    
     public DialogEleitorMaster(ProcessoVotacao processoVotacao, Eleitor eleitor)
     {
         this.setUndecorated(true);
         this.processoVotacao = processoVotacao;
         this.eleitor = eleitor;
         logVotacao = new LogVotacao();
+        ct = new ChecagemTempo<>(eleitor);
+        tct = new ThreadChecagemTempo(ct, true);
+        tct.start();
         
         fechar = false;
         votacaoCargoVez = 0;
@@ -509,6 +516,7 @@ public class DialogEleitorMaster extends JDialog implements ActionListener
         ThreadGravarResultado tgr = new ThreadGravarResultado(oc, processoVotacao);
         tgr.start();
         tpb.start();
+        ct.finalizar();
         eleitor.votar();
         
         //this.dispose();

@@ -2144,3 +2144,172 @@
 [21/8/2018 - 11:13:12] -> {[Voto nulo]}
 
 [21/8/2018 - 11:13:15] -> {[Voto nulo]}
+
+
+[21/8/2018 - 22:27:17] -> {[Fernando Filho][Deputado Federal][DEM][2501][1]}
+
+[21/8/2018 - 22:27:24] -> {[Antônio Coelho][Deputado Estadual][DEM][25000][1]}
+
+[21/8/2018 - 22:27:26] -> {[Silvio Costa][Senador][AVANTE][700][1]}
+
+[21/8/2018 - 22:27:27] -> {[Maurício Rands][Governador][PROS][90][Isabella de Roldão][1]}
+
+[21/8/2018 - 22:27:29] -> {[Marina Silva][Presidente][REDE][18][Eduardo Jorge][1]}
+
+
+[21/8/2018 - 22:29:52] -> {[Programação Orientada a Objetos][Melhor Materia][POS][6][1]}
+
+[21/8/2018 - 22:29:55] -> {[Metodologia Cientifica][Pior Materia][POS][1][1]}
+
+
+[21/8/2018 - 22:30:11] -> {[Programação Orientada a Objetos][Melhor Materia][POS][6][2]}
+
+[21/8/2018 - 22:30:14] -> {[Gestão de Pojetos][Pior Materia][POS][2][1]}
+
+
+[21/8/2018 - 22:30:34] -> {[Engenharia de Requisitos][Melhor Materia][POS][3][1]}
+
+[21/8/2018 - 22:30:36] -> {[Metodologia Cientifica][Pior Materia][POS][1][2]}
+
+
+[21/8/2018 - 22:32:53] -> {[Programação Orientada a Objetos][Melhor Materia][POS][6][1]}
+
+[21/8/2018 - 22:32:55] -> {[Metodologia Cientifica][Pior Materia][POS][1][1]}
+
+
+[21/8/2018 - 22:35:49] -> {[Programação Orientada a Objetos][Melhor Materia][POS][6][1]}
+
+[21/8/2018 - 22:35:50] -> {[Metodologia Cientifica][Pior Materia][POS][1][1]}
+
+
+[21/8/2018 - 22:55:0] -> {[Programação Orientada a Objetos][Melhor Materia][POS][6][1]}
+
+[21/8/2018 - 22:55:1] -> {[Metodologia Cientifica][Pior Materia][POS][1][1]}
+
+
+[21/8/2018 - 22:55:59] -> {[Programação Orientada a Objetos][Melhor Materia][POS][6][1]}
+
+[21/8/2018 - 22:56:0] -> {[Engenharia de Requisitos][Pior Materia][POS][3][1]}
+
+
+[21/8/2018 - 22:57:22] -> {[Programação Orientada a Objetos][Melhor Materia][POS][6][1]}
+
+[21/8/2018 - 22:57:24] -> {[Metodologia Cientifica][Pior Materia][POS][1][1]}
+
+
+[21/8/2018 - 22:59:6] -> {[Programação Orientada a Objetos][Melhor Materia][POS][6][1]}
+
+[21/8/2018 - 22:59:7] -> {[Metodologia Cientifica][Pior Materia][POS][1][1]}
+
+
+[21/8/2018 - 23:10:33] -> {[Programação Orientada a Objetos][Melhor Materia][POS][6][1]}
+
+[21/8/2018 - 23:10:34] -> {[Metodologia Cientifica][Pior Materia][POS][1][1]}
+
+
+[21/8/2018 - 23:12:25] -> {[Programação Orientada a Objetos][Melhor Materia][POS][6][1]}
+
+[21/8/2018 - 23:12:26] -> {[Metodologia Cientifica][Pior Materia][POS][1][1]}
+
+
+[21/8/2018 - 23:14:25] -> {[Programação Orientada a Objetos][Melhor Materia][POS][6][1]}
+
+[21/8/2018 - 23:14:26] -> {[Metodologia Cientifica][Pior Materia][POS][1][1]}
+
+
+[21/8/2018 - 23:14:40] -> {[Análise Orientada a Objetos][Melhor Materia][POS][4][1]}
+
+[21/8/2018 - 23:14:42] -> {[Metodologia Cientifica][Pior Materia][POS][1][2]}
+
+
+[21/8/2018 - 23:16:27] -> {[Fernando Filho][Deputado Federal][DEM][2501][1]}
+
+[21/8/2018 - 23:16:29] -> {[Antônio Coelho][Deputado Estadual][DEM][25000][1]}
+
+[21/8/2018 - 23:16:31] -> {[Silvio Costa][Senador][AVANTE][700][1]}
+
+[21/8/2018 - 23:16:36] -> {[Julio Lossio][Governador][REDE][18][Luciano Bezerra][1]}
+
+[21/8/2018 - 23:16:38] -> {[Marina Silva][Presidente][REDE][18][Eduardo Jorge][1]}
+
+
+[21/8/2018 - 23:16:45] -> {[Fernando Filho][Deputado Federal][DEM][2501][2]}
+
+[21/8/2018 - 23:16:47] -> {[Antônio Coelho][Deputado Estadual][DEM][25000][2]}
+
+[21/8/2018 - 23:16:49] -> {[Lidia Brunes][Senador][PROS][900][1]}
+
+[21/8/2018 - 23:16:51] -> {[Julio Lossio][Governador][REDE][18][Luciano Bezerra][2]}
+
+[21/8/2018 - 23:16:53] -> {[Marina Silva][Presidente][REDE][18][Eduardo Jorge][2]}
+
+
+[21/8/2018 - 23:22:25] -> {[Voto nulo]}
+
+[21/8/2018 - 23:22:26] -> {[Voto nulo]}
+
+
+[22/8/2018 - 0:25:1] -> {[Gestão de Pojetos][Melhor Materia][POS][2][1]}
+
+[22/8/2018 - 0:25:28] -> {[Voto nulo]}
+
+
+[22/8/2018 - 0:27:34] -> {[Voto nulo]}
+
+[22/8/2018 - 0:27:35] -> {[Programação Orientada a Objetos][Pior Materia][POS][6][1]}
+
+
+[22/8/2018 - 0:30:28] -> {[Programação Orientada a Objetos][Melhor Materia][POS][6][1]}
+
+[22/8/2018 - 0:30:29] -> {[Voto nulo]}
+
+
+[22/8/2018 - 0:42:57] -> {[Gestão de Pojetos][Melhor Materia][POS][2][1]}
+
+[22/8/2018 - 0:42:58] -> {[Voto nulo]}
+
+
+[22/8/2018 - 0:43:29] -> {[Voto nulo]}
+
+[22/8/2018 - 0:43:29] -> {[Voto nulo]}
+
+
+[22/8/2018 - 0:44:30] -> {[Voto nulo]}
+
+[22/8/2018 - 0:44:32] -> {[Voto nulo]}
+
+
+[22/8/2018 - 0:47:2] -> {[Processo de Desenvolvimento de Software][Melhor Materia][POS][7][1]}
+
+[22/8/2018 - 0:47:6] -> {[Voto nulo]}
+
+
+[22/8/2018 - 0:50:51] -> {[Voto nulo]}
+
+[22/8/2018 - 0:50:51] -> {[Voto nulo]}
+
+
+[22/8/2018 - 1:14:4] -> {[Design de Interfaces e Usabilidade][Melhor Materia][POS][5][1]}
+
+[22/8/2018 - 1:14:5] -> {[Programação Orientada a Objetos][Pior Materia][POS][6][1]}
+
+
+[22/8/2018 - 1:15:15] -> {[Fernando Filho][Deputado Federal][DEM][2501][1]}
+
+[22/8/2018 - 1:15:18] -> {[Antônio Coelho][Deputado Estadual][DEM][25000][1]}
+
+[22/8/2018 - 1:15:19] -> {[Silvio Costa][Senador][AVANTE][700][1]}
+
+[22/8/2018 - 1:15:22] -> {[Julio Lossio][Governador][REDE][18][Luciano Bezerra][1]}
+
+[22/8/2018 - 1:15:23] -> {[Marina Silva][Presidente][REDE][18][Eduardo Jorge][1]}
+
+
+[22/8/2018 - 1:16:31] -> {[Programação Orientada a Objetos][Melhor Materia][POS][6][1]}
+
+[22/8/2018 - 1:16:32] -> {[Metodologia Cientifica][Pior Materia][POS][1][1]}
+
+
+[22/8/2018 - 1:17:11] -> {[Programação Orientada a Objetos][Melhor Materia][POS][6][1]}
+
+[22/8/2018 - 1:17:12] -> {[Análise Orientada a Objetos][Pior Materia][POS][4][1]}

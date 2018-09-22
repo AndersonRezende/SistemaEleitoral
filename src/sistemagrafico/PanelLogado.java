@@ -21,7 +21,10 @@ import javax.swing.ListSelectionModel;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
 import objetos.Eleitor;
+import objetos.Mesario;
+import objetos.auxiliares.ChecagemTempo;
 import objetos.auxiliares.ProcessoVotacao;
+import objetos.auxiliares.ThreadChecagemTempo;
 
 /**
  *
@@ -40,7 +43,8 @@ public class PanelLogado extends JPanel implements ListSelectionListener, Compon
     private DefaultListModel listModelOpcoesMenu;
     private JLabel labelMesarioSuperior;
     private boolean liberarResultado;
-    
+    private ChecagemTempo<Mesario> ct;
+    private ThreadChecagemTempo tct;
     
     PanelLogado(JPanel panelMesario, Container container, CardLayout cardManager, JPanel panelContainerTelaVez, ProcessoVotacao processoVotacao) 
     {
@@ -49,6 +53,9 @@ public class PanelLogado extends JPanel implements ListSelectionListener, Compon
         this.cardManager = cardManager;
         this.processoVotacao = processoVotacao;
         this.liberarResultado = false;
+        
+        ct = new ChecagemTempo<>(processoVotacao.getMesario());
+        tct = new ThreadChecagemTempo(ct);
         
         fontListOpcoesMenu = new Font(Font.SERIF, Font.PLAIN, 25);
         fontLabelTextoSuperior = new Font(Font.SERIF, Font.BOLD, 25);
@@ -89,7 +96,11 @@ public class PanelLogado extends JPanel implements ListSelectionListener, Compon
             {   //Novo processo de votação
                 int opcao = JOptionPane.showConfirmDialog(container, "Deseja iniciar um novo processo de votação?", "Confirmação", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE, null);
                 if(opcao == JOptionPane.YES_OPTION)
+                {
                     cardManager.show(panelContainerTelaVez, EnumListaPanels.NOVO_PROC_VOTACAO.getOpcao());
+                    ct = new ChecagemTempo<>(processoVotacao.getMesario());
+                    tct = new ThreadChecagemTempo(ct);
+                }
             }
             else
             {   

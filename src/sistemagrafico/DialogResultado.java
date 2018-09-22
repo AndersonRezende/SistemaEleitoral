@@ -22,7 +22,6 @@ import javax.swing.JDialog;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
-import objetos.Candidato;
 import objetos.auxiliares.ProcessoVotacao;
 
 /**
@@ -90,8 +89,9 @@ public class DialogResultado extends JDialog implements ActionListener
     
         //this.setUndecorated(true);
         this.setResizable(false);
-        //this.setSize(tamanhoTela);
-        this.setSize(1500,1000);//AJUSTAR
+        this.setSize(tamanhoTela);
+        //this.setSize(1500,1000);//AJUSTAR
+        this.setAlwaysOnTop(true);
         
         this.setModal(true);
         this.setVisible(true);
@@ -109,6 +109,7 @@ public class DialogResultado extends JDialog implements ActionListener
         JLabel labelNumero;
         JLabel labelPartido;
         JLabel labelVotos;
+        JLabel labelEleito;
         JScrollPane scrollPane;
         for(int index = 0; index < labelCargos.length; index++)
         {   
@@ -121,9 +122,9 @@ public class DialogResultado extends JDialog implements ActionListener
         {
             panelsTelaVez[indexCargos] = new JPanel(new BorderLayout());
             if(processoVotacao.getEleicoes().get(indexCargos).getVice())
-                panelsTelaVezGrid[indexCargos] = new JPanel(new GridLayout(1 + processoVotacao.getQuantidadeElementosPorCargo(processoVotacao.getEleicoes().get(indexCargos).getTitulo()), 5));
+                panelsTelaVezGrid[indexCargos] = new JPanel(new GridLayout(1 + processoVotacao.getQuantidadeElementosPorCargo(processoVotacao.getEleicoes().get(indexCargos).getTitulo()), 6));
             else
-                panelsTelaVezGrid[indexCargos] = new JPanel(new GridLayout(1 + processoVotacao.getQuantidadeElementosPorCargo(processoVotacao.getEleicoes().get(indexCargos).getTitulo()), 4));
+                panelsTelaVezGrid[indexCargos] = new JPanel(new GridLayout(1 + processoVotacao.getQuantidadeElementosPorCargo(processoVotacao.getEleicoes().get(indexCargos).getTitulo()), 5));
             
             panelsTelaVez[indexCargos].add(labelCargos[indexCargos], BorderLayout.NORTH);
             
@@ -132,18 +133,21 @@ public class DialogResultado extends JDialog implements ActionListener
             labelNumero = new JLabel("Número");
             labelPartido = new JLabel("Partido");
             labelVotos = new JLabel("Votos");
+            labelEleito = new JLabel("Eleito");
             
             labelNome.setBorder(BorderFactory.createLineBorder(Color.black));
             labelVice.setBorder(BorderFactory.createLineBorder(Color.black));
             labelNumero.setBorder(BorderFactory.createLineBorder(Color.black));
             labelPartido.setBorder(BorderFactory.createLineBorder(Color.black));
             labelVotos.setBorder(BorderFactory.createLineBorder(Color.black));
+            labelEleito.setBorder(BorderFactory.createLineBorder(Color.black));
             
             labelNome.setFont(fontLabelResultado);
             labelVice.setFont(fontLabelResultado);
             labelNumero.setFont(fontLabelResultado);
             labelPartido.setFont(fontLabelResultado);
             labelVotos.setFont(fontLabelResultado);
+            labelEleito.setFont(fontLabelResultado);
             
             panelsTelaVezGrid[indexCargos].add(labelNome);
             if(processoVotacao.getEleicoes().get(indexCargos).getVice())
@@ -151,6 +155,7 @@ public class DialogResultado extends JDialog implements ActionListener
             panelsTelaVezGrid[indexCargos].add(labelNumero);
             panelsTelaVezGrid[indexCargos].add(labelPartido);
             panelsTelaVezGrid[indexCargos].add(labelVotos);
+            panelsTelaVezGrid[indexCargos].add(labelEleito);
             
             for(int indexPoliticos = 0; indexPoliticos < processoVotacao.getCandidatos().size(); indexPoliticos++)                 //Este for percorre todos os cargos
             {
@@ -162,6 +167,16 @@ public class DialogResultado extends JDialog implements ActionListener
                     labelNumero = new JLabel(""+processoVotacao.getCandidatos().get(indexPoliticos).getNumero());
                     labelPartido = new JLabel(processoVotacao.getCandidatos().get(indexPoliticos).getPartido());
                     labelVotos = new JLabel(""+processoVotacao.getCandidatos().get(indexPoliticos).getVotos());
+                    if(processoVotacao.foiEleito(processoVotacao.getCandidatos().get(indexPoliticos)) && processoVotacao.getCandidatos().get(indexPoliticos).getVotos() > 0)
+                    {
+                        labelEleito = new JLabel("Eleito");
+                        labelEleito.setForeground(Color.blue);
+                    }
+                    else
+                    {
+                        labelEleito = new JLabel("Não foi eleito");
+                        labelEleito.setForeground(Color.red);
+                    }
                     
                     labelNome.setFont(fontLabelResultado);
                     if(processoVotacao.getEleicoes().get(indexCargos).getVice())
@@ -169,6 +184,7 @@ public class DialogResultado extends JDialog implements ActionListener
                     labelNumero.setFont(fontLabelResultado);
                     labelPartido.setFont(fontLabelResultado);
                     labelVotos.setFont(fontLabelResultado);
+                    labelEleito.setFont(fontLabelResultado);
                     
                     labelNome.setBorder(BorderFactory.createLineBorder(Color.black));
                     if(processoVotacao.getEleicoes().get(indexCargos).getVice())
@@ -176,6 +192,7 @@ public class DialogResultado extends JDialog implements ActionListener
                     labelNumero.setBorder(BorderFactory.createLineBorder(Color.black));
                     labelPartido.setBorder(BorderFactory.createLineBorder(Color.black));
                     labelVotos.setBorder(BorderFactory.createLineBorder(Color.black));
+                    labelEleito.setBorder(BorderFactory.createLineBorder(Color.black));
                     
                     panelsTelaVezGrid[indexCargos].add(labelNome);
                     if(processoVotacao.getEleicoes().get(indexCargos).getVice())
@@ -183,6 +200,7 @@ public class DialogResultado extends JDialog implements ActionListener
                     panelsTelaVezGrid[indexCargos].add(labelNumero);
                     panelsTelaVezGrid[indexCargos].add(labelPartido);
                     panelsTelaVezGrid[indexCargos].add(labelVotos);
+                    panelsTelaVezGrid[indexCargos].add(labelEleito);
                 }
             }
             scrollPane = new JScrollPane(panelsTelaVezGrid[indexCargos]);
@@ -192,7 +210,7 @@ public class DialogResultado extends JDialog implements ActionListener
         }
     }
 
-    
+        
     //--------------------------------LISTENERS---------------------------------
     @Override
     public void actionPerformed(ActionEvent e) 

@@ -31,6 +31,7 @@ import javax.swing.JPanel;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 import objetos.Mesario;
+import objetos.auxiliares.ProcessoVotacao;
 
 /**
  *
@@ -53,14 +54,16 @@ public class PanelLogin extends JPanel implements Login, ActionListener, KeyList
     private Font fontLabelsInputs;
     private Font fontButton;
     private JMenuBar menu;
+    private ProcessoVotacao processoVotacao;
     
-    public PanelLogin(JPanel panelLogin, Container container, CardLayout cardManager, JPanel panelContainerTelaVez, JMenuBar menu)
+    public PanelLogin(JPanel panelLogin, Container container, CardLayout cardManager, JPanel panelContainerTelaVez, JMenuBar menu, ProcessoVotacao processoVotacao)
     {   
         this.container = container;
         this.panelContainerTelaVez = panelContainerTelaVez;
         this.cardManager = cardManager;
         this.menu = menu;
         this.panelLogin = panelLogin;
+        this.processoVotacao = processoVotacao;
         
         labelEleicoes = new JLabel("ELEIÇÕES "+Calendar.getInstance().get(Calendar.YEAR));
         labelLogin = new JLabel("Login");
@@ -140,7 +143,10 @@ public class PanelLogin extends JPanel implements Login, ActionListener, KeyList
             String senha = new String(passwordFieldSenha.getPassword());
             Mesario mesario = new Mesario(login, senha);
             if(logar(mesario))
+            {
+                processoVotacao.setMesario(mesario);
                 trocarPanel();
+            }
             else
                 JOptionPane.showMessageDialog(container, "Usuário inválido, tente novamente!", "Erro ao fazer login", JOptionPane.ERROR_MESSAGE, null);
         }

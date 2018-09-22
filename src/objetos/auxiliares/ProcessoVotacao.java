@@ -18,6 +18,7 @@ import java.util.Collections;
 import objetos.Candidato;
 import objetos.Eleicao;
 import objetos.Eleitor;
+import objetos.Mesario;
 
 /**
  *
@@ -29,6 +30,8 @@ public class ProcessoVotacao implements ChecagemEleicao, ChecagemEleitor
     private ArrayList<Eleicao> eleicoes;
     private ArrayList<Candidato> candidatos;
     private ArrayList<Eleitor> eleitores;
+    private ArrayList<Candidato> eleitos;
+    private Mesario mesario;
     
     
     public ProcessoVotacao()
@@ -64,6 +67,11 @@ public class ProcessoVotacao implements ChecagemEleicao, ChecagemEleitor
     public void setEleitores(ArrayList<Eleitor> eleitores) 
     {   this.eleitores = eleitores; }
     
+    public void setMesario(Mesario mesario)
+    {   this.mesario = mesario; }
+    
+    public Mesario getMesario()
+    {   return this.mesario;    }
     
     @Override
     public int getMaiorNumeroDigitosEleicao()
@@ -174,9 +182,10 @@ public class ProcessoVotacao implements ChecagemEleicao, ChecagemEleitor
     
     public ArrayList<Candidato> getListaOrdenadaMaiorVoto()
     {
-        Collections.sort(candidatos, new ComparadorCandidatos());
-       
-        return this.candidatos;
+        ArrayList<Candidato> aux = (ArrayList<Candidato>) candidatos.clone();
+        Collections.sort(aux, new ComparadorCandidatos());
+        
+        return aux;
     }
     
     
@@ -185,24 +194,38 @@ public class ProcessoVotacao implements ChecagemEleicao, ChecagemEleitor
         ArrayList<Candidato> eleitos = new ArrayList();
         ArrayList<Candidato> candidatosOrdernados = getListaOrdenadaMaiorVoto();
         boolean achou = false;
-        int percorreCandidatos = 0;
+        int incluidos = 0;
         
-        for(int cargos = 0; cargos < eleicoes.size(); cargos++)
+        for(int cargos = 0; cargos < eleicoes.size(); cargos++)                 //Percorre todos os cargos disponíveis
         {
-            achou = false;
-            for(int candidatosEleitos = 0; candidatosEleitos < eleicoes.get(cargos).getEleitos(); candidatosEleitos++)
+            incluidos = 0;
+            for(Candidato c : candidatosOrdernados)
             {
-                while(!achou)
+                if(c.getCargo().equalsIgnoreCase(eleicoes.get(cargos).getTitulo()) && incluidos < eleicoes.get(cargos).getEleitos())
                 {
-                    if(candidatosOrdernados.get(percorreCandidatos).getCargo().equalsIgnoreCase(eleicoes.get(cargos).getTitulo()))
-                    {
-                        eleitos.add(candidatosOrdernados.get(percorreCandidatos));
-                        achou = true;
-                    }
-                    percorreCandidatos++;
+                    incluidos++;
+                    eleitos.add(c);
                 }
             }
         }
         return eleitos;
+    }
+    
+    
+    public boolean foiEleito(Candidato c)
+    {
+        boolean eleito = false;
+        eleitos =  this.getEleitos();
+        
+        for(Candidato candidato : eleitos)
+        {
+            if(candidato.getCargo().equals(c.getCargo()) && candidato.getNumero() == c.getNumero())
+            {
+                eleito = true;
+                break;
+            }
+        }
+        
+        return eleito;
     }
 }

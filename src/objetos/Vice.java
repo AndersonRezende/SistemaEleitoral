@@ -23,9 +23,6 @@ class Vice extends Pessoa
     public String getPartido()
     {   return partido; }
     
-    @Override
-    public String getNome() 
-    {   return super.getNome();    }
   
     @Override
     public void setNome(String nome) 

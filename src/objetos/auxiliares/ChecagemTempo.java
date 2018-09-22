@@ -13,6 +13,7 @@ import objetos.Mesario;
 /**
  *
  * @author Anderson
+ * @param <G>
  */
 public class ChecagemTempo<G>
 {

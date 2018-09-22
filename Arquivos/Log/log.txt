@@ -2313,3 +2313,36 @@
 [22/8/2018 - 1:17:11] -> {[Programação Orientada a Objetos][Melhor Materia][POS][6][1]}
 
 [22/8/2018 - 1:17:12] -> {[Análise Orientada a Objetos][Pior Materia][POS][4][1]}
+
+
+[22/8/2018 - 9:50:40] -> {[Fernando Filho][Deputado Federal][DEM][2501][1]}
+
+[22/8/2018 - 9:50:45] -> {[Antônio Coelho][Deputado Estadual][DEM][25000][1]}
+
+[22/8/2018 - 9:50:49] -> {[Silvio Costa][Senador][AVANTE][700][1]}
+
+[22/8/2018 - 9:50:59] -> {[Julio Lossio][Governador][REDE][18][Luciano Bezerra][1]}
+
+[22/8/2018 - 9:51:0] -> {[Marina Silva][Presidente][REDE][18][Eduardo Jorge][1]}
+
+
+[22/8/2018 - 10:11:8] -> {[Fernando Filho][Deputado Federal][DEM][2501][1]}
+
+[22/8/2018 - 10:11:10] -> {[Voto nulo]}
+
+[22/8/2018 - 10:11:12] -> {[Silvio Costa][Senador][AVANTE][700][1]}
+
+[22/8/2018 - 10:11:15] -> {[Julio Lossio][Governador][REDE][18][Luciano Bezerra][1]}
+
+[22/8/2018 - 10:11:18] -> {[Jair Bolsonaro][Presidente][PSL][17][General Mourão][1]}
+
+
+[22/8/2018 - 11:10:17] -> {[Voto nulo]}
+
+[22/8/2018 - 11:10:18] -> {[Voto nulo]}
+
+[22/8/2018 - 11:10:19] -> {[Voto nulo]}
+
+[22/8/2018 - 11:10:20] -> {[Voto nulo]}
+
+[22/8/2018 - 11:10:22] -> {[Guilherme Boulos][Presidente][PSOL][50][Sonia Guajajara][1]}

@@ -166,7 +166,7 @@
 	<partido>DEM</partido>
 	<vice></vice>
 	<partidovice></partidovice>
-	<votos>1</votos>
+	<votos>0</votos>
 </politico>
 <politico>
 	<nome>Antônio Coelho</nome>
@@ -176,7 +176,7 @@
 	<partido>DEM</partido>
 	<vice></vice>
 	<partidovice></partidovice>
-	<votos>1</votos>
+	<votos>0</votos>
 </politico>
 <politico>
 	<nome>Nino O Deputado Sem Teto</nome>
@@ -456,7 +456,7 @@
 	<partido>AVANTE</partido>
 	<vice></vice>
 	<partidovice></partidovice>
-	<votos>1</votos>
+	<votos>0</votos>
 </politico>
 <politico>
 	<nome>Ana Patrícia Alves</nome>
@@ -496,7 +496,7 @@
 	<partido>REDE</partido>
 	<vice>Luciano Bezerra</vice>
 	<partidovice>REDE</partidovice>
-	<votos>1</votos>
+	<votos>0</votos>
 </politico>
 <politico>
 	<nome>Maurício Rands</nome>
@@ -586,7 +586,7 @@
 	<partido>PSOL</partido>
 	<vice>Sonia Guajajara</vice>
 	<partidovice>PSOL</partidovice>
-	<votos>0</votos>
+	<votos>1</votos>
 </politico>
 <politico>
 	<nome>Henrique Meirelles</nome>
@@ -636,7 +636,7 @@
 	<partido>REDE</partido>
 	<vice>Eduardo Jorge</vice>
 	<partidovice>PV</partidovice>
-	<votos>1</votos>
+	<votos>0</votos>
 </politico>
 <politico>
 	<nome>Vera Lúcia</nome>

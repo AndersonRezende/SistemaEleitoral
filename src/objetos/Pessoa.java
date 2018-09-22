@@ -1,7 +1,6 @@
 /*
- * Aqui contém o polimorfismo de SUBTIPAGEM no método getDados();
  * É utilizado em: Eleitor e em Vice
- * AQUI CONTÉM O POLIMORFISMO DE SUBTIPAGEM
+ * AQUI CONTÉM O POLIMORFISMO DE SUBTIPAGEM (GETDADOS)
  * AQUI É PARTE DE UM PACOTE
  * Utilizado na classe “Pessoa” no método “getDados” que é sobrescrito conforme a 
  * necessidade do objeto que é utilizado.

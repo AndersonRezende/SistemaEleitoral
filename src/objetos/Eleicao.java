@@ -1,5 +1,4 @@
 /*
- * Aqui existe um polimorfismo de coerção explicita
  * AQUI EXISTE UM POLIMORFISMO DE COERÇÃO EXPLICITA
  * Atributo “eleição” da Classe “Eleicao” definido como String para que possa armazenar o nome do tipo de eleição corrente.
  * AQUI CONTÉM POLIMORFISMO DE COERÇÃO EXPLÍCITO (MÉTODO PODEINICIARELEICAO)

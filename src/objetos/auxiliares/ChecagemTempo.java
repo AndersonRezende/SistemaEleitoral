@@ -1,7 +1,8 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * AQUI CONTÉM O POLIMORFISMO PARAMÉTRICO
+ * Na classe “checagemTempo”, é utilizado este item com o intuito de receber um 
+ * objeto que possa ser “Eleitor” ou “Mesario” e realizar uma contagem do tempo de 
+ * operação do sistema eleitoral e sobre o tempo de voto, respectivamente.
  */
 package objetos.auxiliares;
 

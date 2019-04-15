@@ -1,105 +1,105 @@
 <eleitor>
 	<nome>Anderson</nome>
-	<titulo>88223033</titulo>
+	<titulo>1</titulo>
 	<votou></votou>
 </eleitor>
 <eleitor>
 	<nome>Dailton</nome>
-	<titulo>96235244</titulo>
+	<titulo>2</titulo>
 	<votou></votou>
 </eleitor>
 <eleitor>
 	<nome>Hugo</nome>
-	<titulo>98018006</titulo>
+	<titulo>3</titulo>
 	<votou></votou>
 </eleitor>
 <eleitor>
 	<nome>Márcio</nome>
-	<titulo>88049254</titulo>
+	<titulo>4</titulo>
 	<votou></votou>
 </eleitor>
 <eleitor>
 	<nome>Nailson</nome>
-	<titulo>88290673</titulo>
+	<titulo>5</titulo>
 	<votou></votou>
 </eleitor>
 <eleitor>
 	<nome>Vinicios</nome>
-	<titulo>99073685</titulo>
+	<titulo>6</titulo>
 	<votou></votou>
 </eleitor>
 <eleitor>
 	<nome>Ícaro</nome>
-	<titulo>88170986</titulo>
+	<titulo>7</titulo>
 	<votou></votou>
 </eleitor>
 <eleitor>
 	<nome>Thalita</nome>
-	<titulo>88261217</titulo>
+	<titulo>8</titulo>
 	<votou></votou>
 </eleitor>
 <eleitor>
 	<nome>Luana</nome>
-	<titulo>88369079</titulo>
+	<titulo>9</titulo>
 	<votou></votou>
 </eleitor>
 <eleitor>
 	<nome>Raianne</nome>
-	<titulo>91107434</titulo>
+	<titulo>10</titulo>
 	<votou></votou>
 </eleitor>
 <eleitor>
 	<nome>Ravick</nome>
-	<titulo>88179674</titulo>
+	<titulo>11</titulo>
 	<votou></votou>
 </eleitor>
 <eleitor>
 	<nome>Alexandre</nome>
-	<titulo>88213639</titulo>
+	<titulo>12</titulo>
 	<votou></votou>
 </eleitor>
 <eleitor>
 	<nome>Moises</nome>
-	<titulo>88270945</titulo>
+	<titulo>13</titulo>
 	<votou></votou>
 </eleitor>
 <eleitor>
 	<nome>Alanne</nome>
-	<titulo>88348393</titulo>
+	<titulo>14</titulo>
 	<votou></votou>
 </eleitor>
 <eleitor>
 	<nome>Elison</nome>
-	<titulo>88430970</titulo>
+	<titulo>15</titulo>
 	<votou></votou>
 </eleitor>
 <eleitor>
 	<nome>Henrique</nome>
-	<titulo>88557443</titulo>
+	<titulo>16</titulo>
 	<votou></votou>
 </eleitor>
 <eleitor>
 	<nome>Alexandre Braga</nome>
-	<titulo>88587282</titulo>
+	<titulo>17</titulo>
 	<votou></votou>
 </eleitor>
 <eleitor>
 	<nome>Wedson</nome>
-	<titulo>88739883</titulo>
+	<titulo>18</titulo>
 	<votou></votou>
 </eleitor>
 <eleitor>
 	<nome>Washigton</nome>
-	<titulo>98082578</titulo>
+	<titulo>19</titulo>
 	<votou></votou>
 </eleitor>
 <eleitor>
 	<nome>Tenorio</nome>
-	<titulo>99211233</titulo>
+	<titulo>20</titulo>
 	<votou></votou>
 </eleitor>
 <eleitor>
 	<nome>Gondim</nome>
-	<titulo>88220841</titulo>
+	<titulo>21</titulo>
 	<votou></votou>
 </eleitor>
